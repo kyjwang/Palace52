@@ -53,8 +53,8 @@ export function PublicShell({ children }: { children: ReactNode }) {
           </nav>
           <div className="hidden items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--card)] px-3 py-2 text-sm text-[var(--foreground)] shadow-sm md:flex">
             <BarChart3 className="size-4 text-[var(--accent)]" />
-            <span className="font-mono">43/52</span>
-            <span className="text-[var(--muted)]">latest</span>
+            <span className="font-mono">52-card</span>
+            <span className="text-[var(--muted)]">method</span>
           </div>
           <div className="hidden items-center gap-2 md:flex">
             <Link
