@@ -10,9 +10,11 @@ import {
   Spade,
   Trophy
 } from "lucide-react";
+import { CardBadge } from "@/components/app/card-badge";
 import { PublicShell } from "@/components/app/public-shell";
 import { ButtonLink } from "@/components/ui/button";
 import { MetricCard, Panel } from "@/components/ui/product";
+import { cardFromCode } from "@/lib/cards";
 
 const methodSteps = [
   {
@@ -126,21 +128,27 @@ export default function HomePage() {
               </div>
 
               <div className="grid gap-2">
-                {previewCards.map((item) => (
-                  <div key={item.card} className="grid grid-cols-[52px_1fr] gap-3 rounded-md bg-white/[0.06] p-3">
-                    <div className="flex h-14 items-center justify-center rounded-md bg-white text-xl font-bold text-[var(--ink)]">
-                      {item.card}
+                {previewCards.map((item) => {
+                  const card = cardFromCode(item.card);
+
+                  return (
+                    <div key={item.card} className="grid grid-cols-[60px_1fr] gap-3 rounded-md bg-white/[0.06] p-3">
+                      <CardBadge
+                        label={card?.shortLabel ?? item.card}
+                        color={card?.color ?? "black"}
+                        className="h-16 min-w-12"
+                      />
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold">{item.person}</p>
+                        <p className="mt-1 truncate text-xs text-white/58">
+                          <span className="font-semibold text-white/82">A:</span> {item.action}
+                          <span className="mx-2 text-white/28">/</span>
+                          <span className="font-semibold text-white/82">O:</span> {item.object}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold">{item.person}</p>
-                      <p className="mt-1 truncate text-xs text-white/58">
-                        <span className="font-semibold text-white/82">A:</span> {item.action}
-                        <span className="mx-2 text-white/28">/</span>
-                        <span className="font-semibold text-white/82">O:</span> {item.object}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               <div className="grid grid-cols-3 gap-2 pt-1">

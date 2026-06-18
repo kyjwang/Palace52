@@ -30,7 +30,7 @@ export function AppShell({
   const displayName = user?.displayName || user?.username || "athlete";
 
   return (
-    <div className="min-h-[100dvh] bg-[var(--background)] pb-20 text-[var(--foreground)] md:pb-0">
+    <div className="min-h-[100dvh] bg-[var(--background)] pb-20 text-[var(--foreground)] lg:pb-0">
       <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--background)]/92 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
@@ -43,7 +43,7 @@ export function AppShell({
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = isActivePath(pathname, item.href);
@@ -66,7 +66,7 @@ export function AppShell({
             })}
           </nav>
 
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <div className="hidden items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--card)] px-3 py-2 text-sm text-[var(--foreground)] shadow-sm lg:flex">
               <BarChart3 className="size-4 text-[var(--accent)]" />
               <span className="font-mono">43/52</span>
@@ -87,7 +87,7 @@ export function AppShell({
             <LogoutButton compact />
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/profile"
               className="flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card)] shadow-sm"
@@ -107,7 +107,7 @@ export function AppShell({
 
       <main className="mx-auto w-full max-w-7xl px-4 py-5 md:px-6 md:py-8">{children}</main>
 
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-[var(--border)] bg-[var(--card)] md:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-[var(--border)] bg-[var(--card)] lg:hidden">
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = isActivePath(pathname, item.href);

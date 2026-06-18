@@ -229,7 +229,7 @@ export function PalaceBuilder() {
               return (
                 <div key={row.cardCode} className="rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3">
                   <div className="flex items-start gap-3">
-                    <CardBadge label={card.shortLabel} color={card.color} className="h-8 min-w-8 text-xs shadow-none" />
+                    <CardBadge label={card.shortLabel} color={card.color} className="h-11 min-w-9 shadow-sm" />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-semibold">{card.label}</p>
                       <div className="mt-1 space-y-0.5 text-xs leading-5 text-[#6f7468]">

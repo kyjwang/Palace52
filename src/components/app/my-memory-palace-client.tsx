@@ -258,7 +258,7 @@ export function MyMemoryPalaceClient({ embedded = false }: { embedded?: boolean 
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-2">
-                <div className="hidden grid-cols-[58px_minmax(140px,1fr)_96px_110px] gap-2 border-b border-[var(--border)] px-2 pb-2 text-[11px] font-semibold uppercase tracking-normal text-[var(--muted)] md:grid">
+                <div className="hidden grid-cols-[74px_minmax(140px,1fr)_96px_110px] gap-2 border-b border-[var(--border)] px-2 pb-2 text-[11px] font-semibold uppercase tracking-normal text-[var(--muted)] md:grid">
                   <span>Card</span>
                   <span>Person</span>
                   <span>Action</span>
@@ -270,10 +270,10 @@ export function MyMemoryPalaceClient({ embedded = false }: { embedded?: boolean 
                     .map((entry, index) => (
                       <div
                         key={entry.card.code}
-                        className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid md:grid-cols-[58px_minmax(140px,1fr)_96px_110px] md:items-center md:gap-2 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-1.5"
+                        className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid md:grid-cols-[74px_minmax(140px,1fr)_96px_110px] md:items-center md:gap-2 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-2"
                       >
                         <div className="flex items-center gap-2 md:block">
-                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-7 min-w-8 rounded px-1 text-[11px] shadow-none" />
+                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-11 min-w-9 shadow-sm" />
                           <div className="min-w-0 md:hidden">
                             <p className="truncate text-sm font-semibold">{entry.card.label}</p>
                           </div>
