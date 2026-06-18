@@ -1,0 +1,220 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Suit {
+  CLUBS
+  DIAMONDS
+  HEARTS
+  SPADES
+}
+
+enum Rank {
+  ACE
+  TWO
+  THREE
+  FOUR
+  FIVE
+  SIX
+  SEVEN
+  EIGHT
+  NINE
+  TEN
+  JACK
+  QUEEN
+  KING
+}
+
+enum SessionMode {
+  FULL_DECK
+  SPEED
+  SUIT_FOCUS
+  PAO_FLASHCARD
+  RANDOM_POSITION
+  REVIEW
+  HALF_DECK
+}
+
+enum SessionStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+}
+
+enum MistakeType {
+  CORRECT
+  WRONG_CARD
+  WRONG_POSITION
+  MISSING
+  EXTRA
+}
+
+model User {
+  id              String             @id @default(cuid())
+  username        String             @unique
+  passwordHash    String
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  profile         Profile?
+  palaces         Palace[]
+  cardImages      CardImage[]
+  sessions        TrainingSession[]
+  reviewCards     ReviewCard[]
+  leaderboardRows LeaderboardEntry[]
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  displayName String?
+  bio         String?
+  avatarColor String?
+  isPublic    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Palace {
+  id          String            @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  isDefault   Boolean           @default(false)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  locations   PalaceLocation[]
+  sessions    TrainingSession[]
+
+  @@index([userId])
+}
+
+model PalaceLocation {
+  id          String   @id @default(cuid())
+  palaceId    String
+  name        String
+  description String?
+  order       Int
+  cue         String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  palace      Palace   @relation(fields: [palaceId], references: [id], onDelete: Cascade)
+
+  @@unique([palaceId, order])
+  @@index([palaceId])
+}
+
+model CardImage {
+  id          String   @id @default(cuid())
+  userId      String
+  rank        Rank
+  suit        Suit
+  person      String?
+  action      String?
+  object      String?
+  imagePrompt String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, rank, suit])
+  @@index([userId])
+}
+
+model TrainingSession {
+  id                String              @id @default(cuid())
+  userId            String
+  palaceId          String?
+  mode              SessionMode         @default(FULL_DECK)
+  status            SessionStatus       @default(IN_PROGRESS)
+  deck              Json
+  deckSize          Int?
+  selectedSuit      Suit?
+  difficulty        String?
+  generatedDeck     Json?
+  userRecall        Json?
+  questionPositions Json?
+  userAnswers       Json?
+  recall            Json?
+  score             Int                 @default(0)
+  accuracy          Float               @default(0)
+  memorizationMs    Int?
+  recallMs          Int?
+  totalTimeMs       Int?
+  mistakes          Json?
+  isValidRun        Boolean             @default(true)
+  isPersonalBest    Boolean             @default(false)
+  completedAt       DateTime?
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  palace            Palace?             @relation(fields: [palaceId], references: [id], onDelete: SetNull)
+  cardResults       SessionCardResult[]
+  leaderboardEntry  LeaderboardEntry?
+
+  @@index([userId, createdAt])
+  @@index([mode, status, score])
+}
+
+model SessionCardResult {
+  id            String          @id @default(cuid())
+  sessionId     String
+  expectedRank  Rank
+  expectedSuit  Suit
+  recalledRank  Rank?
+  recalledSuit  Suit?
+  expectedIndex Int
+  recalledIndex Int?
+  isCorrect     Boolean
+  mistakeType   MistakeType
+  feedback      String
+  createdAt     DateTime        @default(now())
+  session       TrainingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+  @@index([expectedRank, expectedSuit])
+}
+
+model ReviewCard {
+  id             String    @id @default(cuid())
+  userId         String
+  rank           Rank
+  suit           Suit
+  intervalDays   Int       @default(1)
+  easeFactor     Float     @default(2.5)
+  repetitions    Int       @default(0)
+  lapses         Int       @default(0)
+  dueAt          DateTime  @default(now())
+  lastReviewedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, rank, suit])
+  @@index([userId, dueAt])
+}
+
+model LeaderboardEntry {
+  id             String          @id @default(cuid())
+  userId         String
+  sessionId      String          @unique
+  mode           SessionMode
+  score          Int
+  accuracy       Float
+  memorizationMs Int?
+  recallMs       Int?
+  totalTimeMs    Int?
+  createdAt      DateTime        @default(now())
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  session        TrainingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([mode, score, accuracy])
+  @@index([userId])
+}
