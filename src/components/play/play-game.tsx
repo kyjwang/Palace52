@@ -19,7 +19,7 @@ import {
 import { savePlaySessionResult } from "@/app/actions/sessions";
 import { Button } from "@/components/ui/button";
 import { MetricCard, Panel } from "@/components/ui/product";
-import { cardFromCode } from "@/lib/cards";
+import { cardFromCode, type PlayingCard } from "@/lib/cards";
 import {
   buildPlaySessionResult,
   gradePaoAnswer,
@@ -551,16 +551,16 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
 
       {phase === "memorize" && current && (
         <section className="mx-auto flex min-h-[calc(100dvh-160px)] max-w-xl flex-col items-center justify-center gap-4">
-          <div className="w-full max-w-[420px] rounded-lg border border-[#dfe3d7] bg-white p-3 shadow-sm dark:border-[var(--border)] dark:bg-[var(--card)]">
+          <div className="w-full max-w-[420px] rounded-lg border border-[var(--border)] bg-[var(--card)] p-3 shadow-[var(--shadow)]">
             <div className="flex items-center justify-between gap-2">
-              <p className="font-mono text-sm font-semibold text-[#0f7a5f] dark:text-[var(--accent)]">
-                {modeTitle} · Card {index + 1} of {deck.length}
+              <p className="font-mono text-sm font-semibold text-[var(--accent)]">
+                {modeTitle} / Card {index + 1} of {deck.length}
               </p>
               <div className="flex gap-2">
                 <button
                   type="button"
                   onClick={() => setActiveHint((hint) => (hint === "palace" ? null : "palace"))}
-                  className="inline-flex size-9 items-center justify-center rounded-md border border-[#dfe3d7] bg-[#fbfcf8] text-[#0f7a5f] transition hover:bg-[#eef8f3] active:translate-y-px dark:border-[var(--border)] dark:bg-[var(--card-muted)] dark:text-[var(--accent)]"
+                  className="inline-flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card-muted)] text-[var(--accent)] transition hover:border-[var(--border-strong)] active:translate-y-px"
                   aria-label="Show current memory palace location"
                   aria-pressed={activeHint === "palace"}
                 >
@@ -569,7 +569,7 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
                 <button
                   type="button"
                   onClick={() => setActiveHint((hint) => (hint === "pao" ? null : "pao"))}
-                  className="inline-flex size-9 items-center justify-center rounded-md border border-[#dfe3d7] bg-[#fbfcf8] text-[#0f7a5f] transition hover:bg-[#eef8f3] active:translate-y-px dark:border-[var(--border)] dark:bg-[var(--card-muted)] dark:text-[var(--accent)]"
+                  className="inline-flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card-muted)] text-[var(--accent)] transition hover:border-[var(--border-strong)] active:translate-y-px"
                   aria-label="Show current card PAO hint"
                   aria-pressed={activeHint === "pao"}
                 >
@@ -579,18 +579,18 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
             </div>
 
             {activeHint === "palace" && (
-              <div className="mt-3 rounded-md bg-[#eef8f3] p-3 text-sm leading-6 dark:bg-[var(--accent-soft)]">
-                <p className="font-semibold text-[#161713] dark:text-[var(--foreground)]">{selectedPalace.name}</p>
-                <p className="text-[#394037] dark:text-[var(--muted)]">
+              <div className="mt-3 rounded-md bg-[var(--accent-soft)] p-3 text-sm leading-6">
+                <p className="font-semibold text-[var(--foreground)]">{selectedPalace.name}</p>
+                <p className="text-[var(--muted)]">
                   Location {currentRouteIndex + 1} of {selectedPalace.locations.length}: {currentRouteLocation}
                 </p>
               </div>
             )}
 
             {activeHint === "pao" && (
-              <div className="mt-3 rounded-md bg-[#fbfcf8] p-3 text-sm leading-6 dark:bg-[var(--card-muted)]">
-                <p className="font-semibold text-[#161713] dark:text-[var(--foreground)]">{current.card.label}</p>
-                <p className="mb-2 text-xs text-[#6f7468] dark:text-[var(--muted)]">PAO deck: {selectedPaoDeck.name}</p>
+              <div className="mt-3 rounded-md bg-[var(--card-muted)] p-3 text-sm leading-6">
+                <p className="font-semibold text-[var(--foreground)]">{current.card.label}</p>
+                <p className="mb-2 text-xs text-[var(--muted)]">PAO deck: {selectedPaoDeck.name}</p>
                 <p><strong className="font-semibold">P:</strong> {current.person}</p>
                 <p><strong className="font-semibold">A:</strong> {current.action}</p>
                 <p><strong className="font-semibold">O:</strong> {current.object}</p>
@@ -602,14 +602,10 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
             onPointerDown={(event) => setTouchStartX(event.clientX)}
             onPointerUp={(event) => handleSwipe(event.clientX)}
             onClick={(event) => handleCardClick(event.clientX, event.currentTarget)}
-            className="flex aspect-[3/4] w-full max-w-[320px] touch-pan-y select-none flex-col items-center justify-between rounded-2xl border border-[#dfe3d7] bg-white p-7 text-center shadow-sm transition active:scale-[0.99] md:max-w-[380px]"
+            className="group w-full max-w-[320px] touch-pan-y select-none transition active:scale-[0.99] md:max-w-[380px]"
             aria-label={`${current.card.label}. Swipe left or click right half for next card. Swipe right or click left half for previous card.`}
           >
-            <CardCorner card={current.card.shortLabel} color={current.card.color} />
-            <div className={current.card.color === "red" ? "font-mono text-8xl font-bold text-red-600" : "font-mono text-8xl font-bold text-zinc-900"}>
-              {current.card.shortLabel}
-            </div>
-            <CardCorner card={current.card.shortLabel} color={current.card.color} flipped />
+            <PlayingCardFace card={current.card} />
           </button>
 
           <div className="flex w-full max-w-[420px] gap-2">
@@ -810,14 +806,6 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
   );
 }
 
-function CardCorner({ card, color, flipped = false }: { card: string; color: "red" | "black"; flipped?: boolean }) {
-  return (
-    <div className={`${flipped ? "self-end rotate-180" : "self-start"} font-mono text-2xl font-bold ${color === "red" ? "text-red-600" : "text-zinc-900"}`}>
-      {card}
-    </div>
-  );
-}
-
 function InlineCounter({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 py-2">
@@ -825,6 +813,126 @@ function InlineCounter({ label, value }: { label: string; value: number }) {
       <p className="text-[var(--muted)]">{label}</p>
     </div>
   );
+}
+
+function PlayingCardFace({ card }: { card: PlayingCard }) {
+  const rank = getRankMark(card);
+  const suit = getSuitMark(card);
+  const tone = getCardTone(card);
+  const pipCount = getPipCount(card);
+  const isFace = card.rank === "JACK" || card.rank === "QUEEN" || card.rank === "KING";
+
+  return (
+    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[22px] border border-[#b99548] bg-[#fff8e8] p-4 text-[#21172c] shadow-[0_24px_70px_rgb(5_3_12/0.38),inset_0_0_0_8px_rgb(255_248_232/0.72),inset_0_0_0_10px_rgb(185_149_72/0.24)]">
+      <div className="pointer-events-none absolute inset-3 rounded-[17px] border border-[#d2b66a]/70" />
+      <div className="pointer-events-none absolute inset-6 rounded-[13px] border border-[#21172c]/10" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4af37]/10 blur-2xl" />
+
+      <CardIndex rank={rank} suit={suit} tone={tone} />
+      <CardIndex rank={rank} suit={suit} tone={tone} flipped />
+
+      <div className="relative flex h-full items-center justify-center px-7 py-8">
+        {isFace ? (
+          <FaceCourtCard card={card} rank={rank} suit={suit} tone={tone} />
+        ) : pipCount === 1 ? (
+          <div className={`flex flex-col items-center ${tone}`}>
+            <span className="font-mono text-3xl font-bold tracking-tight">{rank}</span>
+            <span className="mt-3 text-[8.5rem] leading-none drop-shadow-sm">{suit}</span>
+          </div>
+        ) : (
+          <div className={`grid h-full w-full grid-cols-3 grid-rows-5 items-center justify-items-center ${tone}`}>
+            {getPipPositions(pipCount).map((position) => (
+              <span
+                key={`${card.code}-${position}`}
+                className={`text-4xl leading-none md:text-5xl ${position >= 7 ? "rotate-180" : ""}`}
+                style={{ gridColumn: (position % 3) + 1, gridRow: Math.floor(position / 3) + 1 }}
+              >
+                {suit}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function CardIndex({ rank, suit, tone, flipped = false }: { rank: string; suit: string; tone: string; flipped?: boolean }) {
+  return (
+    <div className={`absolute ${flipped ? "bottom-4 right-4 rotate-180" : "left-4 top-4"} z-10 flex flex-col items-center font-mono font-bold ${tone}`}>
+      <span className="text-2xl leading-none">{rank}</span>
+      <span className="text-2xl leading-none">{suit}</span>
+    </div>
+  );
+}
+
+function FaceCourtCard({ card, rank, suit, tone }: { card: PlayingCard; rank: string; suit: string; tone: string }) {
+  const title = card.rank === "JACK" ? "Knight" : card.rank === "QUEEN" ? "Queen" : "King";
+  const crown = card.rank === "QUEEN" ? "Q" : card.rank === "KING" ? "K" : "J";
+
+  return (
+    <div className="relative flex h-full w-full flex-col items-center justify-between rounded-xl border border-[#b99548]/45 bg-[linear-gradient(145deg,#fffaf0,#f0dfba)] px-5 py-6 shadow-[inset_0_0_28px_rgb(185_149_72/0.18)]">
+      <div className="absolute inset-3 rounded-lg border border-[#21172c]/10" />
+      <div className={`relative flex size-24 items-center justify-center rounded-full border border-[#b99548] bg-[#21172c] ${tone}`}>
+        <span className="absolute -top-4 font-mono text-2xl text-[#b99548]">{crown}</span>
+        <span className="text-6xl leading-none">{suit}</span>
+      </div>
+      <div className="relative text-center">
+        <p className="font-mono text-5xl font-bold tracking-tight text-[#21172c]">{rank}</p>
+        <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#8a6518]">{title}</p>
+      </div>
+      <div className={`relative flex items-center gap-3 ${tone}`}>
+        <span className="rotate-180 text-4xl leading-none">{suit}</span>
+        <span className="text-4xl leading-none">{suit}</span>
+      </div>
+    </div>
+  );
+}
+
+function getRankMark(card: PlayingCard) {
+  if (card.rank === "ACE") return "A";
+  if (card.rank === "JACK") return "J";
+  if (card.rank === "QUEEN") return "Q";
+  if (card.rank === "KING") return "K";
+  return card.shortLabel.replace(/[^\d]/g, "");
+}
+
+function getSuitMark(card: PlayingCard) {
+  return card.shortLabel.replace(/[A-Z0-9]/g, "");
+}
+
+function getCardTone(card: PlayingCard) {
+  return card.color === "red" ? "text-[#9f1d2e]" : "text-[#21172c]";
+}
+
+function getPipCount(card: PlayingCard) {
+  if (card.rank === "ACE") return 1;
+  if (card.rank === "TWO") return 2;
+  if (card.rank === "THREE") return 3;
+  if (card.rank === "FOUR") return 4;
+  if (card.rank === "FIVE") return 5;
+  if (card.rank === "SIX") return 6;
+  if (card.rank === "SEVEN") return 7;
+  if (card.rank === "EIGHT") return 8;
+  if (card.rank === "NINE") return 9;
+  if (card.rank === "TEN") return 10;
+  return 0;
+}
+
+function getPipPositions(count: number) {
+  const positions: Record<number, number[]> = {
+    2: [1, 13],
+    3: [1, 7, 13],
+    4: [0, 2, 12, 14],
+    5: [0, 2, 7, 12, 14],
+    6: [0, 2, 6, 8, 12, 14],
+    7: [0, 2, 4, 6, 8, 12, 14],
+    8: [0, 2, 4, 6, 8, 10, 12, 14],
+    9: [0, 2, 3, 5, 7, 9, 11, 12, 14],
+    10: [0, 2, 3, 5, 6, 8, 9, 11, 12, 14]
+  };
+
+  return positions[count] ?? [7];
 }
 
 function shuffleEntries<T>(entries: T[]) {
