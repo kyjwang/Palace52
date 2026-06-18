@@ -1,27 +1,23 @@
 import { Trophy } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/product";
-import { getPrisma } from "@/lib/prisma";
+import { getLeaderboardRankings } from "@/lib/leaderboard";
 import { hasRequiredAppConfig } from "@/lib/runtime-config";
-import { formatDuration, formatPercent } from "@/lib/utils";
+import { formatFriendlyDuration, formatPercent } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
 export default async function LeaderboardPage() {
   if (!hasRequiredAppConfig()) return null;
 
-  const entries = await getPrisma().leaderboardEntry.findMany({
-    include: { user: { include: { profile: true } } },
-    orderBy: [{ score: "desc" }, { totalTimeMs: "asc" }],
-    take: 50
-  });
+  const entries = (await getLeaderboardRankings()).slice(0, 50);
 
   return (
     <div className="space-y-6">
       <PageHeader
         label="Leaderboard"
         title="Top public training scores"
-        description="Ranks favor higher score first, then faster total memorization and recall time."
+        description="Ranks favor higher score first, then higher accuracy, then faster total memorization and recall time."
       />
       <Card>
         <CardHeader>
@@ -46,12 +42,12 @@ export default async function LeaderboardPage() {
               <tbody className="divide-y divide-[#edf0e8]">
                 {entries.map((entry, index) => (
                   <tr key={entry.id} className={index < 3 ? "bg-[var(--card-muted)]" : ""}>
-                    <td className="py-3 pr-4 font-mono font-semibold">{index + 1}</td>
-                    <td className="py-3 pr-4 font-medium">{entry.user.profile?.displayName ?? entry.user.username}</td>
+                    <td className="py-3 pr-4 font-mono font-semibold">{entry.rank}</td>
+                    <td className="py-3 pr-4 font-medium">{entry.username}</td>
                     <td className="py-3 pr-4">{entry.mode.replace("_", " ")}</td>
-                    <td className="py-3 pr-4 font-mono">{entry.score}</td>
+                    <td className="py-3 pr-4 font-mono">{entry.score}/{entry.deckSize}</td>
                     <td className="py-3 pr-4 font-mono">{formatPercent(entry.accuracy)}</td>
-                    <td className="py-3 pr-4 font-mono">{formatDuration(entry.totalTimeMs)}</td>
+                    <td className="py-3 pr-4 font-mono">{formatFriendlyDuration(entry.totalTimeMs)}</td>
                   </tr>
                 ))}
               </tbody>

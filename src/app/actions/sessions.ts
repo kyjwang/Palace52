@@ -100,6 +100,7 @@ export async function completeTrainingSession(input: {
         accuracy: summary.accuracy,
         memorizationMs: parsed.memorizationMs,
         recallMs: parsed.recallMs,
+        totalTimeMs: parsed.memorizationMs + parsed.recallMs,
         completedAt: now
       }
     });
