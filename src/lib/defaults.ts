@@ -1,33 +1,25 @@
 import { fullDeck } from "@/lib/cards";
+import { gymRoute, homeRoute, schoolRoute } from "@/lib/sample-palace";
 
-export const starterLocations = [
-  "Front door",
-  "Entry table",
-  "Hallway mirror",
-  "Coat rack",
-  "Kitchen sink",
-  "Stove",
-  "Fridge",
-  "Dining table",
-  "Sofa",
-  "Coffee table",
-  "Bookshelf",
-  "Television",
-  "Desk",
-  "Bedroom door",
-  "Bed",
-  "Nightstand",
-  "Wardrobe",
-  "Bathroom sink",
-  "Shower",
-  "Balcony",
-  "Mailbox",
-  "Garden path",
-  "Garage",
-  "Car seat",
-  "Laundry basket",
-  "Window sill"
+export const starterRoutes = [
+  {
+    name: "Home Palace",
+    description: "A starter 18-loci route through familiar household locations.",
+    locations: homeRoute
+  },
+  {
+    name: "Gym Route",
+    description: "A starter 18-loci route through a gym training path.",
+    locations: gymRoute
+  },
+  {
+    name: "School Route",
+    description: "A starter 18-loci route through a school building.",
+    locations: schoolRoute
+  }
 ];
+
+export const starterLocations = starterRoutes[0].locations;
 
 const people = [
   "Astronaut",

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-[var(--accent)] text-[var(--accent-foreground)] shadow-sm shadow-emerald-950/10 hover:bg-[var(--accent-strong)]",
+    "bg-[var(--accent)] text-[var(--accent-foreground)] shadow-sm shadow-black/15 hover:bg-[var(--accent-strong)]",
   secondary:
     "border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] shadow-sm shadow-black/5 hover:border-[var(--border-strong)] hover:bg-[var(--card-muted)]",
   ghost: "text-[var(--foreground)] hover:bg-[var(--accent-soft)]"

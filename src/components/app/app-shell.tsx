@@ -78,7 +78,7 @@ export function AppShell({
             >
               <span
                 className="flex size-6 items-center justify-center rounded-full text-xs font-semibold text-white"
-                style={{ backgroundColor: user?.avatarColor ?? "#0e765c" }}
+                style={{ backgroundColor: user?.avatarColor ?? "#8a6518" }}
               >
                 {displayName.charAt(0).toUpperCase()}
               </span>
@@ -95,7 +95,7 @@ export function AppShell({
             >
               <span
                 className="flex size-6 items-center justify-center rounded-full text-xs font-semibold text-white"
-                style={{ backgroundColor: user?.avatarColor ?? "#0e765c" }}
+                style={{ backgroundColor: user?.avatarColor ?? "#8a6518" }}
               >
                 {displayName.charAt(0).toUpperCase()}
               </span>
