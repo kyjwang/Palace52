@@ -14,23 +14,25 @@ export async function ensureStarterContent() {
   ]);
   const existingPalaceNames = new Set(existingPalaces.map((palace) => palace.name));
 
-  for (const route of starterRoutes) {
-    if (!existingPalaceNames.has(route.name)) {
-      await db.palace.create({
-        data: {
-          userId: user.id,
-          name: route.name,
-          description: route.description,
-          isDefault: true,
-          locations: {
-            create: route.locations.map((name, index) => ({
-              name,
-              order: index + 1,
-              cue: `Imagine location ${index + 1} with exaggerated color, sound, and movement.`
-            }))
+  if (existingPalaces.length === 0 && imageCount === 0) {
+    for (const route of starterRoutes) {
+      if (!existingPalaceNames.has(route.name)) {
+        await db.palace.create({
+          data: {
+            userId: user.id,
+            name: route.name,
+            description: route.description,
+            isDefault: true,
+            locations: {
+              create: route.locations.map((name, index) => ({
+                name,
+                order: index + 1,
+                cue: `Imagine location ${index + 1} with exaggerated color, sound, and movement.`
+              }))
+            }
           }
-        }
-      });
+        });
+      }
     }
   }
 

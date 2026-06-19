@@ -34,12 +34,12 @@ export function AppShell({
       <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--background)]/92 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-md bg-[var(--accent)] font-mono text-sm font-bold text-[var(--accent-foreground)] shadow-sm">
-              52
+            <span className="flex size-9 items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] shadow-sm">
+              <Castle className="size-5" strokeWidth={2.2} aria-hidden="true" />
             </span>
             <span>
               <span className="block text-sm font-semibold leading-4">Palace52</span>
-              <span className="hidden text-xs text-[var(--muted)] sm:block">Cognitive deck training</span>
+              <span className="hidden text-xs text-[var(--muted)] sm:block">Deck memorization training</span>
             </span>
           </Link>
 
