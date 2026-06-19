@@ -29,6 +29,8 @@ const playMistakeSchema = z.object({
   feedback: z.string()
 });
 
+const roundedMsSchema = z.number().nonnegative().transform((value) => Math.round(value));
+
 const savePlaySessionSchema = z.object({
   mode: z.nativeEnum(SessionMode),
   deckSize: z.number().int().positive().max(52),
@@ -39,9 +41,9 @@ const savePlaySessionSchema = z.object({
   questionPositions: z.array(z.number().int().positive()).max(52).default([]),
   userAnswers: z.array(z.string()).max(52).default([]),
   accuracy: z.number().min(0).max(1),
-  memorizationTime: z.number().int().nonnegative(),
-  recallTime: z.number().int().nonnegative(),
-  totalTime: z.number().int().nonnegative(),
+  memorizationTime: roundedMsSchema,
+  recallTime: roundedMsSchema,
+  totalTime: roundedMsSchema,
   mistakes: z.array(playMistakeSchema).max(52),
   isValidRun: z.boolean(),
   isPersonalBest: z.boolean()
@@ -274,4 +276,20 @@ export async function savePlaySessionResult(input: z.input<typeof savePlaySessio
   revalidatePath("/leaderboard");
 
   return { sessionId: session.id };
+}
+
+export async function clearTrainingHistory() {
+  const user = await requireCurrentUser();
+
+  await getPrisma().trainingSession.deleteMany({
+    where: {
+      userId: user.id,
+      status: "COMPLETED"
+    }
+  });
+
+  revalidatePath("/profile");
+  revalidatePath("/sessions");
+  revalidatePath("/dashboard");
+  revalidatePath("/leaderboard");
 }

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { CalendarDays, Pencil, Route, Target, Timer, UserRound } from "lucide-react";
+import { CalendarDays, Pencil, Route, Target, Timer, Trash2, UserRound } from "lucide-react";
+import { clearTrainingHistory } from "@/app/actions/sessions";
+import { Button, ButtonLink } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ButtonLink } from "@/components/ui/button";
 import { InlineStat, MetricCard, PageHeader } from "@/components/ui/product";
 import { requireCurrentUser } from "@/lib/auth";
 import { getPrisma } from "@/lib/prisma";
@@ -13,7 +14,7 @@ export default async function ProfilePage() {
   const user = await requireCurrentUser();
   const db = getPrisma();
 
-  const [totalSessions, averageAccuracy, bestFullDeck, paoCards, routesCreated] = await Promise.all([
+  const [totalSessions, averageAccuracy, bestFullDeck, paoCards, routesCreated, history] = await Promise.all([
     db.trainingSession.count({ where: { userId: user.id, status: "COMPLETED" } }),
     db.trainingSession.aggregate({
       where: { userId: user.id, status: "COMPLETED" },
@@ -30,7 +31,28 @@ export default async function ProfilePage() {
       select: { totalTimeMs: true, score: true, accuracy: true }
     }),
     db.cardImage.count({ where: { userId: user.id } }),
-    db.palace.count({ where: { userId: user.id } })
+    db.palace.count({ where: { userId: user.id } }),
+    db.trainingSession.findMany({
+      where: { userId: user.id, status: "COMPLETED" },
+      orderBy: { completedAt: "desc" },
+      take: 12,
+      select: {
+        id: true,
+        mode: true,
+        deckSize: true,
+        deck: true,
+        score: true,
+        accuracy: true,
+        totalTimeMs: true,
+        memorizationMs: true,
+        recallMs: true,
+        completedAt: true,
+        isPersonalBest: true,
+        isValidRun: true,
+        selectedSuit: true,
+        difficulty: true
+      }
+    })
   ]);
 
   const profile = user.profile;
@@ -101,6 +123,69 @@ export default async function ProfilePage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
+            <CardTitle className="flex items-center gap-2">
+              <CalendarDays className="size-5 text-[var(--accent)]" />
+              Play history
+            </CardTitle>
+            <form action={clearTrainingHistory}>
+              <Button type="submit" variant="secondary" disabled={history.length === 0}>
+                <Trash2 className="size-4" />
+                Clear history
+              </Button>
+            </form>
+          </div>
+        </CardHeader>
+        <CardContent>
+          {history.length === 0 ? (
+            <p className="text-sm text-[var(--muted)]">No completed rounds yet. Play one round to save it here.</p>
+          ) : (
+            <div className="space-y-2">
+              {history.map((session) => (
+                <div
+                  key={session.id}
+                  className="grid gap-3 rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 py-3 text-sm md:grid-cols-[1fr_auto] md:items-center"
+                >
+                  <div>
+                    <p className="font-semibold text-[var(--foreground)]">
+                      {modeLabel(session.mode)} · {session.score}/{session.deckSize ?? (Array.isArray(session.deck) ? session.deck.length : 52)}
+                    </p>
+                    <p className="mt-1 text-[var(--muted)]">
+                      {session.completedAt?.toLocaleDateString() ?? "Completed"} · {formatPercent(session.accuracy)} accuracy · {modeDetail(session)}
+                    </p>
+                  </div>
+                  <div className="font-mono text-sm text-[var(--foreground)] md:text-right">
+                    <p>{session.totalTimeMs ? formatDuration(session.totalTimeMs) : `Study ${formatDuration(session.memorizationMs)} · Recall ${formatDuration(session.recallMs)}`}</p>
+                    <p className="mt-1 text-xs text-[var(--muted)]">
+                      {session.isPersonalBest ? "PB" : session.isValidRun ? "Saved" : "Invalid run"}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
+}
+
+function modeLabel(mode: string) {
+  if (mode === "FULL_DECK") return "Classic";
+  return mode
+    .toLowerCase()
+    .split("_")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function modeDetail(session: { selectedSuit: string | null; difficulty: string | null; mode: string }) {
+  if (session.selectedSuit) return `${session.selectedSuit.toLowerCase()} focus`;
+  if (session.difficulty) return `${session.difficulty} run`;
+  if (session.mode === "PAO_FLASHCARD") return "PAO flashcards";
+  if (session.mode === "RANDOM_POSITION") return "Random positions";
+  return "Deck practice";
 }
