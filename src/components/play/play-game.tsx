@@ -34,20 +34,13 @@ import {
   type SpeedDifficulty,
   type SuitName
 } from "@/lib/play-modes";
+import type { PaoDeckOption } from "@/lib/pao-decks";
 import { sampleUserPalaces, type StarterPao } from "@/lib/sample-palace";
 import { formatPercent } from "@/lib/utils";
 
 type Phase = "setup" | "memorize" | "recall" | "flashcards" | "score";
 type Hint = "palace" | "pao" | null;
 type SaveState = "idle" | "saving" | "saved" | "local";
-export type PlayPaoDeckOption = {
-  id: string;
-  name: string;
-  description: string;
-  deck: StarterPao[];
-  customCount?: number;
-};
-
 const emptyPaoDeck: StarterPao[] = [];
 const cardCounts = [10, 20, 26, 32, 40, 52];
 const suitCounts = [5, 10, 13];
@@ -80,7 +73,7 @@ const modeCards: Array<{
   { mode: "RANDOM_POSITION", title: "Random Position", short: "Guess cards from random spots.", icon: Layers3 }
 ];
 
-export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PlayPaoDeckOption[] }) {
+export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOption[] }) {
   const [phase, setPhase] = useState<Phase>("setup");
   const [mode, setMode] = useState<PlayMode>("FULL_DECK");
   const [count, setCount] = useState(10);

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input, Label, Textarea } from "@/components/ui/form";
 import { requireCurrentUser } from "@/lib/auth";
 import { getPrisma } from "@/lib/prisma";
+import { getPaoDeckOptions } from "@/lib/pao-decks";
 import { hasRequiredAppConfig } from "@/lib/runtime-config";
 
 export const dynamic = "force-dynamic";
@@ -16,15 +17,33 @@ export default async function PalacesPage() {
 
   await ensureStarterContent();
   const user = await requireCurrentUser();
-  const palaces = await getPrisma().palace.findMany({
-    where: { userId: user.id },
-    include: { locations: { orderBy: { order: "asc" } } },
-    orderBy: { createdAt: "asc" }
-  });
+  const db = getPrisma();
+  const [palaces, cardImages] = await Promise.all([
+    db.palace.findMany({
+      where: { userId: user.id },
+      include: { locations: { orderBy: { order: "asc" } } },
+      orderBy: { createdAt: "asc" }
+    }),
+    db.cardImage.findMany({
+      where: { userId: user.id },
+      select: {
+        rank: true,
+        suit: true,
+        person: true,
+        action: true,
+        object: true,
+        imagePrompt: true,
+        notes: true,
+        createdAt: true,
+        updatedAt: true
+      }
+    })
+  ]);
+  const paoDeckOptions = getPaoDeckOptions(cardImages);
 
   return (
     <div className="space-y-8">
-      <MyMemoryPalaceClient embedded />
+      <MyMemoryPalaceClient embedded paoDeckOptions={paoDeckOptions} />
 
       <section className="space-y-4">
         <div>

@@ -28,21 +28,42 @@ export async function upsertCardImage(formData: FormData) {
     notes: formData.get("notes") || undefined
   });
 
+  await saveCardImageForUser(user.id, parsed);
+
+  revalidateCardImageViews();
+}
+
+export async function saveCardImage(input: z.input<typeof cardImageSchema>) {
+  const user = await requireCurrentUser();
+  const parsed = cardImageSchema.parse(input);
+
+  await saveCardImageForUser(user.id, parsed);
+
+  revalidateCardImageViews();
+}
+
+async function saveCardImageForUser(userId: string, parsed: z.infer<typeof cardImageSchema>) {
   await getPrisma().cardImage.upsert({
     where: {
       userId_rank_suit: {
-        userId: user.id,
+        userId,
         rank: parsed.rank,
         suit: parsed.suit
       }
     },
     update: parsed,
     create: {
-      userId: user.id,
+      userId,
       ...parsed
     }
   });
+}
 
+function revalidateCardImageViews() {
   revalidatePath("/cards");
   revalidatePath("/training");
+  revalidatePath("/build-palace");
+  revalidatePath("/my-memory-palace");
+  revalidatePath("/palaces");
+  revalidatePath("/play");
 }

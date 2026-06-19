@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/form";
 import { PageHeader } from "@/components/ui/product";
-import { paoDeckPresets, sampleUserPalaces, suitOrder } from "@/lib/sample-palace";
+import { getPresetPaoDeckOptions, type PaoDeckOption } from "@/lib/pao-decks";
+import { sampleUserPalaces, suitOrder } from "@/lib/sample-palace";
 
 const suitLabels: Record<string, string> = {
   CLUBS: "Clubs",
@@ -17,13 +18,19 @@ const suitLabels: Record<string, string> = {
   SPADES: "Spades"
 };
 
-export function MyMemoryPalaceClient({ embedded = false }: { embedded?: boolean }) {
+export function MyMemoryPalaceClient({
+  embedded = false,
+  paoDeckOptions = getPresetPaoDeckOptions()
+}: {
+  embedded?: boolean;
+  paoDeckOptions?: PaoDeckOption[];
+}) {
   const [deckIndex, setDeckIndex] = useState(0);
   const [palaces, setPalaces] = useState(sampleUserPalaces);
   const [expandedPalace, setExpandedPalace] = useState<string | null>(null);
   const [editingPalace, setEditingPalace] = useState<string | null>(null);
   const [deckSelectorOpen, setDeckSelectorOpen] = useState(false);
-  const activeDeck = paoDeckPresets[deckIndex];
+  const activeDeck = paoDeckOptions[deckIndex] ?? paoDeckOptions[0] ?? getPresetPaoDeckOptions()[0];
 
   function chooseDeck(index: number) {
     setDeckIndex(index);
@@ -224,7 +231,7 @@ export function MyMemoryPalaceClient({ embedded = false }: { embedded?: boolean 
                   </Button>
                   {deckSelectorOpen && (
                     <div className="absolute left-0 right-0 top-12 z-20 max-h-64 overflow-y-auto rounded-lg border border-[var(--border)] bg-[var(--card)] p-2 shadow-[var(--shadow)]">
-                      {paoDeckPresets.map((preset, index) => (
+                      {paoDeckOptions.map((preset, index) => (
                         <button
                           key={preset.name}
                           type="button"

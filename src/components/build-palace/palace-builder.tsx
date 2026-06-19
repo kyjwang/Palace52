@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
+import { saveCardImage } from "@/app/actions/card-images";
 import { CardBadge } from "@/components/app/card-badge";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/form";
@@ -9,13 +10,10 @@ import { Panel } from "@/components/ui/product";
 import { fullDeck } from "@/lib/cards";
 
 const starterLocations = ["Front door", "Hallway mirror", "Kitchen sink", "Living room sofa", "Bedroom door", "Balcony chair"];
-const starterPaoRows = [
-  { cardCode: "AC", person: "Albert Einstein", action: "balancing", object: "anchor" },
-  { cardCode: "2C", person: "Amelia Earhart", action: "flying", object: "helmet" },
-  { cardCode: "3C", person: "Bruce Lee", action: "kicking", object: "mirror" }
-];
+type PaoRow = { cardCode: string; person: string; action: string; object: string };
 
 export function PalaceBuilder() {
+  const [isPending, startTransition] = useTransition();
   const [name, setName] = useState("My First Palace");
   const [description, setDescription] = useState("A route through familiar rooms at home.");
   const [locations, setLocations] = useState(starterLocations);
@@ -24,8 +22,9 @@ export function PalaceBuilder() {
   const [person, setPerson] = useState("");
   const [action, setAction] = useState("");
   const [object, setObject] = useState("");
-  const [paoRows, setPaoRows] = useState(starterPaoRows);
+  const [paoRows, setPaoRows] = useState<PaoRow[]>([]);
   const [saved, setSaved] = useState(false);
+  const [paoSaveState, setPaoSaveState] = useState<"idle" | "saved" | "error">("idle");
 
   function addLocation() {
     if (!newLocation.trim()) return;
@@ -50,15 +49,17 @@ export function PalaceBuilder() {
 
   function savePao() {
     if (!person.trim() || !action.trim() || !object.trim()) return;
+    const card = fullDeck.find((item) => item.code === selectedCardCode);
+    if (!card) return;
+
+    const nextRow = {
+      cardCode: selectedCardCode,
+      person: person.trim(),
+      action: action.trim(),
+      object: object.trim()
+    };
 
     setPaoRows((current) => {
-      const nextRow = {
-        cardCode: selectedCardCode,
-        person: person.trim(),
-        action: action.trim(),
-        object: object.trim()
-      };
-
       if (current.some((row) => row.cardCode === selectedCardCode)) {
         return current.map((row) => (row.cardCode === selectedCardCode ? nextRow : row));
       }
@@ -68,7 +69,25 @@ export function PalaceBuilder() {
     setPerson("");
     setAction("");
     setObject("");
+    setPaoSaveState("idle");
     setSaved(false);
+
+    startTransition(async () => {
+      try {
+        await saveCardImage({
+          rank: card.rank,
+          suit: card.suit,
+          person: nextRow.person,
+          action: nextRow.action,
+          object: nextRow.object,
+          imagePrompt: `${nextRow.person} ${nextRow.action} with ${nextRow.object}`,
+          notes: "Custom PAO card image."
+        });
+        setPaoSaveState("saved");
+      } catch {
+        setPaoSaveState("error");
+      }
+    });
   }
 
   function removePao(cardCode: string) {
@@ -208,10 +227,20 @@ export function PalaceBuilder() {
                 <Input id="pao-object" value={object} onChange={(event) => setObject(event.target.value)} placeholder="lantern" />
               </div>
             </div>
-            <Button type="button" onClick={savePao} className="w-full">
+            <Button type="button" onClick={savePao} disabled={isPending} className="w-full">
               <Save className="size-4" />
-              Save PAO
+              {isPending ? "Saving PAO" : "Save PAO"}
             </Button>
+            {paoSaveState === "saved" && (
+              <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">
+                Saved to your PAO deck.
+              </p>
+            )}
+            {paoSaveState === "error" && (
+              <p className="rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
+                Could not save this PAO card. Try again.
+              </p>
+            )}
           </div>
         </Panel>
 
@@ -221,10 +250,15 @@ export function PalaceBuilder() {
               <p className="text-sm text-[#6f7468]">Custom PAO deck</p>
               <h2 className="text-2xl font-semibold">{paoRows.length}/52 cards mapped</h2>
             </div>
-            <p className="rounded-md bg-[#f6f7f3] px-3 py-2 text-sm text-[#6f7468]">Saved locally for preview</p>
+            <p className="rounded-md bg-[#f6f7f3] px-3 py-2 text-sm text-[#6f7468]">Saved cards appear in My Palace and Play</p>
           </div>
-          <div className="mt-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-            {paoRows.map((row) => {
+          {paoRows.length === 0 ? (
+            <p className="mt-5 rounded-md border border-dashed border-[var(--border)] bg-[var(--card-muted)] px-3 py-4 text-sm text-[var(--muted)]">
+              No custom PAO cards saved yet.
+            </p>
+          ) : (
+            <div className="mt-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+              {paoRows.map((row) => {
               const card = fullDeck.find((item) => item.code === row.cardCode) ?? fullDeck[0];
               return (
                 <div key={row.cardCode} className="rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3">
@@ -255,8 +289,9 @@ export function PalaceBuilder() {
                   </div>
                 </div>
               );
-            })}
-          </div>
+              })}
+            </div>
+          )}
         </Panel>
       </section>
     </div>
