@@ -75,8 +75,7 @@ export default function HomePage() {
                 Memorize a deck with a route.
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--muted)] md:text-lg">
-                Palace52 helps you build the route, learn every card image, practice timed recall, and turn mistakes
-                into focused review.
+                Build your palace, lock in 52 vivid card images, and race your recall until the whole deck sticks.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/register" className="h-11">

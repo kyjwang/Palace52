@@ -199,12 +199,12 @@ export default function TrainingAcademyPage() {
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-[#161713]">Ready for a small run?</h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5f665b]">
-                Start with 5 cards. Keep the images clear, then let speed come later.
+                Five different modes to play and practice.
               </p>
             </div>
-            <ButtonLink href="/play" className="h-11 md:self-center">
-              Start practice
+            <ButtonLink href="/play" className="h-11 md:mr-8 md:self-center">
               <Play className="size-4" />
+              Play
             </ButtonLink>
           </div>
         </section>
