@@ -34,7 +34,7 @@ import {
   type SpeedDifficulty,
   type SuitName
 } from "@/lib/play-modes";
-import { paoDeckPresets, sampleUserPalaces, type StarterPao } from "@/lib/sample-palace";
+import { sampleUserPalaces, type StarterPao } from "@/lib/sample-palace";
 import { formatPercent } from "@/lib/utils";
 
 type Phase = "setup" | "memorize" | "recall" | "flashcards" | "score";
@@ -48,6 +48,7 @@ export type PlayPaoDeckOption = {
   customCount?: number;
 };
 
+const emptyPaoDeck: StarterPao[] = [];
 const cardCounts = [10, 20, 26, 32, 40, 52];
 const suitCounts = [5, 10, 13];
 const flashcardCounts = [8, 16, 24, 52];
@@ -72,21 +73,14 @@ const modeCards: Array<{
   short: string;
   icon: typeof Timer;
 }> = [
-  { mode: "FULL_DECK", title: "Classic", short: "The current palace recall loop.", icon: Castle },
-  { mode: "SPEED", title: "Speed", short: "Race the clock with validity thresholds.", icon: Gauge },
-  { mode: "SUIT_FOCUS", title: "Suit Focus", short: "Isolate one suit and expose weak ranks.", icon: Crosshair },
-  { mode: "PAO_FLASHCARD", title: "PAO Flashcards", short: "Drill associations from both directions.", icon: Brain },
-  { mode: "RANDOM_POSITION", title: "Random Position", short: "Answer position prompts after memorizing.", icon: Layers3 }
+  { mode: "FULL_DECK", title: "Classic", short: "Memorize as many cards as you can.", icon: Castle },
+  { mode: "SPEED", title: "Speed", short: "Train faster while keeping answers correct.", icon: Gauge },
+  { mode: "SUIT_FOCUS", title: "Suit Focus", short: "Practice one suit at a time.", icon: Crosshair },
+  { mode: "PAO_FLASHCARD", title: "PAO Flashcards", short: "Practice your card images.", icon: Brain },
+  { mode: "RANDOM_POSITION", title: "Random Position", short: "Guess cards from random spots.", icon: Layers3 }
 ];
 
-const defaultPaoDeckOptions: PlayPaoDeckOption[] = paoDeckPresets.map((preset, index) => ({
-  id: `preset-${index}`,
-  name: preset.name,
-  description: preset.description,
-  deck: preset.deck
-}));
-
-export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOptions?: PlayPaoDeckOption[] }) {
+export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PlayPaoDeckOption[] }) {
   const [phase, setPhase] = useState<Phase>("setup");
   const [mode, setMode] = useState<PlayMode>("FULL_DECK");
   const [count, setCount] = useState(10);
@@ -94,7 +88,7 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
   const [selectedSuit, setSelectedSuit] = useState<SuitName>("HEARTS");
   const [difficulty, setDifficulty] = useState<SpeedDifficulty>("Relaxed");
   const [paoVariant, setPaoVariant] = useState<PaoVariant>("CARD_TO_PAO");
-  const [selectedPaoDeckId, setSelectedPaoDeckId] = useState(paoDeckOptions[0]?.id ?? defaultPaoDeckOptions[0].id);
+  const [selectedPaoDeckId, setSelectedPaoDeckId] = useState(paoDeckOptions[0]?.id ?? "");
   const [flashcardCount, setFlashcardCount] = useState(16);
   const [questionCount, setQuestionCount] = useState(10);
   const [palace, setPalace] = useState(sampleUserPalaces[0].name);
@@ -116,13 +110,14 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
   const [isPending, startTransition] = useTransition();
   const ignoreNextClickRef = useRef(false);
 
-  const availablePaoDecks = paoDeckOptions.length > 0 ? paoDeckOptions : defaultPaoDeckOptions;
+  const availablePaoDecks = paoDeckOptions;
   const selectedPaoDeck = useMemo(
-    () => availablePaoDecks.find((item) => item.id === selectedPaoDeckId) ?? availablePaoDecks[0],
+    () => availablePaoDecks.find((item) => item.id === selectedPaoDeckId) ?? availablePaoDecks[0] ?? null,
     [availablePaoDecks, selectedPaoDeckId]
   );
-  const sourcePaoDeck = selectedPaoDeck.deck;
+  const sourcePaoDeck = selectedPaoDeck?.deck ?? emptyPaoDeck;
   const deck = useMemo(() => (sessionDeck.length > 0 ? sessionDeck : sourcePaoDeck.slice(0, count)), [count, sessionDeck, sourcePaoDeck]);
+  const hasPaoDeck = sourcePaoDeck.length > 0;
   const selectedPalace = useMemo(
     () => sampleUserPalaces.find((item) => item.name === palace) ?? sampleUserPalaces[0],
     [palace]
@@ -138,6 +133,8 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
   const modeTitle = modeCards.find((item) => item.mode === mode)?.title ?? "Classic";
 
   function start(startedAtMs: number) {
+    if (!hasPaoDeck) return;
+
     const nextDeck = buildSessionDeck(mode);
     const positions =
       mode === "RANDOM_POSITION" ? shuffleNumbers(nextDeck.length).slice(0, Math.min(questionCount, nextDeck.length)) : [];
@@ -361,7 +358,7 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
   }
 
   function modeBestKey() {
-    return `palace52:best:${selectedPaoDeck.id}:${mode}:${mode === "SPEED" ? difficulty : mode === "SUIT_FOCUS" ? selectedSuit : paoVariant}`;
+    return `palace52:best:${selectedPaoDeck?.id ?? "no-pao"}:${mode}:${mode === "SPEED" ? difficulty : mode === "SUIT_FOCUS" ? selectedSuit : paoVariant}`;
   }
 
   function getVisiblePaoExpected() {
@@ -433,15 +430,22 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
                     setSessionDeck([]);
                     setActiveHint(null);
                   }}
+                  disabled={!hasPaoDeck}
                   className="h-11 w-full rounded-md border border-[var(--border)] bg-[var(--card)] px-3 text-sm"
                 >
-                  {availablePaoDecks.map((item) => (
-                    <option key={item.id} value={item.id}>
-                      {item.name}{typeof item.customCount === "number" ? ` (${item.customCount}/52)` : ""}
-                    </option>
-                  ))}
+                  {hasPaoDeck ? (
+                    availablePaoDecks.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.name}{typeof item.customCount === "number" ? ` (${item.customCount}/52)` : ""}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">No saved PAO deck yet</option>
+                  )}
                 </select>
-                <span className="block text-xs leading-5 text-[var(--muted)]">{selectedPaoDeck.description}</span>
+                <span className="block text-xs leading-5 text-[var(--muted)]">
+                  {selectedPaoDeck?.description ?? "Create PAO card images first, then come back to train with your saved deck."}
+                </span>
               </label>
             </div>
 
@@ -529,7 +533,7 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
               </div>
             )}
 
-            <Button onClick={(event) => start(event.timeStamp)} className="mt-6 h-12 w-full md:w-auto">
+            <Button onClick={(event) => start(event.timeStamp)} disabled={!hasPaoDeck} className="mt-6 h-12 w-full md:w-auto">
               <Timer className="size-4" />
               Start {modeTitle}
             </Button>
@@ -590,7 +594,7 @@ export function PlayGame({ paoDeckOptions = defaultPaoDeckOptions }: { paoDeckOp
             {activeHint === "pao" && (
               <div className="mt-3 rounded-md bg-[var(--card-muted)] p-3 text-sm leading-6">
                 <p className="font-semibold text-[var(--foreground)]">{current.card.label}</p>
-                <p className="mb-2 text-xs text-[var(--muted)]">PAO deck: {selectedPaoDeck.name}</p>
+                <p className="mb-2 text-xs text-[var(--muted)]">PAO deck: {selectedPaoDeck?.name ?? "No saved PAO deck"}</p>
                 <p><strong className="font-semibold">P:</strong> {current.person}</p>
                 <p><strong className="font-semibold">A:</strong> {current.action}</p>
                 <p><strong className="font-semibold">O:</strong> {current.object}</p>

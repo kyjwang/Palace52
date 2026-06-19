@@ -3,7 +3,7 @@ import { PlayGame, type PlayPaoDeckOption } from "@/components/play/play-game";
 import { fullDeck } from "@/lib/cards";
 import { requireCurrentUser } from "@/lib/auth";
 import { getPrisma } from "@/lib/prisma";
-import { beginnerPaoDeck, paoDeckPresets, type StarterPao } from "@/lib/sample-palace";
+import { beginnerPaoDeck, type StarterPao } from "@/lib/sample-palace";
 
 export const dynamic = "force-dynamic";
 
@@ -39,16 +39,9 @@ export default async function PlayPage() {
 }
 
 function buildPaoDeckOptions(savedImages: SavedCardImage[]): PlayPaoDeckOption[] {
-  const presetOptions = paoDeckPresets.map((preset, index) => ({
-    id: `preset-${index}`,
-    name: preset.name,
-    description: preset.description,
-    deck: preset.deck
-  }));
-
   const customCount = savedImages.filter((image) => image.person || image.action || image.object || image.imagePrompt).length;
 
-  if (customCount === 0) return presetOptions;
+  if (customCount === 0) return [];
 
   const imageByCard = new Map(savedImages.map((image) => [`${image.rank}-${image.suit}`, image]));
   const fallbackByCode = new Map(beginnerPaoDeck.map((entry) => [entry.card.code, entry]));
@@ -76,7 +69,6 @@ function buildPaoDeckOptions(savedImages: SavedCardImage[]): PlayPaoDeckOption[]
       description: `${customCount}/52 cards use your saved PAO fields. Missing cards use the beginner fallback.`,
       deck: customDeck,
       customCount
-    },
-    ...presetOptions
+    }
   ];
 }
