@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
-import { BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
+import { useState, useTransition, type DragEvent } from "react";
+import { ArrowDown, ArrowUp, BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
 import { saveCardImage } from "@/app/actions/card-images";
 import { CardBadge } from "@/components/app/card-badge";
 import { Button, ButtonLink } from "@/components/ui/button";
@@ -25,6 +25,7 @@ export function PalaceBuilder() {
   const [paoRows, setPaoRows] = useState<PaoRow[]>([]);
   const [saved, setSaved] = useState(false);
   const [paoSaveState, setPaoSaveState] = useState<"idle" | "saved" | "error">("idle");
+  const [draggedLocationIndex, setDraggedLocationIndex] = useState<number | null>(null);
 
   function addLocation() {
     if (!newLocation.trim()) return;
@@ -41,10 +42,37 @@ export function PalaceBuilder() {
   function moveLocation(index: number, direction: -1 | 1) {
     const target = index + direction;
     if (target < 0 || target >= locations.length) return;
+    moveLocationToIndex(index, target);
+  }
+
+  function moveLocationToIndex(fromIndex: number, toIndex: number) {
+    if (fromIndex === toIndex || fromIndex < 0 || toIndex < 0 || fromIndex >= locations.length || toIndex >= locations.length) {
+      return;
+    }
+
     const next = [...locations];
-    [next[index], next[target]] = [next[target], next[index]];
+    const [movedLocation] = next.splice(fromIndex, 1);
+    next.splice(toIndex, 0, movedLocation);
     setLocations(next);
     setSaved(false);
+  }
+
+  function startLocationDrag(event: DragEvent<HTMLDivElement>, index: number) {
+    setDraggedLocationIndex(index);
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", index.toString());
+  }
+
+  function dropLocation(event: DragEvent<HTMLDivElement>, targetIndex: number) {
+    event.preventDefault();
+    const rawIndex = event.dataTransfer.getData("text/plain");
+    const sourceIndex = rawIndex ? Number(rawIndex) : draggedLocationIndex;
+
+    if (typeof sourceIndex === "number" && Number.isInteger(sourceIndex)) {
+      moveLocationToIndex(sourceIndex, targetIndex);
+    }
+
+    setDraggedLocationIndex(null);
   }
 
   function savePao() {
@@ -162,7 +190,20 @@ export function PalaceBuilder() {
 
         <div className="mt-5 grid gap-3 md:grid-cols-2">
           {locations.map((location, index) => (
-            <div key={`${location}-${index}`} className="rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3">
+            <div
+              key={`${location}-${index}`}
+              draggable
+              onDragStart={(event) => startLocationDrag(event, index)}
+              onDragOver={(event) => {
+                event.preventDefault();
+                event.dataTransfer.dropEffect = "move";
+              }}
+              onDrop={(event) => dropLocation(event, index)}
+              onDragEnd={() => setDraggedLocationIndex(null)}
+              className={`rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3 transition ${
+                draggedLocationIndex === index ? "opacity-60 ring-2 ring-[var(--accent)]/40" : ""
+              }`}
+            >
               <div className="flex items-start gap-3">
                 <div className="flex size-9 shrink-0 items-center justify-center rounded-md bg-white font-mono text-sm font-semibold text-[#0f7a5f]">
                   {index + 1}
@@ -174,14 +215,30 @@ export function PalaceBuilder() {
                     Place one vivid card image here.
                   </p>
                 </div>
-                <GripVertical className="size-4 text-[#899182]" />
+                <GripVertical className="size-4 cursor-grab text-[#899182] active:cursor-grabbing" aria-label={`Drag ${location}`} />
               </div>
               <div className="mt-3 flex gap-2">
-                <Button type="button" variant="secondary" onClick={() => moveLocation(index, -1)} disabled={index === 0} className="h-8 px-3">
-                  Up
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => moveLocation(index, -1)}
+                  disabled={index === 0}
+                  className="size-8 px-0"
+                  aria-label={`Move ${location} up`}
+                  title="Move up"
+                >
+                  <ArrowUp className="size-4" />
                 </Button>
-                <Button type="button" variant="secondary" onClick={() => moveLocation(index, 1)} disabled={index === locations.length - 1} className="h-8 px-3">
-                  Down
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => moveLocation(index, 1)}
+                  disabled={index === locations.length - 1}
+                  className="size-8 px-0"
+                  aria-label={`Move ${location} down`}
+                  title="Move down"
+                >
+                  <ArrowDown className="size-4" />
                 </Button>
                 <Button type="button" variant="ghost" onClick={() => removeLocation(index)} className="h-8 px-3 text-red-600">
                   <Trash2 className="size-4" />
