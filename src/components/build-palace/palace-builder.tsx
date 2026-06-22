@@ -6,7 +6,7 @@ import { savePaoDeck } from "@/app/actions/card-images";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/form";
 import { Panel } from "@/components/ui/product";
-import { fullDeck } from "@/lib/cards";
+import { fullDeck, type PlayingCard } from "@/lib/cards";
 
 const starterLocations = ["Front door", "Hallway mirror", "Kitchen sink", "Living room sofa", "Bedroom door", "Balcony chair"];
 type PaoRow = { cardCode: string; person: string; action: string; object: string };
@@ -25,10 +25,12 @@ export function PalaceBuilder() {
   const [locations, setLocations] = useState(starterLocations);
   const [newLocation, setNewLocation] = useState("");
   const [paoRows, setPaoRows] = useState<PaoRow[]>(blankPaoRows);
+  const [routeEditorOpen, setRouteEditorOpen] = useState(false);
   const [deckEditorOpen, setDeckEditorOpen] = useState(false);
   const [saved, setSaved] = useState(false);
   const [paoSaveState, setPaoSaveState] = useState<"idle" | "saved" | "error">("idle");
   const [draggedLocationIndex, setDraggedLocationIndex] = useState<number | null>(null);
+  const completedRouteLocations = locations.filter((location) => location.trim()).length;
   const completedPaoCards = paoRows.filter((row) => row.person.trim() && row.action.trim() && row.object.trim()).length;
 
   function addLocation() {
@@ -40,6 +42,11 @@ export function PalaceBuilder() {
 
   function removeLocation(index: number) {
     setLocations(locations.filter((_, locationIndex) => locationIndex !== index));
+    setSaved(false);
+  }
+
+  function updateLocation(index: number, value: string) {
+    setLocations(locations.map((location, locationIndex) => (locationIndex === index ? value : location)));
     setSaved(false);
   }
 
@@ -61,13 +68,13 @@ export function PalaceBuilder() {
     setSaved(false);
   }
 
-  function startLocationDrag(event: DragEvent<HTMLDivElement>, index: number) {
+  function startLocationDrag(event: DragEvent<HTMLElement>, index: number) {
     setDraggedLocationIndex(index);
     event.dataTransfer.effectAllowed = "move";
     event.dataTransfer.setData("text/plain", index.toString());
   }
 
-  function dropLocation(event: DragEvent<HTMLDivElement>, targetIndex: number) {
+  function dropLocation(event: DragEvent<HTMLElement>, targetIndex: number) {
     event.preventDefault();
     const rawIndex = event.dataTransfer.getData("text/plain");
     const sourceIndex = rawIndex ? Number(rawIndex) : draggedLocationIndex;
@@ -116,10 +123,9 @@ export function PalaceBuilder() {
 
   return (
     <div className="space-y-5">
-      <div className="grid gap-5 lg:grid-cols-[420px_1fr]">
       <Panel className="p-5">
-        <p className="text-sm font-semibold text-[var(--accent)]">Build a palace</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Create your own route</h1>
+        <p className="text-sm font-semibold text-[var(--accent)]">Introduction</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Learning</h1>
         <div className="mt-4 rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-3">
           <p className="text-sm text-[var(--muted)]">
             New to routes or PAO? Start with the guide before building your first full deck system.
@@ -129,117 +135,175 @@ export function PalaceBuilder() {
             Learn PAO and routes
           </ButtonLink>
         </div>
-        <div className="mt-6 space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="palace-name">Palace name</Label>
-            <Input id="palace-name" value={name} onChange={(event) => setName(event.target.value)} />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="palace-description">Description</Label>
-            <Textarea id="palace-description" value={description} onChange={(event) => setDescription(event.target.value)} />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="new-location">New location</Label>
-            <div className="flex gap-2">
-              <Input
-                id="new-location"
-                value={newLocation}
-                onChange={(event) => setNewLocation(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    addLocation();
-                  }
-                }}
-                placeholder="Window seat"
-              />
-              <Button type="button" onClick={addLocation} aria-label="Add location">
-                <Plus className="size-4" />
-              </Button>
-            </div>
-          </div>
-          <Button type="button" onClick={() => setSaved(true)} className="w-full">
-            <Save className="size-4" />
-            Save palace
-          </Button>
-          {saved && <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">Saved locally for preview.</p>}
-        </div>
       </Panel>
 
       <Panel className="p-5">
-        <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
           <div>
-            <p className="text-sm text-[var(--muted)]">Current palace</p>
-            <h2 className="text-2xl font-semibold">{name}</h2>
-            <p className="mt-1 text-sm text-[var(--muted)]">{description}</p>
+            <p className="text-sm font-semibold text-[var(--accent)]">Build your own Palace</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">Create a route</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Open the table, name your palace, add route locations, then save the route.
+            </p>
           </div>
-          <div className="rounded-md bg-[#101411] px-4 py-3 text-white">
-            <p className="text-xs text-white/55">Capacity</p>
-            <p className="font-mono text-lg font-semibold">{locations.length}/18 locations</p>
-          </div>
+          <Button type="button" onClick={() => setRouteEditorOpen((open) => !open)} className="h-11 md:shrink-0">
+            <Plus className="size-4" />
+            {routeEditorOpen ? "Close table" : "Create route"}
+          </Button>
         </div>
 
-        <div className="mt-5 grid gap-3 md:grid-cols-2">
-          {locations.map((location, index) => (
-            <div
-              key={`${location}-${index}`}
-              draggable
-              onDragStart={(event) => startLocationDrag(event, index)}
-              onDragOver={(event) => {
-                event.preventDefault();
-                event.dataTransfer.dropEffect = "move";
-              }}
-              onDrop={(event) => dropLocation(event, index)}
-              onDragEnd={() => setDraggedLocationIndex(null)}
-              className={`rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3 transition ${
-                draggedLocationIndex === index ? "opacity-60 ring-2 ring-[var(--accent)]/40" : ""
-              }`}
-            >
-              <div className="flex items-start gap-3">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-md bg-white font-mono text-sm font-semibold text-[#0f7a5f]">
-                  {index + 1}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="font-medium">{location}</p>
-                  <p className="mt-1 flex items-center gap-1 text-sm text-[#6f7468]">
-                    <MapPin className="size-3.5" />
-                    Place one vivid card image here.
-                  </p>
-                </div>
-                <GripVertical className="size-4 cursor-grab text-[#899182] active:cursor-grabbing" aria-label={`Drag ${location}`} />
+        <div className="mt-5 flex flex-col justify-between gap-3 rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-3 md:flex-row md:items-center">
+          <div>
+            <p className="text-sm text-[var(--muted)]">Custom route</p>
+            <p className="mt-1 text-2xl font-semibold">{completedRouteLocations}/18 locations mapped</p>
+          </div>
+          <p className="rounded-md bg-[var(--card)] px-3 py-2 text-sm text-[var(--muted)]">Saved routes appear in My Palace and Play</p>
+        </div>
+
+        {!routeEditorOpen ? (
+          <p className="mt-5 rounded-md border border-dashed border-[var(--border)] bg-[var(--card-muted)] px-3 py-4 text-sm text-[var(--muted)]">
+            Click Create route to fill the spreadsheet-style template.
+          </p>
+        ) : (
+          <div className="mt-5 space-y-4">
+            <div className="grid gap-4 rounded-lg border border-[var(--border)] bg-[var(--card-muted)] p-3 md:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="palace-name">Palace name</Label>
+                <Input
+                  id="palace-name"
+                  value={name}
+                  onChange={(event) => {
+                    setName(event.target.value);
+                    setSaved(false);
+                  }}
+                />
               </div>
-              <div className="mt-3 flex gap-2">
-                <Button
-                  type="button"
-                  variant="secondary"
-                  onClick={() => moveLocation(index, -1)}
-                  disabled={index === 0}
-                  className="size-8 px-0"
-                  aria-label={`Move ${location} up`}
-                  title="Move up"
-                >
-                  <ArrowUp className="size-4" />
-                </Button>
-                <Button
-                  type="button"
-                  variant="secondary"
-                  onClick={() => moveLocation(index, 1)}
-                  disabled={index === locations.length - 1}
-                  className="size-8 px-0"
-                  aria-label={`Move ${location} down`}
-                  title="Move down"
-                >
-                  <ArrowDown className="size-4" />
-                </Button>
-                <Button type="button" variant="ghost" onClick={() => removeLocation(index)} className="h-8 px-3 text-red-600">
-                  <Trash2 className="size-4" />
-                </Button>
+              <div className="space-y-2">
+                <Label htmlFor="new-location">New location</Label>
+                <div className="flex gap-2">
+                  <Input
+                    id="new-location"
+                    value={newLocation}
+                    onChange={(event) => setNewLocation(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        event.preventDefault();
+                        addLocation();
+                      }
+                    }}
+                    placeholder="Window seat"
+                  />
+                  <Button type="button" onClick={addLocation} aria-label="Add location">
+                    <Plus className="size-4" />
+                  </Button>
+                </div>
+              </div>
+              <div className="space-y-2 md:col-span-2">
+                <Label htmlFor="palace-description">Description</Label>
+                <Textarea
+                  id="palace-description"
+                  value={description}
+                  onChange={(event) => {
+                    setDescription(event.target.value);
+                    setSaved(false);
+                  }}
+                />
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className="overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--card)]">
+              <table className="w-full min-w-[760px] text-left text-sm">
+                <thead className="border-b border-[var(--border)] bg-[var(--card-muted)] text-[var(--muted)]">
+                  <tr>
+                    <th className="w-24 px-3 py-2 font-medium">Order</th>
+                    <th className="px-3 py-2 font-medium">Location</th>
+                    <th className="px-3 py-2 font-medium">Memory cue</th>
+                    <th className="w-28 px-3 py-2 font-medium">Move</th>
+                    <th className="w-16 px-3 py-2 font-medium">Clear</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[var(--border)]">
+                  {locations.map((location, index) => (
+                    <tr
+                      key={`route-location-${index}`}
+                      draggable
+                      onDragStart={(event) => startLocationDrag(event, index)}
+                      onDragOver={(event) => {
+                        event.preventDefault();
+                        event.dataTransfer.dropEffect = "move";
+                      }}
+                      onDrop={(event) => dropLocation(event, index)}
+                      onDragEnd={() => setDraggedLocationIndex(null)}
+                      className={`bg-[var(--card)] transition ${
+                        draggedLocationIndex === index ? "opacity-60 ring-2 ring-[var(--accent)]/40" : ""
+                      }`}
+                    >
+                      <td className="px-3 py-2">
+                        <div className="flex items-center gap-2">
+                          <GripVertical className="size-4 cursor-grab text-[var(--muted)] active:cursor-grabbing" aria-label={`Drag ${location || "route location"}`} />
+                          <span className="font-mono font-semibold">#{index + 1}</span>
+                        </div>
+                      </td>
+                      <td className="px-3 py-2">
+                        <Input value={location} onChange={(event) => updateLocation(index, event.target.value)} placeholder="Route location" className="h-9" />
+                      </td>
+                      <td className="px-3 py-2 text-[var(--muted)]">
+                        <span className="flex items-center gap-1">
+                          <MapPin className="size-3.5" />
+                          Place one vivid card image here.
+                        </span>
+                      </td>
+                      <td className="px-3 py-2">
+                        <div className="flex gap-2">
+                          <Button
+                            type="button"
+                            variant="secondary"
+                            onClick={() => moveLocation(index, -1)}
+                            disabled={index === 0}
+                            className="size-8 px-0"
+                            aria-label={`Move ${location || "route location"} up`}
+                            title="Move up"
+                          >
+                            <ArrowUp className="size-4" />
+                          </Button>
+                          <Button
+                            type="button"
+                            variant="secondary"
+                            onClick={() => moveLocation(index, 1)}
+                            disabled={index === locations.length - 1}
+                            className="size-8 px-0"
+                            aria-label={`Move ${location || "route location"} down`}
+                            title="Move down"
+                          >
+                            <ArrowDown className="size-4" />
+                          </Button>
+                        </div>
+                      </td>
+                      <td className="px-3 py-2">
+                        <Button type="button" variant="ghost" onClick={() => removeLocation(index)} className="size-8 px-0 text-red-600" aria-label={`Remove ${location || "route location"}`}>
+                          <Trash2 className="size-4" />
+                        </Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
+              <div className="text-sm text-[var(--muted)]">
+                Drag rows or use the arrow buttons to set the route order.
+              </div>
+              <Button type="button" onClick={() => setSaved(true)} disabled={completedRouteLocations === 0} className="h-11 md:shrink-0">
+                <Save className="size-4" />
+                Save route
+              </Button>
+            </div>
+
+            {saved && <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">Route saved locally for preview.</p>}
+          </div>
+        )}
       </Panel>
-      </div>
 
       <Panel className="p-5">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
@@ -274,7 +338,7 @@ export function PalaceBuilder() {
               <table className="w-full min-w-[760px] text-left text-sm">
                 <thead className="border-b border-[var(--border)] bg-[var(--card-muted)] text-[var(--muted)]">
                   <tr>
-                    <th className="w-28 px-3 py-2 font-medium">Card</th>
+                    <th className="w-32 px-3 py-2 font-medium">Card</th>
                     <th className="px-3 py-2 font-medium">Suit</th>
                     <th className="px-3 py-2 font-medium">Person</th>
                     <th className="px-3 py-2 font-medium">Action</th>
@@ -288,7 +352,9 @@ export function PalaceBuilder() {
 
                     return (
                       <tr key={row.cardCode} className="bg-[var(--card)]">
-                        <td className="px-3 py-2 font-mono font-semibold text-[var(--foreground)]">{card.shortLabel}</td>
+                        <td className="px-3 py-2">
+                          <MiniPlayingCard card={card} />
+                        </td>
                         <td className="px-3 py-2 text-[var(--muted)]">{suitLabel(card.suit)}</td>
                         <td className="px-3 py-2">
                           <Input value={row.person} onChange={(event) => updatePaoRow(row.cardCode, "person", event.target.value)} placeholder="Person" className="h-9" />
@@ -340,4 +406,24 @@ export function PalaceBuilder() {
 
 function suitLabel(suit: string) {
   return suit.charAt(0) + suit.slice(1).toLowerCase();
+}
+
+function MiniPlayingCard({ card }: { card: PlayingCard }) {
+  const rank = card.shortLabel.replace(/[^\dA-Z]/g, "");
+  const suit = card.shortLabel.replace(/[\dA-Z]/g, "");
+  const tone = card.color === "red" ? "text-red-600" : "text-[#17151f]";
+
+  return (
+    <div className={`relative h-16 w-11 rounded-md border border-[#d8c38c] bg-[#fffaf1] shadow-sm ${tone}`} aria-label={card.label}>
+      <div className="absolute left-1 top-1 flex flex-col items-center font-mono text-[11px] font-bold leading-none">
+        <span>{rank}</span>
+        <span className="mt-0.5 text-sm">{suit}</span>
+      </div>
+      <div className="flex h-full items-center justify-center text-2xl leading-none">{suit}</div>
+      <div className="absolute bottom-1 right-1 flex rotate-180 flex-col items-center font-mono text-[11px] font-bold leading-none">
+        <span>{rank}</span>
+        <span className="mt-0.5 text-sm">{suit}</span>
+      </div>
+    </div>
+  );
 }

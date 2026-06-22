@@ -53,6 +53,12 @@ const suits: Array<{ value: SuitName; label: string; tone: string }> = [
   { value: "DIAMONDS", label: "Diamonds", tone: "text-red-600" },
   { value: "CLUBS", label: "Clubs", tone: "text-zinc-900 dark:text-zinc-100" }
 ];
+const suitCodeLegend = [
+  { code: "H", suit: "♥", label: "Hearts", tone: "text-red-600 dark:text-red-400" },
+  { code: "D", suit: "♦", label: "Diamonds", tone: "text-red-600 dark:text-red-400" },
+  { code: "C", suit: "♣", label: "Clubs", tone: "text-zinc-900 dark:text-zinc-100" },
+  { code: "S", suit: "♠", label: "Spades", tone: "text-zinc-900 dark:text-zinc-100" }
+];
 const paoVariants: Array<{ value: PaoVariant; label: string; helper: string }> = [
   { value: "CARD_TO_PAO", label: "Card to PAO", helper: "See a card, recall person-action-object." },
   { value: "PAO_TO_CARD", label: "PAO to Card", helper: "See an image cue, name the card." },
@@ -630,9 +636,26 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             <h1 className="mt-2 text-2xl font-semibold tracking-tight">
               {mode === "RANDOM_POSITION" ? `What was card #${currentPromptPosition}?` : "Enter the card at this position"}
             </h1>
-            <p className="mt-2 text-sm leading-6 text-[#6f7468] dark:text-[var(--muted)]">
-              Use A, 2-10, J, Q, K with H, D, C, S. Press Enter to lock the answer and move on.
-            </p>
+            <div className="mt-2 space-y-3">
+              <p className="text-sm leading-6 text-[#6f7468] dark:text-[var(--muted)]">
+                Use A, 2-10, J, Q, K, then add the suit letter. Press Enter to lock the answer and move on.
+              </p>
+              <div className="flex flex-wrap gap-2" aria-label="Suit letter guide">
+                {suitCodeLegend.map((item) => (
+                  <div
+                    key={item.code}
+                    className="inline-flex items-center gap-2 rounded-md border border-[#dfe3d7] bg-[#fbfcf8] px-2.5 py-1 text-sm font-medium dark:border-[var(--border)] dark:bg-[var(--card-muted)]"
+                    title={`${item.code} means ${item.label}`}
+                  >
+                    <span className="font-mono text-xs text-[#6f7468] dark:text-[var(--muted)]">{item.code}</span>
+                    <span className={`text-base leading-none ${item.tone}`} aria-hidden="true">
+                      {item.suit}
+                    </span>
+                    <span className="text-xs text-[#6f7468] dark:text-[var(--muted)]">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="rounded-lg border border-[#dfe3d7] bg-white p-4 shadow-sm md:p-5 dark:border-[var(--border)] dark:bg-[var(--card)]">
@@ -968,7 +991,13 @@ function getModeRules(mode: PlayMode, difficulty: SpeedDifficulty, selectedSuit:
     return ["Memorize the shuffled deck.", "Answer random position questions.", "Feedback marks wrong positions.", "Weak loci appear when route cues exist."];
   }
 
-  return ["Choose palace", "Shuffle deck", "Swipe through cards", "Recall by palace location", "Score time and mistakes"];
+  return [
+    "Choose a palace and PAO deck.",
+    "Memorize each shuffled card in order.",
+    "Place every card image on the next palace location.",
+    "Recall the cards by walking through your palace.",
+    "Review your score, time, and mistakes."
+  ];
 }
 
 function renderPaoPrompt(entry: StarterPao, variant: PaoVariant, missingPart: PaoPart) {
