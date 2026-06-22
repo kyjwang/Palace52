@@ -1,0 +1,502 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/(app)/cards/page.tsx",
+      "type": "file",
+      "name": "(app)/cards page",
+      "summary": "Next.js route module for (app)/cards/page.tsx, exporting dynamic, CardsPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/cards/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/cards/page.tsx:CardsPage",
+      "type": "function",
+      "name": "CardsPage",
+      "summary": "CardsPage implements (app)/cards page behavior in src/app/(app)/cards/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/cards/page.tsx",
+      "lineRange": {
+        "start": 15,
+        "end": 84
+      }
+    },
+    {
+      "id": "file:src/app/actions/card-images.ts",
+      "type": "file",
+      "name": "card-images.ts",
+      "summary": "Next.js route module for actions/card-images.ts, exporting upsertCardImage, saveCardImage, savePaoDeck.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/actions/card-images.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/actions/card-images.ts:upsertCardImage",
+      "type": "function",
+      "name": "upsertCardImage",
+      "summary": "upsertCardImage implements card-images.ts behavior in src/app/actions/card-images.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/card-images.ts",
+      "lineRange": {
+        "start": 31,
+        "end": 46
+      }
+    },
+    {
+      "id": "function:src/app/actions/card-images.ts:saveCardImage",
+      "type": "function",
+      "name": "saveCardImage",
+      "summary": "saveCardImage implements card-images.ts behavior in src/app/actions/card-images.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/card-images.ts",
+      "lineRange": {
+        "start": 48,
+        "end": 55
+      }
+    },
+    {
+      "id": "function:src/app/actions/card-images.ts:savePaoDeck",
+      "type": "function",
+      "name": "savePaoDeck",
+      "summary": "savePaoDeck implements card-images.ts behavior in src/app/actions/card-images.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/card-images.ts",
+      "lineRange": {
+        "start": 57,
+        "end": 96
+      }
+    },
+    {
+      "id": "function:src/app/actions/card-images.ts:saveCardImageForUser",
+      "type": "function",
+      "name": "saveCardImageForUser",
+      "summary": "saveCardImageForUser implements card-images.ts behavior in src/app/actions/card-images.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/card-images.ts",
+      "lineRange": {
+        "start": 98,
+        "end": 113
+      }
+    },
+    {
+      "id": "file:src/components/build-palace/palace-builder.tsx",
+      "type": "file",
+      "name": "palace-builder.tsx",
+      "summary": "Client builder for creating editable palace routes and custom PAO deck entries.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "memory-palace"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/build-palace/palace-builder.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/build-palace/palace-builder.tsx:PalaceBuilder",
+      "type": "function",
+      "name": "PalaceBuilder",
+      "summary": "PalaceBuilder implements palace-builder.tsx behavior in src/components/build-palace/palace-builder.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/build-palace/palace-builder.tsx",
+      "lineRange": {
+        "start": 21,
+        "end": 405
+      }
+    },
+    {
+      "id": "function:src/components/build-palace/palace-builder.tsx:MiniPlayingCard",
+      "type": "function",
+      "name": "MiniPlayingCard",
+      "summary": "MiniPlayingCard implements palace-builder.tsx behavior in src/components/build-palace/palace-builder.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "memory-palace",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/build-palace/palace-builder.tsx",
+      "lineRange": {
+        "start": 411,
+        "end": 429
+      }
+    },
+    {
+      "id": "file:src/components/ui/form.tsx",
+      "type": "file",
+      "name": "form.tsx",
+      "summary": "React component module for Palace52 UI, exporting Label, Input, Textarea.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/form.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/ui/form.tsx:Label",
+      "type": "function",
+      "name": "Label",
+      "summary": "Label implements form.tsx behavior in src/components/ui/form.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/form.tsx",
+      "lineRange": {
+        "start": 4,
+        "end": 6
+      }
+    },
+    {
+      "id": "function:src/components/ui/form.tsx:Input",
+      "type": "function",
+      "name": "Input",
+      "summary": "Input implements form.tsx behavior in src/components/ui/form.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/form.tsx",
+      "lineRange": {
+        "start": 8,
+        "end": 18
+      }
+    },
+    {
+      "id": "function:src/components/ui/form.tsx:Textarea",
+      "type": "function",
+      "name": "Textarea",
+      "summary": "Textarea implements form.tsx behavior in src/components/ui/form.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/form.tsx",
+      "lineRange": {
+        "start": 20,
+        "end": 30
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/app/actions/card-images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/components/app/card-badge.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/components/ui/form.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "function:src/app/(app)/cards/page.tsx:CardsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/cards/page.tsx",
+      "target": "function:src/app/(app)/cards/page.tsx:CardsPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:upsertCardImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:upsertCardImage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:saveCardImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:saveCardImage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:savePaoDeck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:savePaoDeck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/card-images.ts",
+      "target": "function:src/app/actions/card-images.ts:saveCardImageForUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "file:src/app/actions/card-images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "file:src/components/ui/form.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "function:src/components/build-palace/palace-builder.tsx:PalaceBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "function:src/components/build-palace/palace-builder.tsx:PalaceBuilder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/build-palace/palace-builder.tsx",
+      "target": "function:src/components/build-palace/palace-builder.tsx:MiniPlayingCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Label",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Label",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Input",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Textarea",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/form.tsx",
+      "target": "function:src/components/ui/form.tsx:Textarea",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

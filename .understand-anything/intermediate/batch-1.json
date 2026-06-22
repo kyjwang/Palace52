@@ -1,0 +1,1720 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/(app)/dashboard/page.tsx",
+      "type": "file",
+      "name": "(app)/dashboard page",
+      "summary": "Authenticated dashboard page that gathers user training stats, reviews, progress charts, and leaderboard preview data.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "dashboard"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/dashboard/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "type": "function",
+      "name": "DashboardPage",
+      "summary": "DashboardPage implements (app)/dashboard page behavior in src/app/(app)/dashboard/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "dashboard",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/dashboard/page.tsx",
+      "lineRange": {
+        "start": 16,
+        "end": 152
+      }
+    },
+    {
+      "id": "file:src/app/(app)/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "summary": "Next.js route module for (app)/layout.tsx, exporting AppLayout.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/layout.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/layout.tsx:AppLayout",
+      "type": "function",
+      "name": "AppLayout",
+      "summary": "AppLayout implements layout.tsx behavior in src/app/(app)/layout.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/layout.tsx",
+      "lineRange": {
+        "start": 6,
+        "end": 48
+      }
+    },
+    {
+      "id": "file:src/app/(app)/leaderboard/page.tsx",
+      "type": "file",
+      "name": "(app)/leaderboard page",
+      "summary": "Next.js route module for (app)/leaderboard/page.tsx, exporting dynamic, LeaderboardPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "leaderboard"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/leaderboard/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "type": "function",
+      "name": "LeaderboardPage",
+      "summary": "LeaderboardPage implements (app)/leaderboard page behavior in src/app/(app)/leaderboard/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "leaderboard",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/leaderboard/page.tsx",
+      "lineRange": {
+        "start": 10,
+        "end": 61
+      }
+    },
+    {
+      "id": "file:src/app/(app)/profile/page.tsx",
+      "type": "file",
+      "name": "(app)/profile page",
+      "summary": "Profile page that summarizes user identity, training history, performance metrics, and clear-history controls.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/profile/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/profile/page.tsx:ProfilePage",
+      "type": "function",
+      "name": "ProfilePage",
+      "summary": "ProfilePage implements (app)/profile page behavior in src/app/(app)/profile/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/profile/page.tsx",
+      "lineRange": {
+        "start": 13,
+        "end": 174
+      }
+    },
+    {
+      "id": "file:src/app/(app)/sessions/page.tsx",
+      "type": "file",
+      "name": "(app)/sessions page",
+      "summary": "Next.js route module for (app)/sessions/page.tsx, exporting dynamic, SessionsPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "training"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/sessions/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "type": "function",
+      "name": "SessionsPage",
+      "summary": "SessionsPage implements (app)/sessions page behavior in src/app/(app)/sessions/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "training",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/(app)/sessions/page.tsx",
+      "lineRange": {
+        "start": 11,
+        "end": 81
+      }
+    },
+    {
+      "id": "function:src/app/(app)/sessions/page.tsx:readSessionMistakes",
+      "type": "function",
+      "name": "readSessionMistakes",
+      "summary": "readSessionMistakes implements (app)/sessions page behavior in src/app/(app)/sessions/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/sessions/page.tsx",
+      "lineRange": {
+        "start": 100,
+        "end": 110
+      }
+    },
+    {
+      "id": "file:src/app/(app)/settings/page.tsx",
+      "type": "file",
+      "name": "(app)/settings page",
+      "summary": "Next.js route module for (app)/settings/page.tsx, exporting dynamic, SettingsPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/settings/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/settings/page.tsx:SettingsPage",
+      "type": "function",
+      "name": "SettingsPage",
+      "summary": "SettingsPage implements (app)/settings page behavior in src/app/(app)/settings/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/settings/page.tsx",
+      "lineRange": {
+        "start": 11,
+        "end": 76
+      }
+    },
+    {
+      "id": "file:src/app/preview/page.tsx",
+      "type": "file",
+      "name": "app/preview page",
+      "summary": "Next.js route module for preview/page.tsx, exporting PreviewPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/preview/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/preview/page.tsx:PreviewPage",
+      "type": "function",
+      "name": "PreviewPage",
+      "summary": "PreviewPage implements app/preview page behavior in src/app/preview/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/preview/page.tsx",
+      "lineRange": {
+        "start": 28,
+        "end": 180
+      }
+    },
+    {
+      "id": "file:src/components/app/app-shell.tsx",
+      "type": "file",
+      "name": "app-shell.tsx",
+      "summary": "React component module for Palace52 UI, exporting AppShell.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/components/app/app-shell.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/app-shell.tsx:AppShell",
+      "type": "function",
+      "name": "AppShell",
+      "summary": "AppShell implements app-shell.tsx behavior in src/components/app/app-shell.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/components/app/app-shell.tsx",
+      "lineRange": {
+        "start": 18,
+        "end": 133
+      }
+    },
+    {
+      "id": "file:src/components/app/card-badge.tsx",
+      "type": "file",
+      "name": "card-badge.tsx",
+      "summary": "React component module for Palace52 UI, exporting CardBadge.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/card-badge.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/card-badge.tsx:splitCardLabel",
+      "type": "function",
+      "name": "splitCardLabel",
+      "summary": "splitCardLabel implements card-badge.tsx behavior in src/components/app/card-badge.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/card-badge.tsx",
+      "lineRange": {
+        "start": 10,
+        "end": 26
+      }
+    },
+    {
+      "id": "function:src/components/app/card-badge.tsx:CardBadge",
+      "type": "function",
+      "name": "CardBadge",
+      "summary": "CardBadge implements card-badge.tsx behavior in src/components/app/card-badge.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/card-badge.tsx",
+      "lineRange": {
+        "start": 28,
+        "end": 60
+      }
+    },
+    {
+      "id": "file:src/components/app/progress-chart.tsx",
+      "type": "file",
+      "name": "progress-chart.tsx",
+      "summary": "React component module for Palace52 UI, exporting ProgressChart.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/progress-chart.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/progress-chart.tsx:ProgressChart",
+      "type": "function",
+      "name": "ProgressChart",
+      "summary": "ProgressChart implements progress-chart.tsx behavior in src/components/app/progress-chart.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/progress-chart.tsx",
+      "lineRange": {
+        "start": 5,
+        "end": 24
+      }
+    },
+    {
+      "id": "file:src/components/training/training-cockpit.tsx",
+      "type": "file",
+      "name": "training-cockpit.tsx",
+      "summary": "React component module for Palace52 UI, exporting TrainingCockpit.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/training/training-cockpit.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/training/training-cockpit.tsx:TrainingCockpit",
+      "type": "function",
+      "name": "TrainingCockpit",
+      "summary": "TrainingCockpit implements training-cockpit.tsx behavior in src/components/training/training-cockpit.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "exported"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/training/training-cockpit.tsx",
+      "lineRange": {
+        "start": 37,
+        "end": 411
+      }
+    },
+    {
+      "id": "function:src/components/training/training-cockpit.tsx:StatusTile",
+      "type": "function",
+      "name": "StatusTile",
+      "summary": "StatusTile implements training-cockpit.tsx behavior in src/components/training/training-cockpit.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/training/training-cockpit.tsx",
+      "lineRange": {
+        "start": 421,
+        "end": 442
+      }
+    },
+    {
+      "id": "file:src/components/ui/button.tsx",
+      "type": "file",
+      "name": "button.tsx",
+      "summary": "React component module for Palace52 UI, exporting Button, ButtonLink.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/button.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/ui/button.tsx:Button",
+      "type": "function",
+      "name": "Button",
+      "summary": "Button implements button.tsx behavior in src/components/ui/button.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/button.tsx",
+      "lineRange": {
+        "start": 17,
+        "end": 28
+      }
+    },
+    {
+      "id": "function:src/components/ui/button.tsx:ButtonLink",
+      "type": "function",
+      "name": "ButtonLink",
+      "summary": "ButtonLink implements button.tsx behavior in src/components/ui/button.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/button.tsx",
+      "lineRange": {
+        "start": 35,
+        "end": 47
+      }
+    },
+    {
+      "id": "file:src/components/ui/card.tsx",
+      "type": "file",
+      "name": "card.tsx",
+      "summary": "React component module for Palace52 UI, exporting Card, CardHeader, CardTitle.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/card.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/ui/card.tsx:Card",
+      "type": "function",
+      "name": "Card",
+      "summary": "Card implements card.tsx behavior in src/components/ui/card.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/card.tsx",
+      "lineRange": {
+        "start": 4,
+        "end": 11
+      }
+    },
+    {
+      "id": "function:src/components/ui/card.tsx:CardHeader",
+      "type": "function",
+      "name": "CardHeader",
+      "summary": "CardHeader implements card.tsx behavior in src/components/ui/card.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/card.tsx",
+      "lineRange": {
+        "start": 13,
+        "end": 15
+      }
+    },
+    {
+      "id": "function:src/components/ui/card.tsx:CardTitle",
+      "type": "function",
+      "name": "CardTitle",
+      "summary": "CardTitle implements card.tsx behavior in src/components/ui/card.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/card.tsx",
+      "lineRange": {
+        "start": 17,
+        "end": 19
+      }
+    },
+    {
+      "id": "function:src/components/ui/card.tsx:CardContent",
+      "type": "function",
+      "name": "CardContent",
+      "summary": "CardContent implements card.tsx behavior in src/components/ui/card.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/card.tsx",
+      "lineRange": {
+        "start": 21,
+        "end": 23
+      }
+    },
+    {
+      "id": "file:src/lib/dashboard.ts",
+      "type": "file",
+      "name": "dashboard.ts",
+      "summary": "Shared Palace52 library module for dashboard behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "dashboard"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/dashboard.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/dashboard.ts:calculateDashboardStats",
+      "type": "function",
+      "name": "calculateDashboardStats",
+      "summary": "calculateDashboardStats implements dashboard.ts behavior in src/lib/dashboard.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "dashboard",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/dashboard.ts",
+      "lineRange": {
+        "start": 3,
+        "end": 40
+      }
+    },
+    {
+      "id": "file:src/lib/leaderboard.ts",
+      "type": "file",
+      "name": "leaderboard.ts",
+      "summary": "Leaderboard query logic that ranks completed eligible sessions by score, accuracy, and time.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "leaderboard"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/lib/leaderboard.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/leaderboard.ts:getLeaderboardRankings",
+      "type": "function",
+      "name": "getLeaderboardRankings",
+      "summary": "getLeaderboardRankings implements leaderboard.ts behavior in src/lib/leaderboard.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "leaderboard",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/leaderboard.ts",
+      "lineRange": {
+        "start": 41,
+        "end": 87
+      }
+    },
+    {
+      "id": "function:src/lib/leaderboard.ts:getLeaderboardPreview",
+      "type": "function",
+      "name": "getLeaderboardPreview",
+      "summary": "getLeaderboardPreview implements leaderboard.ts behavior in src/lib/leaderboard.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "leaderboard",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/leaderboard.ts",
+      "lineRange": {
+        "start": 89,
+        "end": 96
+      }
+    },
+    {
+      "id": "function:src/lib/leaderboard.ts:getLeaderboardDeckSize",
+      "type": "function",
+      "name": "getLeaderboardDeckSize",
+      "summary": "getLeaderboardDeckSize implements leaderboard.ts behavior in src/lib/leaderboard.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "leaderboard",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/leaderboard.ts",
+      "lineRange": {
+        "start": 98,
+        "end": 116
+      }
+    },
+    {
+      "id": "config:src/lib/runtime-config.ts",
+      "type": "config",
+      "name": "runtime-config.ts",
+      "summary": "Configuration file for runtime-config.ts in the Palace52 Next.js project.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/runtime-config.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "function",
+      "name": "hasRequiredAppConfig",
+      "summary": "hasRequiredAppConfig implements runtime-config.ts behavior in src/lib/runtime-config.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/runtime-config.ts",
+      "lineRange": {
+        "start": 1,
+        "end": 3
+      }
+    },
+    {
+      "id": "file:src/lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "summary": "Shared Palace52 library module for utils behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/utils.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/utils.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "summary": "cn implements utils.ts behavior in src/lib/utils.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": {
+        "start": 4,
+        "end": 6
+      }
+    },
+    {
+      "id": "function:src/lib/utils.ts:formatDuration",
+      "type": "function",
+      "name": "formatDuration",
+      "summary": "formatDuration implements utils.ts behavior in src/lib/utils.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": {
+        "start": 8,
+        "end": 14
+      }
+    },
+    {
+      "id": "function:src/lib/utils.ts:formatFriendlyDuration",
+      "type": "function",
+      "name": "formatFriendlyDuration",
+      "summary": "formatFriendlyDuration implements utils.ts behavior in src/lib/utils.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": {
+        "start": 16,
+        "end": 25
+      }
+    },
+    {
+      "id": "function:src/lib/utils.ts:formatPercent",
+      "type": "function",
+      "name": "formatPercent",
+      "summary": "formatPercent implements utils.ts behavior in src/lib/utils.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": {
+        "start": 27,
+        "end": 29
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/app/actions/onboarding.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/components/app/progress-chart.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/lib/dashboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/lib/leaderboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/dashboard/page.tsx",
+      "target": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/layout.tsx",
+      "target": "file:src/components/app/app-shell.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/layout.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/layout.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/layout.tsx",
+      "target": "function:src/app/(app)/layout.tsx:AppLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/layout.tsx",
+      "target": "function:src/app/(app)/layout.tsx:AppLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "file:src/lib/leaderboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/leaderboard/page.tsx",
+      "target": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/app/actions/sessions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "function:src/app/(app)/profile/page.tsx:ProfilePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/profile/page.tsx",
+      "target": "function:src/app/(app)/profile/page.tsx:ProfilePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/sessions/page.tsx",
+      "target": "function:src/app/(app)/sessions/page.tsx:readSessionMistakes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "function:src/app/(app)/settings/page.tsx:SettingsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/settings/page.tsx",
+      "target": "function:src/app/(app)/settings/page.tsx:SettingsPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/preview/page.tsx",
+      "target": "file:src/components/app/card-badge.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/preview/page.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/preview/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/preview/page.tsx",
+      "target": "function:src/app/preview/page.tsx:PreviewPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/preview/page.tsx",
+      "target": "function:src/app/preview/page.tsx:PreviewPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/app-shell.tsx",
+      "target": "file:src/components/app/logout-button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/app-shell.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/app-shell.tsx",
+      "target": "function:src/components/app/app-shell.tsx:AppShell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/app-shell.tsx",
+      "target": "function:src/components/app/app-shell.tsx:AppShell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/card-badge.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/card-badge.tsx",
+      "target": "function:src/components/app/card-badge.tsx:splitCardLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/card-badge.tsx",
+      "target": "function:src/components/app/card-badge.tsx:CardBadge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/card-badge.tsx",
+      "target": "function:src/components/app/card-badge.tsx:CardBadge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/progress-chart.tsx",
+      "target": "function:src/components/app/progress-chart.tsx:ProgressChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/progress-chart.tsx",
+      "target": "function:src/components/app/progress-chart.tsx:ProgressChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/app/actions/sessions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/components/app/card-badge.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/lib/scoring.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "function:src/components/training/training-cockpit.tsx:TrainingCockpit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "function:src/components/training/training-cockpit.tsx:TrainingCockpit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/training/training-cockpit.tsx",
+      "target": "function:src/components/training/training-cockpit.tsx:StatusTile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:ButtonLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:ButtonLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:Card",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:Card",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardTitle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardTitle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/card.tsx",
+      "target": "function:src/components/ui/card.tsx:CardContent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/dashboard.ts",
+      "target": "function:src/lib/dashboard.ts:calculateDashboardStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/dashboard.ts",
+      "target": "function:src/lib/dashboard.ts:calculateDashboardStats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardRankings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardRankings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardPreview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardPreview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/leaderboard.ts",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardDeckSize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "config:src/lib/runtime-config.ts",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "config:src/lib/runtime-config.ts",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatFriendlyDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatFriendlyDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardPreview",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "target": "function:src/lib/dashboard.ts:calculateDashboardStats",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/dashboard/page.tsx:DashboardPage",
+      "target": "function:src/lib/utils.ts:formatFriendlyDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/layout.tsx:AppLayout",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "target": "function:src/lib/leaderboard.ts:getLeaderboardRankings",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/leaderboard/page.tsx:LeaderboardPage",
+      "target": "function:src/lib/utils.ts:formatFriendlyDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/profile/page.tsx:ProfilePage",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/profile/page.tsx:ProfilePage",
+      "target": "function:src/lib/utils.ts:formatDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/sessions/page.tsx:SessionsPage",
+      "target": "function:src/lib/utils.ts:formatDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/(app)/settings/page.tsx:SettingsPage",
+      "target": "function:src/lib/runtime-config.ts:hasRequiredAppConfig",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/app/app-shell.tsx:AppShell",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/app/card-badge.tsx:CardBadge",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/training/training-cockpit.tsx:TrainingCockpit",
+      "target": "function:src/lib/utils.ts:formatDuration",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/training/training-cockpit.tsx:TrainingCockpit",
+      "target": "function:src/lib/utils.ts:formatPercent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/button.tsx:Button",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/button.tsx:ButtonLink",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/card.tsx:Card",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/card.tsx:CardHeader",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/card.tsx:CardTitle",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/card.tsx:CardContent",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "summary": "Configuration file for .env.example in the Palace52 Next.js project.",
+      "tags": [
+        "config"
+      ],
+      "complexity": "simple",
+      "filePath": ".env.example",
+      "language": "config"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "summary": "Project README describing Palace52 setup, local development, authentication, and core memory-training workflows.",
+      "tags": [
+        "docs",
+        "markdown"
+      ],
+      "complexity": "moderate",
+      "filePath": "README.md",
+      "language": "markdown"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "summary": "Project manifest defining the Next.js application scripts and dependencies for the Palace52 web app.",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple",
+      "filePath": "package.json",
+      "language": "json"
+    },
+    {
+      "id": "config:pnpm-workspace.yaml",
+      "type": "config",
+      "name": "pnpm-workspace.yaml",
+      "summary": "Configuration file for pnpm-workspace.yaml in the Palace52 Next.js project.",
+      "tags": [
+        "config",
+        "yaml"
+      ],
+      "complexity": "simple",
+      "filePath": "pnpm-workspace.yaml",
+      "language": "yaml"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "summary": "Configuration file for tsconfig.json in the Palace52 Next.js project.",
+      "tags": [
+        "config",
+        "json"
+      ],
+      "complexity": "simple",
+      "filePath": "tsconfig.json",
+      "language": "json"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:package.json",
+      "target": "config:next.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

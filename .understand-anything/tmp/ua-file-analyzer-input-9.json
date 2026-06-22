@@ -1,0 +1,142 @@
+{
+  "projectRoot": "/Users/kevin/Desktop/Palace52",
+  "batchFiles": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "language": "markdown",
+      "sizeLines": 75,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "next-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "next.config.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "language": "javascript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "language": "sql",
+      "sizeLines": 247,
+      "fileCategory": "data"
+    },
+    {
+      "path": "prisma/migrations/migration_lock.toml",
+      "language": "toml",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "language": "prisma",
+      "sizeLines": 220,
+      "fileCategory": "data"
+    },
+    {
+      "path": "src/app/(app)/history/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(app)/pao/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(app)/routes/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/globals.css",
+      "language": "css",
+      "sizeLines": 80,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/leaderboard-dashboard/page.tsx",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/play-modes.test.mjs",
+      "language": "javascript",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/types/next-auth.d.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".understand-anything/.understandignore": [],
+    "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md": [],
+    "eslint.config.mjs": [],
+    "next-env.d.ts": [],
+    "next.config.ts": [],
+    "postcss.config.mjs": [],
+    "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql": [],
+    "prisma/migrations/migration_lock.toml": [],
+    "prisma/schema.prisma": [],
+    "src/app/(app)/history/page.tsx": [],
+    "src/app/(app)/pao/page.tsx": [],
+    "src/app/(app)/routes/page.tsx": [],
+    "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx": [],
+    "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx": [],
+    "src/app/globals.css": [],
+    "src/app/layout.tsx": [
+      "src/app/globals.css"
+    ],
+    "src/app/leaderboard-dashboard/page.tsx": [],
+    "src/lib/play-modes.test.mjs": [],
+    "src/types/next-auth.d.ts": []
+  }
+}

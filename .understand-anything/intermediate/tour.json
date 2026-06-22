@@ -1,0 +1,81 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README and package manifest to understand what Palace52 is, how it runs locally, and which framework stack it uses.",
+    "nodeIds": [
+      "document:README.md",
+      "config:package.json",
+      "config:next.config.ts"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Application Shell",
+    "description": "Follow the root layout into the public and authenticated shells to see how pages are wrapped, branded, and gated by login state.",
+    "nodeIds": [
+      "file:src/app/layout.tsx",
+      "file:src/components/app/public-shell.tsx",
+      "file:src/app/(app)/layout.tsx",
+      "file:src/components/app/app-shell.tsx"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Authentication And Profile",
+    "description": "Inspect the local auth helpers, NextAuth route, account actions, and profile page that show user identity and saved training history.",
+    "nodeIds": [
+      "file:src/auth.ts",
+      "file:src/lib/auth.ts",
+      "file:src/app/api/auth/[...nextauth]/route.ts",
+      "file:src/app/actions/auth-actions.ts",
+      "file:src/app/(app)/profile/page.tsx"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Build Palaces And PAO Decks",
+    "description": "Walk through the builder route, client builder component, and persistence actions for custom routes and PAO card mappings.",
+    "nodeIds": [
+      "file:src/app/build-palace/page.tsx",
+      "file:src/components/build-palace/palace-builder.tsx",
+      "file:src/app/actions/palaces.ts",
+      "file:src/app/actions/card-images.ts",
+      "file:src/lib/pao-decks.ts"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Play Modes And Session Saving",
+    "description": "Study how the play page prepares a mode, runs the interactive game, grades answers, and saves completed session results.",
+    "nodeIds": [
+      "file:src/app/play/page.tsx",
+      "file:src/components/play/play-game.tsx",
+      "file:src/lib/play-modes.ts",
+      "file:src/app/actions/sessions.ts",
+      "file:src/lib/scoring.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Dashboard And Leaderboard",
+    "description": "See how dashboard metrics, progress charts, and leaderboard rankings are calculated from completed training sessions.",
+    "nodeIds": [
+      "file:src/app/(app)/dashboard/page.tsx",
+      "file:src/lib/dashboard.ts",
+      "file:src/lib/leaderboard.ts",
+      "file:src/app/(app)/leaderboard/page.tsx",
+      "file:src/components/app/progress-chart.tsx"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Database Model",
+    "description": "Finish at Prisma to connect the code paths back to persisted users, palaces, cards, sessions, reviews, and auth tables.",
+    "nodeIds": [
+      "schema:prisma/schema.prisma",
+      "schema:prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "file:src/lib/prisma.ts"
+    ]
+  }
+]

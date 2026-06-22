@@ -1,0 +1,326 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 87,
+    "filesWithImports": 50,
+    "totalEdges": 179
+  },
+  "importMap": {
+    ".env.example": [],
+    ".understand-anything/.understandignore": [],
+    "docs/architecture.md": [],
+    "docs/AUTH_FLOW.md": [],
+    "docs/game-modes.md": [],
+    "docs/local-testing.md": [],
+    "docs/Name_suggestions.md": [],
+    "docs/project_overview.md": [],
+    "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md": [],
+    "eslint.config.mjs": [],
+    "next-env.d.ts": [],
+    "next.config.ts": [],
+    "package.json": [],
+    "pnpm-workspace.yaml": [],
+    "postcss.config.mjs": [],
+    "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql": [],
+    "prisma/migrations/migration_lock.toml": [],
+    "prisma/schema.prisma": [],
+    "README.md": [],
+    "src/app/(app)/cards/page.tsx": [
+      "src/app/actions/card-images.ts",
+      "src/components/app/card-badge.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/form.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/cards.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/dashboard/page.tsx": [
+      "src/app/actions/onboarding.ts",
+      "src/components/app/progress-chart.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/dashboard.ts",
+      "src/lib/leaderboard.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/app/(app)/history/page.tsx": [],
+    "src/app/(app)/layout.tsx": [
+      "src/components/app/app-shell.tsx",
+      "src/lib/auth.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/leaderboard/page.tsx": [
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/leaderboard.ts",
+      "src/lib/runtime-config.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/app/(app)/palaces/page.tsx": [
+      "src/app/actions/onboarding.ts",
+      "src/components/app/my-memory-palace-client.tsx",
+      "src/lib/auth.ts",
+      "src/lib/pao-decks.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/pao/page.tsx": [],
+    "src/app/(app)/profile/edit/page.tsx": [
+      "src/components/app/auth-forms.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts"
+    ],
+    "src/app/(app)/profile/page.tsx": [
+      "src/app/actions/sessions.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/app/(app)/reviews/page.tsx": [
+      "src/app/actions/reviews.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/routes/page.tsx": [],
+    "src/app/(app)/sessions/page.tsx": [
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/app/(app)/settings/page.tsx": [
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/training/page.tsx": [
+      "src/app/actions/onboarding.ts",
+      "src/components/training/training-cockpit.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx": [],
+    "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx": [],
+    "src/app/actions/auth-actions.ts": [
+      "src/auth.ts",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/card-images.ts": [
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/onboarding.ts": [
+      "src/lib/auth.ts",
+      "src/lib/defaults.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/palaces.ts": [
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/reviews.ts": [
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/spaced-repetition.ts"
+    ],
+    "src/app/actions/sessions.ts": [
+      "src/lib/auth.ts",
+      "src/lib/cards.ts",
+      "src/lib/prisma.ts",
+      "src/lib/scoring.ts",
+      "src/lib/spaced-repetition.ts"
+    ],
+    "src/app/api/auth/[...nextauth]/route.ts": [
+      "src/auth.ts"
+    ],
+    "src/app/api/health/route.ts": [
+      "src/lib/prisma.ts"
+    ],
+    "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx": [
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/button.tsx",
+      "src/lib/auth.ts"
+    ],
+    "src/app/build-palace/page.tsx": [
+      "src/components/app/public-shell.tsx",
+      "src/components/build-palace/palace-builder.tsx",
+      "src/lib/auth.ts"
+    ],
+    "src/app/globals.css": [],
+    "src/app/layout.tsx": [
+      "src/app/globals.css"
+    ],
+    "src/app/leaderboard-dashboard/page.tsx": [],
+    "src/app/login/page.tsx": [
+      "src/auth.ts",
+      "src/components/app/auth-forms.tsx",
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/product.tsx"
+    ],
+    "src/app/my-memory-palace/page.tsx": [
+      "src/components/app/my-memory-palace-client.tsx",
+      "src/lib/auth.ts"
+    ],
+    "src/app/page.tsx": [
+      "src/components/app/card-badge.tsx",
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/cards.ts"
+    ],
+    "src/app/play/page.tsx": [
+      "src/components/app/public-shell.tsx",
+      "src/components/play/play-game.tsx",
+      "src/lib/auth.ts",
+      "src/lib/pao-decks.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/preview/page.tsx": [
+      "src/components/app/card-badge.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx"
+    ],
+    "src/app/register/page.tsx": [
+      "src/auth.ts",
+      "src/components/app/auth-forms.tsx",
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/product.tsx"
+    ],
+    "src/app/training-academy/page.tsx": [
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts"
+    ],
+    "src/auth.ts": [
+      "src/lib/prisma.ts"
+    ],
+    "src/components/app/app-shell.tsx": [
+      "src/components/app/logout-button.tsx",
+      "src/lib/utils.ts"
+    ],
+    "src/components/app/auth-forms.tsx": [
+      "src/app/actions/auth-actions.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/form.tsx"
+    ],
+    "src/components/app/card-badge.tsx": [
+      "src/lib/utils.ts"
+    ],
+    "src/components/app/logout-button.tsx": [
+      "src/app/actions/auth-actions.ts",
+      "src/components/ui/button.tsx"
+    ],
+    "src/components/app/my-memory-palace-client.tsx": [
+      "src/components/app/card-badge.tsx",
+      "src/components/app/public-shell.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/form.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/pao-decks.ts",
+      "src/lib/sample-palace.ts"
+    ],
+    "src/components/app/progress-chart.tsx": [],
+    "src/components/app/public-shell.tsx": [
+      "src/components/app/logout-button.tsx",
+      "src/lib/utils.ts"
+    ],
+    "src/components/build-palace/palace-builder.tsx": [
+      "src/app/actions/card-images.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/form.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/cards.ts"
+    ],
+    "src/components/play/play-game.tsx": [
+      "src/app/actions/sessions.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/cards.ts",
+      "src/lib/pao-decks.ts",
+      "src/lib/play-modes.ts",
+      "src/lib/sample-palace.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/components/training/training-cockpit.tsx": [
+      "src/app/actions/sessions.ts",
+      "src/components/app/card-badge.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/lib/cards.ts",
+      "src/lib/scoring.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/components/ui/button.tsx": [
+      "src/lib/utils.ts"
+    ],
+    "src/components/ui/card.tsx": [
+      "src/lib/utils.ts"
+    ],
+    "src/components/ui/form.tsx": [
+      "src/lib/utils.ts"
+    ],
+    "src/components/ui/product.tsx": [
+      "src/lib/utils.ts"
+    ],
+    "src/lib/auth.ts": [
+      "src/auth.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/lib/cards.ts": [],
+    "src/lib/dashboard.ts": [],
+    "src/lib/defaults.ts": [
+      "src/lib/cards.ts",
+      "src/lib/sample-palace.ts"
+    ],
+    "src/lib/leaderboard.ts": [
+      "src/lib/prisma.ts"
+    ],
+    "src/lib/pao-decks.ts": [
+      "src/lib/cards.ts",
+      "src/lib/sample-palace.ts"
+    ],
+    "src/lib/play-modes.test.mjs": [],
+    "src/lib/play-modes.ts": [],
+    "src/lib/prisma.ts": [],
+    "src/lib/runtime-config.ts": [],
+    "src/lib/sample-palace.ts": [
+      "src/lib/cards.ts"
+    ],
+    "src/lib/scoring.ts": [
+      "src/lib/cards.ts"
+    ],
+    "src/lib/spaced-repetition.ts": [],
+    "src/lib/utils.ts": [],
+    "src/proxy.ts": [
+      "src/auth.ts"
+    ],
+    "src/types/next-auth.d.ts": [],
+    "tsconfig.json": []
+  }
+}

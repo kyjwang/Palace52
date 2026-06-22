@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/AUTH_FLOW.md",
+      "type": "document",
+      "name": "AUTH_FLOW.md",
+      "summary": "Documentation covering AUTH_FLOW for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "moderate",
+      "filePath": "docs/AUTH_FLOW.md",
+      "language": "markdown"
+    },
+    {
+      "id": "document:docs/Name_suggestions.md",
+      "type": "document",
+      "name": "Name_suggestions.md",
+      "summary": "Documentation covering Name_suggestions for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/Name_suggestions.md",
+      "language": "markdown"
+    },
+    {
+      "id": "document:docs/architecture.md",
+      "type": "document",
+      "name": "architecture.md",
+      "summary": "Documentation covering architecture for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/architecture.md",
+      "language": "markdown"
+    },
+    {
+      "id": "document:docs/game-modes.md",
+      "type": "document",
+      "name": "game-modes.md",
+      "summary": "Documentation covering game-modes for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "moderate",
+      "filePath": "docs/game-modes.md",
+      "language": "markdown"
+    },
+    {
+      "id": "document:docs/local-testing.md",
+      "type": "document",
+      "name": "local-testing.md",
+      "summary": "Documentation covering local-testing for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "moderate",
+      "filePath": "docs/local-testing.md",
+      "language": "markdown"
+    },
+    {
+      "id": "document:docs/project_overview.md",
+      "type": "document",
+      "name": "project_overview.md",
+      "summary": "Documentation covering project_overview for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "documentation"
+      ],
+      "complexity": "complex",
+      "filePath": "docs/project_overview.md",
+      "language": "markdown"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/AUTH_FLOW.md",
+      "target": "file:src/auth.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/Name_suggestions.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/architecture.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/game-modes.md",
+      "target": "file:src/lib/play-modes.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/local-testing.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/project_overview.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

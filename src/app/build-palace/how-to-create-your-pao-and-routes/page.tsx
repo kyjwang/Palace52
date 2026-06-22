@@ -1,6 +1,7 @@
 import { ArrowLeft, Brain, Castle, Film, MapPinned, Palette, Route, Shapes, Sparkles, UserRound } from "lucide-react";
 import { PublicShell } from "@/components/app/public-shell";
 import { ButtonLink } from "@/components/ui/button";
+import { getCurrentUser } from "@/lib/auth";
 
 const routeExamples = [
   "Front door",
@@ -55,9 +56,21 @@ const paoExamples = [
 
 const imageRules = ["Big", "Funny", "Emotional", "Violent", "Absurd", "Colorful", "Moving"];
 
-export default function HowToCreatePaoAndRoutesPage() {
+export default async function HowToCreatePaoAndRoutesPage() {
+  const user = await getCurrentUser();
+
   return (
-    <PublicShell>
+    <PublicShell
+      user={
+        user
+          ? {
+              username: user.username,
+              displayName: user.profile?.displayName,
+              avatarColor: user.profile?.avatarColor
+            }
+          : null
+      }
+    >
       <div className="space-y-8">
         <section className="rounded-lg border border-[#dfe3d7] bg-white p-5 md:p-6">
           <ButtonLink href="/build-palace" variant="secondary" className="mb-5">

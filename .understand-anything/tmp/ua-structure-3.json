@@ -1,0 +1,692 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/profile/edit/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "EditProfilePage",
+          "startLine": 9,
+          "endLine": 50,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "EditProfilePage",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EditProfilePage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/auth-actions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "registerAction",
+          "startLine": 62,
+          "endLine": 107,
+          "params": [
+            "_state",
+            "formData"
+          ]
+        },
+        {
+          "name": "loginAction",
+          "startLine": 109,
+          "endLine": 136,
+          "params": [
+            "_state",
+            "formData"
+          ]
+        },
+        {
+          "name": "updateProfileAction",
+          "startLine": 138,
+          "endLine": 169,
+          "params": [
+            "_state",
+            "formData"
+          ]
+        },
+        {
+          "name": "logoutAction",
+          "startLine": 171,
+          "endLine": 173,
+          "params": []
+        },
+        {
+          "name": "safeRedirect",
+          "startLine": 175,
+          "endLine": 179,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "registerAction",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "loginAction",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "updateProfileAction",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "logoutAction",
+          "line": 171,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registerAction",
+          "callee": "registerSchema.safeParse",
+          "lineNumber": 63
+        },
+        {
+          "caller": "registerAction",
+          "callee": "formData.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "registerAction",
+          "callee": "formData.get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "registerAction",
+          "callee": "formData.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "registerAction",
+          "callee": "parsed.error.flatten",
+          "lineNumber": 73
+        },
+        {
+          "caller": "registerAction",
+          "callee": "getPrisma",
+          "lineNumber": 77
+        },
+        {
+          "caller": "registerAction",
+          "callee": "db.user.findUnique",
+          "lineNumber": 78
+        },
+        {
+          "caller": "registerAction",
+          "callee": "bcrypt.hash",
+          "lineNumber": 91
+        },
+        {
+          "caller": "registerAction",
+          "callee": "db.user.create",
+          "lineNumber": 93
+        },
+        {
+          "caller": "registerAction",
+          "callee": "redirect",
+          "lineNumber": 106
+        },
+        {
+          "caller": "loginAction",
+          "callee": "loginSchema.safeParse",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loginAction",
+          "callee": "formData.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "loginAction",
+          "callee": "formData.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "loginAction",
+          "callee": "formData.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "loginAction",
+          "callee": "signIn",
+          "lineNumber": 121
+        },
+        {
+          "caller": "loginAction",
+          "callee": "safeRedirect",
+          "lineNumber": 124
+        },
+        {
+          "caller": "loginAction",
+          "callee": "isRedirectError",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "requireCurrentUser",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "profileSchema.safeParse",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "formData.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "formData.get",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "formData.get",
+          "lineNumber": 143
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "formData.get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "parsed.error.flatten",
+          "lineNumber": 151
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "getPrisma().profile.upsert",
+          "lineNumber": 155
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "getPrisma",
+          "lineNumber": 155
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "revalidatePath",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "revalidatePath",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateProfileAction",
+          "callee": "revalidatePath",
+          "lineNumber": 166
+        },
+        {
+          "caller": "logoutAction",
+          "callee": "signOut",
+          "lineNumber": 172
+        },
+        {
+          "caller": "safeRedirect",
+          "callee": "value.startsWith",
+          "lineNumber": 176
+        },
+        {
+          "caller": "safeRedirect",
+          "callee": "value.startsWith",
+          "lineNumber": 176
+        },
+        {
+          "caller": "safeRedirect",
+          "callee": "value.startsWith",
+          "lineNumber": 177
+        },
+        {
+          "caller": "safeRedirect",
+          "callee": "value.startsWith",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/api/auth/[...nextauth]/route.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "exports": [
+        {
+          "name": "{ GET, POST }",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/login/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "LoginPage",
+          "startLine": 9,
+          "endLine": 32,
+          "params": [
+            "{\n  searchParams\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "LoginPage",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LoginPage",
+          "callee": "auth",
+          "lineNumber": 14
+        },
+        {
+          "caller": "LoginPage",
+          "callee": "redirect",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/register/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "RegisterPage",
+          "startLine": 10,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "RegisterPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RegisterPage",
+          "callee": "auth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "RegisterPage",
+          "callee": "redirect",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "InvalidLoginError",
+          "startLine": 7,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "{ handlers, auth, signIn, signOut }",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorize",
+          "callee": "credentialsSchema.safeParse",
+          "lineNumber": 30
+        },
+        {
+          "caller": "authorize",
+          "callee": "getPrisma().user.findUnique",
+          "lineNumber": 33
+        },
+        {
+          "caller": "authorize",
+          "callee": "getPrisma",
+          "lineNumber": 33
+        },
+        {
+          "caller": "authorize",
+          "callee": "bcrypt.compare",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/components/app/auth-forms.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "LoginForm",
+          "startLine": 17,
+          "endLine": 58,
+          "params": [
+            "{\n  callbackUrl,\n  registered\n}"
+          ]
+        },
+        {
+          "name": "RegisterForm",
+          "startLine": 60,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "ProfileEditForm",
+          "startLine": 97,
+          "endLine": 147,
+          "params": [
+            "{\n  profile\n}"
+          ]
+        },
+        {
+          "name": "FieldError",
+          "startLine": 149,
+          "endLine": 152,
+          "params": [
+            "{ messages }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginForm",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "RegisterForm",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "ProfileEditForm",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LoginForm",
+          "callee": "useActionState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "RegisterForm",
+          "callee": "useActionState",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ProfileEditForm",
+          "callee": "useActionState",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ProfileEditForm",
+          "callee": "Boolean",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/logout-button.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "LogoutButton",
+          "startLine": 7,
+          "endLine": 16,
+          "params": [
+            "{ compact = false }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LogoutButton",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ui/product.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "PageHeader",
+          "startLine": 4,
+          "endLine": 36,
+          "params": [
+            "{\n  label,\n  title,\n  description,\n  action,\n  className\n}"
+          ]
+        },
+        {
+          "name": "Panel",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "{ className, children }"
+          ]
+        },
+        {
+          "name": "MetricCard",
+          "startLine": 46,
+          "endLine": 78,
+          "params": [
+            "{\n  label,\n  value,\n  helper,\n  icon,\n  tone = \"default\"\n}"
+          ]
+        },
+        {
+          "name": "InlineStat",
+          "startLine": 80,
+          "endLine": 87,
+          "params": [
+            "{ label, value }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PageHeader",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Panel",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "MetricCard",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "InlineStat",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PageHeader",
+          "callee": "cn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "Panel",
+          "callee": "cn",
+          "lineNumber": 40
+        },
+        {
+          "caller": "MetricCard",
+          "callee": "cn",
+          "lineNumber": 61
+        },
+        {
+          "caller": "MetricCard",
+          "callee": "cn",
+          "lineNumber": 70
+        },
+        {
+          "caller": "MetricCard",
+          "callee": "cn",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/proxy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "exports": [
+        {
+          "name": "config",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

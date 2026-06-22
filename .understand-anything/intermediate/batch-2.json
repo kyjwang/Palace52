@@ -1,0 +1,1333 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/(app)/palaces/page.tsx",
+      "type": "file",
+      "name": "(app)/palaces page",
+      "summary": "Next.js route module for (app)/palaces/page.tsx, exporting dynamic, PalacesPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/palaces/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/palaces/page.tsx:PalacesPage",
+      "type": "function",
+      "name": "PalacesPage",
+      "summary": "PalacesPage implements (app)/palaces page behavior in src/app/(app)/palaces/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/palaces/page.tsx",
+      "lineRange": {
+        "start": 10,
+        "end": 37
+      }
+    },
+    {
+      "id": "file:src/app/actions/sessions.ts",
+      "type": "file",
+      "name": "sessions.ts",
+      "summary": "Server actions for creating, completing, saving, and clearing user training session history.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "training"
+      ],
+      "complexity": "complex",
+      "filePath": "src/app/actions/sessions.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/actions/sessions.ts:createTrainingSession",
+      "type": "function",
+      "name": "createTrainingSession",
+      "summary": "createTrainingSession implements sessions.ts behavior in src/app/actions/sessions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/sessions.ts",
+      "lineRange": {
+        "start": 52,
+        "end": 68
+      }
+    },
+    {
+      "id": "function:src/app/actions/sessions.ts:completeTrainingSession",
+      "type": "function",
+      "name": "completeTrainingSession",
+      "summary": "completeTrainingSession implements sessions.ts behavior in src/app/actions/sessions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "training",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/actions/sessions.ts",
+      "lineRange": {
+        "start": 70,
+        "end": 191
+      }
+    },
+    {
+      "id": "function:src/app/actions/sessions.ts:savePlaySessionResult",
+      "type": "function",
+      "name": "savePlaySessionResult",
+      "summary": "savePlaySessionResult implements sessions.ts behavior in src/app/actions/sessions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "training",
+        "exported"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/actions/sessions.ts",
+      "lineRange": {
+        "start": 193,
+        "end": 279
+      }
+    },
+    {
+      "id": "function:src/app/actions/sessions.ts:clearTrainingHistory",
+      "type": "function",
+      "name": "clearTrainingHistory",
+      "summary": "clearTrainingHistory implements sessions.ts behavior in src/app/actions/sessions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/sessions.ts",
+      "lineRange": {
+        "start": 281,
+        "end": 295
+      }
+    },
+    {
+      "id": "file:src/app/my-memory-palace/page.tsx",
+      "type": "file",
+      "name": "app/my-memory-palace page",
+      "summary": "Next.js route module for my-memory-palace/page.tsx, exporting MyMemoryPalacePage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/my-memory-palace/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/my-memory-palace/page.tsx:MyMemoryPalacePage",
+      "type": "function",
+      "name": "MyMemoryPalacePage",
+      "summary": "MyMemoryPalacePage implements app/my-memory-palace page behavior in src/app/my-memory-palace/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/my-memory-palace/page.tsx",
+      "lineRange": {
+        "start": 4,
+        "end": 20
+      }
+    },
+    {
+      "id": "file:src/components/app/my-memory-palace-client.tsx",
+      "type": "file",
+      "name": "my-memory-palace-client.tsx",
+      "summary": "React component module for Palace52 UI, exporting MyMemoryPalaceClient.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "memory-palace"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/app/my-memory-palace-client.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/my-memory-palace-client.tsx:MyMemoryPalaceClient",
+      "type": "function",
+      "name": "MyMemoryPalaceClient",
+      "summary": "MyMemoryPalaceClient implements my-memory-palace-client.tsx behavior in src/components/app/my-memory-palace-client.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/app/my-memory-palace-client.tsx",
+      "lineRange": {
+        "start": 21,
+        "end": 326
+      }
+    },
+    {
+      "id": "file:src/components/play/play-game.tsx",
+      "type": "file",
+      "name": "play-game.tsx",
+      "summary": "Client play experience for memorizing and recalling card sequences across the supported training modes.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/play/play-game.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:PlayGame",
+      "type": "function",
+      "name": "PlayGame",
+      "summary": "PlayGame implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "exported"
+      ],
+      "complexity": "complex",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 82,
+        "end": 827
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:PlayingCardFace",
+      "type": "function",
+      "name": "PlayingCardFace",
+      "summary": "PlayingCardFace implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 838,
+        "end": 878
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:FaceCourtCard",
+      "type": "function",
+      "name": "FaceCourtCard",
+      "summary": "FaceCourtCard implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 889,
+        "end": 910
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:getPipCount",
+      "type": "function",
+      "name": "getPipCount",
+      "summary": "getPipCount implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 928,
+        "end": 940
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:getPipPositions",
+      "type": "function",
+      "name": "getPipPositions",
+      "summary": "getPipPositions implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 942,
+        "end": 956
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:getModeRules",
+      "type": "function",
+      "name": "getModeRules",
+      "summary": "getModeRules implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 972,
+        "end": 1001
+      }
+    },
+    {
+      "id": "function:src/components/play/play-game.tsx:renderPaoPrompt",
+      "type": "function",
+      "name": "renderPaoPrompt",
+      "summary": "renderPaoPrompt implements play-game.tsx behavior in src/components/play/play-game.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/play/play-game.tsx",
+      "lineRange": {
+        "start": 1003,
+        "end": 1014
+      }
+    },
+    {
+      "id": "file:src/lib/cards.ts",
+      "type": "file",
+      "name": "cards.ts",
+      "summary": "Shared Palace52 library module for cards behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/lib/cards.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/cards.ts:cardFromCode",
+      "type": "function",
+      "name": "cardFromCode",
+      "summary": "cardFromCode implements cards.ts behavior in src/lib/cards.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/cards.ts",
+      "lineRange": {
+        "start": 100,
+        "end": 102
+      }
+    },
+    {
+      "id": "function:src/lib/cards.ts:shuffleDeck",
+      "type": "function",
+      "name": "shuffleDeck",
+      "summary": "shuffleDeck implements cards.ts behavior in src/lib/cards.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/cards.ts",
+      "lineRange": {
+        "start": 104,
+        "end": 115
+      }
+    },
+    {
+      "id": "file:src/lib/pao-decks.ts",
+      "type": "file",
+      "name": "pao-decks.ts",
+      "summary": "Shared Palace52 library module for pao-decks behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/pao-decks.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/pao-decks.ts:getPresetPaoDeckOptions",
+      "type": "function",
+      "name": "getPresetPaoDeckOptions",
+      "summary": "getPresetPaoDeckOptions implements pao-decks.ts behavior in src/lib/pao-decks.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/pao-decks.ts",
+      "lineRange": {
+        "start": 26,
+        "end": 33
+      }
+    },
+    {
+      "id": "function:src/lib/pao-decks.ts:getPaoDeckOptions",
+      "type": "function",
+      "name": "getPaoDeckOptions",
+      "summary": "getPaoDeckOptions implements pao-decks.ts behavior in src/lib/pao-decks.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/pao-decks.ts",
+      "lineRange": {
+        "start": 35,
+        "end": 40
+      }
+    },
+    {
+      "id": "function:src/lib/pao-decks.ts:getCustomPaoDeckOption",
+      "type": "function",
+      "name": "getCustomPaoDeckOption",
+      "summary": "getCustomPaoDeckOption implements pao-decks.ts behavior in src/lib/pao-decks.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/pao-decks.ts",
+      "lineRange": {
+        "start": 42,
+        "end": 73
+      }
+    },
+    {
+      "id": "file:src/lib/play-modes.ts",
+      "type": "file",
+      "name": "play-modes.ts",
+      "summary": "Domain logic for preparing play-mode decks, grading answers, normalizing card codes, and producing session results.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training"
+      ],
+      "complexity": "complex",
+      "filePath": "src/lib/play-modes.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:prepareModeDeck",
+      "type": "function",
+      "name": "prepareModeDeck",
+      "summary": "prepareModeDeck implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 79,
+        "end": 92
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:buildPlaySessionResult",
+      "type": "function",
+      "name": "buildPlaySessionResult",
+      "summary": "buildPlaySessionResult implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 94,
+        "end": 152
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:gradePaoAnswer",
+      "type": "function",
+      "name": "gradePaoAnswer",
+      "summary": "gradePaoAnswer implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 154,
+        "end": 181
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:getPaoExpectedAnswer",
+      "type": "function",
+      "name": "getPaoExpectedAnswer",
+      "summary": "getPaoExpectedAnswer implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 183,
+        "end": 187
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:toTrainingSessionPayload",
+      "type": "function",
+      "name": "toTrainingSessionPayload",
+      "summary": "toTrainingSessionPayload implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 189,
+        "end": 207
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:normalizeCardCode",
+      "type": "function",
+      "name": "normalizeCardCode",
+      "summary": "normalizeCardCode implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 209,
+        "end": 219
+      }
+    },
+    {
+      "id": "function:src/lib/play-modes.ts:buildMistake",
+      "type": "function",
+      "name": "buildMistake",
+      "summary": "buildMistake implements play-modes.ts behavior in src/lib/play-modes.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "training",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/play-modes.ts",
+      "lineRange": {
+        "start": 221,
+        "end": 237
+      }
+    },
+    {
+      "id": "file:src/lib/sample-palace.ts",
+      "type": "file",
+      "name": "sample-palace.ts",
+      "summary": "Shared Palace52 library module for sample-palace behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace"
+      ],
+      "complexity": "complex",
+      "filePath": "src/lib/sample-palace.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/sample-palace.ts:buildPaoDeck",
+      "type": "function",
+      "name": "buildPaoDeck",
+      "summary": "buildPaoDeck implements sample-palace.ts behavior in src/lib/sample-palace.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "memory-palace",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/sample-palace.ts",
+      "lineRange": {
+        "start": 396,
+        "end": 412
+      }
+    },
+    {
+      "id": "file:src/lib/scoring.ts",
+      "type": "file",
+      "name": "scoring.ts",
+      "summary": "Shared Palace52 library module for scoring behavior.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/lib/scoring.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/lib/scoring.ts:scoreRecall",
+      "type": "function",
+      "name": "scoreRecall",
+      "summary": "scoreRecall implements scoring.ts behavior in src/lib/scoring.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/scoring.ts",
+      "lineRange": {
+        "start": 23,
+        "end": 58
+      }
+    },
+    {
+      "id": "function:src/lib/scoring.ts:getFeedback",
+      "type": "function",
+      "name": "getFeedback",
+      "summary": "getFeedback implements scoring.ts behavior in src/lib/scoring.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/scoring.ts",
+      "lineRange": {
+        "start": 67,
+        "end": 80
+      }
+    },
+    {
+      "id": "function:src/lib/scoring.ts:getCorrectRuns",
+      "type": "function",
+      "name": "getCorrectRuns",
+      "summary": "getCorrectRuns implements scoring.ts behavior in src/lib/scoring.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "domain-library",
+        "internal"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib/scoring.ts",
+      "lineRange": {
+        "start": 82,
+        "end": 97
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "file:src/app/actions/onboarding.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "file:src/components/app/my-memory-palace-client.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "file:src/lib/pao-decks.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "config:src/lib/runtime-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "function:src/app/(app)/palaces/page.tsx:PalacesPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/palaces/page.tsx",
+      "target": "function:src/app/(app)/palaces/page.tsx:PalacesPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "file:src/lib/scoring.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "file:src/lib/spaced-repetition.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:createTrainingSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:createTrainingSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:completeTrainingSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:completeTrainingSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:savePlaySessionResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:savePlaySessionResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:clearTrainingHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/sessions.ts",
+      "target": "function:src/app/actions/sessions.ts:clearTrainingHistory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/my-memory-palace/page.tsx",
+      "target": "file:src/components/app/my-memory-palace-client.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/my-memory-palace/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/my-memory-palace/page.tsx",
+      "target": "function:src/app/my-memory-palace/page.tsx:MyMemoryPalacePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/my-memory-palace/page.tsx",
+      "target": "function:src/app/my-memory-palace/page.tsx:MyMemoryPalacePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/app/card-badge.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/app/public-shell.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/ui/form.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/lib/pao-decks.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "file:src/lib/sample-palace.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "function:src/components/app/my-memory-palace-client.tsx:MyMemoryPalaceClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/my-memory-palace-client.tsx",
+      "target": "function:src/components/app/my-memory-palace-client.tsx:MyMemoryPalaceClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/app/actions/sessions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/lib/pao-decks.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/lib/play-modes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/lib/sample-palace.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:PlayGame",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:PlayGame",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:PlayingCardFace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:FaceCourtCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:getPipCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:getPipPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:getModeRules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/play/play-game.tsx",
+      "target": "function:src/components/play/play-game.tsx:renderPaoPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/cards.ts",
+      "target": "function:src/lib/cards.ts:cardFromCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/cards.ts",
+      "target": "function:src/lib/cards.ts:cardFromCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/cards.ts",
+      "target": "function:src/lib/cards.ts:shuffleDeck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/cards.ts",
+      "target": "function:src/lib/cards.ts:shuffleDeck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "file:src/lib/sample-palace.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "function:src/lib/pao-decks.ts:getPresetPaoDeckOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "function:src/lib/pao-decks.ts:getPresetPaoDeckOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "function:src/lib/pao-decks.ts:getPaoDeckOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "function:src/lib/pao-decks.ts:getPaoDeckOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/pao-decks.ts",
+      "target": "function:src/lib/pao-decks.ts:getCustomPaoDeckOption",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:prepareModeDeck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:prepareModeDeck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:buildPlaySessionResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:buildPlaySessionResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:gradePaoAnswer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:gradePaoAnswer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:getPaoExpectedAnswer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:getPaoExpectedAnswer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:toTrainingSessionPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:toTrainingSessionPayload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:normalizeCardCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:normalizeCardCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/play-modes.ts",
+      "target": "function:src/lib/play-modes.ts:buildMistake",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/sample-palace.ts",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/sample-palace.ts",
+      "target": "function:src/lib/sample-palace.ts:buildPaoDeck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/scoring.ts",
+      "target": "file:src/lib/cards.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib/scoring.ts",
+      "target": "function:src/lib/scoring.ts:scoreRecall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/scoring.ts",
+      "target": "function:src/lib/scoring.ts:scoreRecall",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/scoring.ts",
+      "target": "function:src/lib/scoring.ts:getFeedback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/scoring.ts",
+      "target": "function:src/lib/scoring.ts:getCorrectRuns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/app/(app)/palaces/page.tsx:PalacesPage",
+      "target": "function:src/lib/pao-decks.ts:getPaoDeckOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/actions/sessions.ts:createTrainingSession",
+      "target": "function:src/lib/cards.ts:shuffleDeck",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/app/actions/sessions.ts:completeTrainingSession",
+      "target": "function:src/lib/scoring.ts:scoreRecall",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/app/my-memory-palace-client.tsx:MyMemoryPalaceClient",
+      "target": "function:src/lib/pao-decks.ts:getPresetPaoDeckOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/lib/scoring.ts:scoreRecall",
+      "target": "function:src/lib/cards.ts:cardFromCode",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

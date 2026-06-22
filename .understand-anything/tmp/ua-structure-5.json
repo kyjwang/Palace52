@@ -1,0 +1,415 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 275,
+      "nonEmptyLines": 260,
+      "functions": [
+        {
+          "name": "HowToCreatePaoAndRoutesPage",
+          "startLine": 59,
+          "endLine": 275,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HowToCreatePaoAndRoutesPage",
+          "line": 59,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "getCurrentUser",
+          "lineNumber": 60
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "routeExamples.map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "locationFields.map",
+          "lineNumber": 163
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "suitCategories.map",
+          "lineNumber": 189
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "rankPatterns.map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "paoExamples.map",
+          "lineNumber": 228
+        },
+        {
+          "caller": "HowToCreatePaoAndRoutesPage",
+          "callee": "imageRules.map",
+          "lineNumber": 246
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/build-palace/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "BuildPalacePage",
+          "startLine": 5,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BuildPalacePage",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BuildPalacePage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 271,
+      "nonEmptyLines": 254,
+      "functions": [
+        {
+          "name": "HomePage",
+          "startLine": 67,
+          "endLine": 271,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HomePage",
+          "line": 67,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HomePage",
+          "callee": "getCurrentUser",
+          "lineNumber": 68
+        },
+        {
+          "caller": "HomePage",
+          "callee": "[\"18 route locations\", \"52 PAO mappings\", \"Timed recall loop\"].map",
+          "lineNumber": 105
+        },
+        {
+          "caller": "HomePage",
+          "callee": "previewCards.map",
+          "lineNumber": 143
+        },
+        {
+          "caller": "HomePage",
+          "callee": "cardFromCode",
+          "lineNumber": 144
+        },
+        {
+          "caller": "HomePage",
+          "callee": "[\n                  [\"Accuracy\", \"86%\"],\n                  [\"Weak cards\", \"7\"],\n                  [\"Best time\", \"4:42\"]\n                ].map",
+          "lineNumber": 167
+        },
+        {
+          "caller": "HomePage",
+          "callee": "methodSteps.map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "HomePage",
+          "callee": "features.map",
+          "lineNumber": 239
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/play/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "PlayPage",
+          "startLine": 9,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "PlayPage",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PlayPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 10
+        },
+        {
+          "caller": "PlayPage",
+          "callee": "getPrisma().cardImage.findMany",
+          "lineNumber": 11
+        },
+        {
+          "caller": "PlayPage",
+          "callee": "getPrisma",
+          "lineNumber": 11
+        },
+        {
+          "caller": "PlayPage",
+          "callee": "getPaoDeckOptions",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/training-academy/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 227,
+      "nonEmptyLines": 218,
+      "functions": [
+        {
+          "name": "TrainingAcademyPage",
+          "startLine": 101,
+          "endLine": 227,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TrainingAcademyPage",
+          "line": 101,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TrainingAcademyPage",
+          "callee": "getCurrentUser",
+          "lineNumber": 102
+        },
+        {
+          "caller": "TrainingAcademyPage",
+          "callee": "practiceBlocks.map",
+          "lineNumber": 143
+        },
+        {
+          "caller": "TrainingAcademyPage",
+          "callee": "groups.map",
+          "lineNumber": 160
+        },
+        {
+          "caller": "TrainingAcademyPage",
+          "callee": "group.lessonNumbers.join",
+          "lineNumber": 170
+        },
+        {
+          "caller": "TrainingAcademyPage",
+          "callee": "lessons.map",
+          "lineNumber": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/public-shell.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "PublicShell",
+          "startLine": 24,
+          "endLine": 132,
+          "params": [
+            "{\n  children,\n  user\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PublicShell",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PublicShell",
+          "callee": "usePathname",
+          "lineNumber": 31
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "navItems.map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "cn",
+          "lineNumber": 55
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "displayName.charAt(0).toUpperCase",
+          "lineNumber": 79
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "displayName.charAt",
+          "lineNumber": 79
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "navItems.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "PublicShell",
+          "callee": "cn",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "getCurrentUser",
+          "startLine": 5,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "requireCurrentUser",
+          "startLine": 17,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCurrentUser",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "requireCurrentUser",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCurrentUser",
+          "callee": "auth",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "getPrisma().user.findUnique",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getCurrentUser",
+          "callee": "getPrisma",
+          "lineNumber": 11
+        },
+        {
+          "caller": "requireCurrentUser",
+          "callee": "getCurrentUser",
+          "lineNumber": 18
+        },
+        {
+          "caller": "requireCurrentUser",
+          "callee": "redirect",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

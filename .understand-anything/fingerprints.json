@@ -1,0 +1,4095 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "ae2a4855a298320ec3e570dee9d656c23163414d",
+  "generatedAt": "2026-06-22T23:11:53.137Z",
+  "files": {
+    ".env.example": {
+      "filePath": ".env.example",
+      "contentHash": "271ad7a5f7d1acf36044cb34f3042c4b1748da84102dbd3d288df4175ed03782",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": true
+    },
+    ".understand-anything/.understandignore": {
+      "filePath": ".understand-anything/.understandignore",
+      "contentHash": "47670d944238982fd89d8ae3de4490c05489614df39856abbfa1ff4f8c5b8f7c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "docs/architecture.md": {
+      "filePath": "docs/architecture.md",
+      "contentHash": "4a7d942d48cbf4d3075e081b9e79d7785410c5c9993da5c505993c3e8bb13848",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 40,
+      "hasStructuralAnalysis": true
+    },
+    "docs/AUTH_FLOW.md": {
+      "filePath": "docs/AUTH_FLOW.md",
+      "contentHash": "c59d7049c29e3d7701ae83b4cc6d983782c549d752b3db04735fa14b0ba6b907",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 170,
+      "hasStructuralAnalysis": true
+    },
+    "docs/game-modes.md": {
+      "filePath": "docs/game-modes.md",
+      "contentHash": "c3a0f9514fa71f2455fe85c4334cd67bda47ec2b0c63bead3d717e2f8efc90f9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": true
+    },
+    "docs/local-testing.md": {
+      "filePath": "docs/local-testing.md",
+      "contentHash": "bd08d33059386b077e8ae581cf57260d3d38bb1ff5c832beb0454147bcfd0c19",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 115,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Name_suggestions.md": {
+      "filePath": "docs/Name_suggestions.md",
+      "contentHash": "0c627791a0d1e230718f3b123778db23d827370e30f0d22739eb526f05ed154e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "docs/project_overview.md": {
+      "filePath": "docs/project_overview.md",
+      "contentHash": "210fd9001026d92351b885da1ac6ea7918f0cb32570c306c85cb89d51585c335",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 534,
+      "hasStructuralAnalysis": true
+    },
+    "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md": {
+      "filePath": "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "contentHash": "52fd229c285ae39779cf0006d72e7c33e293461d06a947a2d1e964577e59a3e0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "eslint.config.mjs": {
+      "filePath": "eslint.config.mjs",
+      "contentHash": "8d16c1d50985a9894be1ea315be0f642c74b288d4d41290ac0ca7e1556636b1e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "eslint-config-next/core-web-vitals",
+          "specifiers": [
+            "nextVitals"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "next-env.d.ts": {
+      "filePath": "next-env.d.ts",
+      "contentHash": "7ad303e40d4fddf44f156129e397511953a71481c5cfd86b1862649aaaf240cc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./.next/dev/types/routes.d.ts",
+          "specifiers": []
+        }
+      ],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "next.config.ts": {
+      "filePath": "next.config.ts",
+      "contentHash": "ab4c61f6ee100ae43610a18512f1ebcec842bb2405431e1009266173f21cf772",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "NextConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "0fb47a813bd5093063d256a0507ca811603ea50fb466c8feb5f6125ff79b0fa6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "pnpm-workspace.yaml": {
+      "filePath": "pnpm-workspace.yaml",
+      "contentHash": "d8e48e19995710819c247f8d6a6309f5e93843d4e265d71985e93fb108a6b2e6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "postcss.config.mjs": {
+      "filePath": "postcss.config.mjs",
+      "contentHash": "37dcf5f6f2f7d2cc94f102a1f741d84869231e44c5cd787129f03b85db2b19aa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql": {
+      "filePath": "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "contentHash": "635689f26df9825b79cf9d91b05682343a9ffaa2ca48f4c490773d57ff84777f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 248,
+      "hasStructuralAnalysis": true
+    },
+    "prisma/migrations/migration_lock.toml": {
+      "filePath": "prisma/migrations/migration_lock.toml",
+      "contentHash": "99836963713b4f5b269ad49af0ed3d7b0b2e336115c2f92dc9ac683d139d0900",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "prisma/schema.prisma": {
+      "filePath": "prisma/schema.prisma",
+      "contentHash": "397b4ca661f37e2d5aa1e8e130c2634e7e9c5f0acf4a908dc323bbf077a0844d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 221,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "036a39a1be4dbf2c8d7d4be41afab0e4fe9f28e18f6dbb3f51181565a5883afe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/cards/page.tsx": {
+      "filePath": "src/app/(app)/cards/page.tsx",
+      "contentHash": "f863707a2e9cf41f05a76738f9c4c140d9c71b6ffe187cd1db384675a6b28669",
+      "functions": [
+        {
+          "name": "CardsPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 70
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Save"
+          ]
+        },
+        {
+          "source": "@/app/actions/card-images",
+          "specifiers": [
+            "upsertCardImage"
+          ]
+        },
+        {
+          "source": "@/components/app/card-badge",
+          "specifiers": [
+            "CardBadge"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/form",
+          "specifiers": [
+            "Input",
+            "Label",
+            "Textarea"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "CardsPage"
+      ],
+      "totalLines": 85,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/dashboard/page.tsx": {
+      "filePath": "src/app/(app)/dashboard/page.tsx",
+      "contentHash": "1ab60833fd2b6eb1e8505bd7826341c0d2efc0eed613eb4088a5298344f4849c",
+      "functions": [
+        {
+          "name": "DashboardPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 137
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowRight",
+            "Brain",
+            "CheckCircle2",
+            "Dumbbell",
+            "Target",
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/app/actions/onboarding",
+          "specifiers": [
+            "ensureStarterContent"
+          ]
+        },
+        {
+          "source": "@/components/app/progress-chart",
+          "specifiers": [
+            "ProgressChart"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "MetricCard",
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/dashboard",
+          "specifiers": [
+            "calculateDashboardStats"
+          ]
+        },
+        {
+          "source": "@/lib/leaderboard",
+          "specifiers": [
+            "getLeaderboardPreview"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatFriendlyDuration",
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "DashboardPage"
+      ],
+      "totalLines": 153,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/history/page.tsx": {
+      "filePath": "src/app/(app)/history/page.tsx",
+      "contentHash": "73f52af642537fca21fb6a1b27b4be8ca42546952c4190c8c94c227a7a80d84b",
+      "functions": [
+        {
+          "name": "HistoryRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "HistoryRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/layout.tsx": {
+      "filePath": "src/app/(app)/layout.tsx",
+      "contentHash": "f5d09a4be8b6a890eb6302671aaba247aca37d494d4fcc49658bda462df6a900",
+      "functions": [
+        {
+          "name": "AppLayout",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "@/components/app/app-shell",
+          "specifiers": [
+            "AppShell"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "AppLayout"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/leaderboard/page.tsx": {
+      "filePath": "src/app/(app)/leaderboard/page.tsx",
+      "contentHash": "f2c86421d1114a7f1b35d85035b1020d4bb95937c48399d85a4eb64933325d3c",
+      "functions": [
+        {
+          "name": "LeaderboardPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/leaderboard",
+          "specifiers": [
+            "getLeaderboardRankings"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatFriendlyDuration",
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "LeaderboardPage"
+      ],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/palaces/page.tsx": {
+      "filePath": "src/app/(app)/palaces/page.tsx",
+      "contentHash": "759944eaee3e36a0c0e0d1f4314c4f3553a663bd31d34d858d9e9c567b3367ca",
+      "functions": [
+        {
+          "name": "PalacesPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/app/actions/onboarding",
+          "specifiers": [
+            "ensureStarterContent"
+          ]
+        },
+        {
+          "source": "@/components/app/my-memory-palace-client",
+          "specifiers": [
+            "MyMemoryPalaceClient"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/pao-decks",
+          "specifiers": [
+            "getPaoDeckOptions"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "PalacesPage"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/pao/page.tsx": {
+      "filePath": "src/app/(app)/pao/page.tsx",
+      "contentHash": "eb8acd0396cdb3e9630f6c9554f4b044939367cca633caa88c74ac44d344e8b3",
+      "functions": [
+        {
+          "name": "PaoRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "PaoRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/profile/edit/page.tsx": {
+      "filePath": "src/app/(app)/profile/edit/page.tsx",
+      "contentHash": "5486c67018473af400568c2cbb027341f5c124e5dc1bec65319bf62d75e02a55",
+      "functions": [
+        {
+          "name": "EditProfilePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "UserRound"
+          ]
+        },
+        {
+          "source": "@/components/app/auth-forms",
+          "specifiers": [
+            "ProfileEditForm"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "EditProfilePage"
+      ],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/profile/page.tsx": {
+      "filePath": "src/app/(app)/profile/page.tsx",
+      "contentHash": "1029f03acde2e72537bca252bf8c92249830fdf564dc8f0f4e693e7700268254",
+      "functions": [
+        {
+          "name": "ProfilePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 162
+        },
+        {
+          "name": "modeLabel",
+          "params": [
+            "mode"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "modeDetail",
+          "params": [
+            "session"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CalendarDays",
+            "Pencil",
+            "Route",
+            "Target",
+            "Timer",
+            "Trash2",
+            "UserRound"
+          ]
+        },
+        {
+          "source": "@/app/actions/sessions",
+          "specifiers": [
+            "clearTrainingHistory"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button",
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "InlineStat",
+            "MetricCard",
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatDuration",
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "ProfilePage"
+      ],
+      "totalLines": 192,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/reviews/page.tsx": {
+      "filePath": "src/app/(app)/reviews/page.tsx",
+      "contentHash": "2c45181829a02bc4ad37c5e957f4e8fa920c8e7339ea6b22eed269eebcf138ce",
+      "functions": [
+        {
+          "name": "ReviewsPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 82
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Brain",
+            "CheckCircle2"
+          ]
+        },
+        {
+          "source": "@/app/actions/reviews",
+          "specifiers": [
+            "gradeReviewCard"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "ReviewsPage"
+      ],
+      "totalLines": 94,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/routes/page.tsx": {
+      "filePath": "src/app/(app)/routes/page.tsx",
+      "contentHash": "dc1d6281401cccb8c94242cdf1926faecf58a99aa1e5e463a9d5cf530527eba8",
+      "functions": [
+        {
+          "name": "RoutesRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "RoutesRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/sessions/page.tsx": {
+      "filePath": "src/app/(app)/sessions/page.tsx",
+      "contentHash": "b1a97f557f125204dd41221924249a54badbe560dff4dd8ad87c81d3f06df077",
+      "functions": [
+        {
+          "name": "SessionsPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 71
+        },
+        {
+          "name": "modeLabel",
+          "params": [
+            "mode"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "modeDetail",
+          "params": [
+            "session"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "readSessionMistakes",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckCircle2",
+            "XCircle"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatDuration",
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "SessionsPage"
+      ],
+      "totalLines": 111,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/settings/page.tsx": {
+      "filePath": "src/app/(app)/settings/page.tsx",
+      "contentHash": "c4b78742244045c097d0b0a7b859057a3124b01fb6f81eead6301a1e5aea915e",
+      "functions": [
+        {
+          "name": "SettingsPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 66
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Settings",
+            "ShieldCheck",
+            "UserRound"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader",
+            "InlineStat"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "SettingsPage"
+      ],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(app)/training/page.tsx": {
+      "filePath": "src/app/(app)/training/page.tsx",
+      "contentHash": "66c823dca453861653f297f3a7705f95adabba84fd8449ef699a8401575e4ab6",
+      "functions": [
+        {
+          "name": "TrainingPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/training/training-cockpit",
+          "specifiers": [
+            "TrainingCockpit"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/app/actions/onboarding",
+          "specifiers": [
+            "ensureStarterContent"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/runtime-config",
+          "specifiers": [
+            "hasRequiredAppConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "TrainingPage"
+      ],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx": {
+      "filePath": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "contentHash": "3fbf19dd3ca487e33ec45194043ffab3f2b56735bcc0b117c5df6ecdfb02cfaf",
+      "functions": [
+        {
+          "name": "SignInRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "SignInRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx": {
+      "filePath": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "contentHash": "a9e270f65be267427b98f97da9a1a3c13419f358c3b652c2975b133ad22e0940",
+      "functions": [
+        {
+          "name": "SignUpRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "SignUpRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/auth-actions.ts": {
+      "filePath": "src/app/actions/auth-actions.ts",
+      "contentHash": "9e3af6cbe4da0548475170b9dfa72e31ac95602c8461f7903757495e5c9d7bea",
+      "functions": [
+        {
+          "name": "registerAction",
+          "params": [
+            "_state",
+            "formData"
+          ],
+          "returnType": "Promise<AuthActionState>",
+          "exported": true,
+          "lineCount": 46
+        },
+        {
+          "name": "loginAction",
+          "params": [
+            "_state",
+            "formData"
+          ],
+          "returnType": "Promise<AuthActionState>",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "updateProfileAction",
+          "params": [
+            "_state",
+            "formData"
+          ],
+          "returnType": "Promise<AuthActionState>",
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "logoutAction",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "safeRedirect",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/dist/client/components/redirect-error",
+          "specifiers": [
+            "isRedirectError"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        },
+        {
+          "source": "next/cache",
+          "specifiers": [
+            "revalidatePath"
+          ]
+        },
+        {
+          "source": "bcryptjs",
+          "specifiers": [
+            "bcrypt"
+          ]
+        },
+        {
+          "source": "next-auth",
+          "specifiers": [
+            "AuthError"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "signIn",
+            "signOut"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "registerAction",
+        "loginAction",
+        "updateProfileAction",
+        "logoutAction"
+      ],
+      "totalLines": 180,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/card-images.ts": {
+      "filePath": "src/app/actions/card-images.ts",
+      "contentHash": "be19d20101f50a72ca9fa0c9d5d3d00d3df32e0014543980ee87b21729a49fa0",
+      "functions": [
+        {
+          "name": "upsertCardImage",
+          "params": [
+            "formData"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "saveCardImage",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "savePaoDeck",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "saveCardImageForUser",
+          "params": [
+            "userId",
+            "parsed"
+          ],
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "revalidateCardImageViews",
+          "params": [],
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/cache",
+          "specifiers": [
+            "revalidatePath"
+          ]
+        },
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "Rank",
+            "Suit"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "upsertCardImage",
+        "saveCardImage",
+        "savePaoDeck"
+      ],
+      "totalLines": 123,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/onboarding.ts": {
+      "filePath": "src/app/actions/onboarding.ts",
+      "contentHash": "dd176f3f87c4c0402c3b80dcaea797536a6619a1aea98bdab63b7d8f45737835",
+      "functions": [
+        {
+          "name": "ensureStarterContent",
+          "params": [],
+          "exported": true,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/defaults",
+          "specifiers": [
+            "starterCardImages",
+            "starterRoutes"
+          ]
+        }
+      ],
+      "exports": [
+        "ensureStarterContent"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/palaces.ts": {
+      "filePath": "src/app/actions/palaces.ts",
+      "contentHash": "f1e93afb64a10ad07e5d07fce545a625adccfe62d80137ea0b4f4172ce65c7d7",
+      "functions": [
+        {
+          "name": "createPalace",
+          "params": [
+            "formData"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "addPalaceLocation",
+          "params": [
+            "formData"
+          ],
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/cache",
+          "specifiers": [
+            "revalidatePath"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "createPalace",
+        "addPalaceLocation"
+      ],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/reviews.ts": {
+      "filePath": "src/app/actions/reviews.ts",
+      "contentHash": "03ede774d1de20ea7548f52a8a94a1da85c9ed8b73f09d98f63a3e9eeb0d655a",
+      "functions": [
+        {
+          "name": "gradeReviewCard",
+          "params": [
+            "formData"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/cache",
+          "specifiers": [
+            "revalidatePath"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/spaced-repetition",
+          "specifiers": [
+            "nextReviewState",
+            "ReviewGrade"
+          ]
+        }
+      ],
+      "exports": [
+        "gradeReviewCard"
+      ],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/actions/sessions.ts": {
+      "filePath": "src/app/actions/sessions.ts",
+      "contentHash": "7f958888b7ee53b6b67f4dd31e7720e787dbfd74caae9fb3a4779a802fd4fa0e",
+      "functions": [
+        {
+          "name": "createTrainingSession",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "completeTrainingSession",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 122
+        },
+        {
+          "name": "savePlaySessionResult",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 87
+        },
+        {
+          "name": "clearTrainingHistory",
+          "params": [],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/cache",
+          "specifiers": [
+            "revalidatePath"
+          ]
+        },
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "MistakeType",
+            "SessionMode",
+            "Suit"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck",
+            "shuffleDeck",
+            "CardCode"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/scoring",
+          "specifiers": [
+            "scoreRecall"
+          ]
+        },
+        {
+          "source": "@/lib/spaced-repetition",
+          "specifiers": [
+            "gradeFromRecall",
+            "nextReviewState"
+          ]
+        }
+      ],
+      "exports": [
+        "createTrainingSession",
+        "completeTrainingSession",
+        "savePlaySessionResult",
+        "clearTrainingHistory"
+      ],
+      "totalLines": 296,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/auth/[...nextauth]/route.ts": {
+      "filePath": "src/app/api/auth/[...nextauth]/route.ts",
+      "contentHash": "c3e8185d66af3fe7019dd236a463365cce7e1e8dcaea2a7c3b8f0b103e930ce4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "handlers"
+          ]
+        }
+      ],
+      "exports": [
+        "{ GET, POST }"
+      ],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/api/health/route.ts": {
+      "filePath": "src/app/api/health/route.ts",
+      "contentHash": "2d3d233ae213f2695302d4108902d8798a8a936ac029588cd3fcecbf8abcd33f",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "GET"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx": {
+      "filePath": "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx",
+      "contentHash": "b9aaa4dbcc1789dee0f2bd10afa5304284a0f067b7bdd489a81c852b18d5d511",
+      "functions": [
+        {
+          "name": "HowToCreatePaoAndRoutesPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 217
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowLeft",
+            "Brain",
+            "Castle",
+            "Film",
+            "MapPinned",
+            "Palette",
+            "Route",
+            "Shapes",
+            "Sparkles",
+            "UserRound"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "getCurrentUser"
+          ]
+        }
+      ],
+      "exports": [
+        "HowToCreatePaoAndRoutesPage"
+      ],
+      "totalLines": 276,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/build-palace/page.tsx": {
+      "filePath": "src/app/build-palace/page.tsx",
+      "contentHash": "3c343c66e8607c6891cb2677e0694a9272faac9b795f14456b1d1e15bf4566d0",
+      "functions": [
+        {
+          "name": "BuildPalacePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/build-palace/palace-builder",
+          "specifiers": [
+            "PalaceBuilder"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        }
+      ],
+      "exports": [
+        "BuildPalacePage"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/globals.css": {
+      "filePath": "src/app/globals.css",
+      "contentHash": "6a22c2cb293a76a5b8bf56394c53771f69e41b8c51a3ddacf0cbc0361c447e95",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": false
+    },
+    "src/app/layout.tsx": {
+      "filePath": "src/app/layout.tsx",
+      "contentHash": "28ac3fb67d2eb470900b2e8607af5b435b28bab01d2d735c9480bcc6af66055b",
+      "functions": [
+        {
+          "name": "RootLayout",
+          "params": [
+            "{\n  children\n}"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "./globals.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [
+        "metadata",
+        "RootLayout"
+      ],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/leaderboard-dashboard/page.tsx": {
+      "filePath": "src/app/leaderboard-dashboard/page.tsx",
+      "contentHash": "61811b71f51a5d7be77f689859b37618344f8d97b9a001f232bae23ffc3fa132",
+      "functions": [
+        {
+          "name": "LeaderboardDashboardRedirectPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        }
+      ],
+      "exports": [
+        "LeaderboardDashboardRedirectPage"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/login/page.tsx": {
+      "filePath": "src/app/login/page.tsx",
+      "contentHash": "5b0c397cc3b6e3905fe61879f28fd9a5fd6cb464c014c4124a1e50fce02ab35f",
+      "functions": [
+        {
+          "name": "LoginPage",
+          "params": [
+            "{\n  searchParams\n}"
+          ],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        },
+        {
+          "source": "@/components/app/auth-forms",
+          "specifiers": [
+            "LoginForm"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "auth"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "LoginPage"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/my-memory-palace/page.tsx": {
+      "filePath": "src/app/my-memory-palace/page.tsx",
+      "contentHash": "4c9adc3499fcb2537aa3452ce6dba48fca8ac3f9f81af1b4a78dbe25ca080f48",
+      "functions": [
+        {
+          "name": "MyMemoryPalacePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/app/my-memory-palace-client",
+          "specifiers": [
+            "MyMemoryPalaceClient"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "getCurrentUser"
+          ]
+        }
+      ],
+      "exports": [
+        "MyMemoryPalacePage"
+      ],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/page.tsx": {
+      "filePath": "src/app/page.tsx",
+      "contentHash": "b10e2cc13d3a567f2aa9ba6395ba284e794075c6351897f55f97d5e00f38e89e",
+      "functions": [
+        {
+          "name": "HomePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 205
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowRight",
+            "Brain",
+            "Castle",
+            "CheckCircle2",
+            "Clock3",
+            "Layers3",
+            "Route",
+            "ShieldCheck",
+            "Spade",
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/components/app/card-badge",
+          "specifiers": [
+            "CardBadge"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "MetricCard",
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "getCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "cardFromCode"
+          ]
+        }
+      ],
+      "exports": [
+        "HomePage"
+      ],
+      "totalLines": 272,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/play/page.tsx": {
+      "filePath": "src/app/play/page.tsx",
+      "contentHash": "ffdd82f36d82ad4adf0d2ea06508297814ee1d10fd290100283367b8f192e98e",
+      "functions": [
+        {
+          "name": "PlayPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/play/play-game",
+          "specifiers": [
+            "PlayGame"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "requireCurrentUser"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        },
+        {
+          "source": "@/lib/pao-decks",
+          "specifiers": [
+            "getPaoDeckOptions"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "PlayPage"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/preview/page.tsx": {
+      "filePath": "src/app/preview/page.tsx",
+      "contentHash": "5e94040dc0afdda55ff936ec6377481ea02af75402d36862942af769d0ab3f05",
+      "functions": [
+        {
+          "name": "PreviewPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 153
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "BarChart3",
+            "Brain",
+            "Castle",
+            "CheckCircle2",
+            "Clock3",
+            "Images",
+            "Play",
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/components/app/card-badge",
+          "specifiers": [
+            "CardBadge"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        }
+      ],
+      "exports": [
+        "PreviewPage"
+      ],
+      "totalLines": 181,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/register/page.tsx": {
+      "filePath": "src/app/register/page.tsx",
+      "contentHash": "689037d7f27eb56ce154fe70c10d00c29b26b0a477c5bfa11271fd9ebf64f802",
+      "functions": [
+        {
+          "name": "RegisterPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 40
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "KeyRound",
+            "UserRound"
+          ]
+        },
+        {
+          "source": "@/components/app/auth-forms",
+          "specifiers": [
+            "RegisterForm"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "auth"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "RegisterPage"
+      ],
+      "totalLines": 50,
+      "hasStructuralAnalysis": true
+    },
+    "src/app/training-academy/page.tsx": {
+      "filePath": "src/app/training-academy/page.tsx",
+      "contentHash": "ac717b3af38e06c38cc1e8e4f3262c19398dc8ed00452715e5a5e727e9994b36",
+      "functions": [
+        {
+          "name": "TrainingAcademyPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 127
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowRight",
+            "Brain",
+            "CheckCircle2",
+            "Clock3",
+            "Layers3",
+            "Map",
+            "Play",
+            "Route",
+            "Sparkles",
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader",
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/lib/auth",
+          "specifiers": [
+            "getCurrentUser"
+          ]
+        }
+      ],
+      "exports": [
+        "TrainingAcademyPage"
+      ],
+      "totalLines": 228,
+      "hasStructuralAnalysis": true
+    },
+    "src/auth.ts": {
+      "filePath": "src/auth.ts",
+      "contentHash": "9365d6df6dace6df7d71fa5e86193259a6c1453f8a13cf720d2a5c7f07cf7cb3",
+      "functions": [],
+      "classes": [
+        {
+          "name": "InvalidLoginError",
+          "methods": [],
+          "properties": [
+            "code"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "next-auth",
+          "specifiers": [
+            "NextAuth",
+            "CredentialsSignin"
+          ]
+        },
+        {
+          "source": "next-auth/providers/credentials",
+          "specifiers": [
+            "Credentials"
+          ]
+        },
+        {
+          "source": "bcryptjs",
+          "specifiers": [
+            "bcrypt"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "{ handlers, auth, signIn, signOut }"
+      ],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/app-shell.tsx": {
+      "filePath": "src/components/app/app-shell.tsx",
+      "contentHash": "98f08e9b6625e4c653228117f816c782302083f2710e8c7c4ed35fea41d26ded",
+      "functions": [
+        {
+          "name": "AppShell",
+          "params": [
+            "{\n  children,\n  user\n}"
+          ],
+          "exported": true,
+          "lineCount": 116
+        },
+        {
+          "name": "isActivePath",
+          "params": [
+            "pathname",
+            "href"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "usePathname"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "BarChart3",
+            "Castle",
+            "GraduationCap",
+            "Hammer",
+            "Play"
+          ]
+        },
+        {
+          "source": "@/components/app/logout-button",
+          "specifiers": [
+            "LogoutButton"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "AppShell"
+      ],
+      "totalLines": 140,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/auth-forms.tsx": {
+      "filePath": "src/components/app/auth-forms.tsx",
+      "contentHash": "38e81df93eba18af40e514bf63aaf3d32c79b52d4c361b2649bbc9173b26890d",
+      "functions": [
+        {
+          "name": "LoginForm",
+          "params": [
+            "{\n  callbackUrl,\n  registered\n}"
+          ],
+          "exported": true,
+          "lineCount": 42
+        },
+        {
+          "name": "RegisterForm",
+          "params": [],
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "ProfileEditForm",
+          "params": [
+            "{\n  profile\n}"
+          ],
+          "exported": true,
+          "lineCount": 51
+        },
+        {
+          "name": "FieldError",
+          "params": [
+            "{ messages }"
+          ],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useActionState"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowRight",
+            "CheckCircle2",
+            "Loader2",
+            "ShieldCheck"
+          ]
+        },
+        {
+          "source": "@/app/actions/auth-actions",
+          "specifiers": [
+            "loginAction",
+            "registerAction",
+            "updateProfileAction",
+            "AuthActionState"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/form",
+          "specifiers": [
+            "Input",
+            "Label",
+            "Textarea"
+          ]
+        }
+      ],
+      "exports": [
+        "LoginForm",
+        "RegisterForm",
+        "ProfileEditForm"
+      ],
+      "totalLines": 153,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/card-badge.tsx": {
+      "filePath": "src/components/app/card-badge.tsx",
+      "contentHash": "946fc273c819662fd30ec9f107c7d12f1e4446589aecd02a643ceef8c1ca4282",
+      "functions": [
+        {
+          "name": "splitCardLabel",
+          "params": [
+            "label"
+          ],
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "CardBadge",
+          "params": [
+            "{\n  label,\n  color,\n  className\n}"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "CardBadge"
+      ],
+      "totalLines": 61,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/logout-button.tsx": {
+      "filePath": "src/components/app/logout-button.tsx",
+      "contentHash": "26887420cd99e2eaf02d4f25932c0446c3bbae94406bedc219cb8160c9744970",
+      "functions": [
+        {
+          "name": "LogoutButton",
+          "params": [
+            "{ compact = false }"
+          ],
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "LogOut"
+          ]
+        },
+        {
+          "source": "@/app/actions/auth-actions",
+          "specifiers": [
+            "logoutAction"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        }
+      ],
+      "exports": [
+        "LogoutButton"
+      ],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/my-memory-palace-client.tsx": {
+      "filePath": "src/components/app/my-memory-palace-client.tsx",
+      "contentHash": "f5e9414691f859920925be811e117f63eada7589c3a2869a6ef8cbfa17b5ae46",
+      "functions": [
+        {
+          "name": "MyMemoryPalaceClient",
+          "params": [
+            "{\n  embedded = false,\n  headerUser,\n  paoDeckOptions = getPresetPaoDeckOptions()\n}"
+          ],
+          "exported": true,
+          "lineCount": 306
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "Castle",
+            "ChevronDown",
+            "Orbit",
+            "Pencil",
+            "Trash2",
+            "Wand2"
+          ]
+        },
+        {
+          "source": "@/components/app/public-shell",
+          "specifiers": [
+            "PublicShell",
+            "HeaderUser"
+          ]
+        },
+        {
+          "source": "@/components/app/card-badge",
+          "specifiers": [
+            "CardBadge"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/components/ui/form",
+          "specifiers": [
+            "Input"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "PageHeader"
+          ]
+        },
+        {
+          "source": "@/lib/pao-decks",
+          "specifiers": [
+            "getPresetPaoDeckOptions",
+            "PaoDeckOption"
+          ]
+        },
+        {
+          "source": "@/lib/sample-palace",
+          "specifiers": [
+            "sampleUserPalaces",
+            "suitOrder"
+          ]
+        }
+      ],
+      "exports": [
+        "MyMemoryPalaceClient"
+      ],
+      "totalLines": 327,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/progress-chart.tsx": {
+      "filePath": "src/components/app/progress-chart.tsx",
+      "contentHash": "bc6f1dabe2602d156302545bc34d203f849409c0e14a772bb1b5f4605cd82342",
+      "functions": [
+        {
+          "name": "ProgressChart",
+          "params": [
+            "{ data }"
+          ],
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "recharts",
+          "specifiers": [
+            "CartesianGrid",
+            "Line",
+            "LineChart",
+            "ResponsiveContainer",
+            "Tooltip",
+            "XAxis",
+            "YAxis"
+          ]
+        }
+      ],
+      "exports": [
+        "ProgressChart"
+      ],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/app/public-shell.tsx": {
+      "filePath": "src/components/app/public-shell.tsx",
+      "contentHash": "e9e3b7c320ec306cc4f009d0ea36ee09cb12811c22b755f24872d5bc450f85ae",
+      "functions": [
+        {
+          "name": "PublicShell",
+          "params": [
+            "{\n  children,\n  user\n}"
+          ],
+          "exported": true,
+          "lineCount": 109
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "usePathname"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "BarChart3",
+            "Castle",
+            "GraduationCap",
+            "Hammer",
+            "Play",
+            "Trophy"
+          ]
+        },
+        {
+          "source": "@/components/app/logout-button",
+          "specifiers": [
+            "LogoutButton"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "PublicShell"
+      ],
+      "totalLines": 133,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/build-palace/palace-builder.tsx": {
+      "filePath": "src/components/build-palace/palace-builder.tsx",
+      "contentHash": "41136367395c39e379025e24ce8782f1db20fd7bbe07ffda8d7ac8409cebec55",
+      "functions": [
+        {
+          "name": "PalaceBuilder",
+          "params": [],
+          "exported": true,
+          "lineCount": 385
+        },
+        {
+          "name": "suitLabel",
+          "params": [
+            "suit"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "MiniPlayingCard",
+          "params": [
+            "{ card }"
+          ],
+          "exported": false,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useTransition",
+            "DragEvent"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "ArrowDown",
+            "ArrowUp",
+            "BookOpen",
+            "GripVertical",
+            "MapPin",
+            "Plus",
+            "Save",
+            "Trash2"
+          ]
+        },
+        {
+          "source": "@/app/actions/card-images",
+          "specifiers": [
+            "savePaoDeck"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button",
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "@/components/ui/form",
+          "specifiers": [
+            "Input",
+            "Label",
+            "Textarea"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck",
+            "PlayingCard"
+          ]
+        }
+      ],
+      "exports": [
+        "PalaceBuilder"
+      ],
+      "totalLines": 430,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/play/play-game.tsx": {
+      "filePath": "src/components/play/play-game.tsx",
+      "contentHash": "59294fd51890c8880d63e3b5cba7bcfce20122de911ae86166d0b21628d7b25b",
+      "functions": [
+        {
+          "name": "PlayGame",
+          "params": [
+            "{ paoDeckOptions = [] }"
+          ],
+          "exported": true,
+          "lineCount": 746
+        },
+        {
+          "name": "InlineCounter",
+          "params": [
+            "{ label, value }"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "PlayingCardFace",
+          "params": [
+            "{ card }"
+          ],
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "CardIndex",
+          "params": [
+            "{ rank, suit, tone, flipped = false }"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "FaceCourtCard",
+          "params": [
+            "{ card, rank, suit, tone }"
+          ],
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "getRankMark",
+          "params": [
+            "card"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "getSuitMark",
+          "params": [
+            "card"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getCardTone",
+          "params": [
+            "card"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getPipCount",
+          "params": [
+            "card"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "getPipPositions",
+          "params": [
+            "count"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "shuffleEntries",
+          "params": [
+            "entries"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "shuffleNumbers",
+          "params": [
+            "count"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "formatMs",
+          "params": [
+            "ms"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "getModeRules",
+          "params": [
+            "mode",
+            "difficulty",
+            "selectedSuit"
+          ],
+          "exported": false,
+          "lineCount": 30
+        },
+        {
+          "name": "renderPaoPrompt",
+          "params": [
+            "entry",
+            "variant",
+            "missingPart"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "getMissingPart",
+          "params": [
+            "index"
+          ],
+          "returnType": "PaoPart",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "resultSummary",
+          "params": [
+            "result",
+            "mode",
+            "difficulty"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "readPersonalBest",
+          "params": [
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "writePersonalBest",
+          "params": [
+            "key",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "isRecallCorrectLabel",
+          "params": [
+            "code"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useMemo",
+            "useRef",
+            "useState",
+            "useTransition"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "BadgeCheck",
+            "Brain",
+            "Castle",
+            "CheckCircle2",
+            "Crosshair",
+            "Flame",
+            "Gauge",
+            "Layers3",
+            "RotateCcw",
+            "Send",
+            "Timer",
+            "Trophy",
+            "Zap"
+          ]
+        },
+        {
+          "source": "@/app/actions/sessions",
+          "specifiers": [
+            "savePlaySessionResult"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/product",
+          "specifiers": [
+            "MetricCard",
+            "Panel"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "cardFromCode",
+            "PlayingCard"
+          ]
+        },
+        {
+          "source": "@/lib/play-modes",
+          "specifiers": [
+            "buildPlaySessionResult",
+            "gradePaoAnswer",
+            "normalizeCardCode",
+            "prepareModeDeck",
+            "toTrainingSessionPayload",
+            "PaoFlashcardGrade",
+            "PaoPart",
+            "PaoVariant",
+            "PlayMode",
+            "PlaySessionResult",
+            "SpeedDifficulty",
+            "SuitName"
+          ]
+        },
+        {
+          "source": "@/lib/pao-decks",
+          "specifiers": [
+            "PaoDeckOption"
+          ]
+        },
+        {
+          "source": "@/lib/sample-palace",
+          "specifiers": [
+            "sampleUserPalaces",
+            "StarterPao"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "PlayGame"
+      ],
+      "totalLines": 1042,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/training/training-cockpit.tsx": {
+      "filePath": "src/components/training/training-cockpit.tsx",
+      "contentHash": "bae2426352738738c0832edf2d5fe32449e6a7445e8b8acd007b2dce5e0355d7",
+      "functions": [
+        {
+          "name": "TrainingCockpit",
+          "params": [
+            "{\n  palaces,\n  cardImages\n}"
+          ],
+          "exported": true,
+          "lineCount": 375
+        },
+        {
+          "name": "phaseLabel",
+          "params": [
+            "phase"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "selectedDeckSize",
+          "params": [
+            "mode"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "StatusTile",
+          "params": [
+            "{\n  label,\n  value,\n  helper,\n  icon\n}"
+          ],
+          "exported": false,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useMemo",
+            "useState",
+            "useTransition"
+          ]
+        },
+        {
+          "source": "lucide-react",
+          "specifiers": [
+            "CheckCircle2",
+            "Clock3",
+            "Eye",
+            "MapPin",
+            "RotateCcw",
+            "Send",
+            "Timer"
+          ]
+        },
+        {
+          "source": "@/app/actions/sessions",
+          "specifiers": [
+            "createTrainingSession",
+            "completeTrainingSession"
+          ]
+        },
+        {
+          "source": "@/components/app/card-badge",
+          "specifiers": [
+            "CardBadge"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/ui/card",
+          "specifiers": [
+            "Card",
+            "CardContent",
+            "CardHeader",
+            "CardTitle"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck",
+            "CardCode",
+            "PlayingCard"
+          ]
+        },
+        {
+          "source": "@/lib/scoring",
+          "specifiers": [
+            "ScoreSummary"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "formatDuration",
+            "formatPercent"
+          ]
+        }
+      ],
+      "exports": [
+        "TrainingCockpit"
+      ],
+      "totalLines": 443,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/button.tsx": {
+      "filePath": "src/components/ui/button.tsx",
+      "contentHash": "483e53f54ff0b6195c5e2e8187bae7de8a1140f0f1a61bfd252fb9910d5be29a",
+      "functions": [
+        {
+          "name": "Button",
+          "params": [
+            "{ className, variant = \"primary\", ...props }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "ButtonLink",
+          "params": [
+            "{ className, variant = \"primary\", href, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ButtonHTMLAttributes",
+            "AnchorHTMLAttributes"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Button",
+        "ButtonLink"
+      ],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/card.tsx": {
+      "filePath": "src/components/ui/card.tsx",
+      "contentHash": "d7b78039ecdbb13ceff74ef9a2a95e57315dc4acb47958d404be49b06dcb3d86",
+      "functions": [
+        {
+          "name": "Card",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "CardHeader",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "CardTitle",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "CardContent",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "HTMLAttributes"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardTitle",
+        "CardContent"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/form.tsx": {
+      "filePath": "src/components/ui/form.tsx",
+      "contentHash": "c5207bfc3136b9a1ee4e61a0a38a18baea2260542ba8b735401b96394ff79243",
+      "functions": [
+        {
+          "name": "Label",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "Input",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "Textarea",
+          "params": [
+            "{ className, ...props }"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "InputHTMLAttributes",
+            "LabelHTMLAttributes",
+            "TextareaHTMLAttributes"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Label",
+        "Input",
+        "Textarea"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/product.tsx": {
+      "filePath": "src/components/ui/product.tsx",
+      "contentHash": "394d26fed4a80975eb5a9ab42b55d88669c19568b496c9ed803890334017eb7d",
+      "functions": [
+        {
+          "name": "PageHeader",
+          "params": [
+            "{\n  label,\n  title,\n  description,\n  action,\n  className\n}"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "Panel",
+          "params": [
+            "{ className, children }"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "MetricCard",
+          "params": [
+            "{\n  label,\n  value,\n  helper,\n  icon,\n  tone = \"default\"\n}"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "InlineStat",
+          "params": [
+            "{ label, value }"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "PageHeader",
+        "Panel",
+        "MetricCard",
+        "InlineStat"
+      ],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/auth.ts": {
+      "filePath": "src/lib/auth.ts",
+      "contentHash": "01039c4ab3bc16fc2fdc0ffed88d60eecc3916fd517cc0c8703c816b0413528b",
+      "functions": [
+        {
+          "name": "getCurrentUser",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "requireCurrentUser",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "redirect"
+          ]
+        },
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "auth"
+          ]
+        },
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "getCurrentUser",
+        "requireCurrentUser"
+      ],
+      "totalLines": 26,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/cards.ts": {
+      "filePath": "src/lib/cards.ts",
+      "contentHash": "20a684e09fbd24ec83e216adc70b144dad2e6753aec71a8a357e7d3cf94315a2",
+      "functions": [
+        {
+          "name": "cardFromCode",
+          "params": [
+            "code"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "shuffleDeck",
+          "params": [
+            "seed"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "hashSeed",
+          "params": [
+            "seed"
+          ],
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "Rank",
+            "Suit"
+          ]
+        }
+      ],
+      "exports": [
+        "fullDeck",
+        "cardFromCode",
+        "shuffleDeck"
+      ],
+      "totalLines": 125,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/dashboard.ts": {
+      "filePath": "src/lib/dashboard.ts",
+      "contentHash": "cf406c9224961c9926b760e5a06b58e87ce51763991c03d16594c459e0e4b7f5",
+      "functions": [
+        {
+          "name": "calculateDashboardStats",
+          "params": [
+            "sessions"
+          ],
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "rankLabel",
+          "params": [
+            "rank"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "suitLabel",
+          "params": [
+            "suit"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "SessionCardResult",
+            "TrainingSession"
+          ]
+        }
+      ],
+      "exports": [
+        "calculateDashboardStats"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/defaults.ts": {
+      "filePath": "src/lib/defaults.ts",
+      "contentHash": "f0d08cac6877876f030700bc6be32cfeff47e8bb2618a4b58ec5b28d77e9b3f7",
+      "functions": [
+        {
+          "name": "starterCardImages",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck"
+          ]
+        },
+        {
+          "source": "@/lib/sample-palace",
+          "specifiers": [
+            "gymRoute",
+            "homeRoute",
+            "schoolRoute"
+          ]
+        }
+      ],
+      "exports": [
+        "starterRoutes",
+        "starterLocations",
+        "starterCardImages"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/leaderboard.ts": {
+      "filePath": "src/lib/leaderboard.ts",
+      "contentHash": "966f9ce1c77afa060beb810646922272dacec69ddea280b7dd2b6b34aa2b1404",
+      "functions": [
+        {
+          "name": "getLeaderboardRankings",
+          "params": [],
+          "exported": true,
+          "lineCount": 47
+        },
+        {
+          "name": "getLeaderboardPreview",
+          "params": [
+            "userId"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "getLeaderboardDeckSize",
+          "params": [
+            "session"
+          ],
+          "exported": false,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/prisma",
+          "specifiers": [
+            "getPrisma"
+          ]
+        }
+      ],
+      "exports": [
+        "getLeaderboardRankings",
+        "getLeaderboardPreview"
+      ],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/pao-decks.ts": {
+      "filePath": "src/lib/pao-decks.ts",
+      "contentHash": "f5e2ccabfa0e9327bc9a5c81b59b21df64146a2f994190d81b1c3c2dab4dd42f",
+      "functions": [
+        {
+          "name": "getPresetPaoDeckOptions",
+          "params": [],
+          "returnType": "PaoDeckOption[]",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "getPaoDeckOptions",
+          "params": [
+            "savedImages"
+          ],
+          "returnType": "PaoDeckOption[]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getCustomPaoDeckOption",
+          "params": [
+            "savedImages"
+          ],
+          "returnType": "PaoDeckOption | null",
+          "exported": false,
+          "lineCount": 32
+        },
+        {
+          "name": "isUserEditedCardImage",
+          "params": [
+            "image"
+          ],
+          "exported": false,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck"
+          ]
+        },
+        {
+          "source": "@/lib/sample-palace",
+          "specifiers": [
+            "beginnerPaoDeck",
+            "paoDeckPresets",
+            "StarterPao"
+          ]
+        }
+      ],
+      "exports": [
+        "getPresetPaoDeckOptions",
+        "getPaoDeckOptions"
+      ],
+      "totalLines": 82,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/play-modes.test.mjs": {
+      "filePath": "src/lib/play-modes.test.mjs",
+      "contentHash": "435584c1708400e57b3d1f0d667e52ed08abe62672843f85c139eccd8aafcfd5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 125,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/play-modes.ts": {
+      "filePath": "src/lib/play-modes.ts",
+      "contentHash": "0a36152884268a4001286114c58461b3f9711130488b7967816a9a5d747fedfe",
+      "functions": [
+        {
+          "name": "prepareModeDeck",
+          "params": [
+            "{\n  mode,\n  sourceDeck,\n  deckSize,\n  selectedSuit\n}"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "buildPlaySessionResult",
+          "params": [
+            "input"
+          ],
+          "returnType": "PlaySessionResult",
+          "exported": true,
+          "lineCount": 59
+        },
+        {
+          "name": "gradePaoAnswer",
+          "params": [
+            "{\n  variant,\n  entry,\n  answer,\n  responseTime,\n  missingPart,\n  markedHard = false\n}"
+          ],
+          "returnType": "PaoFlashcardGrade",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "getPaoExpectedAnswer",
+          "params": [
+            "variant",
+            "entry",
+            "missingPart"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "toTrainingSessionPayload",
+          "params": [
+            "result"
+          ],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "normalizeCardCode",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "buildMistake",
+          "params": [
+            "position",
+            "expected",
+            "answer",
+            "generatedDeck"
+          ],
+          "returnType": "PlayMistake",
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "getRunValidity",
+          "params": [
+            "mode",
+            "difficulty",
+            "accuracy"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "normalizeText",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "isPresent",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "prepareModeDeck",
+        "buildPlaySessionResult",
+        "gradePaoAnswer",
+        "getPaoExpectedAnswer",
+        "toTrainingSessionPayload",
+        "normalizeCardCode"
+      ],
+      "totalLines": 253,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/prisma.ts": {
+      "filePath": "src/lib/prisma.ts",
+      "contentHash": "bc30bdbce112c5db4c3c3d8468c17f3d30b7f507f844f67019738846c46336ae",
+      "functions": [
+        {
+          "name": "getPrisma",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "PrismaClient"
+          ]
+        }
+      ],
+      "exports": [
+        "getPrisma"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/runtime-config.ts": {
+      "filePath": "src/lib/runtime-config.ts",
+      "contentHash": "d87b52fd6c536c80eb5f6e858dc4aa8f835a809804c429663de958b43e8a5cdf",
+      "functions": [
+        {
+          "name": "hasRequiredAppConfig",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "hasRequiredAppConfig"
+      ],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/sample-palace.ts": {
+      "filePath": "src/lib/sample-palace.ts",
+      "contentHash": "22926441beea9c1161390a41dcf7f9ddf0a17f1db9220fa4f81ec8cfd5a3a090",
+      "functions": [
+        {
+          "name": "buildPaoDeck",
+          "params": [
+            "source"
+          ],
+          "returnType": "StarterPao[]",
+          "exported": false,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "fullDeck",
+            "PlayingCard"
+          ]
+        }
+      ],
+      "exports": [
+        "homeRoute",
+        "gymRoute",
+        "schoolRoute",
+        "palaceLocations",
+        "suitOrder",
+        "sortedDeck",
+        "paoDeckPresets",
+        "beginnerPaoDeck",
+        "sampleUserPalaces"
+      ],
+      "totalLines": 464,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/scoring.ts": {
+      "filePath": "src/lib/scoring.ts",
+      "contentHash": "007b77d0d4a1faecc47573eb8c914e7328837318947ad0e833e4e988e9ed190d",
+      "functions": [
+        {
+          "name": "scoreRecall",
+          "params": [
+            "expectedDeck",
+            "recalledCodes"
+          ],
+          "returnType": "ScoreSummary",
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "getMistakeType",
+          "params": [
+            "expectedCode",
+            "recalledCode",
+            "recalledIndex"
+          ],
+          "returnType": "MistakeType",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "getFeedback",
+          "params": [
+            "expected",
+            "recalled",
+            "expectedIndex",
+            "recalledIndex",
+            "mistakeType"
+          ],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "getCorrectRuns",
+          "params": [
+            "results"
+          ],
+          "exported": false,
+          "lineCount": 16
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "MistakeType"
+          ]
+        },
+        {
+          "source": "@/lib/cards",
+          "specifiers": [
+            "cardFromCode",
+            "PlayingCard"
+          ]
+        }
+      ],
+      "exports": [
+        "scoreRecall"
+      ],
+      "totalLines": 98,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/spaced-repetition.ts": {
+      "filePath": "src/lib/spaced-repetition.ts",
+      "contentHash": "5b518c63142fe68486a8b94a640d835892e275778ca707b9bac9e731f864c706",
+      "functions": [
+        {
+          "name": "gradeFromRecall",
+          "params": [
+            "isCorrect",
+            "wasMisplaced"
+          ],
+          "returnType": "ReviewGrade",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "nextReviewState",
+          "params": [
+            "card",
+            "grade",
+            "now"
+          ],
+          "exported": true,
+          "lineCount": 44
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@prisma/client",
+          "specifiers": [
+            "ReviewCard"
+          ]
+        }
+      ],
+      "exports": [
+        "gradeFromRecall",
+        "nextReviewState"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/lib/utils.ts": {
+      "filePath": "src/lib/utils.ts",
+      "contentHash": "0fae8dd3c0cc4ce6623130950e9bbc63b20fa3066cd8d888b4b012ca168f7b73",
+      "functions": [
+        {
+          "name": "cn",
+          "params": [
+            "...inputs"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "formatDuration",
+          "params": [
+            "ms"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "formatFriendlyDuration",
+          "params": [
+            "ms"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "formatPercent",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "clsx",
+          "specifiers": [
+            "clsx",
+            "ClassValue"
+          ]
+        },
+        {
+          "source": "tailwind-merge",
+          "specifiers": [
+            "twMerge"
+          ]
+        }
+      ],
+      "exports": [
+        "cn",
+        "formatDuration",
+        "formatFriendlyDuration",
+        "formatPercent"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "src/proxy.ts": {
+      "filePath": "src/proxy.ts",
+      "contentHash": "ef812c58f7ec7b0df4aa64de74ca4a0d47844058b210e25cfefbd8dafa5ebd23",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/server",
+          "specifiers": [
+            "NextResponse"
+          ]
+        },
+        {
+          "source": "@/auth",
+          "specifiers": [
+            "auth"
+          ]
+        }
+      ],
+      "exports": [
+        "config"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/types/next-auth.d.ts": {
+      "filePath": "src/types/next-auth.d.ts",
+      "contentHash": "af309ad22b3bdc1a4ca3575fc77212c1d3e3fd8151916f0fafe03d843ba1b500",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next-auth",
+          "specifiers": [
+            "DefaultSession"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "55134881a23efd2a1f9266d2d0752731ff9c40d0e867136cd8863ea679560a09",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

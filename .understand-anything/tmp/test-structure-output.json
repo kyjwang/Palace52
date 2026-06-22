@@ -1,0 +1,174 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/dashboard/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "DashboardPage",
+          "startLine": 16,
+          "endLine": 152,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "DashboardPage",
+          "line": 16,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DashboardPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 17
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "ensureStarterContent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 20
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma().trainingSession.findMany",
+          "lineNumber": 21
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma",
+          "lineNumber": 21
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma().reviewCard.count",
+          "lineNumber": 27
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma",
+          "lineNumber": 27
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getLeaderboardPreview",
+          "lineNumber": 30
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "calculateDashboardStats",
+          "lineNumber": 31
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatPercent",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "stats.completedSessions.toString",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "dueReviews.toString",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "metrics.map",
+          "lineNumber": 50
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "stats.weakestCards.map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "leaderboard.topEntries.map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatPercent",
+          "lineNumber": 114
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatFriendlyDuration",
+          "lineNumber": 118
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatFriendlyDuration",
+          "lineNumber": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "AppLayout",
+          "startLine": 6,
+          "endLine": 48,
+          "params": [
+            "{ children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppLayout",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppLayout",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 7
+        },
+        {
+          "caller": "AppLayout",
+          "callee": "requireCurrentUser",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

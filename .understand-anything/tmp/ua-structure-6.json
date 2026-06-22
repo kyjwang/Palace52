@@ -1,0 +1,929 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/cards/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "CardsPage",
+          "startLine": 15,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "CardsPage",
+          "line": 15,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CardsPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 16
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 18
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "getPrisma().cardImage.findMany",
+          "lineNumber": 19
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "getPrisma",
+          "lineNumber": 19
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "images.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "fullDeck.map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "CardsPage",
+          "callee": "imageByCard.get",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/card-images.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "upsertCardImage",
+          "startLine": 31,
+          "endLine": 46,
+          "params": [
+            "formData"
+          ]
+        },
+        {
+          "name": "saveCardImage",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "savePaoDeck",
+          "startLine": 57,
+          "endLine": 96,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "saveCardImageForUser",
+          "startLine": 98,
+          "endLine": 113,
+          "params": [
+            "userId",
+            "parsed"
+          ]
+        },
+        {
+          "name": "revalidateCardImageViews",
+          "startLine": 115,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "upsertCardImage",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "saveCardImage",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "savePaoDeck",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "upsertCardImage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 32
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "cardImageSchema.parse",
+          "lineNumber": 33
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 37
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "formData.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "saveCardImageForUser",
+          "lineNumber": 43
+        },
+        {
+          "caller": "upsertCardImage",
+          "callee": "revalidateCardImageViews",
+          "lineNumber": 45
+        },
+        {
+          "caller": "saveCardImage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 49
+        },
+        {
+          "caller": "saveCardImage",
+          "callee": "cardImageSchema.parse",
+          "lineNumber": 50
+        },
+        {
+          "caller": "saveCardImage",
+          "callee": "saveCardImageForUser",
+          "lineNumber": 52
+        },
+        {
+          "caller": "saveCardImage",
+          "callee": "revalidateCardImageViews",
+          "lineNumber": 54
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "requireCurrentUser",
+          "lineNumber": 58
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "paoDeckSchema.parse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "parsed.cards.filter",
+          "lineNumber": 60
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.person?.trim",
+          "lineNumber": 60
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.action?.trim",
+          "lineNumber": 60
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.object?.trim",
+          "lineNumber": 60
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "getPrisma().$transaction",
+          "lineNumber": 64
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "getPrisma",
+          "lineNumber": 64
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "completedCards.map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "getPrisma().cardImage.upsert",
+          "lineNumber": 66
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "getPrisma",
+          "lineNumber": 66
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.person?.trim",
+          "lineNumber": 75
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.action?.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.object?.trim",
+          "lineNumber": 77
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.person?.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.action?.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.object?.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.person?.trim",
+          "lineNumber": 85
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.action?.trim",
+          "lineNumber": 86
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.object?.trim",
+          "lineNumber": 87
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.person?.trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.action?.trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "card.object?.trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "savePaoDeck",
+          "callee": "revalidateCardImageViews",
+          "lineNumber": 95
+        },
+        {
+          "caller": "saveCardImageForUser",
+          "callee": "getPrisma().cardImage.upsert",
+          "lineNumber": 99
+        },
+        {
+          "caller": "saveCardImageForUser",
+          "callee": "getPrisma",
+          "lineNumber": 99
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 116
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 117
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 118
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 119
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 120
+        },
+        {
+          "caller": "revalidateCardImageViews",
+          "callee": "revalidatePath",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/build-palace/palace-builder.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 429,
+      "nonEmptyLines": 395,
+      "functions": [
+        {
+          "name": "PalaceBuilder",
+          "startLine": 21,
+          "endLine": 405,
+          "params": []
+        },
+        {
+          "name": "suitLabel",
+          "startLine": 407,
+          "endLine": 409,
+          "params": [
+            "suit"
+          ]
+        },
+        {
+          "name": "MiniPlayingCard",
+          "startLine": 411,
+          "endLine": 429,
+          "params": [
+            "{ card }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PalaceBuilder",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useTransition",
+          "lineNumber": 22
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 29
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "useState",
+          "lineNumber": 32
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "locations.filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "location.trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "paoRows.filter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "row.person.trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "row.action.trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "row.object.trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "addLocation",
+          "callee": "newLocation.trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "addLocation",
+          "callee": "setLocations",
+          "lineNumber": 38
+        },
+        {
+          "caller": "addLocation",
+          "callee": "newLocation.trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "addLocation",
+          "callee": "setNewLocation",
+          "lineNumber": 39
+        },
+        {
+          "caller": "addLocation",
+          "callee": "setSaved",
+          "lineNumber": 40
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "setLocations",
+          "lineNumber": 44
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "locations.filter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "setSaved",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateLocation",
+          "callee": "setLocations",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateLocation",
+          "callee": "locations.map",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateLocation",
+          "callee": "setSaved",
+          "lineNumber": 50
+        },
+        {
+          "caller": "moveLocation",
+          "callee": "moveLocationToIndex",
+          "lineNumber": 56
+        },
+        {
+          "caller": "moveLocationToIndex",
+          "callee": "next.splice",
+          "lineNumber": 65
+        },
+        {
+          "caller": "moveLocationToIndex",
+          "callee": "next.splice",
+          "lineNumber": 66
+        },
+        {
+          "caller": "moveLocationToIndex",
+          "callee": "setLocations",
+          "lineNumber": 67
+        },
+        {
+          "caller": "moveLocationToIndex",
+          "callee": "setSaved",
+          "lineNumber": 68
+        },
+        {
+          "caller": "startLocationDrag",
+          "callee": "setDraggedLocationIndex",
+          "lineNumber": 72
+        },
+        {
+          "caller": "startLocationDrag",
+          "callee": "event.dataTransfer.setData",
+          "lineNumber": 74
+        },
+        {
+          "caller": "startLocationDrag",
+          "callee": "index.toString",
+          "lineNumber": 74
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "event.preventDefault",
+          "lineNumber": 78
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "event.dataTransfer.getData",
+          "lineNumber": 79
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "Number",
+          "lineNumber": 80
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "Number.isInteger",
+          "lineNumber": 82
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "moveLocationToIndex",
+          "lineNumber": 83
+        },
+        {
+          "caller": "dropLocation",
+          "callee": "setDraggedLocationIndex",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updatePaoRow",
+          "callee": "setPaoRows",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updatePaoRow",
+          "callee": "current.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updatePaoRow",
+          "callee": "setPaoSaveState",
+          "lineNumber": 93
+        },
+        {
+          "caller": "clearPaoRow",
+          "callee": "setPaoRows",
+          "lineNumber": 97
+        },
+        {
+          "caller": "clearPaoRow",
+          "callee": "current.map",
+          "lineNumber": 97
+        },
+        {
+          "caller": "clearPaoRow",
+          "callee": "setPaoSaveState",
+          "lineNumber": 98
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "startTransition",
+          "lineNumber": 102
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "savePaoDeck",
+          "lineNumber": 104
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "paoRows.map",
+          "lineNumber": 105
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "fullDeck.find",
+          "lineNumber": 106
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "setPaoSaveState",
+          "lineNumber": 117
+        },
+        {
+          "caller": "saveFullPaoDeck",
+          "callee": "setPaoSaveState",
+          "lineNumber": 119
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setRouteEditorOpen",
+          "lineNumber": 149
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setName",
+          "lineNumber": 176
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setSaved",
+          "lineNumber": 177
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setNewLocation",
+          "lineNumber": 187
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "event.preventDefault",
+          "lineNumber": 190
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "addLocation",
+          "lineNumber": 191
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setDescription",
+          "lineNumber": 207
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setSaved",
+          "lineNumber": 208
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "locations.map",
+          "lineNumber": 226
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "startLocationDrag",
+          "lineNumber": 230
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "event.preventDefault",
+          "lineNumber": 232
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "dropLocation",
+          "lineNumber": 235
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setDraggedLocationIndex",
+          "lineNumber": 236
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "updateLocation",
+          "lineNumber": 248
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "moveLocation",
+          "lineNumber": 261
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "moveLocation",
+          "lineNumber": 272
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "removeLocation",
+          "lineNumber": 283
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setSaved",
+          "lineNumber": 297
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "setDeckEditorOpen",
+          "lineNumber": 317
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "paoRows.map",
+          "lineNumber": 350
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "fullDeck.find",
+          "lineNumber": 351
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "suitLabel",
+          "lineNumber": 358
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "updatePaoRow",
+          "lineNumber": 360
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "updatePaoRow",
+          "lineNumber": 363
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "updatePaoRow",
+          "lineNumber": 366
+        },
+        {
+          "caller": "PalaceBuilder",
+          "callee": "clearPaoRow",
+          "lineNumber": 369
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.charAt",
+          "lineNumber": 408
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.slice(1).toLowerCase",
+          "lineNumber": 408
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.slice",
+          "lineNumber": 408
+        },
+        {
+          "caller": "MiniPlayingCard",
+          "callee": "card.shortLabel.replace",
+          "lineNumber": 412
+        },
+        {
+          "caller": "MiniPlayingCard",
+          "callee": "card.shortLabel.replace",
+          "lineNumber": 413
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ui/form.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "Label",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "{ className, ...props }"
+          ]
+        },
+        {
+          "name": "Input",
+          "startLine": 8,
+          "endLine": 18,
+          "params": [
+            "{ className, ...props }"
+          ]
+        },
+        {
+          "name": "Textarea",
+          "startLine": 20,
+          "endLine": 30,
+          "params": [
+            "{ className, ...props }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Label",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Input",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "Textarea",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Label",
+          "callee": "cn",
+          "lineNumber": 5
+        },
+        {
+          "caller": "Input",
+          "callee": "cn",
+          "lineNumber": 11
+        },
+        {
+          "caller": "Textarea",
+          "callee": "cn",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

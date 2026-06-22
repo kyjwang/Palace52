@@ -25,7 +25,13 @@ export default async function PlayPage() {
   const paoDeckOptions = getPaoDeckOptions(savedImages);
 
   return (
-    <PublicShell>
+    <PublicShell
+      user={{
+        username: user.username,
+        displayName: user.profile?.displayName,
+        avatarColor: user.profile?.avatarColor
+      }}
+    >
       <PlayGame paoDeckOptions={paoDeckOptions} />
     </PublicShell>
   );

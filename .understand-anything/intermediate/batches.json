@@ -1,0 +1,2771 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 87,
+  "totalBatches": 9,
+  "exportsByPath": {
+    ".understand-anything/.understandignore": [],
+    "eslint.config.mjs": [],
+    "next-env.d.ts": [],
+    "next.config.ts": [],
+    "postcss.config.mjs": [],
+    "src/app/(app)/cards/page.tsx": [
+      "dynamic",
+      "CardsPage"
+    ],
+    "src/app/(app)/dashboard/page.tsx": [
+      "dynamic",
+      "DashboardPage"
+    ],
+    "src/app/(app)/history/page.tsx": [
+      "HistoryRedirectPage"
+    ],
+    "src/app/(app)/layout.tsx": [
+      "AppLayout"
+    ],
+    "src/app/(app)/leaderboard/page.tsx": [
+      "dynamic",
+      "LeaderboardPage"
+    ],
+    "src/app/(app)/palaces/page.tsx": [
+      "dynamic",
+      "PalacesPage"
+    ],
+    "src/app/(app)/pao/page.tsx": [
+      "PaoRedirectPage"
+    ],
+    "src/app/(app)/profile/edit/page.tsx": [
+      "dynamic",
+      "EditProfilePage"
+    ],
+    "src/app/(app)/profile/page.tsx": [
+      "dynamic",
+      "ProfilePage"
+    ],
+    "src/app/(app)/reviews/page.tsx": [
+      "dynamic",
+      "ReviewsPage"
+    ],
+    "src/app/(app)/routes/page.tsx": [
+      "RoutesRedirectPage"
+    ],
+    "src/app/(app)/sessions/page.tsx": [
+      "dynamic",
+      "SessionsPage"
+    ],
+    "src/app/(app)/settings/page.tsx": [
+      "dynamic",
+      "SettingsPage"
+    ],
+    "src/app/(app)/training/page.tsx": [
+      "dynamic",
+      "TrainingPage"
+    ],
+    "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx": [
+      "SignInRedirectPage"
+    ],
+    "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx": [
+      "SignUpRedirectPage"
+    ],
+    "src/app/actions/auth-actions.ts": [
+      "registerAction",
+      "loginAction",
+      "updateProfileAction",
+      "logoutAction"
+    ],
+    "src/app/actions/card-images.ts": [
+      "upsertCardImage",
+      "saveCardImage",
+      "savePaoDeck"
+    ],
+    "src/app/actions/onboarding.ts": [
+      "ensureStarterContent"
+    ],
+    "src/app/actions/palaces.ts": [
+      "createPalace",
+      "addPalaceLocation"
+    ],
+    "src/app/actions/reviews.ts": [
+      "gradeReviewCard"
+    ],
+    "src/app/actions/sessions.ts": [
+      "createTrainingSession",
+      "completeTrainingSession",
+      "savePlaySessionResult",
+      "clearTrainingHistory"
+    ],
+    "src/app/api/auth/[...nextauth]/route.ts": [
+      "{ GET, POST }"
+    ],
+    "src/app/api/health/route.ts": [
+      "dynamic",
+      "GET"
+    ],
+    "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx": [
+      "HowToCreatePaoAndRoutesPage"
+    ],
+    "src/app/build-palace/page.tsx": [
+      "BuildPalacePage"
+    ],
+    "src/app/layout.tsx": [
+      "metadata",
+      "RootLayout"
+    ],
+    "src/app/leaderboard-dashboard/page.tsx": [
+      "LeaderboardDashboardRedirectPage"
+    ],
+    "src/app/login/page.tsx": [
+      "dynamic",
+      "LoginPage"
+    ],
+    "src/app/my-memory-palace/page.tsx": [
+      "MyMemoryPalacePage"
+    ],
+    "src/app/page.tsx": [
+      "HomePage"
+    ],
+    "src/app/play/page.tsx": [
+      "dynamic",
+      "PlayPage"
+    ],
+    "src/app/preview/page.tsx": [
+      "PreviewPage"
+    ],
+    "src/app/register/page.tsx": [
+      "dynamic",
+      "RegisterPage"
+    ],
+    "src/app/training-academy/page.tsx": [
+      "TrainingAcademyPage"
+    ],
+    "src/auth.ts": [
+      "{ handlers, auth, signIn, signOut }"
+    ],
+    "src/components/app/app-shell.tsx": [
+      "AppShell"
+    ],
+    "src/components/app/auth-forms.tsx": [
+      "LoginForm",
+      "RegisterForm",
+      "ProfileEditForm"
+    ],
+    "src/components/app/card-badge.tsx": [
+      "CardBadge"
+    ],
+    "src/components/app/logout-button.tsx": [
+      "LogoutButton"
+    ],
+    "src/components/app/my-memory-palace-client.tsx": [
+      "MyMemoryPalaceClient"
+    ],
+    "src/components/app/progress-chart.tsx": [
+      "ProgressChart"
+    ],
+    "src/components/app/public-shell.tsx": [
+      "PublicShell"
+    ],
+    "src/components/build-palace/palace-builder.tsx": [
+      "PalaceBuilder"
+    ],
+    "src/components/play/play-game.tsx": [
+      "PlayGame"
+    ],
+    "src/components/training/training-cockpit.tsx": [
+      "TrainingCockpit"
+    ],
+    "src/components/ui/button.tsx": [
+      "Button",
+      "ButtonLink"
+    ],
+    "src/components/ui/card.tsx": [
+      "Card",
+      "CardHeader",
+      "CardTitle",
+      "CardContent"
+    ],
+    "src/components/ui/form.tsx": [
+      "Label",
+      "Input",
+      "Textarea"
+    ],
+    "src/components/ui/product.tsx": [
+      "PageHeader",
+      "Panel",
+      "MetricCard",
+      "InlineStat"
+    ],
+    "src/lib/auth.ts": [
+      "getCurrentUser",
+      "requireCurrentUser"
+    ],
+    "src/lib/cards.ts": [
+      "fullDeck",
+      "cardFromCode",
+      "shuffleDeck"
+    ],
+    "src/lib/dashboard.ts": [
+      "calculateDashboardStats"
+    ],
+    "src/lib/defaults.ts": [
+      "starterRoutes",
+      "starterLocations",
+      "starterCardImages"
+    ],
+    "src/lib/leaderboard.ts": [
+      "getLeaderboardRankings",
+      "getLeaderboardPreview"
+    ],
+    "src/lib/pao-decks.ts": [
+      "getPresetPaoDeckOptions",
+      "getPaoDeckOptions"
+    ],
+    "src/lib/play-modes.test.mjs": [],
+    "src/lib/play-modes.ts": [
+      "prepareModeDeck",
+      "buildPlaySessionResult",
+      "gradePaoAnswer",
+      "getPaoExpectedAnswer",
+      "toTrainingSessionPayload",
+      "normalizeCardCode"
+    ],
+    "src/lib/prisma.ts": [
+      "getPrisma"
+    ],
+    "src/lib/runtime-config.ts": [
+      "hasRequiredAppConfig"
+    ],
+    "src/lib/sample-palace.ts": [
+      "homeRoute",
+      "gymRoute",
+      "schoolRoute",
+      "palaceLocations",
+      "suitOrder",
+      "sortedDeck",
+      "paoDeckPresets",
+      "beginnerPaoDeck",
+      "sampleUserPalaces"
+    ],
+    "src/lib/scoring.ts": [
+      "scoreRecall"
+    ],
+    "src/lib/spaced-repetition.ts": [
+      "gradeFromRecall",
+      "nextReviewState"
+    ],
+    "src/lib/utils.ts": [
+      "cn",
+      "formatDuration",
+      "formatFriendlyDuration",
+      "formatPercent"
+    ],
+    "src/proxy.ts": [
+      "config"
+    ],
+    "src/types/next-auth.d.ts": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "src/app/(app)/dashboard/page.tsx",
+          "language": "typescript",
+          "sizeLines": 152,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/layout.tsx",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/leaderboard/page.tsx",
+          "language": "typescript",
+          "sizeLines": 61,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/profile/page.tsx",
+          "language": "typescript",
+          "sizeLines": 191,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/sessions/page.tsx",
+          "language": "typescript",
+          "sizeLines": 110,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/settings/page.tsx",
+          "language": "typescript",
+          "sizeLines": 76,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/preview/page.tsx",
+          "language": "typescript",
+          "sizeLines": 180,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/app-shell.tsx",
+          "language": "typescript",
+          "sizeLines": 139,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/card-badge.tsx",
+          "language": "typescript",
+          "sizeLines": 60,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/progress-chart.tsx",
+          "language": "typescript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/training/training-cockpit.tsx",
+          "language": "typescript",
+          "sizeLines": 442,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ui/button.tsx",
+          "language": "typescript",
+          "sizeLines": 47,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ui/card.tsx",
+          "language": "typescript",
+          "sizeLines": 23,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/dashboard.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/leaderboard.ts",
+          "language": "typescript",
+          "sizeLines": 116,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/runtime-config.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/(app)/dashboard/page.tsx": [
+          "src/app/actions/onboarding.ts",
+          "src/components/app/progress-chart.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/dashboard.ts",
+          "src/lib/leaderboard.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/app/(app)/layout.tsx": [
+          "src/components/app/app-shell.tsx",
+          "src/lib/auth.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/(app)/leaderboard/page.tsx": [
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/leaderboard.ts",
+          "src/lib/runtime-config.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/app/(app)/profile/page.tsx": [
+          "src/app/actions/sessions.ts",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/app/(app)/sessions/page.tsx": [
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/app/(app)/settings/page.tsx": [
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/preview/page.tsx": [
+          "src/components/app/card-badge.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx"
+        ],
+        "src/components/app/app-shell.tsx": [
+          "src/components/app/logout-button.tsx",
+          "src/lib/utils.ts"
+        ],
+        "src/components/app/card-badge.tsx": [
+          "src/lib/utils.ts"
+        ],
+        "src/components/app/progress-chart.tsx": [],
+        "src/components/training/training-cockpit.tsx": [
+          "src/app/actions/sessions.ts",
+          "src/components/app/card-badge.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/lib/cards.ts",
+          "src/lib/scoring.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/components/ui/button.tsx": [
+          "src/lib/utils.ts"
+        ],
+        "src/components/ui/card.tsx": [
+          "src/lib/utils.ts"
+        ],
+        "src/lib/dashboard.ts": [],
+        "src/lib/leaderboard.ts": [
+          "src/lib/prisma.ts"
+        ],
+        "src/lib/runtime-config.ts": [],
+        "src/lib/utils.ts": []
+      },
+      "neighborMap": {
+        "src/app/(app)/dashboard/page.tsx": [
+          {
+            "path": "src/app/actions/onboarding.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ensureStarterContent"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/app/(app)/layout.tsx": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/app/(app)/leaderboard/page.tsx": [
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          }
+        ],
+        "src/app/(app)/profile/page.tsx": [
+          {
+            "path": "src/app/actions/sessions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createTrainingSession",
+              "completeTrainingSession",
+              "savePlaySessionResult",
+              "clearTrainingHistory"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/app/(app)/sessions/page.tsx": [
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/app/(app)/settings/page.tsx": [
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/components/app/app-shell.tsx": [
+          {
+            "path": "src/components/app/logout-button.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "LogoutButton"
+            ]
+          }
+        ],
+        "src/components/app/card-badge.tsx": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "HomePage"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          }
+        ],
+        "src/components/training/training-cockpit.tsx": [
+          {
+            "path": "src/app/actions/sessions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createTrainingSession",
+              "completeTrainingSession",
+              "savePlaySessionResult",
+              "clearTrainingHistory"
+            ]
+          },
+          {
+            "path": "src/lib/cards.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "fullDeck",
+              "cardFromCode",
+              "shuffleDeck"
+            ]
+          },
+          {
+            "path": "src/lib/scoring.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "scoreRecall"
+            ]
+          },
+          {
+            "path": "src/app/(app)/training/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "TrainingPage"
+            ]
+          }
+        ],
+        "src/components/ui/button.tsx": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/reviews/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "ReviewsPage"
+            ]
+          },
+          {
+            "path": "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "HowToCreatePaoAndRoutesPage"
+            ]
+          },
+          {
+            "path": "src/app/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "HomePage"
+            ]
+          },
+          {
+            "path": "src/app/training-academy/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "TrainingAcademyPage"
+            ]
+          },
+          {
+            "path": "src/components/app/auth-forms.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "LoginForm",
+              "RegisterForm",
+              "ProfileEditForm"
+            ]
+          },
+          {
+            "path": "src/components/app/logout-button.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "LogoutButton"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          },
+          {
+            "path": "src/components/build-palace/palace-builder.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "PalaceBuilder"
+            ]
+          },
+          {
+            "path": "src/components/play/play-game.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PlayGame"
+            ]
+          }
+        ],
+        "src/components/ui/card.tsx": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/edit/page.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "dynamic",
+              "EditProfilePage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/reviews/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "ReviewsPage"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          }
+        ],
+        "src/lib/leaderboard.ts": [
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/lib/runtime-config.ts": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/palaces/page.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "dynamic",
+              "PalacesPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/reviews/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "ReviewsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/training/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "TrainingPage"
+            ]
+          }
+        ],
+        "src/lib/utils.ts": [
+          {
+            "path": "src/components/app/public-shell.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "PublicShell"
+            ]
+          },
+          {
+            "path": "src/components/play/play-game.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PlayGame"
+            ]
+          },
+          {
+            "path": "src/components/ui/form.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "Label",
+              "Input",
+              "Textarea"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "src/app/(app)/palaces/page.tsx",
+          "language": "typescript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/sessions.ts",
+          "language": "typescript",
+          "sizeLines": 295,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/my-memory-palace/page.tsx",
+          "language": "typescript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/my-memory-palace-client.tsx",
+          "language": "typescript",
+          "sizeLines": 326,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/play/play-game.tsx",
+          "language": "typescript",
+          "sizeLines": 1041,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/cards.ts",
+          "language": "typescript",
+          "sizeLines": 124,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/pao-decks.ts",
+          "language": "typescript",
+          "sizeLines": 81,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/play-modes.ts",
+          "language": "typescript",
+          "sizeLines": 252,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/sample-palace.ts",
+          "language": "typescript",
+          "sizeLines": 463,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/scoring.ts",
+          "language": "typescript",
+          "sizeLines": 97,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/(app)/palaces/page.tsx": [
+          "src/app/actions/onboarding.ts",
+          "src/components/app/my-memory-palace-client.tsx",
+          "src/lib/auth.ts",
+          "src/lib/pao-decks.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/actions/sessions.ts": [
+          "src/lib/auth.ts",
+          "src/lib/cards.ts",
+          "src/lib/prisma.ts",
+          "src/lib/scoring.ts",
+          "src/lib/spaced-repetition.ts"
+        ],
+        "src/app/my-memory-palace/page.tsx": [
+          "src/components/app/my-memory-palace-client.tsx",
+          "src/lib/auth.ts"
+        ],
+        "src/components/app/my-memory-palace-client.tsx": [
+          "src/components/app/card-badge.tsx",
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/form.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/pao-decks.ts",
+          "src/lib/sample-palace.ts"
+        ],
+        "src/components/play/play-game.tsx": [
+          "src/app/actions/sessions.ts",
+          "src/components/ui/button.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/cards.ts",
+          "src/lib/pao-decks.ts",
+          "src/lib/play-modes.ts",
+          "src/lib/sample-palace.ts",
+          "src/lib/utils.ts"
+        ],
+        "src/lib/cards.ts": [],
+        "src/lib/pao-decks.ts": [
+          "src/lib/cards.ts",
+          "src/lib/sample-palace.ts"
+        ],
+        "src/lib/play-modes.ts": [],
+        "src/lib/sample-palace.ts": [
+          "src/lib/cards.ts"
+        ],
+        "src/lib/scoring.ts": [
+          "src/lib/cards.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/app/(app)/palaces/page.tsx": [
+          {
+            "path": "src/app/actions/onboarding.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ensureStarterContent"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          },
+          {
+            "path": "src/lib/runtime-config.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "hasRequiredAppConfig"
+            ]
+          }
+        ],
+        "src/app/actions/sessions.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          },
+          {
+            "path": "src/lib/spaced-repetition.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "gradeFromRecall",
+              "nextReviewState"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "ProfilePage"
+            ]
+          },
+          {
+            "path": "src/components/training/training-cockpit.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "TrainingCockpit"
+            ]
+          }
+        ],
+        "src/app/my-memory-palace/page.tsx": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/components/app/my-memory-palace-client.tsx": [
+          {
+            "path": "src/components/app/card-badge.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "CardBadge"
+            ]
+          },
+          {
+            "path": "src/components/app/public-shell.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "PublicShell"
+            ]
+          },
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/card.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Card",
+              "CardHeader",
+              "CardTitle",
+              "CardContent"
+            ]
+          },
+          {
+            "path": "src/components/ui/form.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "Label",
+              "Input",
+              "Textarea"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          }
+        ],
+        "src/components/play/play-game.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn",
+              "formatDuration",
+              "formatFriendlyDuration",
+              "formatPercent"
+            ]
+          },
+          {
+            "path": "src/app/play/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "dynamic",
+              "PlayPage"
+            ]
+          }
+        ],
+        "src/lib/cards.ts": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "HomePage"
+            ]
+          },
+          {
+            "path": "src/components/build-palace/palace-builder.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "PalaceBuilder"
+            ]
+          },
+          {
+            "path": "src/components/training/training-cockpit.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "TrainingCockpit"
+            ]
+          },
+          {
+            "path": "src/lib/defaults.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "starterRoutes",
+              "starterLocations",
+              "starterCardImages"
+            ]
+          }
+        ],
+        "src/lib/pao-decks.ts": [
+          {
+            "path": "src/app/play/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "dynamic",
+              "PlayPage"
+            ]
+          }
+        ],
+        "src/lib/sample-palace.ts": [
+          {
+            "path": "src/lib/defaults.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "starterRoutes",
+              "starterLocations",
+              "starterCardImages"
+            ]
+          }
+        ],
+        "src/lib/scoring.ts": [
+          {
+            "path": "src/components/training/training-cockpit.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "TrainingCockpit"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "src/app/(app)/profile/edit/page.tsx",
+          "language": "typescript",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/auth-actions.ts",
+          "language": "typescript",
+          "sizeLines": 179,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/api/auth/[...nextauth]/route.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/login/page.tsx",
+          "language": "typescript",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/register/page.tsx",
+          "language": "typescript",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/auth.ts",
+          "language": "typescript",
+          "sizeLines": 73,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/auth-forms.tsx",
+          "language": "typescript",
+          "sizeLines": 152,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/logout-button.tsx",
+          "language": "typescript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ui/product.tsx",
+          "language": "typescript",
+          "sizeLines": 87,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/proxy.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/(app)/profile/edit/page.tsx": [
+          "src/components/app/auth-forms.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts"
+        ],
+        "src/app/actions/auth-actions.ts": [
+          "src/auth.ts",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts"
+        ],
+        "src/app/api/auth/[...nextauth]/route.ts": [
+          "src/auth.ts"
+        ],
+        "src/app/login/page.tsx": [
+          "src/auth.ts",
+          "src/components/app/auth-forms.tsx",
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/product.tsx"
+        ],
+        "src/app/register/page.tsx": [
+          "src/auth.ts",
+          "src/components/app/auth-forms.tsx",
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/product.tsx"
+        ],
+        "src/auth.ts": [
+          "src/lib/prisma.ts"
+        ],
+        "src/components/app/auth-forms.tsx": [
+          "src/app/actions/auth-actions.ts",
+          "src/components/ui/button.tsx",
+          "src/components/ui/form.tsx"
+        ],
+        "src/components/app/logout-button.tsx": [
+          "src/app/actions/auth-actions.ts",
+          "src/components/ui/button.tsx"
+        ],
+        "src/components/ui/product.tsx": [
+          "src/lib/utils.ts"
+        ],
+        "src/proxy.ts": [
+          "src/auth.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/app/(app)/profile/edit/page.tsx": [
+          {
+            "path": "src/components/ui/card.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Card",
+              "CardHeader",
+              "CardTitle",
+              "CardContent"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/app/actions/auth-actions.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/app/login/page.tsx": [
+          {
+            "path": "src/components/app/public-shell.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "PublicShell"
+            ]
+          }
+        ],
+        "src/app/register/page.tsx": [
+          {
+            "path": "src/components/app/public-shell.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "PublicShell"
+            ]
+          }
+        ],
+        "src/auth.ts": [
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/components/app/auth-forms.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/form.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "Label",
+              "Input",
+              "Textarea"
+            ]
+          }
+        ],
+        "src/components/app/logout-button.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/app/app-shell.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "AppShell"
+            ]
+          },
+          {
+            "path": "src/components/app/public-shell.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "PublicShell"
+            ]
+          }
+        ],
+        "src/components/ui/product.tsx": [
+          {
+            "path": "src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn",
+              "formatDuration",
+              "formatFriendlyDuration",
+              "formatPercent"
+            ]
+          },
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/dashboard/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "DashboardPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/leaderboard/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "LeaderboardPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "ProfilePage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/reviews/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "ReviewsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/sessions/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SessionsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/settings/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SettingsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/training/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "TrainingPage"
+            ]
+          },
+          {
+            "path": "src/app/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "HomePage"
+            ]
+          },
+          {
+            "path": "src/app/training-academy/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "TrainingAcademyPage"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          },
+          {
+            "path": "src/components/build-palace/palace-builder.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "PalaceBuilder"
+            ]
+          },
+          {
+            "path": "src/components/play/play-game.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PlayGame"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "src/app/(app)/reviews/page.tsx",
+          "language": "typescript",
+          "sizeLines": 93,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/training/page.tsx",
+          "language": "typescript",
+          "sizeLines": 45,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/onboarding.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/palaces.ts",
+          "language": "typescript",
+          "sizeLines": 69,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/reviews.ts",
+          "language": "typescript",
+          "sizeLines": 35,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/api/health/route.ts",
+          "language": "typescript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/defaults.ts",
+          "language": "typescript",
+          "sizeLines": 82,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/prisma.ts",
+          "language": "typescript",
+          "sizeLines": 13,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/spaced-repetition.ts",
+          "language": "typescript",
+          "sizeLines": 54,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/(app)/reviews/page.tsx": [
+          "src/app/actions/reviews.ts",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/(app)/training/page.tsx": [
+          "src/app/actions/onboarding.ts",
+          "src/components/training/training-cockpit.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/actions/onboarding.ts": [
+          "src/lib/auth.ts",
+          "src/lib/defaults.ts",
+          "src/lib/prisma.ts"
+        ],
+        "src/app/actions/palaces.ts": [
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts"
+        ],
+        "src/app/actions/reviews.ts": [
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts",
+          "src/lib/spaced-repetition.ts"
+        ],
+        "src/app/api/health/route.ts": [
+          "src/lib/prisma.ts"
+        ],
+        "src/lib/defaults.ts": [
+          "src/lib/cards.ts",
+          "src/lib/sample-palace.ts"
+        ],
+        "src/lib/prisma.ts": [],
+        "src/lib/spaced-repetition.ts": []
+      },
+      "neighborMap": {
+        "src/app/(app)/reviews/page.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/card.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Card",
+              "CardHeader",
+              "CardTitle",
+              "CardContent"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/runtime-config.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "hasRequiredAppConfig"
+            ]
+          }
+        ],
+        "src/app/(app)/training/page.tsx": [
+          {
+            "path": "src/components/training/training-cockpit.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "TrainingCockpit"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/runtime-config.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "hasRequiredAppConfig"
+            ]
+          }
+        ],
+        "src/app/actions/onboarding.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/app/(app)/dashboard/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "DashboardPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/palaces/page.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "dynamic",
+              "PalacesPage"
+            ]
+          }
+        ],
+        "src/app/actions/palaces.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/app/actions/reviews.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          }
+        ],
+        "src/lib/defaults.ts": [
+          {
+            "path": "src/lib/cards.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "fullDeck",
+              "cardFromCode",
+              "shuffleDeck"
+            ]
+          },
+          {
+            "path": "src/lib/sample-palace.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "homeRoute",
+              "gymRoute",
+              "schoolRoute",
+              "palaceLocations",
+              "suitOrder",
+              "sortedDeck",
+              "paoDeckPresets",
+              "beginnerPaoDeck",
+              "sampleUserPalaces"
+            ]
+          }
+        ],
+        "src/lib/prisma.ts": [
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/dashboard/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "DashboardPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/palaces/page.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "dynamic",
+              "PalacesPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "ProfilePage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/sessions/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SessionsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/settings/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SettingsPage"
+            ]
+          },
+          {
+            "path": "src/app/actions/auth-actions.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "registerAction",
+              "loginAction",
+              "updateProfileAction",
+              "logoutAction"
+            ]
+          },
+          {
+            "path": "src/app/actions/card-images.ts",
+            "batchIndex": 6,
+            "symbols": [
+              "upsertCardImage",
+              "saveCardImage",
+              "savePaoDeck"
+            ]
+          },
+          {
+            "path": "src/app/actions/sessions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createTrainingSession",
+              "completeTrainingSession",
+              "savePlaySessionResult",
+              "clearTrainingHistory"
+            ]
+          },
+          {
+            "path": "src/app/play/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "dynamic",
+              "PlayPage"
+            ]
+          },
+          {
+            "path": "src/auth.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "{ handlers, auth, signIn, signOut }"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/leaderboard.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getLeaderboardRankings",
+              "getLeaderboardPreview"
+            ]
+          }
+        ],
+        "src/lib/spaced-repetition.ts": [
+          {
+            "path": "src/app/actions/sessions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createTrainingSession",
+              "completeTrainingSession",
+              "savePlaySessionResult",
+              "clearTrainingHistory"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx",
+          "language": "typescript",
+          "sizeLines": 275,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/build-palace/page.tsx",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/page.tsx",
+          "language": "typescript",
+          "sizeLines": 271,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/play/page.tsx",
+          "language": "typescript",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/training-academy/page.tsx",
+          "language": "typescript",
+          "sizeLines": 227,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/app/public-shell.tsx",
+          "language": "typescript",
+          "sizeLines": 132,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/auth.ts",
+          "language": "typescript",
+          "sizeLines": 25,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx": [
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/button.tsx",
+          "src/lib/auth.ts"
+        ],
+        "src/app/build-palace/page.tsx": [
+          "src/components/app/public-shell.tsx",
+          "src/components/build-palace/palace-builder.tsx",
+          "src/lib/auth.ts"
+        ],
+        "src/app/page.tsx": [
+          "src/components/app/card-badge.tsx",
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/cards.ts"
+        ],
+        "src/app/play/page.tsx": [
+          "src/components/app/public-shell.tsx",
+          "src/components/play/play-game.tsx",
+          "src/lib/auth.ts",
+          "src/lib/pao-decks.ts",
+          "src/lib/prisma.ts"
+        ],
+        "src/app/training-academy/page.tsx": [
+          "src/components/app/public-shell.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts"
+        ],
+        "src/components/app/public-shell.tsx": [
+          "src/components/app/logout-button.tsx",
+          "src/lib/utils.ts"
+        ],
+        "src/lib/auth.ts": [
+          "src/auth.ts",
+          "src/lib/prisma.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/app/build-palace/how-to-create-your-pao-and-routes/page.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          }
+        ],
+        "src/app/build-palace/page.tsx": [
+          {
+            "path": "src/components/build-palace/palace-builder.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "PalaceBuilder"
+            ]
+          }
+        ],
+        "src/app/page.tsx": [
+          {
+            "path": "src/components/app/card-badge.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "CardBadge"
+            ]
+          },
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/cards.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "fullDeck",
+              "cardFromCode",
+              "shuffleDeck"
+            ]
+          }
+        ],
+        "src/app/play/page.tsx": [
+          {
+            "path": "src/components/play/play-game.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PlayGame"
+            ]
+          },
+          {
+            "path": "src/lib/pao-decks.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "getPresetPaoDeckOptions",
+              "getPaoDeckOptions"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/app/training-academy/page.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          }
+        ],
+        "src/components/app/public-shell.tsx": [
+          {
+            "path": "src/components/app/logout-button.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "LogoutButton"
+            ]
+          },
+          {
+            "path": "src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn",
+              "formatDuration",
+              "formatFriendlyDuration",
+              "formatPercent"
+            ]
+          },
+          {
+            "path": "src/app/login/page.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "dynamic",
+              "LoginPage"
+            ]
+          },
+          {
+            "path": "src/app/register/page.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "dynamic",
+              "RegisterPage"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          }
+        ],
+        "src/lib/auth.ts": [
+          {
+            "path": "src/auth.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "{ handlers, auth, signIn, signOut }"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          },
+          {
+            "path": "src/app/(app)/cards/page.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "dynamic",
+              "CardsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/dashboard/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "DashboardPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/layout.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "AppLayout"
+            ]
+          },
+          {
+            "path": "src/app/(app)/palaces/page.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "dynamic",
+              "PalacesPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/edit/page.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "dynamic",
+              "EditProfilePage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/profile/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "ProfilePage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/reviews/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "ReviewsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/sessions/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SessionsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/settings/page.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "dynamic",
+              "SettingsPage"
+            ]
+          },
+          {
+            "path": "src/app/(app)/training/page.tsx",
+            "batchIndex": 4,
+            "symbols": [
+              "dynamic",
+              "TrainingPage"
+            ]
+          },
+          {
+            "path": "src/app/actions/auth-actions.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "registerAction",
+              "loginAction",
+              "updateProfileAction",
+              "logoutAction"
+            ]
+          },
+          {
+            "path": "src/app/actions/card-images.ts",
+            "batchIndex": 6,
+            "symbols": [
+              "upsertCardImage",
+              "saveCardImage",
+              "savePaoDeck"
+            ]
+          },
+          {
+            "path": "src/app/actions/onboarding.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ensureStarterContent"
+            ]
+          },
+          {
+            "path": "src/app/actions/palaces.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "createPalace",
+              "addPalaceLocation"
+            ]
+          },
+          {
+            "path": "src/app/actions/reviews.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "gradeReviewCard"
+            ]
+          },
+          {
+            "path": "src/app/actions/sessions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createTrainingSession",
+              "completeTrainingSession",
+              "savePlaySessionResult",
+              "clearTrainingHistory"
+            ]
+          },
+          {
+            "path": "src/app/my-memory-palace/page.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalacePage"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "src/app/(app)/cards/page.tsx",
+          "language": "typescript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/actions/card-images.ts",
+          "language": "typescript",
+          "sizeLines": 122,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/build-palace/palace-builder.tsx",
+          "language": "typescript",
+          "sizeLines": 429,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ui/form.tsx",
+          "language": "typescript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/app/(app)/cards/page.tsx": [
+          "src/app/actions/card-images.ts",
+          "src/components/app/card-badge.tsx",
+          "src/components/ui/button.tsx",
+          "src/components/ui/card.tsx",
+          "src/components/ui/form.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/auth.ts",
+          "src/lib/cards.ts",
+          "src/lib/prisma.ts",
+          "src/lib/runtime-config.ts"
+        ],
+        "src/app/actions/card-images.ts": [
+          "src/lib/auth.ts",
+          "src/lib/prisma.ts"
+        ],
+        "src/components/build-palace/palace-builder.tsx": [
+          "src/app/actions/card-images.ts",
+          "src/components/ui/button.tsx",
+          "src/components/ui/form.tsx",
+          "src/components/ui/product.tsx",
+          "src/lib/cards.ts"
+        ],
+        "src/components/ui/form.tsx": [
+          "src/lib/utils.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/app/(app)/cards/page.tsx": [
+          {
+            "path": "src/components/app/card-badge.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "CardBadge"
+            ]
+          },
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/card.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Card",
+              "CardHeader",
+              "CardTitle",
+              "CardContent"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/cards.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "fullDeck",
+              "cardFromCode",
+              "shuffleDeck"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          },
+          {
+            "path": "src/lib/runtime-config.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "hasRequiredAppConfig"
+            ]
+          }
+        ],
+        "src/app/actions/card-images.ts": [
+          {
+            "path": "src/lib/auth.ts",
+            "batchIndex": 5,
+            "symbols": [
+              "getCurrentUser",
+              "requireCurrentUser"
+            ]
+          },
+          {
+            "path": "src/lib/prisma.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "getPrisma"
+            ]
+          }
+        ],
+        "src/components/build-palace/palace-builder.tsx": [
+          {
+            "path": "src/components/ui/button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button",
+              "ButtonLink"
+            ]
+          },
+          {
+            "path": "src/components/ui/product.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "PageHeader",
+              "Panel",
+              "MetricCard",
+              "InlineStat"
+            ]
+          },
+          {
+            "path": "src/lib/cards.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "fullDeck",
+              "cardFromCode",
+              "shuffleDeck"
+            ]
+          },
+          {
+            "path": "src/app/build-palace/page.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "BuildPalacePage"
+            ]
+          }
+        ],
+        "src/components/ui/form.tsx": [
+          {
+            "path": "src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn",
+              "formatDuration",
+              "formatFriendlyDuration",
+              "formatPercent"
+            ]
+          },
+          {
+            "path": "src/components/app/auth-forms.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "LoginForm",
+              "RegisterForm",
+              "ProfileEditForm"
+            ]
+          },
+          {
+            "path": "src/components/app/my-memory-palace-client.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MyMemoryPalaceClient"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": ".env.example",
+          "language": "config",
+          "sizeLines": 2,
+          "fileCategory": "config"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 150,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 50,
+          "fileCategory": "config"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "language": "yaml",
+          "sizeLines": 6,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 41,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".env.example": [],
+        "README.md": [],
+        "package.json": [],
+        "pnpm-workspace.yaml": [],
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "docs/AUTH_FLOW.md",
+          "language": "markdown",
+          "sizeLines": 169,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/Name_suggestions.md",
+          "language": "markdown",
+          "sizeLines": 62,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/architecture.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/game-modes.md",
+          "language": "markdown",
+          "sizeLines": 131,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/local-testing.md",
+          "language": "markdown",
+          "sizeLines": 114,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/project_overview.md",
+          "language": "markdown",
+          "sizeLines": 533,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/AUTH_FLOW.md": [],
+        "docs/Name_suggestions.md": [],
+        "docs/architecture.md": [],
+        "docs/game-modes.md": [],
+        "docs/local-testing.md": [],
+        "docs/project_overview.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": ".understand-anything/.understandignore",
+          "language": "unknown",
+          "sizeLines": 26,
+          "fileCategory": "code"
+        },
+        {
+          "path": "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+          "language": "markdown",
+          "sizeLines": 75,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "eslint.config.mjs",
+          "language": "javascript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "next-env.d.ts",
+          "language": "typescript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "next.config.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "postcss.config.mjs",
+          "language": "javascript",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+          "language": "sql",
+          "sizeLines": 247,
+          "fileCategory": "data"
+        },
+        {
+          "path": "prisma/migrations/migration_lock.toml",
+          "language": "toml",
+          "sizeLines": 3,
+          "fileCategory": "config"
+        },
+        {
+          "path": "prisma/schema.prisma",
+          "language": "prisma",
+          "sizeLines": 220,
+          "fileCategory": "data"
+        },
+        {
+          "path": "src/app/(app)/history/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/pao/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(app)/routes/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/globals.css",
+          "language": "css",
+          "sizeLines": 80,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "src/app/layout.tsx",
+          "language": "typescript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/app/leaderboard-dashboard/page.tsx",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/lib/play-modes.test.mjs",
+          "language": "javascript",
+          "sizeLines": 124,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/types/next-auth.d.ts",
+          "language": "typescript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".understand-anything/.understandignore": [],
+        "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md": [],
+        "eslint.config.mjs": [],
+        "next-env.d.ts": [],
+        "next.config.ts": [],
+        "postcss.config.mjs": [],
+        "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql": [],
+        "prisma/migrations/migration_lock.toml": [],
+        "prisma/schema.prisma": [],
+        "src/app/(app)/history/page.tsx": [],
+        "src/app/(app)/pao/page.tsx": [],
+        "src/app/(app)/routes/page.tsx": [],
+        "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx": [],
+        "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx": [],
+        "src/app/globals.css": [],
+        "src/app/layout.tsx": [
+          "src/app/globals.css"
+        ],
+        "src/app/leaderboard-dashboard/page.tsx": [],
+        "src/lib/play-modes.test.mjs": [],
+        "src/types/next-auth.d.ts": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

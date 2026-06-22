@@ -2,6 +2,7 @@ import { ArrowRight, Brain, CheckCircle2, Clock3, Layers3, Map, Play, Route, Spa
 import { PublicShell } from "@/components/app/public-shell";
 import { ButtonLink } from "@/components/ui/button";
 import { PageHeader, Panel } from "@/components/ui/product";
+import { getCurrentUser } from "@/lib/auth";
 
 const lessons = [
   {
@@ -97,9 +98,21 @@ const practiceBlocks = [
   { time: "5 min", title: "Recall small", detail: "Memorize 5 cards and mark the weak image." }
 ];
 
-export default function TrainingAcademyPage() {
+export default async function TrainingAcademyPage() {
+  const user = await getCurrentUser();
+
   return (
-    <PublicShell>
+    <PublicShell
+      user={
+        user
+          ? {
+              username: user.username,
+              displayName: user.profile?.displayName,
+              avatarColor: user.profile?.avatarColor
+            }
+          : null
+      }
+    >
       <div className="space-y-8 md:space-y-10">
         <PageHeader
           label="Training Academy"
@@ -150,7 +163,7 @@ export default function TrainingAcademyPage() {
                   <div key={group.name} className="rounded-md bg-[#f6f7f3] p-3">
                     <div className="flex items-center gap-2">
                       <Icon className="size-4 text-[#0f7a5f]" />
-                      <p className="font-semibold">{group.name}</p>
+                      <p className="font-semibold text-[#161713]">{group.name}</p>
                     </div>
                     <p className="mt-2 text-sm leading-6 text-[#5f665b]">{group.description}</p>
                     <p className="mt-3 font-mono text-xs font-semibold text-[#0f7a5f]">

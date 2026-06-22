@@ -3,10 +3,16 @@ import { PalaceBuilder } from "@/components/build-palace/palace-builder";
 import { requireCurrentUser } from "@/lib/auth";
 
 export default async function BuildPalacePage() {
-  await requireCurrentUser();
+  const user = await requireCurrentUser();
 
   return (
-    <PublicShell>
+    <PublicShell
+      user={{
+        username: user.username,
+        displayName: user.profile?.displayName,
+        avatarColor: user.profile?.avatarColor
+      }}
+    >
       <PalaceBuilder />
     </PublicShell>
   );

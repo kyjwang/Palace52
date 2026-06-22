@@ -1,0 +1,808 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/app/(app)/profile/edit/page.tsx",
+      "type": "file",
+      "name": "profile/edit page",
+      "summary": "Next.js route module for (app)/profile/edit/page.tsx, exporting dynamic, EditProfilePage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/profile/edit/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/profile/edit/page.tsx:EditProfilePage",
+      "type": "function",
+      "name": "EditProfilePage",
+      "summary": "EditProfilePage implements profile/edit page behavior in src/app/(app)/profile/edit/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/profile/edit/page.tsx",
+      "lineRange": {
+        "start": 9,
+        "end": 50
+      }
+    },
+    {
+      "id": "file:src/app/actions/auth-actions.ts",
+      "type": "file",
+      "name": "auth-actions.ts",
+      "summary": "Next.js route module for actions/auth-actions.ts, exporting registerAction, loginAction, updateProfileAction.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "auth"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/actions/auth-actions.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/actions/auth-actions.ts:registerAction",
+      "type": "function",
+      "name": "registerAction",
+      "summary": "registerAction implements auth-actions.ts behavior in src/app/actions/auth-actions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/auth-actions.ts",
+      "lineRange": {
+        "start": 62,
+        "end": 107
+      }
+    },
+    {
+      "id": "function:src/app/actions/auth-actions.ts:loginAction",
+      "type": "function",
+      "name": "loginAction",
+      "summary": "loginAction implements auth-actions.ts behavior in src/app/actions/auth-actions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/auth-actions.ts",
+      "lineRange": {
+        "start": 109,
+        "end": 136
+      }
+    },
+    {
+      "id": "function:src/app/actions/auth-actions.ts:updateProfileAction",
+      "type": "function",
+      "name": "updateProfileAction",
+      "summary": "updateProfileAction implements auth-actions.ts behavior in src/app/actions/auth-actions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/auth-actions.ts",
+      "lineRange": {
+        "start": 138,
+        "end": 169
+      }
+    },
+    {
+      "id": "function:src/app/actions/auth-actions.ts:logoutAction",
+      "type": "function",
+      "name": "logoutAction",
+      "summary": "logoutAction implements auth-actions.ts behavior in src/app/actions/auth-actions.ts.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "server-actions",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/actions/auth-actions.ts",
+      "lineRange": {
+        "start": 171,
+        "end": 173
+      }
+    },
+    {
+      "id": "file:src/app/api/auth/[...nextauth]/route.ts",
+      "type": "file",
+      "name": "api/auth/[...nextauth] route",
+      "summary": "Next.js route module for api/auth/[...nextauth]/route.ts, exporting { GET, POST }.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "auth"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/api/auth/[...nextauth]/route.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "file:src/app/login/page.tsx",
+      "type": "file",
+      "name": "app/login page",
+      "summary": "Next.js route module for login/page.tsx, exporting dynamic, LoginPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/login/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/login/page.tsx:LoginPage",
+      "type": "function",
+      "name": "LoginPage",
+      "summary": "LoginPage implements app/login page behavior in src/app/login/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/login/page.tsx",
+      "lineRange": {
+        "start": 9,
+        "end": 32
+      }
+    },
+    {
+      "id": "file:src/app/register/page.tsx",
+      "type": "file",
+      "name": "app/register page",
+      "summary": "Next.js route module for register/page.tsx, exporting dynamic, RegisterPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/register/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/register/page.tsx:RegisterPage",
+      "type": "function",
+      "name": "RegisterPage",
+      "summary": "RegisterPage implements app/register page behavior in src/app/register/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/register/page.tsx",
+      "lineRange": {
+        "start": 10,
+        "end": 49
+      }
+    },
+    {
+      "id": "file:src/auth.ts",
+      "type": "file",
+      "name": "auth.ts",
+      "summary": "auth.ts in the Palace52 codebase.",
+      "tags": [
+        "code",
+        "typescript",
+        "auth"
+      ],
+      "complexity": "simple",
+      "filePath": "src/auth.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "file:src/components/app/auth-forms.tsx",
+      "type": "file",
+      "name": "auth-forms.tsx",
+      "summary": "React component module for Palace52 UI, exporting LoginForm, RegisterForm, ProfileEditForm.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "auth"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/components/app/auth-forms.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/auth-forms.tsx:LoginForm",
+      "type": "function",
+      "name": "LoginForm",
+      "summary": "LoginForm implements auth-forms.tsx behavior in src/components/app/auth-forms.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/auth-forms.tsx",
+      "lineRange": {
+        "start": 17,
+        "end": 58
+      }
+    },
+    {
+      "id": "function:src/components/app/auth-forms.tsx:RegisterForm",
+      "type": "function",
+      "name": "RegisterForm",
+      "summary": "RegisterForm implements auth-forms.tsx behavior in src/components/app/auth-forms.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/auth-forms.tsx",
+      "lineRange": {
+        "start": 60,
+        "end": 95
+      }
+    },
+    {
+      "id": "function:src/components/app/auth-forms.tsx:ProfileEditForm",
+      "type": "function",
+      "name": "ProfileEditForm",
+      "summary": "ProfileEditForm implements auth-forms.tsx behavior in src/components/app/auth-forms.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/auth-forms.tsx",
+      "lineRange": {
+        "start": 97,
+        "end": 147
+      }
+    },
+    {
+      "id": "file:src/components/app/logout-button.tsx",
+      "type": "file",
+      "name": "logout-button.tsx",
+      "summary": "React component module for Palace52 UI, exporting LogoutButton.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/logout-button.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/app/logout-button.tsx:LogoutButton",
+      "type": "function",
+      "name": "LogoutButton",
+      "summary": "LogoutButton implements logout-button.tsx behavior in src/components/app/logout-button.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/app/logout-button.tsx",
+      "lineRange": {
+        "start": 7,
+        "end": 16
+      }
+    },
+    {
+      "id": "file:src/components/ui/product.tsx",
+      "type": "file",
+      "name": "product.tsx",
+      "summary": "React component module for Palace52 UI, exporting PageHeader, Panel, MetricCard.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/components/ui/product.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/components/ui/product.tsx:PageHeader",
+      "type": "function",
+      "name": "PageHeader",
+      "summary": "PageHeader implements product.tsx behavior in src/components/ui/product.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/product.tsx",
+      "lineRange": {
+        "start": 4,
+        "end": 36
+      }
+    },
+    {
+      "id": "function:src/components/ui/product.tsx:Panel",
+      "type": "function",
+      "name": "Panel",
+      "summary": "Panel implements product.tsx behavior in src/components/ui/product.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/product.tsx",
+      "lineRange": {
+        "start": 38,
+        "end": 44
+      }
+    },
+    {
+      "id": "function:src/components/ui/product.tsx:MetricCard",
+      "type": "function",
+      "name": "MetricCard",
+      "summary": "MetricCard implements product.tsx behavior in src/components/ui/product.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/product.tsx",
+      "lineRange": {
+        "start": 46,
+        "end": 78
+      }
+    },
+    {
+      "id": "function:src/components/ui/product.tsx:InlineStat",
+      "type": "function",
+      "name": "InlineStat",
+      "summary": "InlineStat implements product.tsx behavior in src/components/ui/product.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "react-component",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/components/ui/product.tsx",
+      "lineRange": {
+        "start": 80,
+        "end": 87
+      }
+    },
+    {
+      "id": "file:src/proxy.ts",
+      "type": "file",
+      "name": "proxy.ts",
+      "summary": "proxy.ts in the Palace52 codebase.",
+      "tags": [
+        "code",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "filePath": "src/proxy.ts",
+      "language": "typescript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "file:src/components/app/auth-forms.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "file:src/components/ui/card.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "function:src/app/(app)/profile/edit/page.tsx:EditProfilePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/profile/edit/page.tsx",
+      "target": "function:src/app/(app)/profile/edit/page.tsx:EditProfilePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "file:src/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "file:src/lib/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:registerAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:registerAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:loginAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:loginAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:updateProfileAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:updateProfileAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:logoutAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/actions/auth-actions.ts",
+      "target": "function:src/app/actions/auth-actions.ts:logoutAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/api/auth/[...nextauth]/route.ts",
+      "target": "file:src/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "file:src/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "file:src/components/app/auth-forms.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "file:src/components/app/public-shell.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "function:src/app/login/page.tsx:LoginPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/login/page.tsx",
+      "target": "function:src/app/login/page.tsx:LoginPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "file:src/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "file:src/components/app/auth-forms.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "file:src/components/app/public-shell.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "file:src/components/ui/product.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "function:src/app/register/page.tsx:RegisterPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/register/page.tsx",
+      "target": "function:src/app/register/page.tsx:RegisterPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/auth.ts",
+      "target": "file:src/lib/prisma.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "file:src/app/actions/auth-actions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "file:src/components/ui/form.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:LoginForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:LoginForm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:RegisterForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:RegisterForm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:ProfileEditForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/auth-forms.tsx",
+      "target": "function:src/components/app/auth-forms.tsx:ProfileEditForm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/app/logout-button.tsx",
+      "target": "file:src/app/actions/auth-actions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/logout-button.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/app/logout-button.tsx",
+      "target": "function:src/components/app/logout-button.tsx:LogoutButton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/app/logout-button.tsx",
+      "target": "function:src/components/app/logout-button.tsx:LogoutButton",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:PageHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:PageHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:Panel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:Panel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:MetricCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:MetricCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:InlineStat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/product.tsx",
+      "target": "function:src/components/ui/product.tsx:InlineStat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/proxy.ts",
+      "target": "file:src/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

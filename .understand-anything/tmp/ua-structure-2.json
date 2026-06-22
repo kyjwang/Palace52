@@ -1,0 +1,2817 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/palaces/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "PalacesPage",
+          "startLine": 10,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "PalacesPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PalacesPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 11
+        },
+        {
+          "caller": "PalacesPage",
+          "callee": "ensureStarterContent",
+          "lineNumber": 13
+        },
+        {
+          "caller": "PalacesPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 14
+        },
+        {
+          "caller": "PalacesPage",
+          "callee": "getPrisma",
+          "lineNumber": 15
+        },
+        {
+          "caller": "PalacesPage",
+          "callee": "db.cardImage.findMany",
+          "lineNumber": 16
+        },
+        {
+          "caller": "PalacesPage",
+          "callee": "getPaoDeckOptions",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/sessions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 295,
+      "nonEmptyLines": 260,
+      "functions": [
+        {
+          "name": "createTrainingSession",
+          "startLine": 52,
+          "endLine": 68,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "completeTrainingSession",
+          "startLine": 70,
+          "endLine": 191,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "savePlaySessionResult",
+          "startLine": 193,
+          "endLine": 279,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "clearTrainingHistory",
+          "startLine": 281,
+          "endLine": 295,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTrainingSession",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "completeTrainingSession",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "savePlaySessionResult",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "clearTrainingHistory",
+          "line": 281,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTrainingSession",
+          "callee": "requireCurrentUser",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "createSessionSchema.parse",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "shuffleDeck().slice",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "shuffleDeck",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "shuffleDeck",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "getPrisma().trainingSession.create",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "getPrisma",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "deck.map",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createTrainingSession",
+          "callee": "revalidatePath",
+          "lineNumber": 66
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "requireCurrentUser",
+          "lineNumber": 76
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "completeSessionSchema.parse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "getPrisma",
+          "lineNumber": 78
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "db.trainingSession.findFirst",
+          "lineNumber": 80
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "z.array(z.string()).parse",
+          "lineNumber": 86
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "z.array",
+          "lineNumber": 86
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "z.string",
+          "lineNumber": 86
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "expectedCodes\n    .map((code) => fullDeck.find((card) => card.code === code))\n    .filter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "expectedCodes\n    .map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "fullDeck.find",
+          "lineNumber": 88
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "Boolean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "scoreRecall",
+          "lineNumber": 90
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "db.$transaction",
+          "lineNumber": 93
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.sessionCardResult.deleteMany",
+          "lineNumber": 94
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.trainingSession.update",
+          "lineNumber": 96
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.sessionCardResult.createMany",
+          "lineNumber": 110
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "summary.results.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.reviewCard.findUnique",
+          "lineNumber": 128
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "nextReviewState",
+          "lineNumber": 138
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "gradeFromRecall",
+          "lineNumber": 140
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.reviewCard.upsert",
+          "lineNumber": 144
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "tx.leaderboardEntry.upsert",
+          "lineNumber": 162
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "revalidatePath",
+          "lineNumber": 185
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "revalidatePath",
+          "lineNumber": 186
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "revalidatePath",
+          "lineNumber": 187
+        },
+        {
+          "caller": "completeTrainingSession",
+          "callee": "revalidatePath",
+          "lineNumber": 188
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "requireCurrentUser",
+          "lineNumber": 194
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "savePlaySessionSchema.parse",
+          "lineNumber": 195
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "getPrisma",
+          "lineNumber": 196
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "Math.max",
+          "lineNumber": 199
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "db.$transaction",
+          "lineNumber": 201
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "tx.trainingSession.create",
+          "lineNumber": 202
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "parsed.generatedDeck\n      .map((code, index) => {\n        const expected = fullDeck.find((card) => card.code === code);\n        if (!expected) return null;\n        const recalledCode = parsed.userRecall[index] || parsed.userAnswers[index] || \"\";\n        const recalled = fullDeck.find((card) => card.code === recalledCode);\n        const mistake = parsed.mistakes.find((item) => item.position === index + 1);\n\n        return {\n          sessionId: created.id,\n          expectedRank: expected.rank,\n          expectedSuit: expected.suit,\n          recalledRank: recalled?.rank,\n          recalledSuit: recalled?.suit,\n          expectedIndex: index,\n          recalledIndex: recalled ? parsed.generatedDeck.indexOf(recalled.code) : undefined,\n          isCorrect: !mistake && Boolean(recalledCode),\n          mistakeType: (mistake?.type ?? \"CORRECT\") as MistakeType,\n          feedback: mistake?.feedback ?? \"Correct image and location.\"\n        };\n      })\n      .filter",
+          "lineNumber": 228
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "parsed.generatedDeck\n      .map",
+          "lineNumber": 228
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "fullDeck.find",
+          "lineNumber": 230
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "fullDeck.find",
+          "lineNumber": 233
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "parsed.mistakes.find",
+          "lineNumber": 234
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "parsed.generatedDeck.indexOf",
+          "lineNumber": 243
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "Boolean",
+          "lineNumber": 244
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "Boolean",
+          "lineNumber": 249
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "tx.sessionCardResult.createMany",
+          "lineNumber": 252
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "tx.leaderboardEntry.create",
+          "lineNumber": 256
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "revalidatePath",
+          "lineNumber": 273
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "revalidatePath",
+          "lineNumber": 274
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "revalidatePath",
+          "lineNumber": 275
+        },
+        {
+          "caller": "savePlaySessionResult",
+          "callee": "revalidatePath",
+          "lineNumber": 276
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "requireCurrentUser",
+          "lineNumber": 282
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "getPrisma().trainingSession.deleteMany",
+          "lineNumber": 284
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "getPrisma",
+          "lineNumber": 284
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "revalidatePath",
+          "lineNumber": 291
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "revalidatePath",
+          "lineNumber": 292
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "revalidatePath",
+          "lineNumber": 293
+        },
+        {
+          "caller": "clearTrainingHistory",
+          "callee": "revalidatePath",
+          "lineNumber": 294
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/my-memory-palace/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "MyMemoryPalacePage",
+          "startLine": 4,
+          "endLine": 20,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MyMemoryPalacePage",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MyMemoryPalacePage",
+          "callee": "getCurrentUser",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/my-memory-palace-client.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 326,
+      "nonEmptyLines": 311,
+      "functions": [
+        {
+          "name": "MyMemoryPalaceClient",
+          "startLine": 21,
+          "endLine": 326,
+          "params": [
+            "{\n  embedded = false,\n  headerUser,\n  paoDeckOptions = getPresetPaoDeckOptions()\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MyMemoryPalaceClient",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "getPresetPaoDeckOptions",
+          "lineNumber": 24
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "useState",
+          "lineNumber": 32
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "useState",
+          "lineNumber": 33
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "useState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "getPresetPaoDeckOptions",
+          "lineNumber": 35
+        },
+        {
+          "caller": "chooseDeck",
+          "callee": "setDeckIndex",
+          "lineNumber": 38
+        },
+        {
+          "caller": "chooseDeck",
+          "callee": "setDeckSelectorOpen",
+          "lineNumber": 39
+        },
+        {
+          "caller": "renamePalace",
+          "callee": "setPalaces",
+          "lineNumber": 43
+        },
+        {
+          "caller": "renamePalace",
+          "callee": "current.map",
+          "lineNumber": 44
+        },
+        {
+          "caller": "renamePalace",
+          "callee": "setExpandedPalace",
+          "lineNumber": 46
+        },
+        {
+          "caller": "renamePalace",
+          "callee": "setEditingPalace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "renameLocation",
+          "callee": "setPalaces",
+          "lineNumber": 51
+        },
+        {
+          "caller": "renameLocation",
+          "callee": "current.map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "renameLocation",
+          "callee": "palace.locations.map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "setPalaces",
+          "lineNumber": 64
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "current.map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "palace.locations.filter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "removeLocation",
+          "callee": "Math.max",
+          "lineNumber": 70
+        },
+        {
+          "caller": "moveLocation",
+          "callee": "setPalaces",
+          "lineNumber": 78
+        },
+        {
+          "caller": "moveLocation",
+          "callee": "current.map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "palaces.map",
+          "lineNumber": 108
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "setExpandedPalace",
+          "lineNumber": 109
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 115
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "renamePalace",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 129
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "setExpandedPalace",
+          "lineNumber": 130
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "setEditingPalace",
+          "lineNumber": 131
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "(expandedPalace === palace.name ? palace.locations : palace.locations.slice(0, 6)).map",
+          "lineNumber": 147
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "palace.locations.slice",
+          "lineNumber": 147
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 154
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "renameLocation",
+          "lineNumber": 155
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 162
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "moveLocation",
+          "lineNumber": 163
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 173
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "moveLocation",
+          "lineNumber": 174
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "event.stopPropagation",
+          "lineNumber": 184
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "removeLocation",
+          "lineNumber": 185
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "setDeckSelectorOpen",
+          "lineNumber": 224
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "paoDeckOptions.map",
+          "lineNumber": 236
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "chooseDeck",
+          "lineNumber": 240
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "suitOrder.map",
+          "lineNumber": 261
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "activeDeck.deck\n                    .filter((entry) => entry.card.suit === suit)\n                    .map",
+          "lineNumber": 277
+        },
+        {
+          "caller": "MyMemoryPalaceClient",
+          "callee": "activeDeck.deck\n                    .filter",
+          "lineNumber": 277
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/play/play-game.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1041,
+      "nonEmptyLines": 953,
+      "functions": [
+        {
+          "name": "PlayGame",
+          "startLine": 82,
+          "endLine": 827,
+          "params": [
+            "{ paoDeckOptions = [] }"
+          ]
+        },
+        {
+          "name": "InlineCounter",
+          "startLine": 829,
+          "endLine": 836,
+          "params": [
+            "{ label, value }"
+          ]
+        },
+        {
+          "name": "PlayingCardFace",
+          "startLine": 838,
+          "endLine": 878,
+          "params": [
+            "{ card }"
+          ]
+        },
+        {
+          "name": "CardIndex",
+          "startLine": 880,
+          "endLine": 887,
+          "params": [
+            "{ rank, suit, tone, flipped = false }"
+          ]
+        },
+        {
+          "name": "FaceCourtCard",
+          "startLine": 889,
+          "endLine": 910,
+          "params": [
+            "{ card, rank, suit, tone }"
+          ]
+        },
+        {
+          "name": "getRankMark",
+          "startLine": 912,
+          "endLine": 918,
+          "params": [
+            "card"
+          ]
+        },
+        {
+          "name": "getSuitMark",
+          "startLine": 920,
+          "endLine": 922,
+          "params": [
+            "card"
+          ]
+        },
+        {
+          "name": "getCardTone",
+          "startLine": 924,
+          "endLine": 926,
+          "params": [
+            "card"
+          ]
+        },
+        {
+          "name": "getPipCount",
+          "startLine": 928,
+          "endLine": 940,
+          "params": [
+            "card"
+          ]
+        },
+        {
+          "name": "getPipPositions",
+          "startLine": 942,
+          "endLine": 956,
+          "params": [
+            "count"
+          ]
+        },
+        {
+          "name": "shuffleEntries",
+          "startLine": 958,
+          "endLine": 960,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "shuffleNumbers",
+          "startLine": 962,
+          "endLine": 964,
+          "params": [
+            "count"
+          ]
+        },
+        {
+          "name": "formatMs",
+          "startLine": 966,
+          "endLine": 970,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "getModeRules",
+          "startLine": 972,
+          "endLine": 1001,
+          "params": [
+            "mode",
+            "difficulty",
+            "selectedSuit"
+          ]
+        },
+        {
+          "name": "renderPaoPrompt",
+          "startLine": 1003,
+          "endLine": 1014,
+          "params": [
+            "entry",
+            "variant",
+            "missingPart"
+          ]
+        },
+        {
+          "name": "getMissingPart",
+          "startLine": 1016,
+          "endLine": 1018,
+          "params": [
+            "index"
+          ]
+        },
+        {
+          "name": "resultSummary",
+          "startLine": 1020,
+          "endLine": 1026,
+          "params": [
+            "result",
+            "mode",
+            "difficulty"
+          ]
+        },
+        {
+          "name": "readPersonalBest",
+          "startLine": 1028,
+          "endLine": 1032,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "writePersonalBest",
+          "startLine": 1034,
+          "endLine": 1037,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "isRecallCorrectLabel",
+          "startLine": 1039,
+          "endLine": 1041,
+          "params": [
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PlayGame",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 83
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 84
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 85
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 86
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 87
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 88
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 89
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 90
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 91
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 92
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 93
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 94
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 95
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 96
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 97
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 98
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 99
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 100
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 101
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 102
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 103
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 104
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 105
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 106
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 107
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useState",
+          "lineNumber": 108
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useTransition",
+          "lineNumber": 109
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useRef",
+          "lineNumber": 110
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useMemo",
+          "lineNumber": 113
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "availablePaoDecks.find",
+          "lineNumber": 114
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useMemo",
+          "lineNumber": 118
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "sourcePaoDeck.slice",
+          "lineNumber": 118
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "useMemo",
+          "lineNumber": 120
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "sampleUserPalaces.find",
+          "lineNumber": 121
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Math.round",
+          "lineNumber": 127
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "flashcardGrades.filter",
+          "lineNumber": 128
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "flashcardGrades.filter",
+          "lineNumber": 129
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Math.floor",
+          "lineNumber": 130
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "modeCards.find",
+          "lineNumber": 132
+        },
+        {
+          "caller": "start",
+          "callee": "buildSessionDeck",
+          "lineNumber": 137
+        },
+        {
+          "caller": "start",
+          "callee": "shuffleNumbers(nextDeck.length).slice",
+          "lineNumber": 139
+        },
+        {
+          "caller": "start",
+          "callee": "shuffleNumbers",
+          "lineNumber": 139
+        },
+        {
+          "caller": "start",
+          "callee": "Math.min",
+          "lineNumber": 139
+        },
+        {
+          "caller": "start",
+          "callee": "setSessionDeck",
+          "lineNumber": 141
+        },
+        {
+          "caller": "start",
+          "callee": "setQuestionPositions",
+          "lineNumber": 142
+        },
+        {
+          "caller": "start",
+          "callee": "setIndex",
+          "lineNumber": 143
+        },
+        {
+          "caller": "start",
+          "callee": "setRecall",
+          "lineNumber": 144
+        },
+        {
+          "caller": "start",
+          "callee": "Array.from",
+          "lineNumber": 144
+        },
+        {
+          "caller": "start",
+          "callee": "setFlashcardAnswer",
+          "lineNumber": 145
+        },
+        {
+          "caller": "start",
+          "callee": "setFlashcardGrades",
+          "lineNumber": 146
+        },
+        {
+          "caller": "start",
+          "callee": "setStudyStartedAt",
+          "lineNumber": 147
+        },
+        {
+          "caller": "start",
+          "callee": "setRecallStartedAt",
+          "lineNumber": 148
+        },
+        {
+          "caller": "start",
+          "callee": "setResponseStartedAt",
+          "lineNumber": 149
+        },
+        {
+          "caller": "start",
+          "callee": "setMemorizationMs",
+          "lineNumber": 150
+        },
+        {
+          "caller": "start",
+          "callee": "setRecallMs",
+          "lineNumber": 151
+        },
+        {
+          "caller": "start",
+          "callee": "setResult",
+          "lineNumber": 152
+        },
+        {
+          "caller": "start",
+          "callee": "setSaveState",
+          "lineNumber": 153
+        },
+        {
+          "caller": "start",
+          "callee": "setActiveHint",
+          "lineNumber": 154
+        },
+        {
+          "caller": "start",
+          "callee": "setPhase",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "shuffleEntries",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "prepareModeDeck",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "shuffleEntries(sourcePaoDeck).slice",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "shuffleEntries",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "shuffleEntries(sourcePaoDeck).slice",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildSessionDeck",
+          "callee": "shuffleEntries",
+          "lineNumber": 167
+        },
+        {
+          "caller": "beginRecall",
+          "callee": "setMemorizationMs",
+          "lineNumber": 171
+        },
+        {
+          "caller": "beginRecall",
+          "callee": "setRecallStartedAt",
+          "lineNumber": 172
+        },
+        {
+          "caller": "beginRecall",
+          "callee": "setIndex",
+          "lineNumber": 173
+        },
+        {
+          "caller": "beginRecall",
+          "callee": "setActiveHint",
+          "lineNumber": 174
+        },
+        {
+          "caller": "beginRecall",
+          "callee": "setPhase",
+          "lineNumber": 175
+        },
+        {
+          "caller": "nextCard",
+          "callee": "setIndex",
+          "lineNumber": 180
+        },
+        {
+          "caller": "nextCard",
+          "callee": "setActiveHint",
+          "lineNumber": 181
+        },
+        {
+          "caller": "previousCard",
+          "callee": "setIndex",
+          "lineNumber": 185
+        },
+        {
+          "caller": "previousCard",
+          "callee": "Math.max",
+          "lineNumber": 185
+        },
+        {
+          "caller": "previousCard",
+          "callee": "setActiveHint",
+          "lineNumber": 186
+        },
+        {
+          "caller": "handleSwipe",
+          "callee": "setTouchStartX",
+          "lineNumber": 192
+        },
+        {
+          "caller": "handleSwipe",
+          "callee": "nextCard",
+          "lineNumber": 196
+        },
+        {
+          "caller": "handleSwipe",
+          "callee": "previousCard",
+          "lineNumber": 201
+        },
+        {
+          "caller": "handleCardClick",
+          "callee": "currentTarget.getBoundingClientRect",
+          "lineNumber": 211
+        },
+        {
+          "caller": "handleCardClick",
+          "callee": "nextCard",
+          "lineNumber": 212
+        },
+        {
+          "caller": "handleCardClick",
+          "callee": "previousCard",
+          "lineNumber": 213
+        },
+        {
+          "caller": "updateRecallGuess",
+          "callee": "normalizeCardCode",
+          "lineNumber": 218
+        },
+        {
+          "caller": "updateRecallGuess",
+          "callee": "setRecall",
+          "lineNumber": 219
+        },
+        {
+          "caller": "advanceRecall",
+          "callee": "finishRecall",
+          "lineNumber": 224
+        },
+        {
+          "caller": "advanceRecall",
+          "callee": "setIndex",
+          "lineNumber": 228
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "readPersonalBest",
+          "lineNumber": 234
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "modeBestKey",
+          "lineNumber": 234
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "buildPlaySessionResult",
+          "lineNumber": 237
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "deck.map",
+          "lineNumber": 239
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "buildPlaySessionResult",
+          "lineNumber": 247
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "deck.map",
+          "lineNumber": 249
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "setRecallMs",
+          "lineNumber": 258
+        },
+        {
+          "caller": "finishRecall",
+          "callee": "completeWithResult",
+          "lineNumber": 259
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "getVisiblePaoExpected",
+          "lineNumber": 267
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "gradePaoAnswer",
+          "lineNumber": 271
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "getMissingPart",
+          "lineNumber": 275
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "setFlashcardGrades",
+          "lineNumber": 280
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "setFlashcardAnswer",
+          "lineNumber": 281
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades.reduce",
+          "lineNumber": 284
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "readPersonalBest",
+          "lineNumber": 285
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "modeBestKey",
+          "lineNumber": 285
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades.filter",
+          "lineNumber": 286
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades\n        .map((item, gradeIndex) => ({ item, gradeIndex }))\n        .filter(({ item }) => item.outcome !== \"correct\")\n        .map",
+          "lineNumber": 287
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades\n        .map((item, gradeIndex) => ({ item, gradeIndex }))\n        .filter",
+          "lineNumber": 287
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades\n        .map",
+          "lineNumber": 287
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "deck.map",
+          "lineNumber": 301
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades.map",
+          "lineNumber": 302
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "nextGrades.map",
+          "lineNumber": 304
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "mistakes.map((mistake) => deck[mistake.position - 1]?.card.rank).filter",
+          "lineNumber": 312
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "mistakes.map",
+          "lineNumber": 312
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "setRecallMs",
+          "lineNumber": 318
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "completeWithResult",
+          "lineNumber": 319
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "setIndex",
+          "lineNumber": 323
+        },
+        {
+          "caller": "submitFlashcard",
+          "callee": "setResponseStartedAt",
+          "lineNumber": 324
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "setResult",
+          "lineNumber": 328
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "setPhase",
+          "lineNumber": 329
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "writePersonalBest",
+          "lineNumber": 332
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "modeBestKey",
+          "lineNumber": 332
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "startTransition",
+          "lineNumber": 335
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "setSaveState",
+          "lineNumber": 337
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "savePlaySessionResult",
+          "lineNumber": 338
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "toTrainingSessionPayload",
+          "lineNumber": 338
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "setSaveState",
+          "lineNumber": 339
+        },
+        {
+          "caller": "completeWithResult",
+          "callee": "setSaveState",
+          "lineNumber": 341
+        },
+        {
+          "caller": "reset",
+          "callee": "setPhase",
+          "lineNumber": 347
+        },
+        {
+          "caller": "reset",
+          "callee": "setIndex",
+          "lineNumber": 348
+        },
+        {
+          "caller": "reset",
+          "callee": "setRecall",
+          "lineNumber": 349
+        },
+        {
+          "caller": "reset",
+          "callee": "setSessionDeck",
+          "lineNumber": 350
+        },
+        {
+          "caller": "reset",
+          "callee": "setQuestionPositions",
+          "lineNumber": 351
+        },
+        {
+          "caller": "reset",
+          "callee": "setFlashcardAnswer",
+          "lineNumber": 352
+        },
+        {
+          "caller": "reset",
+          "callee": "setFlashcardGrades",
+          "lineNumber": 353
+        },
+        {
+          "caller": "reset",
+          "callee": "setActiveHint",
+          "lineNumber": 354
+        },
+        {
+          "caller": "reset",
+          "callee": "setResult",
+          "lineNumber": 355
+        },
+        {
+          "caller": "reset",
+          "callee": "setSaveState",
+          "lineNumber": 356
+        },
+        {
+          "caller": "getVisiblePaoExpected",
+          "callee": "getMissingPart",
+          "lineNumber": 366
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "modeCards.map",
+          "lineNumber": 391
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setMode",
+          "lineNumber": 398
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setPalace",
+          "lineNumber": 416
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "sampleUserPalaces.map",
+          "lineNumber": 417
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setSelectedPaoDeckId",
+          "lineNumber": 428
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setSessionDeck",
+          "lineNumber": 429
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setActiveHint",
+          "lineNumber": 430
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "availablePaoDecks.map",
+          "lineNumber": 436
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setDifficulty",
+          "lineNumber": 455
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "speedDifficulties.map",
+          "lineNumber": 456
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setSuitCount",
+          "lineNumber": 464
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Number",
+          "lineNumber": 464
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "suitCounts.map",
+          "lineNumber": 465
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setFlashcardCount",
+          "lineNumber": 473
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Number",
+          "lineNumber": 473
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "flashcardCounts.map",
+          "lineNumber": 474
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setQuestionCount",
+          "lineNumber": 482
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Number",
+          "lineNumber": 482
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "positionQuestionCounts.map",
+          "lineNumber": 483
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setCount",
+          "lineNumber": 491
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "Number",
+          "lineNumber": 491
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "cardCounts.map",
+          "lineNumber": 492
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "suits.map",
+          "lineNumber": 502
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setSelectedSuit",
+          "lineNumber": 506
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "paoVariants.map",
+          "lineNumber": 519
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setPaoVariant",
+          "lineNumber": 523
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "start",
+          "lineNumber": 535
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "getModeRules(mode, difficulty, selectedSuit).map",
+          "lineNumber": 544
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "getModeRules",
+          "lineNumber": 544
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setActiveHint",
+          "lineNumber": 565
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setActiveHint",
+          "lineNumber": 574
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setTouchStartX",
+          "lineNumber": 605
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "handleSwipe",
+          "lineNumber": 606
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "handleCardClick",
+          "lineNumber": 607
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "beginRecall",
+          "lineNumber": 619
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "suitCodeLegend.map",
+          "lineNumber": 644
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "updateRecallGuess",
+          "lineNumber": 683
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "event.preventDefault",
+          "lineNumber": 686
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "advanceRecall",
+          "lineNumber": 687
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "updateRecallGuess",
+          "lineNumber": 696
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "advanceRecall",
+          "lineNumber": 699
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "paoVariants.find",
+          "lineNumber": 716
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "flashcardGrades.filter",
+          "lineNumber": 719
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "renderPaoPrompt",
+          "lineNumber": 729
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "getMissingPart",
+          "lineNumber": 729
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "setFlashcardAnswer",
+          "lineNumber": 736
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "event.preventDefault",
+          "lineNumber": 739
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "submitFlashcard",
+          "lineNumber": 740
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "getVisiblePaoExpected",
+          "lineNumber": 748
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "submitFlashcard",
+          "lineNumber": 751
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "submitFlashcard",
+          "lineNumber": 754
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "submitFlashcard",
+          "lineNumber": 757
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "formatPercent",
+          "lineNumber": 769
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "formatMs",
+          "lineNumber": 770
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "formatMs",
+          "lineNumber": 771
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "resultSummary",
+          "lineNumber": 784
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "result.mistakes.slice(0, 12).map",
+          "lineNumber": 799
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "result.mistakes.slice",
+          "lineNumber": 799
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "mistake.type.replace",
+          "lineNumber": 803
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "result.weakRanks.join",
+          "lineNumber": 813
+        },
+        {
+          "caller": "PlayGame",
+          "callee": "result.weakLoci.join",
+          "lineNumber": 819
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getRankMark",
+          "lineNumber": 839
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getSuitMark",
+          "lineNumber": 840
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getCardTone",
+          "lineNumber": 841
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getPipCount",
+          "lineNumber": 842
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getPipPositions(pipCount).map",
+          "lineNumber": 864
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "getPipPositions",
+          "lineNumber": 864
+        },
+        {
+          "caller": "PlayingCardFace",
+          "callee": "Math.floor",
+          "lineNumber": 868
+        },
+        {
+          "caller": "getRankMark",
+          "callee": "card.shortLabel.replace",
+          "lineNumber": 917
+        },
+        {
+          "caller": "getSuitMark",
+          "callee": "card.shortLabel.replace",
+          "lineNumber": 921
+        },
+        {
+          "caller": "shuffleEntries",
+          "callee": "[...entries].sort",
+          "lineNumber": 959
+        },
+        {
+          "caller": "shuffleEntries",
+          "callee": "Math.random",
+          "lineNumber": 959
+        },
+        {
+          "caller": "shuffleNumbers",
+          "callee": "Array.from({ length: count }, (_, index) => index + 1).sort",
+          "lineNumber": 963
+        },
+        {
+          "caller": "shuffleNumbers",
+          "callee": "Array.from",
+          "lineNumber": 963
+        },
+        {
+          "caller": "shuffleNumbers",
+          "callee": "Math.random",
+          "lineNumber": 963
+        },
+        {
+          "caller": "formatMs",
+          "callee": "Math.round",
+          "lineNumber": 967
+        },
+        {
+          "caller": "formatMs",
+          "callee": "Math.floor",
+          "lineNumber": 968
+        },
+        {
+          "caller": "formatMs",
+          "callee": "String(seconds % 60).padStart",
+          "lineNumber": 969
+        },
+        {
+          "caller": "formatMs",
+          "callee": "String",
+          "lineNumber": 969
+        },
+        {
+          "caller": "getModeRules",
+          "callee": "selectedSuit.toLowerCase",
+          "lineNumber": 983
+        },
+        {
+          "caller": "readPersonalBest",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 1030
+        },
+        {
+          "caller": "readPersonalBest",
+          "callee": "Number",
+          "lineNumber": 1031
+        },
+        {
+          "caller": "writePersonalBest",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "writePersonalBest",
+          "callee": "String",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "isRecallCorrectLabel",
+          "callee": "cardFromCode",
+          "lineNumber": 1040
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/cards.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "cardFromCode",
+          "startLine": 100,
+          "endLine": 102,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "shuffleDeck",
+          "startLine": 104,
+          "endLine": 115,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "hashSeed",
+          "startLine": 117,
+          "endLine": 124,
+          "params": [
+            "seed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fullDeck",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "cardFromCode",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "shuffleDeck",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cardFromCode",
+          "callee": "fullDeck.find",
+          "lineNumber": 101
+        },
+        {
+          "caller": "shuffleDeck",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 104
+        },
+        {
+          "caller": "shuffleDeck",
+          "callee": "hashSeed",
+          "lineNumber": 106
+        },
+        {
+          "caller": "shuffleDeck",
+          "callee": "Math.floor",
+          "lineNumber": 110
+        },
+        {
+          "caller": "hashSeed",
+          "callee": "seed.charCodeAt",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/pao-decks.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "getPresetPaoDeckOptions",
+          "startLine": 26,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "getPaoDeckOptions",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "savedImages"
+          ]
+        },
+        {
+          "name": "getCustomPaoDeckOption",
+          "startLine": 42,
+          "endLine": 73,
+          "params": [
+            "savedImages"
+          ]
+        },
+        {
+          "name": "isUserEditedCardImage",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "image"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPresetPaoDeckOptions",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getPaoDeckOptions",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPresetPaoDeckOptions",
+          "callee": "paoDeckPresets.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getPaoDeckOptions",
+          "callee": "getCustomPaoDeckOption",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getPaoDeckOptions",
+          "callee": "getPresetPaoDeckOptions",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "savedImages.filter",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "savedImages.map",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "beginnerPaoDeck.map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "fullDeck.map",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "imageByCard.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "fallbackByCode.get",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "image?.person?.trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "image?.action?.trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "image?.object?.trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "image?.imagePrompt?.trim",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getCustomPaoDeckOption",
+          "callee": "fallback.location.toLowerCase",
+          "lineNumber": 62
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "Boolean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.person?.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.action?.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.object?.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.imagePrompt?.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.updatedAt.getTime",
+          "lineNumber": 77
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.createdAt.getTime",
+          "lineNumber": 77
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "Boolean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.notes?.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "isUserEditedCardImage",
+          "callee": "image.notes.trim",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/play-modes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 230,
+      "functions": [
+        {
+          "name": "prepareModeDeck",
+          "startLine": 79,
+          "endLine": 92,
+          "params": [
+            "{\n  mode,\n  sourceDeck,\n  deckSize,\n  selectedSuit\n}"
+          ]
+        },
+        {
+          "name": "buildPlaySessionResult",
+          "startLine": 94,
+          "endLine": 152,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "gradePaoAnswer",
+          "startLine": 154,
+          "endLine": 181,
+          "params": [
+            "{\n  variant,\n  entry,\n  answer,\n  responseTime,\n  missingPart,\n  markedHard = false\n}"
+          ]
+        },
+        {
+          "name": "getPaoExpectedAnswer",
+          "startLine": 183,
+          "endLine": 187,
+          "params": [
+            "variant",
+            "entry",
+            "missingPart"
+          ]
+        },
+        {
+          "name": "toTrainingSessionPayload",
+          "startLine": 189,
+          "endLine": 207,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "normalizeCardCode",
+          "startLine": 209,
+          "endLine": 219,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "buildMistake",
+          "startLine": 221,
+          "endLine": 237,
+          "params": [
+            "position",
+            "expected",
+            "answer",
+            "generatedDeck"
+          ]
+        },
+        {
+          "name": "getRunValidity",
+          "startLine": 239,
+          "endLine": 244,
+          "params": [
+            "mode",
+            "difficulty",
+            "accuracy"
+          ]
+        },
+        {
+          "name": "normalizeText",
+          "startLine": 246,
+          "endLine": 248,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "isPresent",
+          "startLine": 250,
+          "endLine": 252,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "prepareModeDeck",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "buildPlaySessionResult",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "gradePaoAnswer",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "getPaoExpectedAnswer",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "toTrainingSessionPayload",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeCardCode",
+          "line": 209,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "prepareModeDeck",
+          "callee": "sourceDeck.filter",
+          "lineNumber": 90
+        },
+        {
+          "caller": "prepareModeDeck",
+          "callee": "filtered.slice",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "input.deck.map",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "generatedDeck.map",
+          "lineNumber": 96
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "questionPositions.map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "normalizeCardCode",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "input.deck.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "normalizeCardCode",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "checks\n    .filter((check) => normalizeCardCode(check.expected?.code ?? \"\") !== check.answer)\n    .map",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "checks\n    .filter",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "normalizeCardCode",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "buildMistake",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "getRunValidity",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "mistakes.map((mistake) => input.deck[mistake.position - 1]?.rank).filter",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "mistakes.map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "mistakes.map",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "wrongPositions.map((position) => input.routeLocations?.[position - 1]).filter",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "wrongPositions.map",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildPlaySessionResult",
+          "callee": "Array.from",
+          "lineNumber": 147
+        },
+        {
+          "caller": "gradePaoAnswer",
+          "callee": "getPaoExpectedAnswer",
+          "lineNumber": 169
+        },
+        {
+          "caller": "gradePaoAnswer",
+          "callee": "normalizeText",
+          "lineNumber": 170
+        },
+        {
+          "caller": "gradePaoAnswer",
+          "callee": "normalizeText",
+          "lineNumber": 170
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "value.toUpperCase().replace",
+          "lineNumber": 210
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "value.toUpperCase",
+          "lineNumber": 210
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "cleaned.slice",
+          "lineNumber": 211
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "cleaned.slice",
+          "lineNumber": 212
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "validRanks.has",
+          "lineNumber": 217
+        },
+        {
+          "caller": "normalizeCardCode",
+          "callee": "validSuits.has",
+          "lineNumber": 217
+        },
+        {
+          "caller": "buildMistake",
+          "callee": "generatedDeck.includes",
+          "lineNumber": 222
+        },
+        {
+          "caller": "normalizeText",
+          "callee": "value.toLowerCase().replace(/[^a-z0-9]+/g, \" \").trim",
+          "lineNumber": 247
+        },
+        {
+          "caller": "normalizeText",
+          "callee": "value.toLowerCase().replace",
+          "lineNumber": 247
+        },
+        {
+          "caller": "normalizeText",
+          "callee": "value.toLowerCase",
+          "lineNumber": 247
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/sample-palace.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 463,
+      "nonEmptyLines": 441,
+      "functions": [
+        {
+          "name": "buildPaoDeck",
+          "startLine": 396,
+          "endLine": 412,
+          "params": [
+            "source"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "homeRoute",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "gymRoute",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "schoolRoute",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "palaceLocations",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "suitOrder",
+          "line": 388,
+          "isDefault": false
+        },
+        {
+          "name": "sortedDeck",
+          "line": 390,
+          "isDefault": false
+        },
+        {
+          "name": "paoDeckPresets",
+          "line": 414,
+          "isDefault": false
+        },
+        {
+          "name": "beginnerPaoDeck",
+          "line": 442,
+          "isDefault": false
+        },
+        {
+          "name": "sampleUserPalaces",
+          "line": 444,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildPaoDeck",
+          "callee": "sortedDeck.map",
+          "lineNumber": 397
+        },
+        {
+          "caller": "buildPaoDeck",
+          "callee": "location.toLowerCase",
+          "lineNumber": 409
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/scoring.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "scoreRecall",
+          "startLine": 23,
+          "endLine": 58,
+          "params": [
+            "expectedDeck",
+            "recalledCodes"
+          ]
+        },
+        {
+          "name": "getMistakeType",
+          "startLine": 60,
+          "endLine": 65,
+          "params": [
+            "expectedCode",
+            "recalledCode",
+            "recalledIndex"
+          ]
+        },
+        {
+          "name": "getFeedback",
+          "startLine": 67,
+          "endLine": 80,
+          "params": [
+            "expected",
+            "recalled",
+            "expectedIndex",
+            "recalledIndex",
+            "mistakeType"
+          ]
+        },
+        {
+          "name": "getCorrectRuns",
+          "startLine": 82,
+          "endLine": 97,
+          "params": [
+            "results"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "scoreRecall",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "scoreRecall",
+          "callee": "recalledCodes.map",
+          "lineNumber": 24
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "cardFromCode",
+          "lineNumber": 24
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "recalledCards.forEach",
+          "lineNumber": 26
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "recalledIndexByCode.set",
+          "lineNumber": 27
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "expectedDeck.map",
+          "lineNumber": 30
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "recalledIndexByCode.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "getMistakeType",
+          "lineNumber": 34
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "getFeedback",
+          "lineNumber": 43
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "results.filter",
+          "lineNumber": 47
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "getCorrectRuns",
+          "lineNumber": 48
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "results.filter((result) => result.mistakeType === \"MISSING\").map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "results.filter",
+          "lineNumber": 55
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "results.filter((result) => result.mistakeType === \"WRONG_POSITION\").map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "scoreRecall",
+          "callee": "results.filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getCorrectRuns",
+          "callee": "runs.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getCorrectRuns",
+          "callee": "runs.push",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "projectRoot": "/Users/kevin/Desktop/Palace52",
+  "batchFiles": [
+    {
+      "path": "src/app/(app)/reviews/page.tsx",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(app)/training/page.tsx",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/actions/onboarding.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/actions/palaces.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/actions/reviews.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/api/health/route.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/defaults.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/prisma.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/lib/spaced-repetition.ts",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/app/(app)/reviews/page.tsx": [
+      "src/app/actions/reviews.ts",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/(app)/training/page.tsx": [
+      "src/app/actions/onboarding.ts",
+      "src/components/training/training-cockpit.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts"
+    ],
+    "src/app/actions/onboarding.ts": [
+      "src/lib/auth.ts",
+      "src/lib/defaults.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/palaces.ts": [
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts"
+    ],
+    "src/app/actions/reviews.ts": [
+      "src/lib/auth.ts",
+      "src/lib/prisma.ts",
+      "src/lib/spaced-repetition.ts"
+    ],
+    "src/app/api/health/route.ts": [
+      "src/lib/prisma.ts"
+    ],
+    "src/lib/defaults.ts": [
+      "src/lib/cards.ts",
+      "src/lib/sample-palace.ts"
+    ],
+    "src/lib/prisma.ts": [],
+    "src/lib/spaced-repetition.ts": []
+  }
+}

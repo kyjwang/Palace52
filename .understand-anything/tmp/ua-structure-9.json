@@ -1,0 +1,712 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "metrics": {}
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "Custom Credentials Auth Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Task 1: Schema And Dependencies",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "Task 2: Auth Core",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Task 3: Registration, Login, Logout",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Task 4: Profile And Settings",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Task 5: Verification And Docs",
+          "level": 3,
+          "line": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "next-env.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "next.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "postcss.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 247,
+      "nonEmptyLines": 198,
+      "definitions": [
+        {
+          "name": "User",
+          "kind": "table",
+          "fields": [
+            "id",
+            "username",
+            "passwordHash",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 20,
+          "endLine": 28
+        },
+        {
+          "name": "Profile",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "displayName",
+            "bio",
+            "avatarColor",
+            "isPublic",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 31,
+          "endLine": 42
+        },
+        {
+          "name": "Palace",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "name",
+            "description",
+            "isDefault",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 45,
+          "endLine": 55
+        },
+        {
+          "name": "PalaceLocation",
+          "kind": "table",
+          "fields": [
+            "id",
+            "palaceId",
+            "name",
+            "description",
+            "order",
+            "cue",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 58,
+          "endLine": 69
+        },
+        {
+          "name": "CardImage",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "rank",
+            "suit",
+            "person",
+            "action",
+            "object",
+            "imagePrompt",
+            "notes",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 72,
+          "endLine": 86
+        },
+        {
+          "name": "TrainingSession",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "palaceId",
+            "mode",
+            "status",
+            "deck",
+            "deckSize",
+            "selectedSuit",
+            "difficulty",
+            "generatedDeck",
+            "userRecall",
+            "questionPositions",
+            "userAnswers",
+            "recall",
+            "score",
+            "accuracy",
+            "memorizationMs",
+            "recallMs",
+            "totalTimeMs",
+            "mistakes",
+            "isValidRun",
+            "isPersonalBest",
+            "completedAt",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 89,
+          "endLine": 117
+        },
+        {
+          "name": "SessionCardResult",
+          "kind": "table",
+          "fields": [
+            "id",
+            "sessionId",
+            "expectedRank",
+            "expectedSuit",
+            "recalledRank",
+            "recalledSuit",
+            "expectedIndex",
+            "recalledIndex",
+            "isCorrect",
+            "mistakeType",
+            "feedback",
+            "createdAt"
+          ],
+          "startLine": 120,
+          "endLine": 135
+        },
+        {
+          "name": "ReviewCard",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "rank",
+            "suit",
+            "intervalDays",
+            "easeFactor",
+            "repetitions",
+            "lapses",
+            "dueAt",
+            "lastReviewedAt",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 138,
+          "endLine": 153
+        },
+        {
+          "name": "LeaderboardEntry",
+          "kind": "table",
+          "fields": [
+            "id",
+            "userId",
+            "sessionId",
+            "mode",
+            "score",
+            "accuracy",
+            "memorizationMs",
+            "recallMs",
+            "totalTimeMs",
+            "createdAt"
+          ],
+          "startLine": 156,
+          "endLine": 169
+        },
+        {
+          "name": "User_username_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 172,
+          "endLine": 172
+        },
+        {
+          "name": "Profile_userId_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 175,
+          "endLine": 175
+        },
+        {
+          "name": "Palace_userId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 178,
+          "endLine": 178
+        },
+        {
+          "name": "PalaceLocation_palaceId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 181,
+          "endLine": 181
+        },
+        {
+          "name": "PalaceLocation_palaceId_order_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 184,
+          "endLine": 184
+        },
+        {
+          "name": "CardImage_userId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 187,
+          "endLine": 187
+        },
+        {
+          "name": "CardImage_userId_rank_suit_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 190,
+          "endLine": 190
+        },
+        {
+          "name": "TrainingSession_userId_createdAt_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 193,
+          "endLine": 193
+        },
+        {
+          "name": "TrainingSession_mode_status_score_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 196,
+          "endLine": 196
+        },
+        {
+          "name": "SessionCardResult_sessionId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 199,
+          "endLine": 199
+        },
+        {
+          "name": "SessionCardResult_expectedRank_expectedSuit_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 202,
+          "endLine": 202
+        },
+        {
+          "name": "ReviewCard_userId_dueAt_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 205,
+          "endLine": 205
+        },
+        {
+          "name": "ReviewCard_userId_rank_suit_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 208,
+          "endLine": 208
+        },
+        {
+          "name": "LeaderboardEntry_sessionId_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 211,
+          "endLine": 211
+        },
+        {
+          "name": "LeaderboardEntry_mode_score_accuracy_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 214,
+          "endLine": 214
+        },
+        {
+          "name": "LeaderboardEntry_userId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 217,
+          "endLine": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 25
+      }
+    },
+    {
+      "path": "prisma/migrations/migration_lock.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "language": "prisma",
+      "fileCategory": "data",
+      "totalLines": 220,
+      "nonEmptyLines": 198,
+      "metrics": {}
+    },
+    {
+      "path": "src/app/(app)/history/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "HistoryRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HistoryRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HistoryRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/pao/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "PaoRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PaoRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PaoRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/routes/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "RoutesRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RoutesRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RoutesRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "SignInRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SignInRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SignInRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "SignUpRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SignUpRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SignUpRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/globals.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 80,
+      "nonEmptyLines": 72,
+      "metrics": {}
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "RootLayout",
+          "startLine": 10,
+          "endLine": 20,
+          "params": [
+            "{\n  children\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "RootLayout",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/leaderboard-dashboard/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "LeaderboardDashboardRedirectPage",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LeaderboardDashboardRedirectPage",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LeaderboardDashboardRedirectPage",
+          "callee": "redirect",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/play-modes.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 111,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/types/next-auth.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

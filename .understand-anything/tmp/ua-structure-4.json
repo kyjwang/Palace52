@@ -1,0 +1,695 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/reviews/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "ReviewsPage",
+          "startLine": 12,
+          "endLine": 93,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ReviewsPage",
+          "line": 12,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ReviewsPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "getPrisma().reviewCard.findMany",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "getPrisma",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "getPrisma().cardImage.findMany",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "getPrisma",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "images.map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "reviewCards.map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "imageByCard.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "reviewCard.dueAt.toLocaleDateString",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ReviewsPage",
+          "callee": "[1, 3, 5].map",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/training/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "TrainingPage",
+          "startLine": 10,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "TrainingPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TrainingPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 11
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "ensureStarterContent",
+          "lineNumber": 13
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 14
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "getPrisma",
+          "lineNumber": 15
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "Promise.all",
+          "lineNumber": 16
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "db.palace.findMany",
+          "lineNumber": 17
+        },
+        {
+          "caller": "TrainingPage",
+          "callee": "db.cardImage.findMany",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/onboarding.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "ensureStarterContent",
+          "startLine": 7,
+          "endLine": 48,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ensureStarterContent",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureStarterContent",
+          "callee": "requireCurrentUser",
+          "lineNumber": 8
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "getPrisma",
+          "lineNumber": 9
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "Promise.all",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "db.palace.findMany",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "db.cardImage.count",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "existingPalaces.map",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "existingPalaceNames.has",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "db.palace.create",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "route.locations.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "db.cardImage.createMany",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "starterCardImages().map",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ensureStarterContent",
+          "callee": "starterCardImages",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/palaces.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "createPalace",
+          "startLine": 20,
+          "endLine": 36,
+          "params": [
+            "formData"
+          ]
+        },
+        {
+          "name": "addPalaceLocation",
+          "startLine": 38,
+          "endLine": 69,
+          "params": [
+            "formData"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createPalace",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "addPalaceLocation",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createPalace",
+          "callee": "requireCurrentUser",
+          "lineNumber": 21
+        },
+        {
+          "caller": "createPalace",
+          "callee": "palaceSchema.parse",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createPalace",
+          "callee": "formData.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createPalace",
+          "callee": "formData.get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createPalace",
+          "callee": "getPrisma().palace.create",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createPalace",
+          "callee": "getPrisma",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createPalace",
+          "callee": "revalidatePath",
+          "lineNumber": 35
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "requireCurrentUser",
+          "lineNumber": 39
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "locationSchema.parse",
+          "lineNumber": 40
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "formData.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "formData.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "formData.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "formData.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "getPrisma",
+          "lineNumber": 47
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "db.palace.findFirst",
+          "lineNumber": 48
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "Math.max",
+          "lineNumber": 55
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "palace.locations.map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "db.palaceLocation.create",
+          "lineNumber": 57
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "revalidatePath",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addPalaceLocation",
+          "callee": "revalidatePath",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/actions/reviews.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "gradeReviewCard",
+          "startLine": 14,
+          "endLine": 35,
+          "params": [
+            "formData"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "gradeReviewCard",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "gradeReviewCard",
+          "callee": "requireCurrentUser",
+          "lineNumber": 15
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "reviewSchema.parse",
+          "lineNumber": 16
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "formData.get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "Number",
+          "lineNumber": 18
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "formData.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "getPrisma",
+          "lineNumber": 21
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "db.reviewCard.findFirst",
+          "lineNumber": 22
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "db.reviewCard.update",
+          "lineNumber": 28
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "nextReviewState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "revalidatePath",
+          "lineNumber": 33
+        },
+        {
+          "caller": "gradeReviewCard",
+          "callee": "revalidatePath",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/api/health/route.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "GET",
+          "startLine": 5,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "GET",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GET",
+          "callee": "Boolean",
+          "lineNumber": 8
+        },
+        {
+          "caller": "GET",
+          "callee": "Boolean",
+          "lineNumber": 9
+        },
+        {
+          "caller": "GET",
+          "callee": "getPrisma().$queryRaw",
+          "lineNumber": 15
+        },
+        {
+          "caller": "GET",
+          "callee": "getPrisma",
+          "lineNumber": 15
+        },
+        {
+          "caller": "GET",
+          "callee": "Response.json",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/defaults.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "starterCardImages",
+          "startLine": 72,
+          "endLine": 82,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "starterRoutes",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "starterLocations",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "starterCardImages",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "starterCardImages",
+          "callee": "fullDeck.map",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/prisma.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "getPrisma",
+          "startLine": 7,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPrisma",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/spaced-repetition.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "gradeFromRecall",
+          "startLine": 5,
+          "endLine": 9,
+          "params": [
+            "isCorrect",
+            "wasMisplaced"
+          ]
+        },
+        {
+          "name": "nextReviewState",
+          "startLine": 11,
+          "endLine": 54,
+          "params": [
+            "card",
+            "grade",
+            "now"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "gradeFromRecall",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "nextReviewState",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nextReviewState",
+          "callee": "Math.max",
+          "lineNumber": 26
+        },
+        {
+          "caller": "nextReviewState",
+          "callee": "Math.max",
+          "lineNumber": 35
+        },
+        {
+          "caller": "nextReviewState",
+          "callee": "Math.round",
+          "lineNumber": 40
+        },
+        {
+          "caller": "nextReviewState",
+          "callee": "dueAt.setDate",
+          "lineNumber": 44
+        },
+        {
+          "caller": "nextReviewState",
+          "callee": "now.getDate",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,2107 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/app/(app)/dashboard/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "DashboardPage",
+          "startLine": 16,
+          "endLine": 152,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "DashboardPage",
+          "line": 16,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DashboardPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 17
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "ensureStarterContent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 20
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma().trainingSession.findMany",
+          "lineNumber": 21
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma",
+          "lineNumber": 21
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma().reviewCard.count",
+          "lineNumber": 27
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getPrisma",
+          "lineNumber": 27
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "getLeaderboardPreview",
+          "lineNumber": 30
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "calculateDashboardStats",
+          "lineNumber": 31
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatPercent",
+          "lineNumber": 35
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "stats.completedSessions.toString",
+          "lineNumber": 36
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "dueReviews.toString",
+          "lineNumber": 37
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "metrics.map",
+          "lineNumber": 50
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "stats.weakestCards.map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "leaderboard.topEntries.map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatPercent",
+          "lineNumber": 114
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatFriendlyDuration",
+          "lineNumber": 118
+        },
+        {
+          "caller": "DashboardPage",
+          "callee": "formatFriendlyDuration",
+          "lineNumber": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "AppLayout",
+          "startLine": 6,
+          "endLine": 48,
+          "params": [
+            "{ children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppLayout",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppLayout",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 7
+        },
+        {
+          "caller": "AppLayout",
+          "callee": "requireCurrentUser",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/leaderboard/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "LeaderboardPage",
+          "startLine": 10,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "LeaderboardPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LeaderboardPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 11
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "(await getLeaderboardRankings()).slice",
+          "lineNumber": 13
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "getLeaderboardRankings",
+          "lineNumber": 13
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "entries.map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "entry.mode.replace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "formatPercent",
+          "lineNumber": 49
+        },
+        {
+          "caller": "LeaderboardPage",
+          "callee": "formatFriendlyDuration",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/profile/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 191,
+      "nonEmptyLines": 180,
+      "functions": [
+        {
+          "name": "ProfilePage",
+          "startLine": 13,
+          "endLine": 174,
+          "params": []
+        },
+        {
+          "name": "modeLabel",
+          "startLine": 176,
+          "endLine": 183,
+          "params": [
+            "mode"
+          ]
+        },
+        {
+          "name": "modeDetail",
+          "startLine": 185,
+          "endLine": 191,
+          "params": [
+            "session"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "ProfilePage",
+          "line": 13,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ProfilePage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "getPrisma",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "Promise.all",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.trainingSession.count",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.trainingSession.aggregate",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.trainingSession.findFirst",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.cardImage.count",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.palace.count",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "db.trainingSession.findMany",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "Math.min",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "totalSessions.toString",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatPercent",
+          "lineNumber": 78
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatDuration",
+          "lineNumber": 79
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatPercent",
+          "lineNumber": 80
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "user.createdAt.toLocaleDateString",
+          "lineNumber": 94
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "displayName.charAt(0).toUpperCase",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "displayName.charAt",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "routesCreated.toString",
+          "lineNumber": 117
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatPercent",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "history.map",
+          "lineNumber": 147
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "modeLabel",
+          "lineNumber": 154
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "Array.isArray",
+          "lineNumber": 154
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "session.completedAt?.toLocaleDateString",
+          "lineNumber": 157
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatPercent",
+          "lineNumber": 157
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "modeDetail",
+          "lineNumber": 157
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatDuration",
+          "lineNumber": 161
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatDuration",
+          "lineNumber": 161
+        },
+        {
+          "caller": "ProfilePage",
+          "callee": "formatDuration",
+          "lineNumber": 161
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split(\"_\")\n    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))\n    .join",
+          "lineNumber": 178
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split(\"_\")\n    .map",
+          "lineNumber": 178
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split",
+          "lineNumber": 178
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase",
+          "lineNumber": 178
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.charAt(0).toUpperCase",
+          "lineNumber": 181
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.charAt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.slice",
+          "lineNumber": 181
+        },
+        {
+          "caller": "modeDetail",
+          "callee": "session.selectedSuit.toLowerCase",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/sessions/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "SessionsPage",
+          "startLine": 11,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "modeLabel",
+          "startLine": 83,
+          "endLine": 90,
+          "params": [
+            "mode"
+          ]
+        },
+        {
+          "name": "modeDetail",
+          "startLine": 92,
+          "endLine": 98,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "readSessionMistakes",
+          "startLine": 100,
+          "endLine": 110,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "SessionsPage",
+          "line": 11,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SessionsPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 12
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 14
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "getPrisma().trainingSession.findMany",
+          "lineNumber": 15
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "getPrisma",
+          "lineNumber": 15
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "sessions.map",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "modeLabel",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "Array.isArray",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "modeDetail",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "session.completedAt?.toLocaleDateString",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "formatPercent",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "formatDuration",
+          "lineNumber": 46
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "formatDuration",
+          "lineNumber": 46
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "session.cardResults.filter((result) => !result.isCorrect).slice(0, 8).map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "session.cardResults.filter((result) => !result.isCorrect).slice",
+          "lineNumber": 54
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "session.cardResults.filter",
+          "lineNumber": 54
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "session.cardResults.every",
+          "lineNumber": 60
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "readSessionMistakes(session.mistakes).slice(0, 8).map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "readSessionMistakes(session.mistakes).slice",
+          "lineNumber": 67
+        },
+        {
+          "caller": "SessionsPage",
+          "callee": "readSessionMistakes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split(\"_\")\n    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))\n    .join",
+          "lineNumber": 85
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split(\"_\")\n    .map",
+          "lineNumber": 85
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase()\n    .split",
+          "lineNumber": 85
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "mode\n    .toLowerCase",
+          "lineNumber": 85
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.charAt(0).toUpperCase",
+          "lineNumber": 88
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.charAt",
+          "lineNumber": 88
+        },
+        {
+          "caller": "modeLabel",
+          "callee": "part.slice",
+          "lineNumber": 88
+        },
+        {
+          "caller": "modeDetail",
+          "callee": "session.selectedSuit.toLowerCase",
+          "lineNumber": 93
+        },
+        {
+          "caller": "readSessionMistakes",
+          "callee": "Array.isArray",
+          "lineNumber": 101
+        },
+        {
+          "caller": "readSessionMistakes",
+          "callee": "value.filter",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/(app)/settings/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "SettingsPage",
+          "startLine": 11,
+          "endLine": 76,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dynamic",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsPage",
+          "line": 11,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SettingsPage",
+          "callee": "hasRequiredAppConfig",
+          "lineNumber": 12
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "requireCurrentUser",
+          "lineNumber": 14
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "Promise.all",
+          "lineNumber": 15
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma().palace.count",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma().cardImage.count",
+          "lineNumber": 17
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma",
+          "lineNumber": 17
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma().trainingSession.count",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "getPrisma",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "routesCreated.toString",
+          "lineNumber": 69
+        },
+        {
+          "caller": "SettingsPage",
+          "callee": "sessions.toString",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/app/preview/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 180,
+      "nonEmptyLines": 168,
+      "functions": [
+        {
+          "name": "PreviewPage",
+          "startLine": 28,
+          "endLine": 180,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PreviewPage",
+          "line": 28,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PreviewPage",
+          "callee": "metrics.map",
+          "lineNumber": 61
+        },
+        {
+          "caller": "PreviewPage",
+          "callee": "route.map",
+          "lineNumber": 86
+        },
+        {
+          "caller": "PreviewPage",
+          "callee": "studyCards.map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "PreviewPage",
+          "callee": "mistakes.map",
+          "lineNumber": 155
+        },
+        {
+          "caller": "PreviewPage",
+          "callee": "[\"Q♥\", \"5♣\", \"9♦\"].map",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/app-shell.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "AppShell",
+          "startLine": 18,
+          "endLine": 133,
+          "params": [
+            "{\n  children,\n  user\n}"
+          ]
+        },
+        {
+          "name": "isActivePath",
+          "startLine": 135,
+          "endLine": 139,
+          "params": [
+            "pathname",
+            "href"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppShell",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppShell",
+          "callee": "usePathname",
+          "lineNumber": 29
+        },
+        {
+          "caller": "AppShell",
+          "callee": "navItems.map",
+          "lineNumber": 47
+        },
+        {
+          "caller": "AppShell",
+          "callee": "isActivePath",
+          "lineNumber": 49
+        },
+        {
+          "caller": "AppShell",
+          "callee": "cn",
+          "lineNumber": 55
+        },
+        {
+          "caller": "AppShell",
+          "callee": "displayName.charAt(0).toUpperCase",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AppShell",
+          "callee": "displayName.charAt",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AppShell",
+          "callee": "displayName.charAt(0).toUpperCase",
+          "lineNumber": 100
+        },
+        {
+          "caller": "AppShell",
+          "callee": "displayName.charAt",
+          "lineNumber": 100
+        },
+        {
+          "caller": "AppShell",
+          "callee": "navItems.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "AppShell",
+          "callee": "isActivePath",
+          "lineNumber": 114
+        },
+        {
+          "caller": "AppShell",
+          "callee": "cn",
+          "lineNumber": 120
+        },
+        {
+          "caller": "isActivePath",
+          "callee": "pathname.startsWith",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/card-badge.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "splitCardLabel",
+          "startLine": 10,
+          "endLine": 26,
+          "params": [
+            "label"
+          ]
+        },
+        {
+          "name": "CardBadge",
+          "startLine": 28,
+          "endLine": 60,
+          "params": [
+            "{\n  label,\n  color,\n  className\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CardBadge",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "splitCardLabel",
+          "callee": "label.match",
+          "lineNumber": 11
+        },
+        {
+          "caller": "splitCardLabel",
+          "callee": "label.replace",
+          "lineNumber": 15
+        },
+        {
+          "caller": "splitCardLabel",
+          "callee": "label.slice(-1).toUpperCase",
+          "lineNumber": 20
+        },
+        {
+          "caller": "splitCardLabel",
+          "callee": "label.slice",
+          "lineNumber": 20
+        },
+        {
+          "caller": "splitCardLabel",
+          "callee": "label.slice",
+          "lineNumber": 23
+        },
+        {
+          "caller": "CardBadge",
+          "callee": "splitCardLabel",
+          "lineNumber": 37
+        },
+        {
+          "caller": "CardBadge",
+          "callee": "cn",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/app/progress-chart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "ProgressChart",
+          "startLine": 5,
+          "endLine": 24,
+          "params": [
+            "{ data }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProgressChart",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/training/training-cockpit.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 442,
+      "nonEmptyLines": 419,
+      "functions": [
+        {
+          "name": "TrainingCockpit",
+          "startLine": 37,
+          "endLine": 411,
+          "params": [
+            "{\n  palaces,\n  cardImages\n}"
+          ]
+        },
+        {
+          "name": "phaseLabel",
+          "startLine": 413,
+          "endLine": 415,
+          "params": [
+            "phase"
+          ]
+        },
+        {
+          "name": "selectedDeckSize",
+          "startLine": 417,
+          "endLine": 419,
+          "params": [
+            "mode"
+          ]
+        },
+        {
+          "name": "StatusTile",
+          "startLine": 421,
+          "endLine": 442,
+          "params": [
+            "{\n  label,\n  value,\n  helper,\n  icon\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TrainingCockpit",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 44
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 45
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 46
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 47
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 48
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 49
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 50
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 51
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 52
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 53
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 54
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "Date.now",
+          "lineNumber": 54
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 55
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useState",
+          "lineNumber": 56
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useTransition",
+          "lineNumber": 57
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "palaces.find",
+          "lineNumber": 59
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "Math.min",
+          "lineNumber": 60
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "recall.filter",
+          "lineNumber": 64
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "recall.findIndex",
+          "lineNumber": 65
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useMemo",
+          "lineNumber": 70
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "cardImages.forEach",
+          "lineNumber": 72
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "map.set",
+          "lineNumber": 72
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "useEffect",
+          "lineNumber": 76
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "window.setInterval",
+          "lineNumber": 79
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setNow",
+          "lineNumber": 79
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "Date.now",
+          "lineNumber": 79
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "window.clearInterval",
+          "lineNumber": 80
+        },
+        {
+          "caller": "startSession",
+          "callee": "startTransition",
+          "lineNumber": 84
+        },
+        {
+          "caller": "startSession",
+          "callee": "createTrainingSession",
+          "lineNumber": 85
+        },
+        {
+          "caller": "startSession",
+          "callee": "setSessionId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "startSession",
+          "callee": "setDeck",
+          "lineNumber": 90
+        },
+        {
+          "caller": "startSession",
+          "callee": "setRecall",
+          "lineNumber": 91
+        },
+        {
+          "caller": "startSession",
+          "callee": "Array.from",
+          "lineNumber": 91
+        },
+        {
+          "caller": "startSession",
+          "callee": "setActiveStudyIndex",
+          "lineNumber": 92
+        },
+        {
+          "caller": "startSession",
+          "callee": "setMemorizationMs",
+          "lineNumber": 93
+        },
+        {
+          "caller": "startSession",
+          "callee": "setRecallMs",
+          "lineNumber": 94
+        },
+        {
+          "caller": "startSession",
+          "callee": "setSummary",
+          "lineNumber": 95
+        },
+        {
+          "caller": "startSession",
+          "callee": "Date.now",
+          "lineNumber": 96
+        },
+        {
+          "caller": "startSession",
+          "callee": "setNow",
+          "lineNumber": 97
+        },
+        {
+          "caller": "startSession",
+          "callee": "setStudyStartedAt",
+          "lineNumber": 98
+        },
+        {
+          "caller": "startSession",
+          "callee": "setPhase",
+          "lineNumber": 99
+        },
+        {
+          "caller": "startRecall",
+          "callee": "Date.now",
+          "lineNumber": 104
+        },
+        {
+          "caller": "startRecall",
+          "callee": "setNow",
+          "lineNumber": 105
+        },
+        {
+          "caller": "startRecall",
+          "callee": "setMemorizationMs",
+          "lineNumber": 106
+        },
+        {
+          "caller": "startRecall",
+          "callee": "setRecallStartedAt",
+          "lineNumber": 107
+        },
+        {
+          "caller": "startRecall",
+          "callee": "setPhase",
+          "lineNumber": 108
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "startTransition",
+          "lineNumber": 112
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "Date.now",
+          "lineNumber": 113
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "setRecallMs",
+          "lineNumber": 114
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "completeTrainingSession",
+          "lineNumber": 115
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "setSummary",
+          "lineNumber": 121
+        },
+        {
+          "caller": "submitRecall",
+          "callee": "setPhase",
+          "lineNumber": 122
+        },
+        {
+          "caller": "reset",
+          "callee": "setPhase",
+          "lineNumber": 127
+        },
+        {
+          "caller": "reset",
+          "callee": "setDeck",
+          "lineNumber": 128
+        },
+        {
+          "caller": "reset",
+          "callee": "setSessionId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "reset",
+          "callee": "setSummary",
+          "lineNumber": 130
+        },
+        {
+          "caller": "reset",
+          "callee": "setRecall",
+          "lineNumber": 131
+        },
+        {
+          "caller": "reset",
+          "callee": "setStudyStartedAt",
+          "lineNumber": 132
+        },
+        {
+          "caller": "reset",
+          "callee": "setRecallStartedAt",
+          "lineNumber": 133
+        },
+        {
+          "caller": "reset",
+          "callee": "setMemorizationMs",
+          "lineNumber": 134
+        },
+        {
+          "caller": "reset",
+          "callee": "setRecallMs",
+          "lineNumber": 135
+        },
+        {
+          "caller": "reset",
+          "callee": "setActiveStudyIndex",
+          "lineNumber": 136
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "phaseLabel",
+          "lineNumber": 146
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "phases.map",
+          "lineNumber": 149
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "formatDuration",
+          "lineNumber": 167
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "formatDuration",
+          "lineNumber": 167
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "selectedDeckSize",
+          "lineNumber": 175
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "selectedDeckSize",
+          "lineNumber": 176
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "mode.replace",
+          "lineNumber": 189
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setSelectedPalaceId",
+          "lineNumber": 209
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "palaces.map",
+          "lineNumber": 212
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setMode",
+          "lineNumber": 226
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setActiveStudyIndex",
+          "lineNumber": 254
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "Math.max",
+          "lineNumber": 254
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setActiveStudyIndex",
+          "lineNumber": 261
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "Math.min",
+          "lineNumber": 261
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "deck.map",
+          "lineNumber": 274
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "imageByCard.get",
+          "lineNumber": 276
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setActiveStudyIndex",
+          "lineNumber": 287
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "deck.map",
+          "lineNumber": 322
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "setRecall",
+          "lineNumber": 330
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "fullDeck.map",
+          "lineNumber": 335
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "formatPercent",
+          "lineNumber": 359
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "formatDuration",
+          "lineNumber": 365
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "formatDuration",
+          "lineNumber": 371
+        },
+        {
+          "caller": "TrainingCockpit",
+          "callee": "summary.results.map",
+          "lineNumber": 386
+        },
+        {
+          "caller": "phaseLabel",
+          "callee": "phases.find",
+          "lineNumber": 414
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "Button",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "{ className, variant = \"primary\", ...props }"
+          ]
+        },
+        {
+          "name": "ButtonLink",
+          "startLine": 35,
+          "endLine": 47,
+          "params": [
+            "{ className, variant = \"primary\", href, ...props }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Button",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "ButtonLink",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Button",
+          "callee": "cn",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ButtonLink",
+          "callee": "cn",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ui/card.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "Card",
+          "startLine": 4,
+          "endLine": 11,
+          "params": [
+            "{ className, ...props }"
+          ]
+        },
+        {
+          "name": "CardHeader",
+          "startLine": 13,
+          "endLine": 15,
+          "params": [
+            "{ className, ...props }"
+          ]
+        },
+        {
+          "name": "CardTitle",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "{ className, ...props }"
+          ]
+        },
+        {
+          "name": "CardContent",
+          "startLine": 21,
+          "endLine": 23,
+          "params": [
+            "{ className, ...props }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Card",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "CardHeader",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "CardTitle",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "CardContent",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Card",
+          "callee": "cn",
+          "lineNumber": 7
+        },
+        {
+          "caller": "CardHeader",
+          "callee": "cn",
+          "lineNumber": 14
+        },
+        {
+          "caller": "CardTitle",
+          "callee": "cn",
+          "lineNumber": 18
+        },
+        {
+          "caller": "CardContent",
+          "callee": "cn",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/dashboard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "calculateDashboardStats",
+          "startLine": 3,
+          "endLine": 40,
+          "params": [
+            "sessions"
+          ]
+        },
+        {
+          "name": "rankLabel",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "rank"
+          ]
+        },
+        {
+          "name": "suitLabel",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "suit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "calculateDashboardStats",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "sessions.filter",
+          "lineNumber": 6
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "completed.reduce",
+          "lineNumber": 7
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "Math.max",
+          "lineNumber": 7
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "completed.reduce",
+          "lineNumber": 11
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "rankLabel",
+          "lineNumber": 18
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "suitLabel",
+          "lineNumber": 18
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "mistakeCounts.set",
+          "lineNumber": 19
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "mistakeCounts.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "[...mistakeCounts.values()].sort((a, b) => b.count - a.count).slice",
+          "lineNumber": 30
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "[...mistakeCounts.values()].sort",
+          "lineNumber": 30
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "mistakeCounts.values",
+          "lineNumber": 30
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "completed\n      .slice(0, 12)\n      .reverse()\n      .map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "completed\n      .slice(0, 12)\n      .reverse",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "completed\n      .slice",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calculateDashboardStats",
+          "callee": "Math.round",
+          "lineNumber": 37
+        },
+        {
+          "caller": "rankLabel",
+          "callee": "rank.charAt",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rankLabel",
+          "callee": "rank.slice(1).toLowerCase",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rankLabel",
+          "callee": "rank.slice",
+          "lineNumber": 43
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.charAt",
+          "lineNumber": 47
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.slice(1).toLowerCase",
+          "lineNumber": 47
+        },
+        {
+          "caller": "suitLabel",
+          "callee": "suit.slice",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/leaderboard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 101,
+      "functions": [
+        {
+          "name": "getLeaderboardRankings",
+          "startLine": 41,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "getLeaderboardPreview",
+          "startLine": 89,
+          "endLine": 96,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getLeaderboardDeckSize",
+          "startLine": 98,
+          "endLine": 116,
+          "params": [
+            "session"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getLeaderboardRankings",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getLeaderboardPreview",
+          "line": 89,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "getPrisma().leaderboardEntry.findMany",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "getPrisma",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "bestEntryByUser.has",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "bestEntryByUser.set",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "Array.from(bestEntryByUser.values()).map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "Array.from",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "bestEntryByUser.values",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getLeaderboardRankings",
+          "callee": "getLeaderboardDeckSize",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getLeaderboardPreview",
+          "callee": "getLeaderboardRankings",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getLeaderboardPreview",
+          "callee": "rankings.slice",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getLeaderboardPreview",
+          "callee": "rankings.find",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getLeaderboardDeckSize",
+          "callee": "Array.isArray",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLeaderboardDeckSize",
+          "callee": "Array.isArray",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getLeaderboardDeckSize",
+          "callee": "Array.isArray",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/runtime-config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "functions": [
+        {
+          "name": "hasRequiredAppConfig",
+          "startLine": 1,
+          "endLine": 3,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasRequiredAppConfig",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hasRequiredAppConfig",
+          "callee": "Boolean",
+          "lineNumber": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "cn",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "...inputs"
+          ]
+        },
+        {
+          "name": "formatDuration",
+          "startLine": 8,
+          "endLine": 14,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "formatFriendlyDuration",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "formatPercent",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cn",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "formatDuration",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "formatFriendlyDuration",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "formatPercent",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cn",
+          "callee": "twMerge",
+          "lineNumber": 5
+        },
+        {
+          "caller": "cn",
+          "callee": "clsx",
+          "lineNumber": 5
+        },
+        {
+          "caller": "formatDuration",
+          "callee": "Math.round",
+          "lineNumber": 10
+        },
+        {
+          "caller": "formatDuration",
+          "callee": "Math.floor",
+          "lineNumber": 11
+        },
+        {
+          "caller": "formatDuration",
+          "callee": "seconds.toString().padStart",
+          "lineNumber": 13
+        },
+        {
+          "caller": "formatDuration",
+          "callee": "seconds.toString",
+          "lineNumber": 13
+        },
+        {
+          "caller": "formatFriendlyDuration",
+          "callee": "Math.max",
+          "lineNumber": 18
+        },
+        {
+          "caller": "formatFriendlyDuration",
+          "callee": "Math.round",
+          "lineNumber": 18
+        },
+        {
+          "caller": "formatFriendlyDuration",
+          "callee": "Math.floor",
+          "lineNumber": 19
+        },
+        {
+          "caller": "formatFriendlyDuration",
+          "callee": "seconds.toString().padStart",
+          "lineNumber": 24
+        },
+        {
+          "caller": "formatFriendlyDuration",
+          "callee": "seconds.toString",
+          "lineNumber": 24
+        },
+        {
+          "caller": "formatPercent",
+          "callee": "Math.round",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

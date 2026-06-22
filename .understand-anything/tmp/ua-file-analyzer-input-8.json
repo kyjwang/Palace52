@@ -1,0 +1,49 @@
+{
+  "projectRoot": "/Users/kevin/Desktop/Palace52",
+  "batchFiles": [
+    {
+      "path": "docs/AUTH_FLOW.md",
+      "language": "markdown",
+      "sizeLines": 169,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/Name_suggestions.md",
+      "language": "markdown",
+      "sizeLines": 62,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/architecture.md",
+      "language": "markdown",
+      "sizeLines": 39,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/game-modes.md",
+      "language": "markdown",
+      "sizeLines": 131,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/local-testing.md",
+      "language": "markdown",
+      "sizeLines": 114,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/project_overview.md",
+      "language": "markdown",
+      "sizeLines": 533,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "docs/AUTH_FLOW.md": [],
+    "docs/Name_suggestions.md": [],
+    "docs/architecture.md": [],
+    "docs/game-modes.md": [],
+    "docs/local-testing.md": [],
+    "docs/project_overview.md": []
+  }
+}

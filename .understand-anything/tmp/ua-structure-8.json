@@ -1,0 +1,511 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/AUTH_FLOW.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 169,
+      "nonEmptyLines": 118,
+      "sections": [
+        {
+          "heading": "Palace52 Custom Auth Flow",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Stack",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Account Model",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Registration",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Login",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "Session",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Logout",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "Protected Routes",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Ownership",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "Local Setup",
+          "level": 2,
+          "line": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/Name_suggestions.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 63,
+      "nonEmptyLines": 63,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "docs/architecture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "Palace52 Architecture",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Stack",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Main Routes",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Domain Logic",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Deployment",
+          "level": 2,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/game-modes.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 131,
+      "nonEmptyLines": 99,
+      "sections": [
+        {
+          "heading": "Palace52 Game Modes",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Modes",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Classic",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Speed Mode",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Suit Focus Mode",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "PAO Flashcard Mode",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Random Position Mode",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Code Architecture",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Pure Mode Engine",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Play UI",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Persistence",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "History",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Next Improvements",
+          "level": 2,
+          "line": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "docs/local-testing.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 114,
+      "nonEmptyLines": 82,
+      "sections": [
+        {
+          "heading": "Local Testing Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Install Local Tools",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "2. Configure Clerk For Localhost",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "3. Install And Migrate",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "4. Manual Product Test Checklist",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "5. Verification Commands",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "6. Completion Bar For Local Testing",
+          "level": 2,
+          "line": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/project_overview.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 533,
+      "nonEmptyLines": 400,
+      "sections": [
+        {
+          "heading": "Palace52 项目总览",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 项目简介",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "2. 当前已有功能",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "账号与受保护应用",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "新用户初始化",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "记忆宫殿",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "52 张牌图像系统",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "训练模式",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "评分与错误分类",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "弱项复习",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "仪表盘",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "训练历史",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "排行榜",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "3. 技术栈",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "4. 主要目录结构",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "5. 页面路由",
+          "level": 2,
+          "line": 186
+        },
+        {
+          "heading": "真实产品路由",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "认证路由",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "Public / 其他路由",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "旧版 sample/demo 路由",
+          "level": 3,
+          "line": 208
+        },
+        {
+          "heading": "6. 数据模型概览",
+          "level": 2,
+          "line": 220
+        },
+        {
+          "heading": "User",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "Palace",
+          "level": 3,
+          "line": 236
+        },
+        {
+          "heading": "PalaceLocation",
+          "level": 3,
+          "line": 252
+        },
+        {
+          "heading": "CardImage",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "TrainingSession",
+          "level": 3,
+          "line": 281
+        },
+        {
+          "heading": "SessionCardResult",
+          "level": 3,
+          "line": 304
+        },
+        {
+          "heading": "ReviewCard",
+          "level": 3,
+          "line": 320
+        },
+        {
+          "heading": "LeaderboardEntry",
+          "level": 3,
+          "line": 337
+        },
+        {
+          "heading": "7. 核心业务流程",
+          "level": 2,
+          "line": 350
+        },
+        {
+          "heading": "新用户初始化流程",
+          "level": 3,
+          "line": 352
+        },
+        {
+          "heading": "训练流程",
+          "level": 3,
+          "line": 360
+        },
+        {
+          "heading": "评分流程",
+          "level": 3,
+          "line": 371
+        },
+        {
+          "heading": "复习流程",
+          "level": 3,
+          "line": 383
+        },
+        {
+          "heading": "排行榜流程",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "8. 本地运行",
+          "level": 2,
+          "line": 397
+        },
+        {
+          "heading": "9. 验证命令",
+          "level": 2,
+          "line": 436
+        },
+        {
+          "heading": "10. 当前状态",
+          "level": 2,
+          "line": 459
+        },
+        {
+          "heading": "已确认",
+          "level": 3,
+          "line": 461
+        },
+        {
+          "heading": "环境注意事项",
+          "level": 3,
+          "line": 469
+        },
+        {
+          "heading": "11. 下一步建议",
+          "level": 2,
+          "line": 475
+        },
+        {
+          "heading": "优先级 1: 训练体验升级",
+          "level": 3,
+          "line": 479
+        },
+        {
+          "heading": "优先级 2: 复习系统升级",
+          "level": 3,
+          "line": 487
+        },
+        {
+          "heading": "优先级 3: 宫殿和卡片管理",
+          "level": 3,
+          "line": 494
+        },
+        {
+          "heading": "优先级 4: UI 和产品质感",
+          "level": 3,
+          "line": 502
+        },
+        {
+          "heading": "优先级 5: 上线前准备",
+          "level": 3,
+          "line": 509
+        },
+        {
+          "heading": "12. 不包含的内容",
+          "level": 2,
+          "line": 520
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 47
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "projectRoot": "/Users/kevin/Desktop/Palace52",
+  "batchFiles": [
+    {
+      "path": "src/app/(app)/dashboard/page.tsx",
+      "language": "typescript",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app/(app)/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/app/(app)/dashboard/page.tsx": [
+      "src/app/actions/onboarding.ts",
+      "src/components/app/progress-chart.tsx",
+      "src/components/ui/button.tsx",
+      "src/components/ui/card.tsx",
+      "src/components/ui/product.tsx",
+      "src/lib/auth.ts",
+      "src/lib/dashboard.ts",
+      "src/lib/leaderboard.ts",
+      "src/lib/prisma.ts",
+      "src/lib/runtime-config.ts",
+      "src/lib/utils.ts"
+    ],
+    "src/app/(app)/layout.tsx": [
+      "src/components/app/app-shell.tsx",
+      "src/lib/auth.ts",
+      "src/lib/runtime-config.ts"
+    ]
+  }
+}

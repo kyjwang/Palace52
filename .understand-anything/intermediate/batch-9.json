@@ -1,0 +1,524 @@
+{
+  "nodes": [
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "summary": ".understandignore in the Palace52 codebase.",
+      "tags": [
+        "code"
+      ],
+      "complexity": "simple",
+      "filePath": ".understand-anything/.understandignore",
+      "language": "unknown"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "type": "document",
+      "name": "2026-06-18-custom-credentials-auth.md",
+      "summary": "Documentation covering 2026-06-18-custom-credentials-auth for the Palace52 project.",
+      "tags": [
+        "docs",
+        "markdown",
+        "auth",
+        "documentation"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "language": "markdown"
+    },
+    {
+      "id": "config:eslint.config.mjs",
+      "type": "config",
+      "name": "eslint.config.mjs",
+      "summary": "Configuration file for eslint.config.mjs in the Palace52 Next.js project.",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple",
+      "filePath": "eslint.config.mjs",
+      "language": "javascript"
+    },
+    {
+      "id": "file:next-env.d.ts",
+      "type": "file",
+      "name": "next-env.d.ts",
+      "summary": "next-env.d.ts in the Palace52 codebase.",
+      "tags": [
+        "code",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "filePath": "next-env.d.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "config:next.config.ts",
+      "type": "config",
+      "name": "next.config.ts",
+      "summary": "Configuration file for next.config.ts in the Palace52 Next.js project.",
+      "tags": [
+        "code",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "filePath": "next.config.ts",
+      "language": "typescript"
+    },
+    {
+      "id": "config:postcss.config.mjs",
+      "type": "config",
+      "name": "postcss.config.mjs",
+      "summary": "Configuration file for postcss.config.mjs in the Palace52 Next.js project.",
+      "tags": [
+        "code",
+        "javascript"
+      ],
+      "complexity": "simple",
+      "filePath": "postcss.config.mjs",
+      "language": "javascript"
+    },
+    {
+      "id": "schema:prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "type": "schema",
+      "name": "migration.sql",
+      "summary": "Database or schema artifact used by the Palace52 persistence layer.",
+      "tags": [
+        "data",
+        "sql",
+        "auth",
+        "database"
+      ],
+      "complexity": "moderate",
+      "filePath": "prisma/migrations/20260618090000_custom_credentials_auth/migration.sql",
+      "language": "sql"
+    },
+    {
+      "id": "config:prisma/migrations/migration_lock.toml",
+      "type": "config",
+      "name": "migration_lock.toml",
+      "summary": "Configuration file for migration_lock.toml in the Palace52 Next.js project.",
+      "tags": [
+        "config",
+        "toml",
+        "database"
+      ],
+      "complexity": "simple",
+      "filePath": "prisma/migrations/migration_lock.toml",
+      "language": "toml"
+    },
+    {
+      "id": "schema:prisma/schema.prisma",
+      "type": "schema",
+      "name": "schema.prisma",
+      "summary": "Prisma data model for users, palaces, PAO card images, training sessions, reviews, and authentication records.",
+      "tags": [
+        "data",
+        "prisma",
+        "database"
+      ],
+      "complexity": "moderate",
+      "filePath": "prisma/schema.prisma",
+      "language": "prisma"
+    },
+    {
+      "id": "file:src/app/(app)/history/page.tsx",
+      "type": "file",
+      "name": "(app)/history page",
+      "summary": "Next.js route module for (app)/history/page.tsx, exporting HistoryRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/history/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/history/page.tsx:HistoryRedirectPage",
+      "type": "function",
+      "name": "HistoryRedirectPage",
+      "summary": "HistoryRedirectPage implements (app)/history page behavior in src/app/(app)/history/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/history/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "file:src/app/(app)/pao/page.tsx",
+      "type": "file",
+      "name": "(app)/pao page",
+      "summary": "Next.js route module for (app)/pao/page.tsx, exporting PaoRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/pao/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/pao/page.tsx:PaoRedirectPage",
+      "type": "function",
+      "name": "PaoRedirectPage",
+      "summary": "PaoRedirectPage implements (app)/pao page behavior in src/app/(app)/pao/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "memory-palace",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/pao/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "file:src/app/(app)/routes/page.tsx",
+      "type": "file",
+      "name": "(app)/routes page",
+      "summary": "Next.js route module for (app)/routes/page.tsx, exporting RoutesRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/routes/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(app)/routes/page.tsx:RoutesRedirectPage",
+      "type": "function",
+      "name": "RoutesRedirectPage",
+      "summary": "RoutesRedirectPage implements (app)/routes page behavior in src/app/(app)/routes/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(app)/routes/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "file:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "type": "file",
+      "name": "sign-in/[[...sign-in]] page",
+      "summary": "Next.js route module for (auth)/sign-in/[[...sign-in]]/page.tsx, exporting SignInRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "auth"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx:SignInRedirectPage",
+      "type": "function",
+      "name": "SignInRedirectPage",
+      "summary": "SignInRedirectPage implements sign-in/[[...sign-in]] page behavior in src/app/(auth)/sign-in/[[...sign-in]]/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "file:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "type": "file",
+      "name": "sign-up/[[...sign-up]] page",
+      "summary": "Next.js route module for (auth)/sign-up/[[...sign-up]]/page.tsx, exporting SignUpRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "auth"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx:SignUpRedirectPage",
+      "type": "function",
+      "name": "SignUpRedirectPage",
+      "summary": "SignUpRedirectPage implements sign-up/[[...sign-up]] page behavior in src/app/(auth)/sign-up/[[...sign-up]]/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "auth",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "file:src/app/globals.css",
+      "type": "file",
+      "name": "globals.css",
+      "summary": "Next.js route module for globals.css, exporting route UI or handlers.",
+      "tags": [
+        "markup",
+        "css",
+        "next-app-router"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/app/globals.css",
+      "language": "css"
+    },
+    {
+      "id": "file:src/app/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "summary": "Root Next.js layout that loads global styles and wraps the application with session and shell providers.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/layout.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/layout.tsx:RootLayout",
+      "type": "function",
+      "name": "RootLayout",
+      "summary": "RootLayout implements layout.tsx behavior in src/app/layout.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/layout.tsx",
+      "lineRange": {
+        "start": 10,
+        "end": 20
+      }
+    },
+    {
+      "id": "file:src/app/leaderboard-dashboard/page.tsx",
+      "type": "file",
+      "name": "app/leaderboard-dashboard page",
+      "summary": "Next.js route module for leaderboard-dashboard/page.tsx, exporting LeaderboardDashboardRedirectPage.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "leaderboard",
+        "dashboard"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/leaderboard-dashboard/page.tsx",
+      "language": "typescript"
+    },
+    {
+      "id": "function:src/app/leaderboard-dashboard/page.tsx:LeaderboardDashboardRedirectPage",
+      "type": "function",
+      "name": "LeaderboardDashboardRedirectPage",
+      "summary": "LeaderboardDashboardRedirectPage implements app/leaderboard-dashboard page behavior in src/app/leaderboard-dashboard/page.tsx.",
+      "tags": [
+        "code",
+        "typescript",
+        "next-app-router",
+        "leaderboard",
+        "dashboard",
+        "exported"
+      ],
+      "complexity": "simple",
+      "filePath": "src/app/leaderboard-dashboard/page.tsx",
+      "lineRange": {
+        "start": 3,
+        "end": 5
+      }
+    },
+    {
+      "id": "config:src/lib/play-modes.test.mjs",
+      "type": "config",
+      "name": "play-modes.test.mjs",
+      "summary": "Configuration file for play-modes.test.mjs in the Palace52 Next.js project.",
+      "tags": [
+        "code",
+        "javascript",
+        "domain-library",
+        "training"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/lib/play-modes.test.mjs",
+      "language": "javascript"
+    },
+    {
+      "id": "file:src/types/next-auth.d.ts",
+      "type": "file",
+      "name": "next-auth.d.ts",
+      "summary": "next-auth.d.ts in the Palace52 codebase.",
+      "tags": [
+        "code",
+        "typescript",
+        "auth"
+      ],
+      "complexity": "simple",
+      "filePath": "src/types/next-auth.d.ts",
+      "language": "typescript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/app/(app)/history/page.tsx",
+      "target": "function:src/app/(app)/history/page.tsx:HistoryRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/history/page.tsx",
+      "target": "function:src/app/(app)/history/page.tsx:HistoryRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/pao/page.tsx",
+      "target": "function:src/app/(app)/pao/page.tsx:PaoRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/pao/page.tsx",
+      "target": "function:src/app/(app)/pao/page.tsx:PaoRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(app)/routes/page.tsx",
+      "target": "function:src/app/(app)/routes/page.tsx:RoutesRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(app)/routes/page.tsx",
+      "target": "function:src/app/(app)/routes/page.tsx:RoutesRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "target": "function:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx:SignInRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx",
+      "target": "function:src/app/(auth)/sign-in/[[...sign-in]]/page.tsx:SignInRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "target": "function:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx:SignUpRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx",
+      "target": "function:src/app/(auth)/sign-up/[[...sign-up]]/page.tsx:SignUpRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "file:src/app/globals.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "function:src/app/layout.tsx:RootLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/layout.tsx",
+      "target": "function:src/app/layout.tsx:RootLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/app/leaderboard-dashboard/page.tsx",
+      "target": "function:src/app/leaderboard-dashboard/page.tsx:LeaderboardDashboardRedirectPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/app/leaderboard-dashboard/page.tsx",
+      "target": "function:src/app/leaderboard-dashboard/page.tsx:LeaderboardDashboardRedirectPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/superpowers/plans/2026-06-18-custom-credentials-auth.md",
+      "target": "file:src/app/page.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "schema:prisma/schema.prisma",
+      "target": "file:src/lib/prisma.ts",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

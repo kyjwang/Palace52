@@ -14,6 +14,7 @@ import { CardBadge } from "@/components/app/card-badge";
 import { PublicShell } from "@/components/app/public-shell";
 import { ButtonLink } from "@/components/ui/button";
 import { MetricCard, Panel } from "@/components/ui/product";
+import { getCurrentUser } from "@/lib/auth";
 import { cardFromCode } from "@/lib/cards";
 
 const methodSteps = [
@@ -63,9 +64,21 @@ const features = [
   }
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const user = await getCurrentUser();
+
   return (
-    <PublicShell>
+    <PublicShell
+      user={
+        user
+          ? {
+              username: user.username,
+              displayName: user.profile?.displayName,
+              avatarColor: user.profile?.avatarColor
+            }
+          : null
+      }
+    >
       <div className="space-y-10 md:space-y-12">
         <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_470px] lg:items-stretch">
           <Panel className="flex min-h-[520px] flex-col justify-between p-6 md:p-8 lg:p-10">

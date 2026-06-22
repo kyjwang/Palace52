@@ -32,7 +32,7 @@ export function AppShell({
   return (
     <div className="min-h-[100dvh] bg-[var(--background)] pb-20 text-[var(--foreground)] lg:pb-0">
       <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--background)]/92 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
+        <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-4 py-2 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <span className="flex size-9 items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] shadow-sm">
               <Castle className="size-5" strokeWidth={2.2} aria-hidden="true" />
@@ -82,7 +82,7 @@ export function AppShell({
               >
                 {displayName.charAt(0).toUpperCase()}
               </span>
-              <span className="hidden max-w-28 truncate lg:inline">{displayName}</span>
+              <span className="max-w-[18rem] whitespace-normal break-words leading-tight">{displayName}</span>
             </Link>
             <LogoutButton compact />
           </div>
@@ -90,15 +90,16 @@ export function AppShell({
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/profile"
-              className="flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card)] shadow-sm"
+              className="flex min-h-9 min-w-0 items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--card)] px-2 py-1.5 text-sm font-medium shadow-sm"
               aria-label="Profile"
             >
               <span
-                className="flex size-6 items-center justify-center rounded-full text-xs font-semibold text-white"
+                className="flex size-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
                 style={{ backgroundColor: user?.avatarColor ?? "#8a6518" }}
               >
                 {displayName.charAt(0).toUpperCase()}
               </span>
+              <span className="max-w-[42vw] whitespace-normal break-words text-left leading-tight">{displayName}</span>
             </Link>
             <LogoutButton compact />
           </div>

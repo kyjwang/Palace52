@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Castle, ChevronDown, Orbit, Pencil, Trash2, Wand2 } from "lucide-react";
-import { PublicShell } from "@/components/app/public-shell";
+import { PublicShell, type HeaderUser } from "@/components/app/public-shell";
 import { CardBadge } from "@/components/app/card-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,9 +20,11 @@ const suitLabels: Record<string, string> = {
 
 export function MyMemoryPalaceClient({
   embedded = false,
+  headerUser,
   paoDeckOptions = getPresetPaoDeckOptions()
 }: {
   embedded?: boolean;
+  headerUser?: HeaderUser | null;
   paoDeckOptions?: PaoDeckOption[];
 }) {
   const [deckIndex, setDeckIndex] = useState(0);
@@ -317,7 +319,7 @@ export function MyMemoryPalaceClient({
   if (embedded) return content;
 
   return (
-    <PublicShell>
+    <PublicShell user={headerUser}>
       {content}
     </PublicShell>
   );
