@@ -2,8 +2,7 @@
 
 import { useState, useTransition, type DragEvent } from "react";
 import { ArrowDown, ArrowUp, BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
-import { saveCardImage } from "@/app/actions/card-images";
-import { CardBadge } from "@/components/app/card-badge";
+import { savePaoDeck } from "@/app/actions/card-images";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Input, Label, Textarea } from "@/components/ui/form";
 import { Panel } from "@/components/ui/product";
@@ -12,20 +11,25 @@ import { fullDeck } from "@/lib/cards";
 const starterLocations = ["Front door", "Hallway mirror", "Kitchen sink", "Living room sofa", "Bedroom door", "Balcony chair"];
 type PaoRow = { cardCode: string; person: string; action: string; object: string };
 
+const blankPaoRows: PaoRow[] = fullDeck.map((card) => ({
+  cardCode: card.code,
+  person: "",
+  action: "",
+  object: ""
+}));
+
 export function PalaceBuilder() {
   const [isPending, startTransition] = useTransition();
   const [name, setName] = useState("My First Palace");
   const [description, setDescription] = useState("A route through familiar rooms at home.");
   const [locations, setLocations] = useState(starterLocations);
   const [newLocation, setNewLocation] = useState("");
-  const [selectedCardCode, setSelectedCardCode] = useState("AC");
-  const [person, setPerson] = useState("");
-  const [action, setAction] = useState("");
-  const [object, setObject] = useState("");
-  const [paoRows, setPaoRows] = useState<PaoRow[]>([]);
+  const [paoRows, setPaoRows] = useState<PaoRow[]>(blankPaoRows);
+  const [deckEditorOpen, setDeckEditorOpen] = useState(false);
   const [saved, setSaved] = useState(false);
   const [paoSaveState, setPaoSaveState] = useState<"idle" | "saved" | "error">("idle");
   const [draggedLocationIndex, setDraggedLocationIndex] = useState<number | null>(null);
+  const completedPaoCards = paoRows.filter((row) => row.person.trim() && row.action.trim() && row.object.trim()).length;
 
   function addLocation() {
     if (!newLocation.trim()) return;
@@ -75,52 +79,39 @@ export function PalaceBuilder() {
     setDraggedLocationIndex(null);
   }
 
-  function savePao() {
-    if (!person.trim() || !action.trim() || !object.trim()) return;
-    const card = fullDeck.find((item) => item.code === selectedCardCode);
-    if (!card) return;
-
-    const nextRow = {
-      cardCode: selectedCardCode,
-      person: person.trim(),
-      action: action.trim(),
-      object: object.trim()
-    };
-
+  function updatePaoRow(cardCode: string, field: "person" | "action" | "object", value: string) {
     setPaoRows((current) => {
-      if (current.some((row) => row.cardCode === selectedCardCode)) {
-        return current.map((row) => (row.cardCode === selectedCardCode ? nextRow : row));
-      }
-
-      return [...current, nextRow].sort((a, b) => a.cardCode.localeCompare(b.cardCode));
+      return current.map((row) => (row.cardCode === cardCode ? { ...row, [field]: value } : row));
     });
-    setPerson("");
-    setAction("");
-    setObject("");
     setPaoSaveState("idle");
-    setSaved(false);
+  }
 
+  function clearPaoRow(cardCode: string) {
+    setPaoRows((current) => current.map((row) => (row.cardCode === cardCode ? { ...row, person: "", action: "", object: "" } : row)));
+    setPaoSaveState("idle");
+  }
+
+  function saveFullPaoDeck() {
     startTransition(async () => {
       try {
-        await saveCardImage({
-          rank: card.rank,
-          suit: card.suit,
-          person: nextRow.person,
-          action: nextRow.action,
-          object: nextRow.object,
-          imagePrompt: `${nextRow.person} ${nextRow.action} with ${nextRow.object}`,
-          notes: "Custom PAO card image."
+        await savePaoDeck({
+          cards: paoRows.map((row) => {
+            const card = fullDeck.find((item) => item.code === row.cardCode) ?? fullDeck[0];
+
+            return {
+              rank: card.rank,
+              suit: card.suit,
+              person: row.person,
+              action: row.action,
+              object: row.object
+            };
+          })
         });
         setPaoSaveState("saved");
       } catch {
         setPaoSaveState("error");
       }
     });
-  }
-
-  function removePao(cardCode: string) {
-    setPaoRows((current) => current.filter((row) => row.cardCode !== cardCode));
-    setSaved(false);
   }
 
   return (
@@ -250,107 +241,103 @@ export function PalaceBuilder() {
       </Panel>
       </div>
 
-      <section className="grid gap-5 lg:grid-cols-[420px_1fr]">
-        <Panel className="p-5">
-          <p className="text-sm font-semibold text-[var(--accent)]">Build your own PAO</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight">Create card images</h2>
+      <Panel className="p-5">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+          <div>
+            <p className="text-sm font-semibold text-[var(--accent)]">Build your own PAO</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">Create a PAO deck</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Open the table, fill person, action, and object for each card, then save the deck.
+            </p>
+          </div>
+          <Button type="button" onClick={() => setDeckEditorOpen((open) => !open)} className="h-11 md:shrink-0">
+            <Plus className="size-4" />
+            {deckEditorOpen ? "Close table" : "Create PAO deck"}
+          </Button>
+        </div>
+
+        <div className="mt-5 flex flex-col justify-between gap-3 rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-3 md:flex-row md:items-center">
+          <div>
+            <p className="text-sm text-[var(--muted)]">Custom PAO deck</p>
+            <p className="mt-1 text-2xl font-semibold">{completedPaoCards}/52 cards mapped</p>
+          </div>
+          <p className="rounded-md bg-[var(--card)] px-3 py-2 text-sm text-[var(--muted)]">Saved decks appear in My Palace and Play</p>
+        </div>
+
+        {!deckEditorOpen ? (
+          <p className="mt-5 rounded-md border border-dashed border-[var(--border)] bg-[var(--card-muted)] px-3 py-4 text-sm text-[var(--muted)]">
+            Click Create PAO deck to fill the spreadsheet-style template.
+          </p>
+        ) : (
           <div className="mt-5 space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="pao-card">Card</Label>
-              <select
-                id="pao-card"
-                value={selectedCardCode}
-                onChange={(event) => setSelectedCardCode(event.target.value)}
-                className="h-10 w-full rounded-md border border-[#dfe3d7] bg-white px-3 text-sm"
-              >
-                {fullDeck.map((card) => (
-                  <option key={card.code} value={card.code}>
-                    {card.label}
-                  </option>
-                ))}
-              </select>
+            <div className="overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--card)]">
+              <table className="w-full min-w-[760px] text-left text-sm">
+                <thead className="border-b border-[var(--border)] bg-[var(--card-muted)] text-[var(--muted)]">
+                  <tr>
+                    <th className="w-28 px-3 py-2 font-medium">Card</th>
+                    <th className="px-3 py-2 font-medium">Suit</th>
+                    <th className="px-3 py-2 font-medium">Person</th>
+                    <th className="px-3 py-2 font-medium">Action</th>
+                    <th className="px-3 py-2 font-medium">Object</th>
+                    <th className="w-16 px-3 py-2 font-medium">Clear</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[var(--border)]">
+                  {paoRows.map((row) => {
+                    const card = fullDeck.find((item) => item.code === row.cardCode) ?? fullDeck[0];
+
+                    return (
+                      <tr key={row.cardCode} className="bg-[var(--card)]">
+                        <td className="px-3 py-2 font-mono font-semibold text-[var(--foreground)]">{card.shortLabel}</td>
+                        <td className="px-3 py-2 text-[var(--muted)]">{suitLabel(card.suit)}</td>
+                        <td className="px-3 py-2">
+                          <Input value={row.person} onChange={(event) => updatePaoRow(row.cardCode, "person", event.target.value)} placeholder="Person" className="h-9" />
+                        </td>
+                        <td className="px-3 py-2">
+                          <Input value={row.action} onChange={(event) => updatePaoRow(row.cardCode, "action", event.target.value)} placeholder="Action" className="h-9" />
+                        </td>
+                        <td className="px-3 py-2">
+                          <Input value={row.object} onChange={(event) => updatePaoRow(row.cardCode, "object", event.target.value)} placeholder="Object" className="h-9" />
+                        </td>
+                        <td className="px-3 py-2">
+                          <Button type="button" variant="ghost" onClick={() => clearPaoRow(row.cardCode)} className="size-8 px-0 text-red-600" aria-label={`Clear PAO for ${card.label}`}>
+                            <Trash2 className="size-4" />
+                          </Button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
-            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="space-y-2">
-                <Label htmlFor="pao-person">Person</Label>
-                <Input id="pao-person" value={person} onChange={(event) => setPerson(event.target.value)} placeholder="Famous person" />
+
+            <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
+              <div className="text-sm text-[var(--muted)]">
+                Fill all three fields for each card you want in the deck.
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="pao-action">Action</Label>
-                <Input id="pao-action" value={action} onChange={(event) => setAction(event.target.value)} placeholder="juggling" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="pao-object">Object</Label>
-                <Input id="pao-object" value={object} onChange={(event) => setObject(event.target.value)} placeholder="lantern" />
-              </div>
+              <Button type="button" onClick={saveFullPaoDeck} disabled={isPending || completedPaoCards === 0} className="h-11 md:shrink-0">
+                <Save className="size-4" />
+                {isPending ? "Saving deck" : "Save PAO deck"}
+              </Button>
             </div>
-            <Button type="button" onClick={savePao} disabled={isPending} className="w-full">
-              <Save className="size-4" />
-              {isPending ? "Saving PAO" : "Save PAO"}
-            </Button>
+
             {paoSaveState === "saved" && (
               <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">
-                Saved to your PAO deck.
+                PAO deck saved. You can choose it in My Palace and Play.
               </p>
             )}
             {paoSaveState === "error" && (
               <p className="rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
-                Could not save this PAO card. Try again.
+                Could not save this PAO deck. Try again.
               </p>
             )}
           </div>
-        </Panel>
-
-        <Panel className="p-5">
-          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm text-[#6f7468]">Custom PAO deck</p>
-              <h2 className="text-2xl font-semibold">{paoRows.length}/52 cards mapped</h2>
-            </div>
-            <p className="rounded-md bg-[#f6f7f3] px-3 py-2 text-sm text-[#6f7468]">Saved cards appear in My Palace and Play</p>
-          </div>
-          {paoRows.length === 0 ? (
-            <p className="mt-5 rounded-md border border-dashed border-[var(--border)] bg-[var(--card-muted)] px-3 py-4 text-sm text-[var(--muted)]">
-              No custom PAO cards saved yet.
-            </p>
-          ) : (
-            <div className="mt-5 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-              {paoRows.map((row) => {
-              const card = fullDeck.find((item) => item.code === row.cardCode) ?? fullDeck[0];
-              return (
-                <div key={row.cardCode} className="rounded-lg border border-[#edf0e8] bg-[#fbfcf8] p-3">
-                  <div className="flex items-start gap-3">
-                    <CardBadge label={card.shortLabel} color={card.color} className="h-11 min-w-9 shadow-sm" />
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-semibold">{card.label}</p>
-                      <div className="mt-1 space-y-0.5 text-xs leading-5 text-[#6f7468]">
-                        <p>
-                          <strong className="font-semibold text-[#161713]">P:</strong> {row.person}
-                        </p>
-                        <p>
-                          <strong className="font-semibold text-[#161713]">A:</strong> {row.action}
-                        </p>
-                        <p>
-                          <strong className="font-semibold text-[#161713]">O:</strong> {row.object}
-                        </p>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => removePao(row.cardCode)}
-                      className="flex size-7 shrink-0 items-center justify-center rounded-md text-red-600 transition hover:bg-white"
-                      aria-label={`Delete PAO for ${card.label}`}
-                    >
-                      <Trash2 className="size-4" />
-                    </button>
-                  </div>
-                </div>
-              );
-              })}
-            </div>
-          )}
-        </Panel>
-      </section>
+        )}
+      </Panel>
     </div>
   );
+}
+
+function suitLabel(suit: string) {
+  return suit.charAt(0) + suit.slice(1).toLowerCase();
 }
