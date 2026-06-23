@@ -129,6 +129,9 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const wrongFlashcards = flashcardGrades.filter((grade) => grade.outcome === "wrong").length;
   const currentRouteIndex = Math.floor(index / 3) % selectedPalace.locations.length;
   const currentRouteLocation = selectedPalace.locations[currentRouteIndex];
+  const currentPromptDeckIndex = mode === "RANDOM_POSITION" ? (currentPromptPosition ?? 1) - 1 : index;
+  const currentPromptRouteIndex = Math.floor(currentPromptDeckIndex / 3) % selectedPalace.locations.length;
+  const currentPromptRouteLocation = selectedPalace.locations[currentPromptRouteIndex];
   const modeTitle = modeCards.find((item) => item.mode === mode)?.title ?? "Classic";
 
   function start(startedAtMs: number) {
@@ -664,15 +667,27 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
                 <p className="font-mono text-sm font-semibold text-[#0f7a5f] dark:text-[var(--accent)]">
                   Question {index + 1} of {recall.length}
                 </p>
-                <p className="mt-1 text-sm text-[#6f7468] dark:text-[var(--muted)]">
-                  {mode === "RANDOM_POSITION"
-                    ? `Route cue: ${selectedPalace.locations[((currentPromptPosition ?? 1) - 1) % selectedPalace.locations.length]}`
-                    : `Route location ${currentRouteIndex + 1}: ${currentRouteLocation}`}
-                </p>
               </div>
               <p className="text-sm font-semibold text-[#6f7468] dark:text-[var(--muted)]">
                 {recall[index] ? "Answer ready" : "Type your best guess"}
               </p>
+            </div>
+
+            <div className="mb-4 grid gap-3 md:grid-cols-2">
+              <div className="rounded-md bg-[var(--accent-soft)] p-3 text-sm leading-6">
+                <p className="font-semibold text-[var(--foreground)]">{selectedPalace.name}</p>
+                <p className="text-[var(--muted)]">
+                  Location {currentPromptRouteIndex + 1} of {selectedPalace.locations.length}: {currentPromptRouteLocation}
+                </p>
+              </div>
+
+              <div className="rounded-md bg-[var(--card-muted)] p-3 text-sm leading-6">
+                <p className="font-semibold text-[var(--foreground)]">{currentPromptCard.card.label}</p>
+                <p className="mb-2 text-xs text-[var(--muted)]">PAO deck: {selectedPaoDeck?.name ?? "No saved PAO deck"}</p>
+                <p><strong className="font-semibold">P:</strong> {currentPromptCard.person}</p>
+                <p><strong className="font-semibold">A:</strong> {currentPromptCard.action}</p>
+                <p><strong className="font-semibold">O:</strong> {currentPromptCard.object}</p>
+              </div>
             </div>
 
             <label className="block space-y-2">
