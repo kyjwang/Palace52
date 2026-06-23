@@ -324,6 +324,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
     }
 
     setIndex(index + 1);
+    setActiveHint(null);
     setResponseStartedAt(finishedAt);
   }
 
@@ -665,30 +666,52 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             <div className="mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
               <div>
                 <p className="font-mono text-sm font-semibold text-[#0f7a5f] dark:text-[var(--accent)]">
-                  Question {index + 1} of {recall.length}
+                  Card {index + 1} of {recall.length}
                 </p>
               </div>
-              <p className="text-sm font-semibold text-[#6f7468] dark:text-[var(--muted)]">
-                {recall[index] ? "Answer ready" : "Type your best guess"}
-              </p>
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-semibold text-[#6f7468] dark:text-[var(--muted)]">
+                  {recall[index] ? "Answer ready" : "Type your best guess"}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setActiveHint((hint) => (hint === "palace" ? null : "palace"))}
+                  className="inline-flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card-muted)] text-[var(--accent)] transition hover:border-[var(--border-strong)] active:translate-y-px"
+                  aria-label="Show current memory palace location"
+                  aria-pressed={activeHint === "palace"}
+                >
+                  <Castle className="size-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveHint((hint) => (hint === "pao" ? null : "pao"))}
+                  className="inline-flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card-muted)] text-[var(--accent)] transition hover:border-[var(--border-strong)] active:translate-y-px"
+                  aria-label="Show current card PAO hint"
+                  aria-pressed={activeHint === "pao"}
+                >
+                  <Brain className="size-4" />
+                </button>
+              </div>
             </div>
 
-            <div className="mb-4 grid gap-3 md:grid-cols-2">
-              <div className="rounded-md bg-[var(--accent-soft)] p-3 text-sm leading-6">
+            {activeHint === "palace" && (
+              <div className="mb-4 rounded-md bg-[var(--accent-soft)] p-3 text-sm leading-6">
                 <p className="font-semibold text-[var(--foreground)]">{selectedPalace.name}</p>
                 <p className="text-[var(--muted)]">
                   Location {currentPromptRouteIndex + 1} of {selectedPalace.locations.length}: {currentPromptRouteLocation}
                 </p>
               </div>
+            )}
 
-              <div className="rounded-md bg-[var(--card-muted)] p-3 text-sm leading-6">
+            {activeHint === "pao" && (
+              <div className="mb-4 rounded-md bg-[var(--card-muted)] p-3 text-sm leading-6">
                 <p className="font-semibold text-[var(--foreground)]">{currentPromptCard.card.label}</p>
                 <p className="mb-2 text-xs text-[var(--muted)]">PAO deck: {selectedPaoDeck?.name ?? "No saved PAO deck"}</p>
                 <p><strong className="font-semibold">P:</strong> {currentPromptCard.person}</p>
                 <p><strong className="font-semibold">A:</strong> {currentPromptCard.action}</p>
                 <p><strong className="font-semibold">O:</strong> {currentPromptCard.object}</p>
               </div>
-            </div>
+            )}
 
             <label className="block space-y-2">
               <span className="text-sm font-medium text-[#394037] dark:text-[var(--foreground)]">Your card code</span>
