@@ -29,7 +29,7 @@ export default async function SessionsPage() {
       <div className="space-y-4">
         {sessions.length === 0 ? (
           <Card>
-            <CardContent className="text-sm text-[#6f7468]">No completed sessions yet. Start with a full-deck training session.</CardContent>
+            <CardContent className="text-sm text-[var(--muted)]">No completed sessions yet. Start with a full-deck training session.</CardContent>
           </Card>
         ) : (
           sessions.map((session) => (
@@ -38,13 +38,13 @@ export default async function SessionsPage() {
                 <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
                   <div>
                     <CardTitle>{modeLabel(session.mode)} · {session.score}/{session.deckSize ?? (Array.isArray(session.deck) ? session.deck.length : 52)}</CardTitle>
-                    <p className="mt-1 text-sm text-[#6f7468]">
+                    <p className="mt-1 text-sm text-[var(--muted)]">
                       {session.palace?.name ?? modeDetail(session)} · {session.completedAt?.toLocaleDateString()} · {formatPercent(session.accuracy)} accuracy
                     </p>
                   </div>
-                  <div className="font-mono text-sm text-[#394037]">
+                  <div className="font-mono text-sm text-[var(--foreground)]">
                     Study {formatDuration(session.memorizationMs)} · Recall {formatDuration(session.recallMs)}
-                    {session.isPersonalBest ? <span className="ml-2 rounded-md bg-[#e5f3ee] px-2 py-1 text-[#0f7a5f]">PB</span> : null}
+                    {session.isPersonalBest ? <span className="ml-2 rounded-md bg-[var(--accent-soft)] px-2 py-1 text-[var(--accent)]">PB</span> : null}
                     {!session.isValidRun ? <span className="ml-2 rounded-md bg-red-50 px-2 py-1 text-red-700">Invalid run</span> : null}
                   </div>
                 </div>
@@ -52,20 +52,20 @@ export default async function SessionsPage() {
               <CardContent>
                 <div className="grid gap-2 md:grid-cols-2">
                   {session.cardResults.filter((result) => !result.isCorrect).slice(0, 8).map((result) => (
-                    <div key={result.id} className="flex gap-3 rounded-md bg-[#fbfcf8] p-3 text-sm">
+                    <div key={result.id} className="flex gap-3 rounded-md bg-[var(--card-muted)] p-3 text-sm">
                       <XCircle className="mt-0.5 size-4 shrink-0 text-red-500" />
                       <span>{result.feedback}</span>
                     </div>
                   ))}
                   {session.cardResults.length > 0 && session.cardResults.every((result) => result.isCorrect) && (
-                    <div className="flex gap-3 rounded-md bg-[#eef8f3] p-3 text-sm">
-                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#0f7a5f]" />
+                    <div className="flex gap-3 rounded-md bg-[var(--accent-soft)] p-3 text-sm">
+                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--accent)]" />
                       Perfect recall. Keep the route fresh with another timed run.
                     </div>
                   )}
                   {session.cardResults.length === 0 &&
                     readSessionMistakes(session.mistakes).slice(0, 8).map((mistake) => (
-                      <div key={`${mistake.position}-${mistake.expected}`} className="flex gap-3 rounded-md bg-[#fbfcf8] p-3 text-sm">
+                      <div key={`${mistake.position}-${mistake.expected}`} className="flex gap-3 rounded-md bg-[var(--card-muted)] p-3 text-sm">
                         <XCircle className="mt-0.5 size-4 shrink-0 text-red-500" />
                         <span>{mistake.feedback}</span>
                       </div>

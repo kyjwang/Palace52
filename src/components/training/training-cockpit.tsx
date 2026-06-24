@@ -200,14 +200,14 @@ export function TrainingCockpit({
           </CardHeader>
           <CardContent className="grid gap-4 md:grid-cols-[1fr_1fr_auto] md:items-end">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-[#394037]" htmlFor="palace">
+              <label className="text-sm font-medium text-[var(--foreground)]" htmlFor="palace">
                 Palace route
               </label>
               <select
                 id="palace"
                 value={selectedPalaceId}
                 onChange={(event) => setSelectedPalaceId(event.target.value)}
-                className="h-10 w-full rounded-md border border-[#dfe3d7] bg-white px-3 text-sm"
+                className="h-10 w-full rounded-md border border-[var(--border)] bg-[var(--card)] px-3 text-sm"
               >
                 {palaces.map((palace) => (
                   <option key={palace.id} value={palace.id}>
@@ -217,14 +217,14 @@ export function TrainingCockpit({
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-[#394037]" htmlFor="mode">
+              <label className="text-sm font-medium text-[var(--foreground)]" htmlFor="mode">
                 Mode
               </label>
               <select
                 id="mode"
                 value={mode}
                 onChange={(event) => setMode(event.target.value as "FULL_DECK" | "HALF_DECK" | "SPEED")}
-                className="h-10 w-full rounded-md border border-[#dfe3d7] bg-white px-3 text-sm"
+                className="h-10 w-full rounded-md border border-[var(--border)] bg-[var(--card)] px-3 text-sm"
               >
                 <option value="FULL_DECK">Full deck</option>
                 <option value="HALF_DECK">Half deck</option>
@@ -245,7 +245,7 @@ export function TrainingCockpit({
             <div>
               <p className="text-sm text-[var(--muted)]">Study phase</p>
               <h2 className="text-xl font-semibold">Walk through {selectedPalace?.name}</h2>
-              <p className="mt-1 text-sm text-[#6f7468]">
+              <p className="mt-1 text-sm text-[var(--muted)]">
                 Card {activeStudyCardNumber} of {deck.length}. Location {activeLocationNumber || 0} of {selectedLocationCount || 0}
               </p>
             </div>
@@ -277,7 +277,7 @@ export function TrainingCockpit({
               return (
                 <Card
                   key={`${card.code}-${index}`}
-                  className={index === activeStudyIndex ? "border-[#0f7a5f] ring-2 ring-[#bcebdc]" : ""}
+                  className={index === activeStudyIndex ? "border-[var(--accent)] ring-2 ring-[var(--accent)]/20" : ""}
                 >
                   <CardContent className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -285,7 +285,7 @@ export function TrainingCockpit({
                       <button
                         type="button"
                         onClick={() => setActiveStudyIndex(index)}
-                        className="rounded-md px-2 py-1 font-mono text-sm text-[#6f7468] hover:bg-[#eef2e8]"
+                        className="rounded-md px-2 py-1 font-mono text-sm text-[var(--muted)] hover:bg-[var(--card-muted)]"
                         aria-label={`Set current study card to ${index + 1}`}
                       >
                         #{index + 1}
@@ -293,7 +293,7 @@ export function TrainingCockpit({
                     </div>
                     <div>
                       <p className="text-sm font-medium">{location?.name ?? `Location ${index + 1}`}</p>
-                      <p className="mt-1 text-sm text-[#6f7468]">{image?.imagePrompt ?? `${image?.person ?? card.label} ${image?.action ?? ""} ${image?.object ?? ""}`}</p>
+                      <p className="mt-1 text-sm text-[var(--muted)]">{image?.imagePrompt ?? `${image?.person ?? card.label} ${image?.action ?? ""} ${image?.object ?? ""}`}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -309,7 +309,7 @@ export function TrainingCockpit({
             <div>
               <p className="text-sm text-[var(--muted)]">Recall phase</p>
               <h2 className="text-xl font-semibold">Enter the deck in order from memory</h2>
-              <p className="mt-1 text-sm text-[#6f7468]">
+              <p className="mt-1 text-sm text-[var(--muted)]">
                 Answered {answeredCount} of {deck.length}. Current card {activeRecallCardNumber} of {deck.length}
               </p>
             </div>
@@ -320,8 +320,8 @@ export function TrainingCockpit({
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {deck.map((_, index) => (
-              <label key={index} className="space-y-2 rounded-lg border border-[#dfe3d7] bg-white p-3">
-                <span className="text-sm font-medium text-[#394037]">Position {index + 1}</span>
+              <label key={index} className="space-y-2 rounded-lg border border-[var(--border)] bg-[var(--card)] p-3">
+                <span className="text-sm font-medium text-[var(--foreground)]">Position {index + 1}</span>
                 <select
                   value={recall[index] ?? ""}
                   onChange={(event) => {
@@ -329,7 +329,7 @@ export function TrainingCockpit({
                     next[index] = event.target.value;
                     setRecall(next);
                   }}
-                  className="h-10 w-full rounded-md border border-[#dfe3d7] bg-[#fbfcf8] px-3 text-sm"
+                  className="h-10 w-full rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 text-sm"
                 >
                   <option value="">No answer</option>
                   {fullDeck.map((card) => (
@@ -349,25 +349,25 @@ export function TrainingCockpit({
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <Card>
               <CardContent>
-                <p className="text-sm text-[#6f7468]">Score</p>
+                <p className="text-sm text-[var(--muted)]">Score</p>
                 <p className="mt-2 text-4xl font-semibold">{summary.score}/{deck.length}</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent>
-                <p className="text-sm text-[#6f7468]">Accuracy</p>
+                <p className="text-sm text-[var(--muted)]">Accuracy</p>
                 <p className="mt-2 text-4xl font-semibold">{formatPercent(summary.accuracy)}</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent>
-                <p className="text-sm text-[#6f7468]">Study time</p>
+                <p className="text-sm text-[var(--muted)]">Study time</p>
                 <p className="mt-2 text-4xl font-semibold">{formatDuration(memorizationMs)}</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent>
-                <p className="text-sm text-[#6f7468]">Recall time</p>
+                <p className="text-sm text-[var(--muted)]">Recall time</p>
                 <p className="mt-2 text-4xl font-semibold">{formatDuration(recallMs)}</p>
               </CardContent>
             </Card>
@@ -384,9 +384,9 @@ export function TrainingCockpit({
             </CardHeader>
             <CardContent className="space-y-2">
               {summary.results.map((result) => (
-                <div key={result.expectedIndex} className="grid gap-3 rounded-md border border-[#edf0e8] p-3 md:grid-cols-[80px_1fr_1fr] md:items-center">
+                <div key={result.expectedIndex} className="grid gap-3 rounded-md border border-[var(--border)] p-3 md:grid-cols-[80px_1fr_1fr] md:items-center">
                   <div className="flex items-center gap-2">
-                    {result.isCorrect ? <CheckCircle2 className="size-4 text-[#0f7a5f]" /> : <span className="size-4 rounded-full bg-red-500" />}
+                    {result.isCorrect ? <CheckCircle2 className="size-4 text-[var(--accent)]" /> : <span className="size-4 rounded-full bg-red-500" />}
                     <span className="font-mono text-sm">#{result.expectedIndex + 1}</span>
                   </div>
                   <p className="text-sm">
@@ -399,7 +399,7 @@ export function TrainingCockpit({
                       ", no answer"
                     )}
                   </p>
-                  <p className="text-sm text-[#6f7468]">{result.feedback}</p>
+                  <p className="text-sm text-[var(--muted)]">{result.feedback}</p>
                 </div>
               ))}
             </CardContent>

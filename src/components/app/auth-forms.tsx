@@ -131,7 +131,7 @@ export function ProfileEditForm({
       </div>
       <div className="space-y-2">
         <Label htmlFor="avatarColor">Avatar color</Label>
-        <Input id="avatarColor" name="avatarColor" type="color" defaultValue={profile.avatarColor ?? "#0e765c"} />
+        <Input id="avatarColor" name="avatarColor" type="color" defaultValue={profile.avatarColor ?? "#2f6fff"} />
         <FieldError messages={state.fieldErrors?.avatarColor} />
       </div>
       <label className="flex items-center gap-3 rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-3 text-sm">

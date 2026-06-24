@@ -300,7 +300,7 @@ export function PalaceBuilder() {
               </Button>
             </div>
 
-            {saved && <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">Route saved locally for preview.</p>}
+            {saved && <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm font-medium text-[var(--accent)]">Route saved locally for preview.</p>}
           </div>
         )}
       </Panel>
@@ -388,7 +388,7 @@ export function PalaceBuilder() {
             </div>
 
             {paoSaveState === "saved" && (
-              <p className="rounded-md bg-[#eef8f3] px-3 py-2 text-sm font-medium text-[#0f7a5f]">
+              <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm font-medium text-[var(--accent)]">
                 PAO deck saved. You can choose it in My Palace and Play.
               </p>
             )}

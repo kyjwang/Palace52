@@ -260,7 +260,7 @@ export default async function HomePage() {
               Create an account, save your PAO deck, and let Palace52 keep the practice loop organized.
             </p>
           </div>
-          <ButtonLink href="/register" className="h-11 bg-white text-[var(--ink)] hover:bg-white/88">
+          <ButtonLink href="/register" className="h-11 bg-[var(--card)] text-[var(--ink)] hover:bg-[var(--card-muted)]">
             Start Palace52
             <ArrowRight className="size-4" />
           </ButtonLink>

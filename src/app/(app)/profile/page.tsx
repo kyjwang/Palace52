@@ -106,7 +106,7 @@ export default async function ProfilePage() {
           <CardContent className="space-y-4">
             <div
               className="flex size-16 items-center justify-center rounded-lg text-2xl font-semibold text-white"
-              style={{ backgroundColor: profile?.avatarColor ?? "#0e765c" }}
+              style={{ backgroundColor: profile?.avatarColor ?? "#2f6fff" }}
             >
               {displayName.charAt(0).toUpperCase()}
             </div>

@@ -22,14 +22,14 @@ export default async function LeaderboardPage() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Trophy className="size-5 text-[#0f7a5f]" />
+            <Trophy className="size-5 text-[var(--accent)]" />
             Full platform rankings
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-left text-sm">
-              <thead className="border-b border-[#edf0e8] text-[#6f7468]">
+              <thead className="border-b border-[var(--border)] text-[var(--muted)]">
                 <tr>
                   <th className="py-3 pr-4 font-medium">Rank</th>
                   <th className="py-3 pr-4 font-medium">Athlete</th>
@@ -39,7 +39,7 @@ export default async function LeaderboardPage() {
                   <th className="py-3 pr-4 font-medium">Total time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#edf0e8]">
+              <tbody className="divide-y divide-[var(--border)]">
                 {entries.map((entry, index) => (
                   <tr key={entry.id} className={index < 3 ? "bg-[var(--card-muted)]" : ""}>
                     <td className="py-3 pr-4 font-mono font-semibold">{entry.rank}</td>
@@ -52,7 +52,7 @@ export default async function LeaderboardPage() {
                 ))}
               </tbody>
             </table>
-            {entries.length === 0 && <p className="py-8 text-center text-sm text-[#6f7468]">No leaderboard entries yet.</p>}
+            {entries.length === 0 && <p className="py-8 text-center text-sm text-[var(--muted)]">No leaderboard entries yet.</p>}
           </div>
         </CardContent>
       </Card>

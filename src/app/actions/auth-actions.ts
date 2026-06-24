@@ -97,7 +97,7 @@ export async function registerAction(_state: AuthActionState = initialErrorState
       profile: {
         create: {
           displayName: parsed.data.username,
-          avatarColor: "#0e765c"
+          avatarColor: "#2f6fff"
         }
       }
     }

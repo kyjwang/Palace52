@@ -39,7 +39,7 @@ export default async function CardsPage() {
                   <CardBadge label={card.shortLabel} color={card.color} />
                   <div>
                     <CardTitle>{card.label}</CardTitle>
-                    <p className="text-sm text-[#6f7468]">{image?.imagePrompt ?? "Create an image that feels instantly recognizable."}</p>
+                    <p className="text-sm text-[var(--muted)]">{image?.imagePrompt ?? "Create an image that feels instantly recognizable."}</p>
                   </div>
                 </div>
               </CardHeader>

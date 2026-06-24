@@ -17,7 +17,7 @@ export function PageHeader({
   return (
     <section
       className={cn(
-        "rounded-lg border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow)] md:p-7",
+        "rounded-lg border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow)] backdrop-blur-2xl md:p-7",
         className
       )}
     >
@@ -37,7 +37,7 @@ export function PageHeader({
 
 export function Panel({ className, children }: { className?: string; children: ReactNode }) {
   return (
-    <section className={cn("rounded-lg border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow)]", className)}>
+    <section className={cn("rounded-lg border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow)] backdrop-blur-2xl", className)}>
       {children}
     </section>
   );
@@ -61,10 +61,10 @@ export function MetricCard({
       className={cn(
         "rounded-lg border p-4 shadow-[var(--shadow)]",
         tone === "dark"
-          ? "border-transparent bg-[var(--ink)] text-white"
+          ? "border-white/10 bg-[var(--ink)]/88 text-white backdrop-blur-2xl"
           : tone === "accent"
-            ? "border-[var(--border-strong)] bg-[var(--accent-soft)] text-[var(--foreground)]"
-            : "border-[var(--border)] bg-[var(--card)] text-[var(--foreground)]"
+            ? "border-[var(--border-strong)] bg-[var(--accent-soft)] text-[var(--foreground)] backdrop-blur-2xl"
+            : "border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] backdrop-blur-2xl"
       )}
     >
       <div className={cn("flex items-center justify-between gap-4 text-sm", tone === "dark" ? "text-white/65" : "text-[var(--muted)]")}>
@@ -79,7 +79,7 @@ export function MetricCard({
 
 export function InlineStat({ label, value }: { label: string; value: ReactNode }) {
   return (
-    <div className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 py-2">
+    <div className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 py-2 backdrop-blur-2xl">
       <p className="text-xs text-[var(--muted)]">{label}</p>
       <p className="mt-1 font-mono text-sm font-semibold text-[var(--foreground)]">{value}</p>
     </div>

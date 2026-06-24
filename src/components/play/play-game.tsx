@@ -542,7 +542,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             </Button>
           </Panel>
 
-          <Panel className="border-black bg-black p-5 text-white md:p-6">
+          <Panel className="border-[var(--border)] bg-[var(--ink)] p-5 text-white md:p-6">
             <p className="text-sm text-white/55">Mode rules</p>
             <div className="mt-5 space-y-3">
               {getModeRules(mode, difficulty, selectedSuit).map((step, stepIndex) => (
@@ -635,42 +635,42 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
 
       {phase === "recall" && currentPromptCard && (
         <section className="mx-auto flex min-h-[calc(100dvh-160px)] max-w-3xl flex-col justify-center gap-4">
-          <div className="rounded-lg border border-[#dfe3d7] bg-white p-5 dark:border-[var(--border)] dark:bg-[var(--card)]">
-            <p className="text-sm font-medium text-[#0f7a5f] dark:text-[var(--accent)]">Recall mode</p>
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-5 dark:border-[var(--border)] dark:bg-[var(--card)]">
+            <p className="text-sm font-medium text-[var(--accent)] dark:text-[var(--accent)]">Recall mode</p>
             <h1 className="mt-2 text-2xl font-semibold tracking-tight">
               {mode === "RANDOM_POSITION" ? `What was card #${currentPromptPosition}?` : "Enter the card at this position"}
             </h1>
             <div className="mt-2 space-y-3">
-              <p className="text-sm leading-6 text-[#6f7468] dark:text-[var(--muted)]">
+              <p className="text-sm leading-6 text-[var(--muted)] dark:text-[var(--muted)]">
                 Use A, 2-10, J, Q, K, then add the suit letter. Press Enter to lock the answer and move on.
               </p>
               <div className="flex flex-wrap gap-2" aria-label="Suit letter guide">
                 {suitCodeLegend.map((item) => (
                   <div
                     key={item.code}
-                    className="inline-flex items-center gap-2 rounded-md border border-[#dfe3d7] bg-[#fbfcf8] px-2.5 py-1 text-sm font-medium dark:border-[var(--border)] dark:bg-[var(--card-muted)]"
+                    className="inline-flex items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-2.5 py-1 text-sm font-medium dark:border-[var(--border)] dark:bg-[var(--card-muted)]"
                     title={`${item.code} means ${item.label}`}
                   >
-                    <span className="font-mono text-xs text-[#6f7468] dark:text-[var(--muted)]">{item.code}</span>
+                    <span className="font-mono text-xs text-[var(--muted)] dark:text-[var(--muted)]">{item.code}</span>
                     <span className={`text-base leading-none ${item.tone}`} aria-hidden="true">
                       {item.suit}
                     </span>
-                    <span className="text-xs text-[#6f7468] dark:text-[var(--muted)]">{item.label}</span>
+                    <span className="text-xs text-[var(--muted)] dark:text-[var(--muted)]">{item.label}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#dfe3d7] bg-white p-4 shadow-sm md:p-5 dark:border-[var(--border)] dark:bg-[var(--card)]">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm md:p-5 dark:border-[var(--border)] dark:bg-[var(--card)]">
             <div className="mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
               <div>
-                <p className="font-mono text-sm font-semibold text-[#0f7a5f] dark:text-[var(--accent)]">
+                <p className="font-mono text-sm font-semibold text-[var(--accent)] dark:text-[var(--accent)]">
                   Card {index + 1} of {recall.length}
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <p className="text-sm font-semibold text-[#6f7468] dark:text-[var(--muted)]">
+                <p className="text-sm font-semibold text-[var(--muted)] dark:text-[var(--muted)]">
                   {recall[index] ? "Answer ready" : "Type your best guess"}
                 </p>
                 <button
@@ -714,7 +714,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             )}
 
             <label className="block space-y-2">
-              <span className="text-sm font-medium text-[#394037] dark:text-[var(--foreground)]">Your card code</span>
+              <span className="text-sm font-medium text-[var(--foreground)] dark:text-[var(--foreground)]">Your card code</span>
               <input
                 autoFocus
                 value={recall[index] ?? ""}
@@ -726,7 +726,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
                   }
                 }}
                 placeholder="2H"
-                className="h-12 w-full rounded-md border border-[#dfe3d7] bg-[#fbfcf8] px-3 font-mono text-base uppercase outline-none transition focus:border-[#0f7a5f] focus:ring-2 focus:ring-[#0f7a5f]/15 dark:border-[var(--border)] dark:bg-[var(--card-muted)]"
+                className="h-12 w-full rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 font-mono text-base uppercase outline-none transition focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 dark:border-[var(--border)] dark:bg-[var(--card-muted)]"
               />
             </label>
 
@@ -828,14 +828,14 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             </div>
 
             {result.mistakes.length === 0 ? (
-              <div className="flex gap-3 rounded-md bg-[#eef8f3] p-4 text-sm dark:bg-[var(--accent-soft)]">
-                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#0f7a5f] dark:text-[var(--accent)]" />
+              <div className="flex gap-3 rounded-md bg-[var(--accent-soft)] p-4 text-sm dark:bg-[var(--accent-soft)]">
+                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--accent)] dark:text-[var(--accent)]" />
                 Clean run. Repeat it once more, then increase pressure.
               </div>
             ) : (
               <div className="grid gap-2 md:grid-cols-2">
                 {result.mistakes.slice(0, 12).map((mistake) => (
-                  <div key={`${mistake.position}-${mistake.expected}-${mistake.answer}`} className="rounded-md bg-[#fbfcf8] p-3 text-sm dark:bg-[var(--card-muted)]">
+                  <div key={`${mistake.position}-${mistake.expected}-${mistake.answer}`} className="rounded-md bg-[var(--card-muted)] p-3 text-sm dark:bg-[var(--card-muted)]">
                     <div className="flex items-center justify-between gap-3">
                       <span className="font-mono">#{mistake.position}</span>
                       <span className="text-xs font-semibold text-red-600 dark:text-[var(--danger)]">{mistake.type.replace("_", " ")}</span>

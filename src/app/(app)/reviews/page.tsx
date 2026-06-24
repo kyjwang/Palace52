@@ -38,8 +38,8 @@ export default async function ReviewsPage() {
 
       {reviewCards.length === 0 ? (
         <Card>
-          <CardContent className="flex items-center gap-3 text-sm text-[#6f7468]">
-            <CheckCircle2 className="size-5 text-[#0f7a5f]" />
+          <CardContent className="flex items-center gap-3 text-sm text-[var(--muted)]">
+            <CheckCircle2 className="size-5 text-[var(--accent)]" />
             No review cards yet. Mistakes from training sessions will appear here.
           </CardContent>
         </Card>
@@ -49,28 +49,28 @@ export default async function ReviewsPage() {
             const image = imageByCard.get(`${reviewCard.rank}-${reviewCard.suit}`);
             const due = reviewCard.dueAt <= now;
             return (
-              <Card key={reviewCard.id} className={due ? "border-[#0f7a5f]" : ""}>
+              <Card key={reviewCard.id} className={due ? "border-[var(--accent)]" : ""}>
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle>{reviewCard.rank} of {reviewCard.suit}</CardTitle>
-                      <p className="mt-1 text-sm text-[#6f7468]">{image?.imagePrompt ?? "No custom image prompt yet."}</p>
+                      <p className="mt-1 text-sm text-[var(--muted)]">{image?.imagePrompt ?? "No custom image prompt yet."}</p>
                     </div>
-                    <Brain className="size-5 text-[#0f7a5f]" />
+                    <Brain className="size-5 text-[var(--accent)]" />
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-3 gap-2 text-sm">
-                    <div className="rounded-md bg-[#f6f7f3] p-3">
-                      <p className="text-[#6f7468]">Interval</p>
+                    <div className="rounded-md bg-[var(--card-muted)] p-3">
+                      <p className="text-[var(--muted)]">Interval</p>
                       <p className="font-mono font-semibold">{reviewCard.intervalDays}d</p>
                     </div>
-                    <div className="rounded-md bg-[#f6f7f3] p-3">
-                      <p className="text-[#6f7468]">Lapses</p>
+                    <div className="rounded-md bg-[var(--card-muted)] p-3">
+                      <p className="text-[var(--muted)]">Lapses</p>
                       <p className="font-mono font-semibold">{reviewCard.lapses}</p>
                     </div>
-                    <div className="rounded-md bg-[#f6f7f3] p-3">
-                      <p className="text-[#6f7468]">Due</p>
+                    <div className="rounded-md bg-[var(--card-muted)] p-3">
+                      <p className="text-[var(--muted)]">Due</p>
                       <p className="font-mono font-semibold">{due ? "Now" : reviewCard.dueAt.toLocaleDateString()}</p>
                     </div>
                   </div>

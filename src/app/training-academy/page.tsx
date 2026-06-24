@@ -151,22 +151,22 @@ export default async function TrainingAcademyPage() {
         </section>
 
         <section id="lesson-path" className="grid gap-5 lg:grid-cols-[320px_1fr]">
-          <aside className="rounded-lg border border-[#dfe3d7] bg-white p-5 shadow-sm lg:self-start">
-            <h2 className="text-2xl font-semibold tracking-tight text-[#161713]">Course path</h2>
-            <p className="mt-2 text-sm leading-6 text-[#5f665b]">
+          <aside className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-5 shadow-sm lg:self-start">
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">Course path</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
               Each lesson is short on purpose. Learn one skill, do one exercise, then move on.
             </p>
             <div className="mt-5 space-y-3">
               {groups.map((group) => {
                 const Icon = group.icon;
                 return (
-                  <div key={group.name} className="rounded-md bg-[#f6f7f3] p-3">
+                  <div key={group.name} className="rounded-md bg-[var(--card-muted)] p-3">
                     <div className="flex items-center gap-2">
-                      <Icon className="size-4 text-[#0f7a5f]" />
-                      <p className="font-semibold text-[#161713]">{group.name}</p>
+                      <Icon className="size-4 text-[var(--accent)]" />
+                      <p className="font-semibold text-[var(--foreground)]">{group.name}</p>
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-[#5f665b]">{group.description}</p>
-                    <p className="mt-3 font-mono text-xs font-semibold text-[#0f7a5f]">
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{group.description}</p>
+                    <p className="mt-3 font-mono text-xs font-semibold text-[var(--accent)]">
                       Lessons {group.lessonNumbers.join(", ")}
                     </p>
                   </div>
@@ -181,25 +181,25 @@ export default async function TrainingAcademyPage() {
               return (
                 <article
                   key={lesson.number}
-                  className="grid gap-4 rounded-lg border border-[#dfe3d7] bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-[#bfcabc] hover:shadow-md md:grid-cols-[80px_1fr_0.9fr] md:items-center md:p-5"
+                  className="grid gap-4 rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--border-strong)] hover:shadow-md md:grid-cols-[80px_1fr_0.9fr] md:items-center md:p-5"
                 >
                   <div className="flex items-center gap-3 md:block">
-                    <div className="flex size-12 items-center justify-center rounded-md bg-[#eef8f3] text-[#0f7a5f]">
+                    <div className="flex size-12 items-center justify-center rounded-md bg-[var(--accent-soft)] text-[var(--accent)]">
                       <Icon className="size-6" />
                     </div>
-                    <p className="font-mono text-sm font-semibold text-[#0f7a5f] md:mt-3">Lesson {lesson.number}</p>
+                    <p className="font-mono text-sm font-semibold text-[var(--accent)] md:mt-3">Lesson {lesson.number}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#5f665b]">{lesson.group}</p>
-                    <h3 className="mt-1 text-xl font-semibold tracking-tight text-[#161713]">{lesson.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[#5f665b]">{lesson.focus}</p>
+                    <p className="text-sm font-medium text-[var(--muted)]">{lesson.group}</p>
+                    <h3 className="mt-1 text-xl font-semibold tracking-tight text-[var(--foreground)]">{lesson.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{lesson.focus}</p>
                   </div>
-                  <div className="rounded-md border border-[#edf0e8] bg-[#fbfcf8] p-3">
-                    <p className="flex items-center gap-2 text-sm font-semibold text-[#161713]">
-                      <CheckCircle2 className="size-4 text-[#0f7a5f]" />
+                  <div className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-3">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-[var(--foreground)]">
+                      <CheckCircle2 className="size-4 text-[var(--accent)]" />
                       Mini exercise
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-[#5f665b]">{lesson.exercise}</p>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{lesson.exercise}</p>
                   </div>
                 </article>
               );
@@ -207,11 +207,11 @@ export default async function TrainingAcademyPage() {
           </div>
         </section>
 
-        <section className="rounded-lg border border-[#cfd8cd] bg-white p-5 shadow-sm md:p-6">
+        <section className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-5 shadow-sm md:p-6">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-[#161713]">Ready for a small run?</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-[#5f665b]">
+              <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">Ready for a small run?</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
                 Five different modes to play and practice.
               </p>
             </div>

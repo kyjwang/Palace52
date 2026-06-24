@@ -14,7 +14,7 @@ export default async function RegisterPage() {
   return (
     <PublicShell>
       <div className="mx-auto grid max-w-5xl gap-5 lg:grid-cols-[1fr_420px]">
-        <Panel className="bg-black p-6 text-white md:p-8">
+        <Panel className="bg-[var(--ink)] p-6 text-white md:p-8">
           <p className="text-sm font-semibold text-[var(--accent)]">Start training</p>
           <h1 className="mt-3 max-w-xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Create your memory account.
