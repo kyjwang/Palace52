@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Castle, ChevronDown, Orbit, Pencil, Trash2, Wand2 } from "lucide-react";
+import { Castle, ChevronDown, House, Orbit, Pencil, Trash2, Wand2 } from "lucide-react";
 import { PublicShell, type HeaderUser } from "@/components/app/public-shell";
 import { CardBadge } from "@/components/app/card-badge";
 import { Button } from "@/components/ui/button";
@@ -102,7 +102,7 @@ export function MyMemoryPalaceClient({
         <section className="space-y-3">
           <div>
             <p className="text-sm font-medium text-[var(--accent)]">Palace routes</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-tight">Choose a route to inspect</h2>
+            <h2 className="mt-1 text-2xl font-semibold tracking-tight">My Palace</h2>
           </div>
           <div className="grid gap-4 xl:grid-cols-3">
             {palaces.map((palace) => (
@@ -119,7 +119,9 @@ export function MyMemoryPalaceClient({
                       />
                     ) : (
                       <CardTitle className="flex items-center gap-2 text-base">
-                        <Castle className="size-5 text-[var(--accent)]" />
+                        <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--nav-item-active)] text-[var(--accent)] shadow-[inset_0_1px_0_rgb(255_255_255/0.16)]">
+                          {palace.name.toLowerCase().includes("home") ? <House className="size-5" /> : <Castle className="size-5" />}
+                        </span>
                         {palace.name}
                       </CardTitle>
                     )}
@@ -218,7 +220,7 @@ export function MyMemoryPalaceClient({
                 <p className="flex-1 text-sm leading-6 text-[var(--muted)]">
                   PAO means Person, Action, Object. Choose a PAO deck, then scan the card table below as a clean image reference.
                 </p>
-                <div className="relative w-full lg:max-w-md">
+                <div className="w-full lg:max-w-md">
                   <Button
                     type="button"
                     onClick={() => setDeckSelectorOpen((open) => !open)}
@@ -232,14 +234,14 @@ export function MyMemoryPalaceClient({
                     <ChevronDown className={`size-4 transition ${deckSelectorOpen ? "rotate-180" : ""}`} />
                   </Button>
                   {deckSelectorOpen && (
-                    <div className="absolute left-0 right-0 top-12 z-20 max-h-64 overflow-y-auto rounded-lg border border-[var(--border)] bg-[var(--card)] p-2 shadow-[var(--shadow)]">
+                    <div className="mt-2 max-h-72 overflow-y-auto rounded-lg border border-[var(--border-strong)] bg-[var(--nav-surface)] p-2 shadow-[0_22px_70px_rgb(0_0_0/0.28)]">
                       {paoDeckOptions.map((preset, index) => (
                         <button
                           key={preset.name}
                           type="button"
                           onClick={() => chooseDeck(index)}
-                          className={`w-full rounded-md px-3 py-2 text-left transition hover:bg-[var(--card-muted)] ${
-                            index === deckIndex ? "bg-[var(--accent-soft)]" : ""
+                          className={`w-full rounded-md border px-3 py-2 text-left transition-[background-color,border-color,transform] duration-150 hover:bg-[var(--nav-item)] active:translate-y-px active:scale-[0.99] ${
+                            index === deckIndex ? "border-[var(--border-strong)] bg-[var(--nav-item-active)]" : "border-transparent bg-transparent"
                           }`}
                         >
                           <span className="block text-sm font-semibold">{preset.name}</span>
@@ -250,7 +252,7 @@ export function MyMemoryPalaceClient({
                   )}
                 </div>
               </div>
-              <div className="mt-3 rounded-md border border-[var(--border)] bg-[var(--card-muted)] px-3 py-2 text-sm">
+              <div className="mt-4 rounded-md border border-[var(--border)] bg-[var(--control)] px-3 py-2 text-sm shadow-[inset_0_1px_0_rgb(255_255_255/0.08)]">
                 <p className="truncate font-semibold">{activeDeck.name}</p>
                 <p className="text-[var(--muted)]">{activeDeck.description}</p>
               </div>
@@ -282,7 +284,7 @@ export function MyMemoryPalaceClient({
                         className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid md:grid-cols-[74px_minmax(140px,1fr)_96px_110px] md:items-center md:gap-2 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-2"
                       >
                         <div className="flex items-center gap-2 md:block">
-                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-11 min-w-9 shadow-sm" />
+                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-16 min-w-11 shadow-sm" />
                           <div className="min-w-0 md:hidden">
                             <p className="truncate text-sm font-semibold">{entry.card.label}</p>
                           </div>

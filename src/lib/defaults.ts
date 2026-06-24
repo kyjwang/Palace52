@@ -3,7 +3,7 @@ import { gymRoute, homeRoute, schoolRoute } from "@/lib/sample-palace";
 
 export const starterRoutes = [
   {
-    name: "Home Palace",
+    name: "Home",
     description: "A starter 18-loci route through familiar household locations.",
     locations: homeRoute
   },

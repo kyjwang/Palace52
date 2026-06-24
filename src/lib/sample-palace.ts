@@ -443,7 +443,7 @@ export const beginnerPaoDeck = paoDeckPresets[0].deck;
 
 export const sampleUserPalaces = [
   {
-    name: "Home Palace",
+    name: "Home",
     locations: homeRoute,
     cards: 52,
     strength: 86
