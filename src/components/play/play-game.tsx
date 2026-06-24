@@ -36,11 +36,12 @@ import {
 } from "@/lib/play-modes";
 import type { PaoDeckOption } from "@/lib/pao-decks";
 import { sampleUserPalaces, type StarterPao } from "@/lib/sample-palace";
-import { formatPercent } from "@/lib/utils";
+import { cn, formatPercent } from "@/lib/utils";
 
 type Phase = "setup" | "memorize" | "recall" | "flashcards" | "score";
 type Hint = "palace" | "pao" | null;
 type SaveState = "idle" | "saving" | "saved" | "local";
+type RecallReveal = { index: number; outcome: "correct" | "wrong" } | null;
 const emptyPaoDeck: StarterPao[] = [];
 const cardCounts = [10, 20, 26, 32, 40, 52];
 const suitCounts = [5, 10, 13];
@@ -104,6 +105,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const [recallMs, setRecallMs] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [activeHint, setActiveHint] = useState<Hint>(null);
+  const [recallReveal, setRecallReveal] = useState<RecallReveal>(null);
   const [result, setResult] = useState<PlaySessionResult | null>(null);
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [isPending, startTransition] = useTransition();
@@ -133,6 +135,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const currentPromptRouteIndex = Math.floor(currentPromptDeckIndex / 3) % selectedPalace.locations.length;
   const currentPromptRouteLocation = selectedPalace.locations[currentPromptRouteIndex];
   const modeTitle = modeCards.find((item) => item.mode === mode)?.title ?? "Classic";
+  const currentRecallReveal = recallReveal?.index === index ? recallReveal.outcome : null;
 
   function start(startedAtMs: number) {
     if (!hasPaoDeck) return;
@@ -155,6 +158,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
     setResult(null);
     setSaveState("idle");
     setActiveHint(null);
+    setRecallReveal(null);
     setPhase(mode === "PAO_FLASHCARD" ? "flashcards" : "memorize");
   }
 
@@ -175,6 +179,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
     setRecallStartedAt(eventTime);
     setIndex(0);
     setActiveHint(null);
+    setRecallReveal(null);
     setPhase("recall");
   }
 
@@ -220,18 +225,48 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
     const next = [...recall];
     next[index] = normalizeCardCode(nextGuess);
     setRecall(next);
+
+    if (recallReveal?.index === index) {
+      setRecallReveal(null);
+    }
+  }
+
+  function markRecallCorrect(finishedAt: number) {
+    if (!currentPromptCard) return;
+    const next = [...recall];
+    next[index] = currentPromptCard.card.code;
+    setRecall(next);
+
+    if (index + 1 >= recall.length) {
+      finishRecall(finishedAt, next);
+      return;
+    }
+
+    setIndex(index + 1);
+    setRecallReveal(null);
   }
 
   function advanceRecall(finishedAt: number) {
+    if (!currentPromptCard) return;
+
+    if (!currentRecallReveal) {
+      setRecallReveal({
+        index,
+        outcome: recall[index] === currentPromptCard.card.code ? "correct" : "wrong"
+      });
+      return;
+    }
+
     if (index + 1 >= recall.length) {
       finishRecall(finishedAt);
       return;
     }
 
     setIndex(index + 1);
+    setRecallReveal(null);
   }
 
-  function finishRecall(finishedAt: number) {
+  function finishRecall(finishedAt: number, recallAnswers = recall) {
     const finalRecallMs = finishedAt - recallStartedAt;
     const routeLocations = selectedPalace.locations;
     const personalBestTotalTime = readPersonalBest(modeBestKey());
@@ -241,7 +276,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             mode,
             deck: deck.map((entry) => entry.card),
             questionPositions,
-            userAnswers: recall,
+            userAnswers: recallAnswers,
             routeLocations,
             memorizationTime: memorizationMs,
             recallTime: finalRecallMs,
@@ -250,7 +285,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
         : buildPlaySessionResult({
             mode,
             deck: deck.map((entry) => entry.card),
-            userRecall: recall,
+            userRecall: recallAnswers,
             selectedSuit: mode === "SUIT_FOCUS" ? selectedSuit : undefined,
             difficulty: mode === "SPEED" ? difficulty : undefined,
             memorizationTime: memorizationMs,
@@ -446,9 +481,6 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
                     <option value="">No saved PAO deck yet</option>
                   )}
                 </select>
-                <span className="block text-xs leading-5 text-[var(--muted)]">
-                  {selectedPaoDeck?.description ?? "Create PAO card images first, then come back to train with your saved deck."}
-                </span>
               </label>
             </div>
 
@@ -713,6 +745,8 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
               </div>
             )}
 
+            <RecallDeckReveal card={currentPromptCard.card} outcome={currentRecallReveal} />
+
             <label className="block space-y-2">
               <span className="text-sm font-medium text-[var(--foreground)] dark:text-[var(--foreground)]">Your card code</span>
               <input
@@ -731,12 +765,12 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
             </label>
 
             <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:justify-end">
-              <Button onClick={() => updateRecallGuess(currentPromptCard.card.code)} variant="secondary">
+              <Button onClick={(event) => markRecallCorrect(event.timeStamp)} variant="secondary">
                 Mark correct
               </Button>
               <Button onClick={(event) => advanceRecall(event.timeStamp)}>
                 <Send className="size-4" />
-                {index + 1 >= recall.length ? "Score run" : "Next question"}
+                {!currentRecallReveal ? "Reveal card" : index + 1 >= recall.length ? "Score run" : "Next question"}
               </Button>
             </div>
           </div>
@@ -873,76 +907,193 @@ function InlineCounter({ label, value }: { label: string; value: number }) {
   );
 }
 
+function RecallDeckReveal({ card, outcome }: { card: PlayingCard; outcome: "correct" | "wrong" | null }) {
+  const isRevealed = Boolean(outcome);
+
+  return (
+    <div className="mb-5 flex flex-col items-center" aria-live="polite">
+      <div className="relative h-[156px] w-[112px] [perspective:900px]">
+        {!isRevealed && (
+          <>
+            <div className="absolute inset-0 translate-x-3 rotate-6 rounded-[10px] border border-white/18 bg-[linear-gradient(135deg,#1b2638,#09111f)] shadow-[0_18px_36px_rgb(0_0_0/0.24)]" />
+            <div className="absolute inset-0 translate-x-1.5 rotate-3 rounded-[10px] border border-white/18 bg-[linear-gradient(135deg,#233855,#0d1729)] shadow-[0_16px_30px_rgb(0_0_0/0.22)]" />
+          </>
+        )}
+
+        <div
+          className={cn(
+            "absolute inset-0 transition duration-500 [transform-style:preserve-3d]",
+            isRevealed && "[transform:rotateY(180deg)]",
+            outcome === "correct" && "animate-[recall-correct_720ms_ease-out]",
+            outcome === "wrong" && "animate-[recall-wrong_460ms_ease-out]"
+          )}
+        >
+          <div className="absolute inset-0 overflow-hidden rounded-[10px] border border-[#77c7ff]/55 bg-[linear-gradient(135deg,#1d3554,#08111f)] shadow-[0_18px_42px_rgb(0_0_0/0.35),inset_0_0_0_2px_rgb(255_255_255/0.08)] [backface-visibility:hidden]">
+            <div className="absolute inset-[8px] rounded-[7px] border border-[#77c7ff]/35" />
+            <div className="absolute inset-[17px] rounded-[5px] border border-white/12" />
+            <div className="absolute left-1/2 top-1/2 size-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#77c7ff]/45 bg-[#77c7ff]/12" />
+            <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgb(119_199_255/0.14)_0_1px,transparent_1px_12px)]" />
+          </div>
+
+          <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+            <RecallCardFace card={card} />
+          </div>
+        </div>
+      </div>
+
+      <p
+        className={cn(
+          "mt-3 rounded-full border px-3 py-1 text-xs font-semibold",
+          outcome === "correct" && "border-emerald-400/30 bg-emerald-400/12 text-emerald-300",
+          outcome === "wrong" && "border-red-400/30 bg-red-400/12 text-red-300",
+          !outcome && "border-[var(--border)] bg-[var(--card-muted)] text-[var(--muted)]"
+        )}
+      >
+        {outcome === "correct" ? "Correct card revealed" : outcome === "wrong" ? `Correct card: ${card.label}` : "Card is folded until you answer"}
+      </p>
+    </div>
+  );
+}
+
+function RecallCardFace({ card }: { card: PlayingCard }) {
+  const rank = getRankMark(card);
+  const suit = getSuitMark(card);
+  const tone = getCardTone(card);
+  const pipPositions = getPipPositions(rank);
+  const isFace = card.rank === "JACK" || card.rank === "QUEEN" || card.rank === "KING";
+  const faceAccent = card.color === "red" ? "#d81218" : "#101010";
+
+  return (
+    <div className={cn("relative h-full w-full overflow-hidden rounded-[10px] border border-[#d6d8de] bg-[#fffef9] font-serif font-bold shadow-[0_18px_38px_rgb(5_3_12/0.25),inset_0_0_0_1px_rgb(255_255_255/0.95)]", tone)}>
+      <div className="pointer-events-none absolute inset-[5px] rounded-[7px] border border-[#1d2430]/8" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgb(255_255_255/0.96),transparent_48%,rgb(226_229_235/0.16))]" />
+      <SmallCardCorner rank={rank} suit={suit} className="left-[8px] top-[8px]" />
+      <SmallCardCorner rank={rank} suit={suit} className="right-[8px] top-[8px]" />
+
+      {pipPositions.length > 0 ? (
+        <div className="absolute inset-x-[18%] inset-y-[13%]">
+          {pipPositions.map((position) => (
+            <span
+              key={`${card.code}-recall-${position.x}-${position.y}-${position.flip ? "flip" : "up"}`}
+              className={cn("absolute -translate-x-1/2 -translate-y-1/2 text-[1.65rem] leading-none", position.flip && "rotate-180")}
+              style={{ left: `${position.x}%`, top: `${position.y}%` }}
+            >
+              {suit}
+            </span>
+          ))}
+        </div>
+      ) : isFace ? (
+        <div className="absolute left-1/2 top-1/2 flex h-[66%] w-[54%] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[5px] border border-[#d8b35c] bg-[#fff7d7]">
+          <div className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 rotate-180 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+          <span className="relative z-10 flex size-11 items-center justify-center rounded-full border border-[#d4a843] bg-[#fffef9] text-2xl leading-none text-[#101010]">
+            {rank}
+          </span>
+          <span className="absolute left-[7%] top-[6%] text-sm leading-none" style={{ color: faceAccent }}>
+            {suit}
+          </span>
+          <span className="absolute bottom-[6%] right-[7%] rotate-180 text-sm leading-none" style={{ color: faceAccent }}>
+            {suit}
+          </span>
+        </div>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-[4.75rem] leading-none">{suit || rank}</span>
+        </div>
+      )}
+
+      <SmallCardCorner rank={rank} suit={suit} className="bottom-[8px] left-[8px] rotate-180" />
+      <SmallCardCorner rank={rank} suit={suit} className="bottom-[8px] right-[8px] rotate-180" />
+    </div>
+  );
+}
+
+function SmallCardCorner({ rank, suit, className }: { rank: string; suit: string; className: string }) {
+  return (
+    <div className={cn("absolute z-10 flex flex-col items-center leading-none", className)}>
+      <span className={cn("text-base", rank === "10" && "text-sm")}>{rank}</span>
+      <span className="text-sm">{suit}</span>
+    </div>
+  );
+}
+
 function PlayingCardFace({ card }: { card: PlayingCard }) {
   const rank = getRankMark(card);
   const suit = getSuitMark(card);
   const tone = getCardTone(card);
-  const pipCount = getPipCount(card);
+  const pipPositions = getPipPositions(rank);
   const isFace = card.rank === "JACK" || card.rank === "QUEEN" || card.rank === "KING";
+  const usePips = pipPositions.length > 0;
+  const faceAccent = card.color === "red" ? "#d81218" : "#101010";
 
   return (
-    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[22px] border border-[#b99548] bg-[#fff8e8] p-4 text-[#21172c] shadow-[0_24px_70px_rgb(5_3_12/0.38),inset_0_0_0_8px_rgb(255_248_232/0.72),inset_0_0_0_10px_rgb(185_149_72/0.24)]">
-      <div className="pointer-events-none absolute inset-3 rounded-[17px] border border-[#d2b66a]/70" />
-      <div className="pointer-events-none absolute inset-6 rounded-[13px] border border-[#21172c]/10" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4af37]/10 blur-2xl" />
+    <div
+      className={cn(
+        "relative aspect-[3/4] w-full overflow-hidden rounded-[14px] border border-[#d6d8de] bg-[#fffef9] font-serif font-bold shadow-[0_24px_70px_rgb(5_3_12/0.34),inset_0_0_0_2px_rgb(255_255_255/0.95)]",
+        tone
+      )}
+    >
+      <div className="pointer-events-none absolute inset-[10px] rounded-[10px] border border-[#1d2430]/8" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgb(255_255_255/0.96),transparent_48%,rgb(226_229_235/0.16))]" />
 
-      <CardIndex rank={rank} suit={suit} tone={tone} />
-      <CardIndex rank={rank} suit={suit} tone={tone} flipped />
+      <CardIndex rank={rank} suit={suit} className="left-[18px] top-[18px]" />
+      <CardIndex rank={rank} suit={suit} className="right-[18px] top-[18px]" />
 
-      <div className="relative flex h-full items-center justify-center px-7 py-8">
-        {isFace ? (
-          <FaceCourtCard card={card} rank={rank} suit={suit} tone={tone} />
-        ) : pipCount === 1 ? (
-          <div className={`flex flex-col items-center ${tone}`}>
-            <span className="font-mono text-3xl font-bold tracking-tight">{rank}</span>
-            <span className="mt-3 text-[8.5rem] leading-none drop-shadow-sm">{suit}</span>
-          </div>
-        ) : (
-          <div className={`grid h-full w-full grid-cols-3 grid-rows-5 items-center justify-items-center ${tone}`}>
-            {getPipPositions(pipCount).map((position) => (
-              <span
-                key={`${card.code}-${position}`}
-                className={`text-4xl leading-none md:text-5xl ${position >= 7 ? "rotate-180" : ""}`}
-                style={{ gridColumn: (position % 3) + 1, gridRow: Math.floor(position / 3) + 1 }}
-              >
-                {suit}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
+      {usePips ? (
+        <div className="absolute inset-x-[15%] inset-y-[11%]">
+          {pipPositions.map((position) => (
+            <span
+              key={`${card.code}-${position.x}-${position.y}-${position.flip ? "flip" : "up"}`}
+              className={cn(
+                "absolute -translate-x-1/2 -translate-y-1/2 text-[clamp(2.45rem,7.2vw,4.25rem)] leading-none",
+                position.flip && "rotate-180"
+              )}
+              style={{ left: `${position.x}%`, top: `${position.y}%` }}
+            >
+              {suit}
+            </span>
+          ))}
+        </div>
+      ) : isFace ? (
+        <FaceCourtCard rank={rank} suit={suit} faceAccent={faceAccent} />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-[clamp(7rem,18vw,10rem)] leading-none">{suit || rank}</span>
+        </div>
+      )}
+
+      <CardIndex rank={rank} suit={suit} className="bottom-[18px] left-[18px] rotate-180" />
+      <CardIndex rank={rank} suit={suit} className="bottom-[18px] right-[18px] rotate-180" />
     </div>
   );
 }
 
-function CardIndex({ rank, suit, tone, flipped = false }: { rank: string; suit: string; tone: string; flipped?: boolean }) {
+function CardIndex({ rank, suit, className }: { rank: string; suit: string; className: string }) {
   return (
-    <div className={`absolute ${flipped ? "bottom-4 right-4 rotate-180" : "left-4 top-4"} z-10 flex flex-col items-center font-mono font-bold ${tone}`}>
-      <span className="text-2xl leading-none">{rank}</span>
-      <span className="text-2xl leading-none">{suit}</span>
+    <div className={cn("absolute z-10 flex flex-col items-center leading-none", className)}>
+      <span className={cn("text-[clamp(1.25rem,4vw,2rem)]", rank === "10" && "text-[clamp(1rem,3.35vw,1.7rem)]")}>{rank}</span>
+      <span className="text-[clamp(1rem,3.3vw,1.65rem)]">{suit}</span>
     </div>
   );
 }
 
-function FaceCourtCard({ card, rank, suit, tone }: { card: PlayingCard; rank: string; suit: string; tone: string }) {
-  const title = card.rank === "JACK" ? "Knight" : card.rank === "QUEEN" ? "Queen" : "King";
-  const crown = card.rank === "QUEEN" ? "Q" : card.rank === "KING" ? "K" : "J";
-
+function FaceCourtCard({ rank, suit, faceAccent }: { rank: string; suit: string; faceAccent: string }) {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-between rounded-xl border border-[#b99548]/45 bg-[linear-gradient(145deg,#fffaf0,#f0dfba)] px-5 py-6 shadow-[inset_0_0_28px_rgb(185_149_72/0.18)]">
-      <div className="absolute inset-3 rounded-lg border border-[#21172c]/10" />
-      <div className={`relative flex size-24 items-center justify-center rounded-full border border-[#b99548] bg-[#21172c] ${tone}`}>
-        <span className="absolute -top-4 font-mono text-2xl text-[#b99548]">{crown}</span>
-        <span className="text-6xl leading-none">{suit}</span>
+    <div className="absolute left-1/2 top-1/2 flex h-[68%] w-[54%] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[10px] border border-[#d8b35c] bg-[#fff7d7] shadow-[inset_0_0_0_2px_rgb(255_255_255/0.75)]">
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 rotate-180 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+      <div className="absolute left-1/2 top-1/2 h-[88%] w-px -translate-x-1/2 -translate-y-1/2 bg-[#8b6a2c]/42" />
+      <div className="absolute inset-y-[7%] left-[26%] w-px bg-[#c82435]/55" />
+      <div className="absolute inset-y-[7%] right-[26%] w-px bg-[#c82435]/55" />
+      <div className="relative z-10 flex size-[clamp(4.5rem,13vw,6.5rem)] items-center justify-center rounded-full border border-[#d4a843] bg-[#fffef9] text-[clamp(2.4rem,7vw,3.8rem)] leading-none text-[#101010]">
+        {rank}
       </div>
-      <div className="relative text-center">
-        <p className="font-mono text-5xl font-bold tracking-tight text-[#21172c]">{rank}</p>
-        <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#8a6518]">{title}</p>
-      </div>
-      <div className={`relative flex items-center gap-3 ${tone}`}>
-        <span className="rotate-180 text-4xl leading-none">{suit}</span>
-        <span className="text-4xl leading-none">{suit}</span>
-      </div>
+      <span className="absolute left-[7%] top-[6%] text-[clamp(1.1rem,3.5vw,1.8rem)] leading-none" style={{ color: faceAccent }}>
+        {suit}
+      </span>
+      <span className="absolute bottom-[6%] right-[7%] rotate-180 text-[clamp(1.1rem,3.5vw,1.8rem)] leading-none" style={{ color: faceAccent }}>
+        {suit}
+      </span>
     </div>
   );
 }
@@ -960,37 +1111,21 @@ function getSuitMark(card: PlayingCard) {
 }
 
 function getCardTone(card: PlayingCard) {
-  return card.color === "red" ? "text-[#9f1d2e]" : "text-[#21172c]";
+  return card.color === "red" ? "text-[#d81218]" : "text-[#101010]";
 }
 
-function getPipCount(card: PlayingCard) {
-  if (card.rank === "ACE") return 1;
-  if (card.rank === "TWO") return 2;
-  if (card.rank === "THREE") return 3;
-  if (card.rank === "FOUR") return 4;
-  if (card.rank === "FIVE") return 5;
-  if (card.rank === "SIX") return 6;
-  if (card.rank === "SEVEN") return 7;
-  if (card.rank === "EIGHT") return 8;
-  if (card.rank === "NINE") return 9;
-  if (card.rank === "TEN") return 10;
-  return 0;
-}
-
-function getPipPositions(count: number) {
-  const positions: Record<number, number[]> = {
-    2: [1, 13],
-    3: [1, 7, 13],
-    4: [0, 2, 12, 14],
-    5: [0, 2, 7, 12, 14],
-    6: [0, 2, 6, 8, 12, 14],
-    7: [0, 2, 4, 6, 8, 12, 14],
-    8: [0, 2, 4, 6, 8, 10, 12, 14],
-    9: [0, 2, 3, 5, 7, 9, 11, 12, 14],
-    10: [0, 2, 3, 5, 6, 8, 9, 11, 12, 14]
-  };
-
-  return positions[count] ?? [7];
+function getPipPositions(rank: string) {
+  if (rank === "A") return [];
+  if (rank === "2") return [{ x: 50, y: 18 }, { x: 50, y: 82, flip: true }];
+  if (rank === "3") return [{ x: 50, y: 18 }, { x: 50, y: 50 }, { x: 50, y: 82, flip: true }];
+  if (rank === "4") return [{ x: 30, y: 20 }, { x: 70, y: 20 }, { x: 30, y: 80, flip: true }, { x: 70, y: 80, flip: true }];
+  if (rank === "5") return [{ x: 30, y: 20 }, { x: 70, y: 20 }, { x: 50, y: 50 }, { x: 30, y: 80, flip: true }, { x: 70, y: 80, flip: true }];
+  if (rank === "6") return [{ x: 30, y: 18 }, { x: 70, y: 18 }, { x: 30, y: 50 }, { x: 70, y: 50 }, { x: 30, y: 82, flip: true }, { x: 70, y: 82, flip: true }];
+  if (rank === "7") return [{ x: 30, y: 16 }, { x: 70, y: 16 }, { x: 50, y: 33 }, { x: 30, y: 50 }, { x: 70, y: 50 }, { x: 30, y: 84, flip: true }, { x: 70, y: 84, flip: true }];
+  if (rank === "8") return [{ x: 30, y: 15 }, { x: 70, y: 15 }, { x: 50, y: 32 }, { x: 30, y: 48 }, { x: 70, y: 48 }, { x: 50, y: 68, flip: true }, { x: 30, y: 85, flip: true }, { x: 70, y: 85, flip: true }];
+  if (rank === "9") return [{ x: 30, y: 14 }, { x: 70, y: 14 }, { x: 30, y: 34 }, { x: 70, y: 34 }, { x: 50, y: 50 }, { x: 30, y: 66, flip: true }, { x: 70, y: 66, flip: true }, { x: 30, y: 86, flip: true }, { x: 70, y: 86, flip: true }];
+  if (rank === "10") return [{ x: 30, y: 12 }, { x: 70, y: 12 }, { x: 50, y: 27 }, { x: 30, y: 39 }, { x: 70, y: 39 }, { x: 30, y: 61, flip: true }, { x: 70, y: 61, flip: true }, { x: 50, y: 73, flip: true }, { x: 30, y: 88, flip: true }, { x: 70, y: 88, flip: true }];
+  return [];
 }
 
 function shuffleEntries<T>(entries: T[]) {

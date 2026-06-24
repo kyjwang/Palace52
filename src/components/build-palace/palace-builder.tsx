@@ -4,7 +4,7 @@ import { useState, useTransition, type DragEvent } from "react";
 import { ArrowDown, ArrowUp, BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
 import { savePaoDeck } from "@/app/actions/card-images";
 import { Button, ButtonLink } from "@/components/ui/button";
-import { Input, Label, Textarea } from "@/components/ui/form";
+import { Input } from "@/components/ui/form";
 import { Panel } from "@/components/ui/product";
 import { fullDeck, type PlayingCard } from "@/lib/cards";
 
@@ -20,10 +20,7 @@ const blankPaoRows: PaoRow[] = fullDeck.map((card) => ({
 
 export function PalaceBuilder() {
   const [isPending, startTransition] = useTransition();
-  const [name, setName] = useState("My First Palace");
-  const [description, setDescription] = useState("A route through familiar rooms at home.");
   const [locations, setLocations] = useState(starterLocations);
-  const [newLocation, setNewLocation] = useState("");
   const [paoRows, setPaoRows] = useState<PaoRow[]>(blankPaoRows);
   const [routeEditorOpen, setRouteEditorOpen] = useState(false);
   const [deckEditorOpen, setDeckEditorOpen] = useState(false);
@@ -34,10 +31,13 @@ export function PalaceBuilder() {
   const completedPaoCards = paoRows.filter((row) => row.person.trim() && row.action.trim() && row.object.trim()).length;
 
   function addLocation() {
-    if (!newLocation.trim()) return;
-    setLocations([...locations, newLocation.trim()]);
-    setNewLocation("");
+    const nextIndex = locations.length;
+    setLocations([...locations, ""]);
     setSaved(false);
+
+    requestAnimationFrame(() => {
+      document.getElementById(`route-location-${nextIndex}`)?.focus();
+    });
   }
 
   function removeLocation(index: number) {
@@ -166,51 +166,6 @@ export function PalaceBuilder() {
           </p>
         ) : (
           <div className="mt-5 space-y-4">
-            <div className="grid gap-4 rounded-lg border border-[var(--border)] bg-[var(--card-muted)] p-3 md:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="palace-name">Palace name</Label>
-                <Input
-                  id="palace-name"
-                  value={name}
-                  onChange={(event) => {
-                    setName(event.target.value);
-                    setSaved(false);
-                  }}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="new-location">New location</Label>
-                <div className="flex gap-2">
-                  <Input
-                    id="new-location"
-                    value={newLocation}
-                    onChange={(event) => setNewLocation(event.target.value)}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") {
-                        event.preventDefault();
-                        addLocation();
-                      }
-                    }}
-                    placeholder="Window seat"
-                  />
-                  <Button type="button" onClick={addLocation} aria-label="Add location">
-                    <Plus className="size-4" />
-                  </Button>
-                </div>
-              </div>
-              <div className="space-y-2 md:col-span-2">
-                <Label htmlFor="palace-description">Description</Label>
-                <Textarea
-                  id="palace-description"
-                  value={description}
-                  onChange={(event) => {
-                    setDescription(event.target.value);
-                    setSaved(false);
-                  }}
-                />
-              </div>
-            </div>
-
             <div className="overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--card)]">
               <table className="w-full min-w-[760px] text-left text-sm">
                 <thead className="border-b border-[var(--border)] bg-[var(--card-muted)] text-[var(--muted)]">
@@ -245,7 +200,13 @@ export function PalaceBuilder() {
                         </div>
                       </td>
                       <td className="px-3 py-2">
-                        <Input value={location} onChange={(event) => updateLocation(index, event.target.value)} placeholder="Route location" className="h-9" />
+                        <Input
+                          id={`route-location-${index}`}
+                          value={location}
+                          onChange={(event) => updateLocation(index, event.target.value)}
+                          placeholder="Route location"
+                          className="h-9"
+                        />
                       </td>
                       <td className="px-3 py-2 text-[var(--muted)]">
                         <span className="flex items-center gap-1">
@@ -290,14 +251,20 @@ export function PalaceBuilder() {
               </table>
             </div>
 
-            <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
+            <div className="flex flex-col justify-between gap-3 rounded-lg border border-[var(--border)] bg-[var(--card-muted)] p-3 md:flex-row md:items-center">
               <div className="text-sm text-[var(--muted)]">
                 Drag rows or use the arrow buttons to set the route order.
               </div>
-              <Button type="button" onClick={() => setSaved(true)} disabled={completedRouteLocations === 0} className="h-11 md:shrink-0">
-                <Save className="size-4" />
-                Save route
-              </Button>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button type="button" onClick={addLocation} className="h-11 md:shrink-0">
+                  <Plus className="size-4" />
+                  Add location
+                </Button>
+                <Button type="button" onClick={() => setSaved(true)} disabled={completedRouteLocations === 0} variant="secondary" className="h-11 md:shrink-0">
+                  <Save className="size-4" />
+                  Save route
+                </Button>
+              </div>
             </div>
 
             {saved && <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm font-medium text-[var(--accent)]">Route saved locally for preview.</p>}

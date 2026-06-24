@@ -7,6 +7,9 @@
   --card-muted: rgb(255 255 255 / 0.34);
   --chrome: rgb(250 252 255 / 0.72);
   --control: rgb(255 255 255 / 0.48);
+  --option-background: #f8faff;
+  --option-foreground: #10131b;
+  --option-selected: #d8ecff;
   --nav-surface: rgb(248 251 255 / 0.98);
   --nav-item: rgb(255 255 255 / 0.82);
   --nav-item-active: rgb(47 111 255 / 0.14);
@@ -72,6 +75,37 @@ select {
   outline-offset: 3px;
 }
 
+@keyframes recall-correct {
+  0% {
+    filter: drop-shadow(0 0 0 rgb(52 211 153 / 0));
+    transform: rotateY(180deg) scale(0.96);
+  }
+  55% {
+    filter: drop-shadow(0 0 24px rgb(52 211 153 / 0.36));
+    transform: rotateY(180deg) scale(1.04);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgb(52 211 153 / 0.18));
+    transform: rotateY(180deg) scale(1);
+  }
+}
+
+@keyframes recall-wrong {
+  0%,
+  100% {
+    transform: rotateY(180deg) translateX(0);
+  }
+  24% {
+    transform: rotateY(180deg) translateX(-5px);
+  }
+  48% {
+    transform: rotateY(180deg) translateX(5px);
+  }
+  72% {
+    transform: rotateY(180deg) translateX(-3px);
+  }
+}
+
 .rounded-lg.border,
 .rounded-md.border {
   backdrop-filter: blur(26px) saturate(180%) contrast(1.04);
@@ -83,6 +117,17 @@ textarea,
 select {
   color: var(--foreground);
   background-color: var(--control);
+}
+
+select option,
+select optgroup {
+  color: var(--option-foreground);
+  background-color: var(--option-background);
+}
+
+select option:checked {
+  color: var(--option-foreground);
+  background-color: var(--option-selected);
 }
 
 @media (prefers-color-scheme: dark) {
