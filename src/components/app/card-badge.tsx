@@ -1,5 +1,11 @@
 import { cn } from "@/lib/utils";
 
+type PipPosition = {
+  x: number;
+  y: number;
+  flip?: boolean;
+};
+
 const suitGlyphs: Record<string, string> = {
   S: "♠",
   H: "♥",
@@ -8,10 +14,10 @@ const suitGlyphs: Record<string, string> = {
 };
 
 const suitTone: Record<string, string> = {
-  "♥": "text-[#d8344f]",
-  "♦": "text-[#e24f55]",
-  "♣": "text-[#171420]",
-  "♠": "text-[#171420]"
+  "♥": "text-[#d81218]",
+  "♦": "text-[#d81218]",
+  "♣": "text-[#101010]",
+  "♠": "text-[#101010]"
 };
 
 function splitCardLabel(label: string) {
@@ -42,68 +48,87 @@ export function CardBadge({
   className?: string;
 }) {
   const { rank, suit } = splitCardLabel(label);
-  const tone = suitTone[suit] ?? (color === "red" ? "text-[#d8344f]" : "text-[#171420]");
+  const tone = suitTone[suit] ?? (color === "red" ? "text-[#d81218]" : "text-[#101010]");
   const pipPositions = getPipPositions(rank);
   const isFace = rank === "J" || rank === "Q" || rank === "K";
   const usePips = pipPositions.length > 0;
+  const faceAccent = color === "red" ? "#d81218" : "#101010";
 
   return (
     <span
       className={cn(
-        "relative inline-flex aspect-[3/4] h-14 min-w-11 shrink-0 items-center justify-center overflow-hidden rounded-[7px] border border-[#d9dbe2] bg-[#fffdf7] p-1 font-mono font-bold shadow-[0_10px_22px_rgb(5_3_12/0.18),inset_0_0_0_1px_rgb(255_255_255/0.92)]",
+        "relative inline-flex aspect-[3/4] h-[76px] min-w-[54px] shrink-0 items-center justify-center overflow-hidden rounded-[5px] border border-[#d6d8de] bg-[#fffef9] font-serif font-bold shadow-[0_10px_22px_rgb(5_3_12/0.2),inset_0_0_0_1px_rgb(255_255_255/0.95)]",
         tone,
         className
       )}
       aria-label={label}
     >
-      <span className="pointer-events-none absolute inset-[3px] rounded-[5px] border border-[#1d2430]/10" />
-      <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgb(255_255_255/0.9),transparent_50%)]" />
+      <span className="pointer-events-none absolute inset-[2px] rounded-[3px] border border-[#1d2430]/8" />
+      <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgb(255_255_255/0.96),transparent_48%,rgb(226_229_235/0.16))]" />
 
-      <span className="absolute left-[5px] top-[5px] z-10 flex flex-col items-center leading-none">
-        <span className="text-[10px]">{rank}</span>
-        <span className="mt-px text-[10px]">{suit}</span>
-      </span>
+      <CardCorner rank={rank} suit={suit} className="left-[4px] top-[4px]" />
+      <CardCorner rank={rank} suit={suit} className="right-[4px] top-[4px]" />
 
       {usePips ? (
-        <span className="grid h-full w-full grid-cols-3 grid-rows-5 items-center justify-items-center px-2.5 py-4">
+        <span className="absolute inset-x-[9px] inset-y-[14px]">
           {pipPositions.map((position) => (
             <span
-              key={`${label}-${position}`}
-              className={cn("text-[13px] leading-none", position >= 7 && "rotate-180")}
-              style={{ gridColumn: (position % 3) + 1, gridRow: Math.floor(position / 3) + 1 }}
+              key={`${label}-${position.x}-${position.y}-${position.flip ? "flip" : "up"}`}
+              className={cn("absolute -translate-x-1/2 -translate-y-1/2 text-[14px] leading-none", position.flip && "rotate-180")}
+              style={{ left: `${position.x}%`, top: `${position.y}%` }}
             >
               {suit}
             </span>
           ))}
         </span>
       ) : isFace ? (
-        <span className="flex h-[58%] w-[52%] items-center justify-center overflow-hidden rounded-[4px] border border-[#d8b35c]/70 bg-[linear-gradient(135deg,#f7df93_0%,#fff6d6_34%,#c42e3c_35%,#c42e3c_48%,#fff6d6_49%,#f3c66c_100%)] shadow-[inset_0_0_0_1px_rgb(255_255_255/0.55)]">
-          <span className="rounded-full bg-[#fffdf7]/85 px-1 text-[14px] leading-none text-[#171420]">{rank}</span>
+        <span className="relative flex h-[49px] w-[32px] items-center justify-center overflow-hidden rounded-[3px] border border-[#d8b35c] bg-[#fff7d7] shadow-[inset_0_0_0_1px_rgb(255_255_255/0.75)]">
+          <span className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+          <span className="absolute inset-x-0 bottom-0 h-1/2 rotate-180 bg-[linear-gradient(135deg,#f8d76c_0%,#f8d76c_26%,#ffffff_27%,#ffffff_40%,#c82435_41%,#c82435_58%,#ffffff_59%,#ffffff_72%,#ecb847_73%,#ecb847_100%)]" />
+          <span className="absolute left-1/2 top-1/2 h-[43px] w-px -translate-x-1/2 -translate-y-1/2 bg-[#8b6a2c]/42" />
+          <span className="absolute inset-y-1 left-[8px] w-px bg-[#c82435]/55" />
+          <span className="absolute inset-y-1 right-[8px] w-px bg-[#c82435]/55" />
+          <span className="relative z-10 flex size-[18px] items-center justify-center rounded-full border border-[#d4a843] bg-[#fffef9] text-[11px] leading-none text-[#101010]">
+            {rank}
+          </span>
+          <span className="absolute left-[3px] top-[3px] text-[8px] leading-none" style={{ color: faceAccent }}>
+            {suit}
+          </span>
+          <span className="absolute bottom-[3px] right-[3px] rotate-180 text-[8px] leading-none" style={{ color: faceAccent }}>
+            {suit}
+          </span>
         </span>
       ) : (
         <span className="flex flex-col items-center justify-center leading-none">
-          <span className="text-[1.65rem]">{suit || rank}</span>
+          <span className="text-[2rem]">{suit || rank}</span>
         </span>
       )}
 
-      <span className="absolute bottom-[5px] right-[5px] z-10 flex rotate-180 flex-col items-center leading-none">
-        <span className="text-[10px]">{rank}</span>
-        <span className="mt-px text-[10px]">{suit}</span>
-      </span>
+      <CardCorner rank={rank} suit={suit} className="bottom-[4px] left-[4px] rotate-180" />
+      <CardCorner rank={rank} suit={suit} className="bottom-[4px] right-[4px] rotate-180" />
+    </span>
+  );
+}
+
+function CardCorner({ rank, suit, className }: { rank: string; suit: string; className: string }) {
+  return (
+    <span className={cn("absolute z-10 flex flex-col items-center leading-none", className)}>
+      <span className={cn("text-[10px]", rank === "10" && "text-[8px]")}>{rank}</span>
+      <span className="text-[8px]">{suit}</span>
     </span>
   );
 }
 
 function getPipPositions(rank: string) {
   if (rank === "A") return [];
-  if (rank === "2") return [1, 13];
-  if (rank === "3") return [1, 7, 13];
-  if (rank === "4") return [0, 2, 12, 14];
-  if (rank === "5") return [0, 2, 7, 12, 14];
-  if (rank === "6") return [0, 2, 6, 8, 12, 14];
-  if (rank === "7") return [0, 2, 4, 6, 8, 12, 14];
-  if (rank === "8") return [0, 2, 4, 6, 8, 10, 12, 14];
-  if (rank === "9") return [0, 2, 3, 5, 7, 9, 11, 12, 14];
-  if (rank === "10") return [0, 2, 3, 5, 6, 8, 9, 11, 12, 14];
+  if (rank === "2") return [{ x: 50, y: 18 }, { x: 50, y: 82, flip: true }];
+  if (rank === "3") return [{ x: 50, y: 18 }, { x: 50, y: 50 }, { x: 50, y: 82, flip: true }];
+  if (rank === "4") return [{ x: 30, y: 20 }, { x: 70, y: 20 }, { x: 30, y: 80, flip: true }, { x: 70, y: 80, flip: true }];
+  if (rank === "5") return [{ x: 30, y: 20 }, { x: 70, y: 20 }, { x: 50, y: 50 }, { x: 30, y: 80, flip: true }, { x: 70, y: 80, flip: true }];
+  if (rank === "6") return [{ x: 30, y: 18 }, { x: 70, y: 18 }, { x: 30, y: 50 }, { x: 70, y: 50 }, { x: 30, y: 82, flip: true }, { x: 70, y: 82, flip: true }];
+  if (rank === "7") return [{ x: 30, y: 16 }, { x: 70, y: 16 }, { x: 50, y: 33 }, { x: 30, y: 50 }, { x: 70, y: 50 }, { x: 30, y: 84, flip: true }, { x: 70, y: 84, flip: true }];
+  if (rank === "8") return [{ x: 30, y: 15 }, { x: 70, y: 15 }, { x: 50, y: 32 }, { x: 30, y: 48 }, { x: 70, y: 48 }, { x: 50, y: 68, flip: true }, { x: 30, y: 85, flip: true }, { x: 70, y: 85, flip: true }];
+  if (rank === "9") return [{ x: 30, y: 14 }, { x: 70, y: 14 }, { x: 30, y: 34 }, { x: 70, y: 34 }, { x: 50, y: 50 }, { x: 30, y: 66, flip: true }, { x: 70, y: 66, flip: true }, { x: 30, y: 86, flip: true }, { x: 70, y: 86, flip: true }];
+  if (rank === "10") return [{ x: 30, y: 12 }, { x: 70, y: 12 }, { x: 50, y: 27 }, { x: 30, y: 39 }, { x: 70, y: 39 }, { x: 30, y: 61, flip: true }, { x: 70, y: 61, flip: true }, { x: 50, y: 73, flip: true }, { x: 30, y: 88, flip: true }, { x: 70, y: 88, flip: true }];
   return [];
 }

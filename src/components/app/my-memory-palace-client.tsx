@@ -284,7 +284,7 @@ export function MyMemoryPalaceClient({
                         className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid md:grid-cols-[74px_minmax(140px,1fr)_96px_110px] md:items-center md:gap-2 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-2"
                       >
                         <div className="flex items-center gap-2 md:block">
-                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-16 min-w-11 shadow-sm" />
+                          <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-[76px] min-w-[54px] shadow-sm" />
                           <div className="min-w-0 md:hidden">
                             <p className="truncate text-sm font-semibold">{entry.card.label}</p>
                           </div>

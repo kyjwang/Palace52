@@ -1,10 +1,12 @@
 import { ArrowRight, Brain, CheckCircle2, Dumbbell, Target, Trophy } from "lucide-react";
 import { ensureStarterContent } from "@/app/actions/onboarding";
+import { CardBadge } from "@/components/app/card-badge";
 import { ProgressChart } from "@/components/app/progress-chart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ButtonLink } from "@/components/ui/button";
 import { MetricCard, PageHeader } from "@/components/ui/product";
 import { requireCurrentUser } from "@/lib/auth";
+import { fullDeck } from "@/lib/cards";
 import { calculateDashboardStats } from "@/lib/dashboard";
 import { getLeaderboardPreview } from "@/lib/leaderboard";
 import { getPrisma } from "@/lib/prisma";
@@ -29,6 +31,7 @@ export default async function DashboardPage() {
   });
   const leaderboard = await getLeaderboardPreview(user.id);
   const stats = calculateDashboardStats(sessions);
+  const cardByLabel = new Map(fullDeck.map((card) => [card.label, card]));
 
   const metrics = [
     { label: "Best score", value: `${stats.bestScore}/52`, icon: Target },
@@ -73,12 +76,19 @@ export default async function DashboardPage() {
               {stats.weakestCards.length === 0 ? (
                 <p className="text-sm text-[var(--muted)]">No mistakes yet. Complete a recall session to discover weak cards.</p>
               ) : (
-                stats.weakestCards.map((card) => (
-                  <div key={card.label} className="flex items-center justify-between rounded-md bg-[var(--card-muted)] px-3 py-2 text-sm">
-                    <span>{card.label}</span>
-                    <span className="font-mono text-[var(--accent)]">{card.count}</span>
-                  </div>
-                ))
+                stats.weakestCards.map((card) => {
+                  const playingCard = cardByLabel.get(card.label);
+
+                  return (
+                    <div key={card.label} className="flex items-center justify-between gap-3 rounded-md bg-[var(--card-muted)] px-3 py-2 text-sm">
+                      <div className="flex min-w-0 items-center gap-3">
+                        {playingCard && <CardBadge label={playingCard.shortLabel} color={playingCard.color} />}
+                        <span className="min-w-0 truncate">{card.label}</span>
+                      </div>
+                      <span className="font-mono text-[var(--accent)]">{card.count}</span>
+                    </div>
+                  );
+                })
               )}
             </CardContent>
           </Card>
