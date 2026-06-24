@@ -108,7 +108,7 @@ export function PublicShell({
         </div>
       </header>
       <main className="mx-auto w-full max-w-7xl px-4 py-5 md:px-6 md:py-8">{children}</main>
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-[var(--border)] bg-[var(--chrome)] shadow-[0_-18px_50px_rgb(18_24_38/0.1)] backdrop-blur-2xl lg:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 gap-1 border-t border-[var(--border)] bg-[var(--nav-surface)] px-2 py-2 shadow-[0_-18px_50px_rgb(0_0_0/0.18),inset_0_1px_0_rgb(255_255_255/0.14)] lg:hidden">
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = pathname === item.href;
@@ -117,12 +117,14 @@ export function PublicShell({
               key={item.href}
               href={item.href}
               className={cn(
-                "flex h-16 flex-col items-center justify-center gap-1 text-xs font-medium transition",
-                active ? "text-[var(--accent)]" : "text-[var(--muted)]"
+                "group flex h-14 flex-col items-center justify-center gap-1 rounded-md border text-xs font-semibold leading-none transition-[background-color,border-color,box-shadow,color,transform] duration-150 active:translate-y-px active:scale-95",
+                active
+                  ? "border-[var(--border-strong)] bg-[var(--nav-item-active)] text-[var(--accent)] shadow-[inset_0_1px_0_rgb(255_255_255/0.18),0_10px_24px_rgb(47_111_255/0.12)]"
+                  : "border-transparent bg-transparent text-[var(--muted)] hover:bg-[var(--nav-item)] hover:text-[var(--foreground)] active:bg-[var(--nav-item)]"
               )}
             >
-              <Icon className="size-5" />
-              {item.label}
+              <Icon className={cn("size-5 transition-transform duration-150", active ? "scale-105" : "group-active:scale-90")} />
+              <span>{item.label}</span>
             </Link>
           );
         })}

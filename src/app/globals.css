@@ -7,6 +7,9 @@
   --card-muted: rgb(255 255 255 / 0.34);
   --chrome: rgb(250 252 255 / 0.72);
   --control: rgb(255 255 255 / 0.48);
+  --nav-surface: rgb(248 251 255 / 0.98);
+  --nav-item: rgb(255 255 255 / 0.82);
+  --nav-item-active: rgb(47 111 255 / 0.14);
   --muted: #5f6778;
   --border: rgb(118 134 158 / 0.28);
   --border-strong: rgb(76 112 168 / 0.42);
@@ -90,6 +93,9 @@ select {
     --card-muted: rgb(255 255 255 / 0.065);
     --chrome: rgb(18 19 26 / 0.72);
     --control: rgb(255 255 255 / 0.075);
+    --nav-surface: rgb(14 15 22 / 0.98);
+    --nav-item: rgb(255 255 255 / 0.07);
+    --nav-item-active: rgb(124 199 255 / 0.16);
     --muted: #b3bac9;
     --border: rgb(255 255 255 / 0.14);
     --border-strong: rgb(128 188 255 / 0.42);
@@ -119,6 +125,9 @@ select {
     --card-muted: #eef3fb;
     --chrome: #f9fbff;
     --control: #ffffff;
+    --nav-surface: #f8faff;
+    --nav-item: #ffffff;
+    --nav-item-active: #e7efff;
   }
 
   .rounded-lg.border,
