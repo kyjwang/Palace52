@@ -10,6 +10,12 @@ const palaceSchema = z.object({
   description: z.string().max(240).optional()
 });
 
+const saveRouteSchema = z.object({
+  name: z.string().min(2).max(80),
+  description: z.string().max(240).optional(),
+  locations: z.array(z.string().trim().min(1).max(80)).min(1).max(52)
+});
+
 const locationSchema = z.object({
   palaceId: z.string().min(1),
   name: z.string().min(2).max(80),
@@ -65,5 +71,55 @@ export async function addPalaceLocation(formData: FormData) {
   });
 
   revalidatePath("/palaces");
+  revalidatePath("/training");
+}
+
+export async function savePalaceRoute(input: unknown) {
+  const user = await requireCurrentUser();
+  const parsed = saveRouteSchema.parse(input);
+  const locations = parsed.locations.map((location) => location.trim()).filter(Boolean);
+  const db = getPrisma();
+  const existingPalace = await db.palace.findFirst({
+    where: { userId: user.id, name: parsed.name },
+    select: { id: true }
+  });
+
+  if (existingPalace) {
+    await db.$transaction([
+      db.palaceLocation.deleteMany({ where: { palaceId: existingPalace.id } }),
+      db.palace.update({
+        where: { id: existingPalace.id },
+        data: {
+          description: parsed.description,
+          locations: {
+            create: locations.map((name, index) => ({
+              name,
+              order: index + 1,
+              cue: "Place one vivid card image here."
+            }))
+          }
+        }
+      })
+    ]);
+  } else {
+    await db.palace.create({
+      data: {
+        userId: user.id,
+        name: parsed.name,
+        description: parsed.description,
+        locations: {
+          create: locations.map((name, index) => ({
+            name,
+            order: index + 1,
+            cue: "Place one vivid card image here."
+          }))
+        }
+      }
+    });
+  }
+
+  revalidatePath("/palaces");
+  revalidatePath("/my-memory-palace");
+  revalidatePath("/play");
   revalidatePath("/training");
 }

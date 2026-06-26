@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Castle, ChevronDown, House, Orbit, Pencil, Trash2, Wand2 } from "lucide-react";
 import { PublicShell, type HeaderUser } from "@/components/app/public-shell";
 import { CardBadge } from "@/components/app/card-badge";
@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/form";
 import { PageHeader } from "@/components/ui/product";
 import { getPresetPaoDeckOptions, type PaoDeckOption } from "@/lib/pao-decks";
+import { readSavedPalaces, removeSavedPalace, subscribeToSavedPalaces, type StoredPalace } from "@/lib/palace-storage";
 import { sampleUserPalaces, suitOrder } from "@/lib/sample-palace";
 
 const suitLabels: Record<string, string> = {
@@ -18,21 +19,58 @@ const suitLabels: Record<string, string> = {
   SPADES: "Spades"
 };
 
+const paoTableColumns = "md:grid-cols-[74px_minmax(160px,1.35fr)_minmax(120px,0.85fr)_minmax(140px,1fr)]";
+
+export type PalaceRouteOption = {
+  name: string;
+  locations: string[];
+  cards: number;
+  strength: number;
+  storageId?: string;
+};
+
+function storedPalaceToOption(palace: StoredPalace): PalaceRouteOption {
+  return {
+    name: palace.name,
+    locations: palace.locations,
+    cards: palace.cards,
+    strength: palace.strength,
+    storageId: palace.id
+  };
+}
+
+function mergePalaces(basePalaces: PalaceRouteOption[], savedPalaces: StoredPalace[]) {
+  const baseNames = new Set(basePalaces.map((palace) => palace.name));
+  return [...basePalaces, ...savedPalaces.map(storedPalaceToOption).filter((palace) => !baseNames.has(palace.name))];
+}
+
 export function MyMemoryPalaceClient({
   embedded = false,
   headerUser,
+  initialPalaces,
   paoDeckOptions = getPresetPaoDeckOptions()
 }: {
   embedded?: boolean;
   headerUser?: HeaderUser | null;
+  initialPalaces?: PalaceRouteOption[];
   paoDeckOptions?: PaoDeckOption[];
 }) {
+  const basePalaces = initialPalaces?.length ? initialPalaces : sampleUserPalaces;
   const [deckIndex, setDeckIndex] = useState(0);
-  const [palaces, setPalaces] = useState(sampleUserPalaces);
+  const [palaces, setPalaces] = useState<PalaceRouteOption[]>(basePalaces);
   const [expandedPalace, setExpandedPalace] = useState<string | null>(null);
   const [editingPalace, setEditingPalace] = useState<string | null>(null);
   const [deckSelectorOpen, setDeckSelectorOpen] = useState(false);
   const activeDeck = paoDeckOptions[deckIndex] ?? paoDeckOptions[0] ?? getPresetPaoDeckOptions()[0];
+
+  useEffect(() => {
+    const syncSavedPalaces = () => {
+      setPalaces(mergePalaces(basePalaces, readSavedPalaces()));
+    };
+
+    syncSavedPalaces();
+    return subscribeToSavedPalaces(syncSavedPalaces);
+  }, [basePalaces]);
 
   function chooseDeck(index: number) {
     setDeckIndex(index);
@@ -74,6 +112,16 @@ export function MyMemoryPalaceClient({
     );
   }
 
+  function removePalace(palaceToRemove: PalaceRouteOption) {
+    if (palaceToRemove.storageId) {
+      removeSavedPalace(palaceToRemove.storageId);
+    }
+
+    setPalaces((current) => current.filter((palace) => palace.name !== palaceToRemove.name));
+    setExpandedPalace((current) => (current === palaceToRemove.name ? null : current));
+    setEditingPalace((current) => (current === palaceToRemove.name ? null : current));
+  }
+
   function moveLocation(palaceName: string, locationIndex: number, direction: -1 | 1) {
     setPalaces((current) =>
       current.map((palace) => {
@@ -106,7 +154,7 @@ export function MyMemoryPalaceClient({
           </div>
           <div className="grid gap-4 xl:grid-cols-3">
             {palaces.map((palace) => (
-              <Card key={palace.name} className="cursor-pointer transition hover:border-[var(--accent)]" onClick={() => setExpandedPalace(expandedPalace === palace.name ? null : palace.name)}>
+              <Card key={palace.storageId ?? palace.name} className="cursor-pointer transition hover:border-[var(--accent)]" onClick={() => setExpandedPalace(expandedPalace === palace.name ? null : palace.name)}>
                 <CardHeader className="p-4">
                   <div className="flex items-center justify-between gap-3">
                     {editingPalace === palace.name ? (
@@ -201,6 +249,20 @@ export function MyMemoryPalaceClient({
                       <div className="rounded-md bg-[var(--ink)] px-2 py-1.5 text-sm font-medium text-[var(--foreground)]">+{palace.locations.length - 6} / click</div>
                     )}
                   </div>
+                  <div className="mt-4 flex justify-end border-t border-[var(--border)] pt-3">
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        removePalace(palace);
+                      }}
+                      className="inline-flex size-9 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--card-muted)] text-[var(--danger)] transition hover:border-[var(--danger)] hover:bg-[var(--danger)]/10 active:translate-y-px"
+                      aria-label={`Delete ${palace.name}`}
+                      title={`Delete ${palace.name}`}
+                    >
+                      <Trash2 className="size-4" />
+                    </button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -269,7 +331,7 @@ export function MyMemoryPalaceClient({
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-2">
-                <div className="hidden grid-cols-[74px_minmax(140px,1fr)_96px_110px] gap-2 border-b border-[var(--border)] px-2 pb-2 text-[11px] font-semibold uppercase tracking-normal text-[var(--muted)] md:grid">
+                <div className={`hidden ${paoTableColumns} gap-3 border-b border-[var(--border)] px-2 pb-2 text-[11px] font-semibold uppercase tracking-normal text-[var(--muted)] md:grid`}>
                   <span>Card</span>
                   <span>Person</span>
                   <span>Action</span>
@@ -281,7 +343,7 @@ export function MyMemoryPalaceClient({
                     .map((entry, index) => (
                       <div
                         key={entry.card.code}
-                        className="rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid md:grid-cols-[74px_minmax(140px,1fr)_96px_110px] md:items-center md:gap-2 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-2"
+                        className={`rounded-md border border-[var(--border)] bg-[var(--card-muted)] p-2 md:grid ${paoTableColumns} md:items-center md:gap-3 md:rounded-none md:border-x-0 md:border-t-0 md:bg-[var(--card)] md:px-2 md:py-2`}
                       >
                         <div className="flex items-center gap-2 md:block">
                           <CardBadge label={entry.card.shortLabel} color={entry.card.color} className="h-[76px] min-w-[54px] shadow-sm" />

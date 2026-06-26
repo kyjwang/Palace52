@@ -3,10 +3,12 @@
 import { useState, useTransition, type DragEvent } from "react";
 import { ArrowDown, ArrowUp, BookOpen, GripVertical, MapPin, Plus, Save, Trash2 } from "lucide-react";
 import { savePaoDeck } from "@/app/actions/card-images";
+import { savePalaceRoute } from "@/app/actions/palaces";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Input } from "@/components/ui/form";
 import { Panel } from "@/components/ui/product";
 import { fullDeck, type PlayingCard } from "@/lib/cards";
+import { upsertSavedPalace } from "@/lib/palace-storage";
 
 const starterLocations = ["Front door", "Hallway mirror", "Kitchen sink", "Living room sofa", "Bedroom door", "Balcony chair"];
 type PaoRow = { cardCode: string; person: string; action: string; object: string };
@@ -24,16 +26,42 @@ export function PalaceBuilder() {
   const [paoRows, setPaoRows] = useState<PaoRow[]>(blankPaoRows);
   const [routeEditorOpen, setRouteEditorOpen] = useState(false);
   const [deckEditorOpen, setDeckEditorOpen] = useState(false);
-  const [saved, setSaved] = useState(false);
+  const [routeSaveState, setRouteSaveState] = useState<"idle" | "saved" | "error">("idle");
   const [paoSaveState, setPaoSaveState] = useState<"idle" | "saved" | "error">("idle");
   const [draggedLocationIndex, setDraggedLocationIndex] = useState<number | null>(null);
   const completedRouteLocations = locations.filter((location) => location.trim()).length;
   const completedPaoCards = paoRows.filter((row) => row.person.trim() && row.action.trim() && row.object.trim()).length;
 
+  function saveRoute() {
+    const savedLocations = locations.map((location) => location.trim()).filter(Boolean);
+    if (!savedLocations.length) return;
+
+    startTransition(async () => {
+      try {
+        await savePalaceRoute({
+          name: "Custom Palace",
+          description: "A custom route built in Palace52.",
+          locations: savedLocations
+        });
+        upsertSavedPalace({
+          id: "custom-palace",
+          name: "Custom Palace",
+          locations: savedLocations,
+          cards: 52,
+          strength: Math.min(100, Math.round((savedLocations.length / 18) * 100)),
+          custom: true
+        });
+        setRouteSaveState("saved");
+      } catch {
+        setRouteSaveState("error");
+      }
+    });
+  }
+
   function addLocation() {
     const nextIndex = locations.length;
     setLocations([...locations, ""]);
-    setSaved(false);
+    setRouteSaveState("idle");
 
     requestAnimationFrame(() => {
       document.getElementById(`route-location-${nextIndex}`)?.focus();
@@ -42,12 +70,12 @@ export function PalaceBuilder() {
 
   function removeLocation(index: number) {
     setLocations(locations.filter((_, locationIndex) => locationIndex !== index));
-    setSaved(false);
+    setRouteSaveState("idle");
   }
 
   function updateLocation(index: number, value: string) {
     setLocations(locations.map((location, locationIndex) => (locationIndex === index ? value : location)));
-    setSaved(false);
+    setRouteSaveState("idle");
   }
 
   function moveLocation(index: number, direction: -1 | 1) {
@@ -65,7 +93,7 @@ export function PalaceBuilder() {
     const [movedLocation] = next.splice(fromIndex, 1);
     next.splice(toIndex, 0, movedLocation);
     setLocations(next);
-    setSaved(false);
+    setRouteSaveState("idle");
   }
 
   function startLocationDrag(event: DragEvent<HTMLElement>, index: number) {
@@ -260,14 +288,19 @@ export function PalaceBuilder() {
                   <Plus className="size-4" />
                   Add location
                 </Button>
-                <Button type="button" onClick={() => setSaved(true)} disabled={completedRouteLocations === 0} variant="secondary" className="h-11 md:shrink-0">
+                <Button type="button" onClick={saveRoute} disabled={completedRouteLocations === 0 || isPending} variant="secondary" className="h-11 md:shrink-0">
                   <Save className="size-4" />
                   Save route
                 </Button>
               </div>
             </div>
 
-            {saved && <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm font-medium text-[var(--accent)]">Route saved locally for preview.</p>}
+            {routeSaveState === "saved" && (
+              <p className="rounded-md bg-[var(--accent-soft)] px-3 py-2 text-sm font-medium text-[var(--accent)]">Route saved. It now appears in My Palace.</p>
+            )}
+            {routeSaveState === "error" && (
+              <p className="rounded-md bg-[var(--danger)]/10 px-3 py-2 text-sm font-medium text-[var(--danger)]">Could not save this route. Please try again.</p>
+            )}
           </div>
         )}
       </Panel>

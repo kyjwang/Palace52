@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import {
   BadgeCheck,
   Brain,
@@ -35,8 +35,32 @@ import {
   type SuitName
 } from "@/lib/play-modes";
 import type { PaoDeckOption } from "@/lib/pao-decks";
+import { readSavedPalaces, subscribeToSavedPalaces, type StoredPalace } from "@/lib/palace-storage";
 import { sampleUserPalaces, type StarterPao } from "@/lib/sample-palace";
 import { cn, formatPercent } from "@/lib/utils";
+
+export type PlayPalaceOption = {
+  name: string;
+  locations: string[];
+  cards: number;
+  strength: number;
+  storageId?: string;
+};
+
+function storedPalaceToOption(palace: StoredPalace): PlayPalaceOption {
+  return {
+    name: palace.name,
+    locations: palace.locations,
+    cards: palace.cards,
+    strength: palace.strength,
+    storageId: palace.id
+  };
+}
+
+function mergePalaces(basePalaces: PlayPalaceOption[], savedPalaces: StoredPalace[]) {
+  const baseNames = new Set(basePalaces.map((palace) => palace.name));
+  return [...basePalaces, ...savedPalaces.map(storedPalaceToOption).filter((palace) => !baseNames.has(palace.name))];
+}
 
 type Phase = "setup" | "memorize" | "recall" | "flashcards" | "score";
 type Hint = "palace" | "pao" | null;
@@ -80,7 +104,8 @@ const modeCards: Array<{
   { mode: "RANDOM_POSITION", title: "Random Position", short: "Guess cards from random spots.", icon: Layers3 }
 ];
 
-export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOption[] }) {
+export function PlayGame({ initialPalaces, paoDeckOptions = [] }: { initialPalaces?: PlayPalaceOption[]; paoDeckOptions?: PaoDeckOption[] }) {
+  const basePalaces = initialPalaces?.length ? initialPalaces : sampleUserPalaces;
   const [phase, setPhase] = useState<Phase>("setup");
   const [mode, setMode] = useState<PlayMode>("FULL_DECK");
   const [count, setCount] = useState(10);
@@ -91,7 +116,8 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const [selectedPaoDeckId, setSelectedPaoDeckId] = useState(paoDeckOptions[0]?.id ?? "");
   const [flashcardCount, setFlashcardCount] = useState(16);
   const [questionCount, setQuestionCount] = useState(10);
-  const [palace, setPalace] = useState(sampleUserPalaces[0].name);
+  const [availablePalaces, setAvailablePalaces] = useState<PlayPalaceOption[]>(basePalaces);
+  const [palace, setPalace] = useState(basePalaces[0]?.name ?? sampleUserPalaces[0].name);
   const [sessionDeck, setSessionDeck] = useState<StarterPao[]>([]);
   const [questionPositions, setQuestionPositions] = useState<number[]>([]);
   const [index, setIndex] = useState(0);
@@ -111,6 +137,15 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const [isPending, startTransition] = useTransition();
   const ignoreNextClickRef = useRef(false);
 
+  useEffect(() => {
+    const syncSavedPalaces = () => {
+      setAvailablePalaces(mergePalaces(basePalaces, readSavedPalaces()));
+    };
+
+    syncSavedPalaces();
+    return subscribeToSavedPalaces(syncSavedPalaces);
+  }, [basePalaces]);
+
   const availablePaoDecks = paoDeckOptions;
   const selectedPaoDeck = useMemo(
     () => availablePaoDecks.find((item) => item.id === selectedPaoDeckId) ?? availablePaoDecks[0] ?? null,
@@ -120,8 +155,8 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
   const deck = useMemo(() => (sessionDeck.length > 0 ? sessionDeck : sourcePaoDeck.slice(0, count)), [count, sessionDeck, sourcePaoDeck]);
   const hasPaoDeck = sourcePaoDeck.length > 0;
   const selectedPalace = useMemo(
-    () => sampleUserPalaces.find((item) => item.name === palace) ?? sampleUserPalaces[0],
-    [palace]
+    () => availablePalaces.find((item) => item.name === palace) ?? availablePalaces[0] ?? sampleUserPalaces[0],
+    [availablePalaces, palace]
   );
   const current = deck[index];
   const currentPromptPosition = questionPositions[index];
@@ -453,7 +488,7 @@ export function PlayGame({ paoDeckOptions = [] }: { paoDeckOptions?: PaoDeckOpti
               <label className="space-y-2">
                 <span className="text-sm font-medium text-[var(--foreground)]">Memory palace</span>
                 <select value={palace} onChange={(event) => setPalace(event.target.value)} className="h-11 w-full rounded-md border border-[var(--border)] bg-[var(--card)] px-3 text-sm">
-                  {sampleUserPalaces.map((item) => (
+                  {availablePalaces.map((item) => (
                     <option key={item.name} value={item.name}>{item.name}</option>
                   ))}
                 </select>
